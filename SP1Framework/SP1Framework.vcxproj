@@ -77,6 +77,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Lazy is Progress - Copy\SP1Framework\Scoreboard.cpp" />
     <ClCompile Include="ai.cpp" />
     <ClCompile Include="Framework\console.cpp" />
     <ClCompile Include="Framework\timer.cpp" />
@@ -90,6 +91,7 @@
     <ClCompile Include="spawn.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Lazy is Progress - Copy\SP1Framework\ScoreBoard.h" />
     <ClInclude Include="ai.h" />
     <ClInclude Include="Framework\console.h" />
     <ClInclude Include="Framework\timer.h" />

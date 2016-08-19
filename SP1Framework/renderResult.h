@@ -13,4 +13,4 @@ extern const unsigned int y;
 extern char map[25][80];
 
 //Definition for function.
-void renderResult();
+void renderResult(bool *g_ResultIsDisplayed, double *g_ElapsedGameTime);

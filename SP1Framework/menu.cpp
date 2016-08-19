@@ -48,7 +48,10 @@ void menu()
 	{
 		g_eGameState = S_GAME;//S_LEVEL1;
 	}
-
+	if (g_menu.m_cLocation.Y == 9 && g_abKeyPressed[K_RETURN])
+	{
+		g_eGameState = S_SCOREBOARD;
+	}
 	if (g_menu.m_cLocation.Y == 10 && g_abKeyPressed[K_RETURN])
 	{
 		g_bQuitGame = true;
