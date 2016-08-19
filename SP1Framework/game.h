@@ -39,6 +39,7 @@ enum EGAMESTATES
 	S_SPLASHSCREEN,
 	S_MENU,
 	S_GAME,
+	S_SCOREBOARD,
 	S_LEVEL1,
 	S_RESULT, //This and COUNT must be at bottom
     S_COUNT
@@ -78,6 +79,8 @@ void renderMap();           // renders the map to the buffer first
 void renderCharacter();     // renders the character into the buffer
 void renderFramerate();     // renders debug information, frame rate, elapsed time, etc
 void renderToScreen();      // dump the contents of the buffer to the screen, one frame worth of game
+void renderResult();  //renders result screen
+void renderScoreBoard(); // renders scoreboard
 
 //Add-ons
 //void menu();				// renders the menu screen.

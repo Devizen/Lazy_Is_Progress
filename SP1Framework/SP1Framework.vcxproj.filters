@@ -54,7 +54,11 @@
     <ClCompile Include="spawn.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="level2.cpp">
+=======
+    <ClCompile Include="..\..\Lazy is Progress - Copy\SP1Framework\Scoreboard.cpp">
+>>>>>>> cde8ee614ef7661c636f4d3a68300075b4a1180c
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -95,7 +99,11 @@
     <ClInclude Include="spawn.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="level2.h">
+=======
+    <ClInclude Include="..\..\Lazy is Progress - Copy\SP1Framework\ScoreBoard.h">
+>>>>>>> cde8ee614ef7661c636f4d3a68300075b4a1180c
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

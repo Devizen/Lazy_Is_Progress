@@ -18,6 +18,7 @@
 #include "renderResult.h"
 #include "menu.h"
 #include "spawn.h"
+#include "ScoreBoard.h"
 
 using std::vector;
 using namespace std;
@@ -25,7 +26,9 @@ using namespace std;
 double g_dElapsedTime;
 double  g_dDeltaTime;
 double g_dCountTime;
+double g_ElapsedGameTime;
 bool    g_abKeyPressed[K_COUNT];
+bool g_ResultIsDisplayed = false;
 
 
 // Game specific variables here
@@ -143,6 +146,7 @@ void update(double dt)
 		break;
 	case S_GAME: gameplay(); // gameplay logic when we are in the game
 		g_dCountTime -= dt;
+		g_ElapsedGameTime += dt;
 		break;
 	}
 }
@@ -167,8 +171,9 @@ void render()
 		break;
 	//case S_LEVEL1: level1();
 	//	break;
-	case S_RESULT: renderResult();
+	case S_RESULT: renderResult(&g_ResultIsDisplayed, &g_ElapsedGameTime);
 		break;
+	case S_SCOREBOARD:renderScoreBoard();
 	}
 
 	renderToScreen();   // dump the contents of the buffer to the screen, one frame worth of game
