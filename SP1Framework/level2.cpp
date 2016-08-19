@@ -1,14 +1,15 @@
-#include "level1.h"
 #include "level2.h"
 #include "ai.h"
 #include "game.h"
 #include "health.h"
 
 //Done by Eugene.
-void level1()
+void level2()
 {
+	clearScreen();
+
 	string line = " ";
-	string name = "Text/level1.txt";
+	string name = "Text/level2.txt";
 	loadlevel(name);
 
 	COORD c;
@@ -80,7 +81,7 @@ void level1()
 		g_nChar.m_cLocation.Y = 10;
 		g_sChar.health = 3;
 
-		load = leveltwo;
+		load = mainscreen;
 
 	}
 }

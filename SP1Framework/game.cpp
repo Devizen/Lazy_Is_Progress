@@ -13,6 +13,7 @@
 #include <string>
 #include "health.h"
 #include "level1.h"
+#include "level2.h"
 #include "ai.h"
 #include "renderResult.h"
 #include "menu.h"
@@ -46,6 +47,7 @@ const unsigned int y = 25;
 
 char map[25][80];
 
+
 //--------------------------------------------------------------
 // Purpose  : Initialisation function
 //            Initialize variables, allocate memory, load data from file, etc. 
@@ -68,6 +70,7 @@ void init(void)
 
 	// sets the width, height and the font name to use in the console
 	g_Console.setConsoleFont(0, 20, L"Consolas");
+
 }
 
 //--------------------------------------------------------------
@@ -183,6 +186,7 @@ void gameplay()            // gameplay logic
 	processUserInput(); // checks if you should change states or do something else with the game, e.g. pause, exit
 	moveCharacter();    // moves the character, collision detection, physics, etc
 	// sound can be played here too.
+
 }
 
 void moveCharacter()
@@ -339,10 +343,12 @@ void renderGame()
 
 	switch (load)
 	{
+	case mainscreen: menu();
+		break;
 	case levelone: level1();
 		break;
-	//case leveltwo: leveltwo();
-	//	break;
+	case leveltwo: level2();
+		break;
 	//case levelthree: levelthree();
 	//	break;
 	}

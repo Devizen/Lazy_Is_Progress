@@ -1,6 +1,7 @@
 #include "menu.h"
 
 //Done by Eugene.
+
 void menu()
 {
 	string line;
