@@ -36,6 +36,8 @@ SGameChar   g_sChar;
 SGameChar	g_nChar;
 SGameChar	g_enemy;
 SGameChar	g_enemy2;
+SGameChar	g_door1;
+SGameChar	g_lever1;
 SGameChar	g_menu;
 SGameChar   g_result;
 EGAMESTATES g_eGameState = S_SPLASHSCREEN;
@@ -63,7 +65,7 @@ void init(void)
 	// Set precision for floating point output
 	g_dElapsedTime = 0.0;
 	g_dBounceTime = 0.0;
-	g_dCountTime = 1000.0;
+	g_dCountTime = 1000;
 
 	// sets the initial state for the game
 	g_eGameState = S_SPLASHSCREEN;
@@ -270,11 +272,26 @@ void moveCharacter()
 
 	if (g_abKeyPressed[K_D])
 	{
-		if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
-			map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != (char)219)
+		switch (load)
 		{
-			g_sChar.m_cLocation.X++;
-			bSomethingHappened = true;
+		case levelone:
+			if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
+				map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != (char)219 &&
+				map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] !=
+				map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
+			{
+				g_sChar.m_cLocation.X++;
+				bSomethingHappened = true;
+				break;
+			}
+		//default:
+		//	if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
+		//		map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != (char)219)
+		//	{
+		//		g_sChar.m_cLocation.X++;
+		//		bSomethingHappened = true;
+		//		break;
+		//	} -11 +14
 		}
 	}
 
@@ -377,24 +394,27 @@ void renderMap()
 void renderCharacter()
 {
 	// Draw the location of the character
-	WORD charColor = 0x0C;
-	WORD charColor2 = 0x0A;
-	if (g_sChar.m_bActive)
-	{
-		charColor = 0x0A;
-	}
-	g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, charColor);
+	//WORD charColor = 0x0C;
+	//WORD charColor2 = 0x0A;
+	//if (g_sChar.m_bActive)
+	//{
+	//	charColor = 0x0A;
+	//}
+	//g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, charColor);
 
-	// Draw the location of the character
-	if (g_nChar.m_bActive)
-	{
-		charColor = 0x0C;
-	}
-	g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, charColor2);
+	//// Draw the location of the character
+	//if (g_nChar.m_bActive)
+	//{
+	//	charColor = 0x0C;
+	//}
+	//g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, charColor2);
 
-	//Enemy
-	g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, charColor2);
-	g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, charColor2);
+	////Enemy
+	//g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, charColor2);
+	//g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, charColor2);
+
+	////Door
+	//g_Console.writeToBuffer(g_door1.m_cLocation,(char)219, charColor);
 
 }
 

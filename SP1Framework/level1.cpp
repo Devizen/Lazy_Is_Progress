@@ -47,7 +47,22 @@ void level1()
 	g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, charColor2);
 	g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, charColor2);
 
+	//Door
+	g_Console.writeToBuffer(g_door1.m_cLocation, (char)219, charColor);
+
+	//Lever
+	g_Console.writeToBuffer(g_lever1.m_cLocation, (char)219, charColor);
+
 	motiondetect();
+
+	//if (g_abKeyPressed[K_D])
+	//{
+	//	if (g_sChar.m_cLocation.X + 1 != g_door1.m_cLocation.X &&
+	//		g_sChar.m_cLocation.Y = g_door1.m_cLocation.Y)
+	//	{
+	//		g_sChar.m_cLocation.X++;
+	//	}
+	//}
 
 	if ((g_enemy.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_sChar.m_cLocation.Y) ||
 		(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y))

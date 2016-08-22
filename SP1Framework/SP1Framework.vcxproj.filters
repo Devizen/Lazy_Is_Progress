@@ -1,110 +1,93 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Header Files\Framework">
-      <UniqueIdentifier>{07667b27-3d02-4514-a465-3fd8b26758ff}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Framework">
-      <UniqueIdentifier>{37c19c94-9502-4b2b-b3f1-70fa908b49af}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Framework\console.cpp" />
+    <ClCompile Include="game.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="level1.cpp">
+      <Filter>Levels</Filter>
     </ClCompile>
-    <ClCompile Include="Framework\console.cpp">
-      <Filter>Source Files\Framework</Filter>
-    </ClCompile>
-    <ClCompile Include="Framework\timer.cpp">
-      <Filter>Source Files\Framework</Filter>
-    </ClCompile>
-    <ClCompile Include="game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="health.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="level2.cpp">
+      <Filter>Levels</Filter>
     </ClCompile>
     <ClCompile Include="ai.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="level1.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>A.I and Characters</Filter>
     </ClCompile>
     <ClCompile Include="loadlevel.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>A.I and Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="health.cpp">
+      <Filter>Game Status</Filter>
     </ClCompile>
     <ClCompile Include="renderResult.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Game Status</Filter>
+    </ClCompile>
+    <ClCompile Include="Scoreboard.cpp">
+      <Filter>Game Status</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\timer.cpp">
+      <Filter>Game Status</Filter>
     </ClCompile>
     <ClCompile Include="menu.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Screens</Filter>
     </ClCompile>
     <ClCompile Include="spawn.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-<<<<<<< HEAD
-    <ClCompile Include="level2.cpp">
-=======
-    <ClCompile Include="..\..\Lazy is Progress - Copy\SP1Framework\Scoreboard.cpp">
->>>>>>> cde8ee614ef7661c636f4d3a68300075b4a1180c
-      <Filter>Source Files</Filter>
+      <Filter>A.I and Characters</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Framework\console.h">
-      <Filter>Header Files\Framework</Filter>
-    </ClInclude>
-    <ClInclude Include="Framework\timer.h">
-      <Filter>Header Files\Framework</Filter>
-    </ClInclude>
-    <ClInclude Include="game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="main.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="health.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClInclude Include="Framework\console.h" />
+    <ClInclude Include="game.h" />
+    <ClInclude Include="main.h" />
     <ClInclude Include="level1.h">
-      <Filter>Header Files</Filter>
+      <Filter>Levels</Filter>
     </ClInclude>
-    <ClInclude Include="loadlevel.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="level2.h">
+      <Filter>Levels</Filter>
     </ClInclude>
     <ClInclude Include="ai.h">
-      <Filter>Header Files</Filter>
+      <Filter>A.I and Characters</Filter>
     </ClInclude>
-    <ClInclude Include="keyboard.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="loadlevel.h">
+      <Filter>A.I and Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="health.h">
+      <Filter>Game Status</Filter>
     </ClInclude>
     <ClInclude Include="renderResult.h">
-      <Filter>Header Files</Filter>
+      <Filter>Game Status</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Lazy is Progress - Copy\SP1Framework\ScoreBoard.h">
+      <Filter>Game Status</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\timer.h">
+      <Filter>Game Status</Filter>
+    </ClInclude>
+    <ClInclude Include="keyboard.h">
+      <Filter>Misc</Filter>
     </ClInclude>
     <ClInclude Include="menu.h">
-      <Filter>Header Files</Filter>
+      <Filter>Screens</Filter>
     </ClInclude>
     <ClInclude Include="spawn.h">
-      <Filter>Header Files</Filter>
+      <Filter>A.I and Characters</Filter>
     </ClInclude>
-<<<<<<< HEAD
-    <ClInclude Include="level2.h">
-=======
-    <ClInclude Include="..\..\Lazy is Progress - Copy\SP1Framework\ScoreBoard.h">
->>>>>>> cde8ee614ef7661c636f4d3a68300075b4a1180c
-      <Filter>Header Files</Filter>
-    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Levels">
+      <UniqueIdentifier>{d6571e63-489c-47ff-b6c4-3d642a6a110a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Status">
+      <UniqueIdentifier>{f7a9100b-a04a-42fa-aa83-8062c1b510dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Misc">
+      <UniqueIdentifier>{db602885-fa91-4086-84cd-52169522b559}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Screens">
+      <UniqueIdentifier>{bb112255-ea5b-4729-b6e9-381b0d83d9a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="A.I and Characters">
+      <UniqueIdentifier>{8a9412b3-8a09-4fd3-9819-e9ed95710482}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
