@@ -7,6 +7,9 @@ using namespace std;
 
 #include "Framework\timer.h"
 
+//Linking boolean states.
+extern bool door1;
+
 extern CStopWatch g_swTimer;
 extern bool g_bQuitGame;
 
@@ -20,6 +23,7 @@ enum EKEYS
     K_ESCAPE,
     K_SPACE,
 	K_RETURN,
+	K_BACK,
 
 	K_w,
 	K_a,
@@ -29,6 +33,7 @@ enum EKEYS
 	K_A,
 	K_S,
 	K_D,
+	K_R,
 
 	K_COUNT //Must be at most bottom
 };

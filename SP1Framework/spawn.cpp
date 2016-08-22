@@ -39,6 +39,10 @@ void spawn()
 		g_lever1.m_cLocation.X = 53;
 		g_lever1.m_cLocation.Y = 8;
 
+		//Box
+		g_box1.m_cLocation.X = 54;
+		g_box1.m_cLocation.Y = 21;
+
 		//Set the initial health of the player
 		g_sChar.health = 3;
 		break;

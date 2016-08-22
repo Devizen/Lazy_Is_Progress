@@ -15,6 +15,7 @@ extern SGameChar g_enemy;
 extern SGameChar g_enemy2;
 extern SGameChar g_door1;
 extern SGameChar g_lever1;
+extern SGameChar g_box1;
 extern SGameChar g_menu;
 extern SGameChar g_result;
 
