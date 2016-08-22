@@ -16,6 +16,7 @@ extern bool g_bQuitGame;
 // Enumeration to store the control keys that your game will have
 enum EKEYS
 {
+	K_SHIFT,
     K_UP,
     K_DOWN,
     K_LEFT,
