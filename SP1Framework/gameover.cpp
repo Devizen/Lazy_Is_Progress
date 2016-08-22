@@ -33,7 +33,7 @@ void gameover(struct SGameChar character)
 		switch (load)
 		{
 			case defeated:
-				g_eGameState = S_SPLASHSCREEN;
+				g_eGameState = S_MENU;
 				load = levelone; 
 				spawn();
 				break;
