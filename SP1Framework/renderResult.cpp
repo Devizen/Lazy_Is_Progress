@@ -4,8 +4,10 @@
 //Done by Yoong Soon.
 void renderResult(bool *g_ResultIsDisplayed, double *g_ElapsedGameTime)
 {
+	double g_dCountTime = 10.0;
+
 	int score_multiplier = 10;
-	static vector <string> line1;
+	static vector <string> line1 ;
 	string buffer;
 	COORD c = g_Console.getConsoleSize();
 
@@ -27,9 +29,9 @@ void renderResult(bool *g_ResultIsDisplayed, double *g_ElapsedGameTime)
 			ofstream savefile("Text/SaveScore.txt", ios_base::app);
 			if (savefile.is_open())
 			{
-				savefile << to_string(*g_ElapsedGameTime * score_multiplier).substr(0, 5);
-				savefile << endl;
-				savefile.close();
+					savefile << to_string((g_dCountTime - *g_ElapsedGameTime ) * score_multiplier +1).substr(0, 5);
+					savefile << endl;
+					savefile.close();
 			}
 			else
 			{
@@ -56,6 +58,6 @@ void renderResult(bool *g_ResultIsDisplayed, double *g_ElapsedGameTime)
 	c.Y = 4;
 	g_Console.writeToBuffer(c, "Score: ");
 	c.Y++;
-	g_Console.writeToBuffer(c, to_string(*g_ElapsedGameTime * score_multiplier).substr(0, 5));
+	g_Console.writeToBuffer(c, to_string((g_dCountTime -*g_ElapsedGameTime) * score_multiplier +1 ).substr(0, 2));
 
 }
