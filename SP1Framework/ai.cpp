@@ -142,7 +142,7 @@ void motiondetect()
 	if (bSomethingHappened)
 	{
 		// set the bounce time to some time in the future to prevent accidental triggers
-		ai_BounceTime = g_dElapsedTime + 0.125; // 125ms should be enough
+		ai_BounceTime = g_dElapsedTime + 0.2; // 125ms should be enough
 	}
 	//if (bSomethingHappened)
 	//{
