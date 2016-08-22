@@ -54,10 +54,6 @@ void renderResult(bool *g_ResultIsDisplayed, double *g_ElapsedGameTime)
 		g_Console.writeToBuffer(c, line1[i]);
 	}
 
-	c.X = 34;
-	c.Y = 4;
-	g_Console.writeToBuffer(c, "Score: ");
-	c.Y++;
-	g_Console.writeToBuffer(c, to_string((g_dCountTime -*g_ElapsedGameTime) * score_multiplier +1 ).substr(0, 2));
+
 
 }

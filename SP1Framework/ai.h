@@ -16,6 +16,7 @@ extern SGameChar g_enemy;
 
 //Linking variables
 extern int health;
+extern bool bSomethingHappened;
 
 //Definition for function.
 void motiondetect();
