@@ -13,6 +13,7 @@
 #include <string>
 #include "health.h"
 #include "level1.h"
+#include "level2.h"
 #include "ai.h"
 #include "renderResult.h"
 #include "menu.h"
@@ -35,6 +36,8 @@ SGameChar   g_sChar;
 SGameChar	g_nChar;
 SGameChar	g_enemy;
 SGameChar	g_enemy2;
+SGameChar	g_door1;
+SGameChar	g_lever1;
 SGameChar	g_menu;
 SGameChar   g_result;
 EGAMESTATES g_eGameState = S_SPLASHSCREEN;
@@ -49,6 +52,7 @@ const unsigned int y = 25;
 
 char map[25][80];
 
+
 //--------------------------------------------------------------
 // Purpose  : Initialisation function
 //            Initialize variables, allocate memory, load data from file, etc. 
@@ -61,7 +65,7 @@ void init(void)
 	// Set precision for floating point output
 	g_dElapsedTime = 0.0;
 	g_dBounceTime = 0.0;
-	g_dCountTime = 1000.0;
+	g_dCountTime = 1000;
 
 	// sets the initial state for the game
 	g_eGameState = S_SPLASHSCREEN;
@@ -71,6 +75,7 @@ void init(void)
 
 	// sets the width, height and the font name to use in the console
 	g_Console.setConsoleFont(0, 20, L"Consolas");
+
 }
 
 //--------------------------------------------------------------
@@ -188,6 +193,7 @@ void gameplay()            // gameplay logic
 	processUserInput(); // checks if you should change states or do something else with the game, e.g. pause, exit
 	moveCharacter();    // moves the character, collision detection, physics, etc
 	// sound can be played here too.
+
 }
 
 void moveCharacter()
@@ -266,11 +272,26 @@ void moveCharacter()
 
 	if (g_abKeyPressed[K_D])
 	{
-		if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
-			map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != (char)219)
+		switch (load)
 		{
-			g_sChar.m_cLocation.X++;
-			bSomethingHappened = true;
+		case levelone:
+			if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
+				map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != (char)219 &&
+				map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] !=
+				map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
+			{
+				g_sChar.m_cLocation.X++;
+				bSomethingHappened = true;
+				break;
+			}
+		//default:
+		//	if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
+		//		map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != (char)219)
+		//	{
+		//		g_sChar.m_cLocation.X++;
+		//		bSomethingHappened = true;
+		//		break;
+		//	} -11 +14
 		}
 	}
 
@@ -344,10 +365,12 @@ void renderGame()
 
 	switch (load)
 	{
+	case mainscreen: menu();
+		break;
 	case levelone: level1();
 		break;
-	//case leveltwo: leveltwo();
-	//	break;
+	case leveltwo: level2();
+		break;
 	//case levelthree: levelthree();
 	//	break;
 	}
@@ -371,24 +394,27 @@ void renderMap()
 void renderCharacter()
 {
 	// Draw the location of the character
-	WORD charColor = 0x0C;
-	WORD charColor2 = 0x0A;
-	if (g_sChar.m_bActive)
-	{
-		charColor = 0x0A;
-	}
-	g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, charColor);
+	//WORD charColor = 0x0C;
+	//WORD charColor2 = 0x0A;
+	//if (g_sChar.m_bActive)
+	//{
+	//	charColor = 0x0A;
+	//}
+	//g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, charColor);
 
-	// Draw the location of the character
-	if (g_nChar.m_bActive)
-	{
-		charColor = 0x0C;
-	}
-	g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, charColor2);
+	//// Draw the location of the character
+	//if (g_nChar.m_bActive)
+	//{
+	//	charColor = 0x0C;
+	//}
+	//g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, charColor2);
 
-	//Enemy
-	g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, charColor2);
-	g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, charColor2);
+	////Enemy
+	//g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, charColor2);
+	//g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, charColor2);
+
+	////Door
+	//g_Console.writeToBuffer(g_door1.m_cLocation,(char)219, charColor);
 
 }
 

@@ -77,17 +77,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Lazy is Progress - Copy\SP1Framework\Scoreboard.cpp" />
     <ClCompile Include="ai.cpp" />
     <ClCompile Include="Framework\console.cpp" />
     <ClCompile Include="Framework\timer.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="health.cpp" />
     <ClCompile Include="level1.cpp" />
+    <ClCompile Include="level2.cpp" />
     <ClCompile Include="loadlevel.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="renderResult.cpp" />
+    <ClCompile Include="Scoreboard.cpp" />
     <ClCompile Include="spawn.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -99,6 +100,7 @@
     <ClInclude Include="health.h" />
     <ClInclude Include="keyboard.h" />
     <ClInclude Include="level1.h" />
+    <ClInclude Include="level2.h" />
     <ClInclude Include="loadlevel.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="menu.h" />
