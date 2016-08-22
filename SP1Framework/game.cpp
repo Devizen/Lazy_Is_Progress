@@ -231,11 +231,32 @@ void moveCharacter()
 
 	if (g_abKeyPressed[K_A])
 	{
-		if (g_sChar.m_cLocation.X > 0 &&
-			map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != (char)219)
+		switch (load)
 		{
-			g_sChar.m_cLocation.X--;
-			bSomethingHappened = true;
+		case levelone:
+			if (door1 == true)
+			{
+				if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
+					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != (char)219 &&
+					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1])
+				{
+					g_sChar.m_cLocation.X--;
+					bSomethingHappened = true;
+					break;
+				}
+			}
+			if (door1 == false)
+			{
+				if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
+					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != (char)219 &&
+					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] !=
+					map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
+				{
+					g_sChar.m_cLocation.X--;
+					bSomethingHappened = true;
+					break;
+				}
+			}
 		}
 	}
 
@@ -275,15 +296,30 @@ void moveCharacter()
 		switch (load)
 		{
 		case levelone:
-			if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
-				map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != (char)219 &&
-				map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] !=
-				map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
+			if (door1 == true)
 			{
-				g_sChar.m_cLocation.X++;
-				bSomethingHappened = true;
-				break;
+				if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
+					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != (char)219 &&
+					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1])
+				{
+					g_sChar.m_cLocation.X++;
+					bSomethingHappened = true;
+					break;
+				}
 			}
+			if (door1 == false)
+			{
+				if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
+					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != (char)219 &&
+					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] !=
+					map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
+				{
+					g_sChar.m_cLocation.X++;
+					bSomethingHappened = true;
+					break;
+				}
+			}
+
 		//default:
 		//	if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
 		//		map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != (char)219)

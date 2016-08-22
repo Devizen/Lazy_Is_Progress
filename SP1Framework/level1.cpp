@@ -4,6 +4,8 @@
 #include "game.h"
 #include "health.h"
 
+bool door1 = false;
+
 //Done by Eugene.
 void level1()
 {
@@ -63,6 +65,17 @@ void level1()
 	//		g_sChar.m_cLocation.X++;
 	//	}
 	//}
+
+	if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X] == map[g_lever1.m_cLocation.Y][g_lever1.m_cLocation.X])
+	{
+		g_Console.writeToBuffer(g_lever1.m_cLocation, (char)219, charColor2);
+		g_Console.writeToBuffer(g_door1.m_cLocation, (char)219, charColor2);
+		door1 = true;
+	}
+	else
+	{
+		door1 = false;
+	}
 
 	if ((g_enemy.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_sChar.m_cLocation.Y) ||
 		(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y))

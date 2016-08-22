@@ -7,6 +7,9 @@ using namespace std;
 
 #include "Framework\timer.h"
 
+//Linking boolean states.
+extern bool door1;
+
 extern CStopWatch g_swTimer;
 extern bool g_bQuitGame;
 
