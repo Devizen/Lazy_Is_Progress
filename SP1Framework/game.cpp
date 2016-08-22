@@ -44,6 +44,7 @@ SGameChar   g_result;
 EGAMESTATES g_eGameState = S_SPLASHSCREEN;
 LEVELS		load = levelone;
 double  g_dBounceTime; // this is to prevent key bouncing, so we won't trigger keypresses more than once
+double  g_dBounceTimeBoost = 0.0; // this is to prevent key bouncing, so we won't trigger keypresses more than once
 
 // Console object
 Console g_Console(80, 25, "SP1 Framework");
@@ -115,6 +116,7 @@ void getInput(void)
 	g_abKeyPressed[K_SPACE] = isKeyPressed(VK_SPACE);
 	g_abKeyPressed[K_ESCAPE] = isKeyPressed(VK_ESCAPE);
 	g_abKeyPressed[K_BACK] = isKeyPressed(VK_BACK);
+	g_abKeyPressed[K_SHIFT] = isKeyPressed(VK_LSHIFT);
 
 	//WASD
 	g_abKeyPressed[K_W] = isKeyPressed(VK_W);
@@ -204,6 +206,7 @@ void gameplay()            // gameplay logic
 void moveCharacter()
 {
 	bool bSomethingHappened = false;
+	bool boost = false;
 	if (g_dBounceTime > g_dElapsedTime)
 		return;
 
@@ -213,6 +216,34 @@ void moveCharacter()
 
 	// Updating the location of the character based on the key press
 	// providing a beep sound whenver we shift the character
+
+	if (g_abKeyPressed[K_SHIFT] && g_abKeyPressed[K_UP] &&
+		map[g_nChar.m_cLocation.Y - 1][g_nChar.m_cLocation.X] != (char)219)
+	{
+		g_nChar.m_cLocation.Y--;
+		boost = true;
+	}
+
+	if (g_abKeyPressed[K_SHIFT] && g_abKeyPressed[K_LEFT] &&
+		map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != (char)219)
+	{
+		g_nChar.m_cLocation.X--;
+		boost = true;
+	}
+
+	if (g_abKeyPressed[K_SHIFT] && g_abKeyPressed[K_DOWN] &&
+		map[g_nChar.m_cLocation.Y + 1][g_nChar.m_cLocation.X] != (char)219)
+	{
+		g_nChar.m_cLocation.Y++;
+		boost = true;
+	}
+
+	if (g_abKeyPressed[K_SHIFT] && g_abKeyPressed[K_RIGHT] &&
+		map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != (char)219)
+	{
+		g_nChar.m_cLocation.X++;
+		boost = true;
+	}
 
 	if (g_abKeyPressed[K_W])
 	{
@@ -356,6 +387,12 @@ void moveCharacter()
 	{
 		// set the bounce time to some time in the future to prevent accidental triggers
 		g_dBounceTime = g_dElapsedTime + 0.125; // 125ms should be enough
+	}
+
+	if (boost)
+	{
+		// set the bounce time to some time in the future to prevent accidental triggers
+		g_dBounceTimeBoost = g_dElapsedTime + 0.125; // 125ms should be enough
 	}
 }
 		
