@@ -34,6 +34,9 @@
     <ClCompile Include="spawn.cpp">
       <Filter>A.I and Characters</Filter>
     </ClCompile>
+    <ClCompile Include="gameover.cpp">
+      <Filter>Game Status</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework\console.h" />
@@ -71,6 +74,9 @@
     </ClInclude>
     <ClInclude Include="spawn.h">
       <Filter>A.I and Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="gameover.h">
+      <Filter>Game Status</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

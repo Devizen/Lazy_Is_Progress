@@ -38,6 +38,7 @@ SGameChar	g_enemy;
 SGameChar	g_enemy2;
 SGameChar	g_door1;
 SGameChar	g_lever1;
+SGameChar	g_box1;
 SGameChar	g_menu;
 SGameChar   g_result;
 EGAMESTATES g_eGameState = S_SPLASHSCREEN;
@@ -74,7 +75,7 @@ void init(void)
 	spawn();
 
 	// sets the width, height and the font name to use in the console
-	g_Console.setConsoleFont(0, 20, L"Consolas");
+	g_Console.setConsoleFont(0, 20, L"Arial");
 
 }
 
@@ -113,12 +114,16 @@ void getInput(void)
 	g_abKeyPressed[K_RETURN] = isKeyPressed(VK_RETURN);
 	g_abKeyPressed[K_SPACE] = isKeyPressed(VK_SPACE);
 	g_abKeyPressed[K_ESCAPE] = isKeyPressed(VK_ESCAPE);
+	g_abKeyPressed[K_BACK] = isKeyPressed(VK_BACK);
 
 	//WASD
 	g_abKeyPressed[K_W] = isKeyPressed(VK_W);
 	g_abKeyPressed[K_A] = isKeyPressed(VK_A);
 	g_abKeyPressed[K_S] = isKeyPressed(VK_S);
 	g_abKeyPressed[K_D] = isKeyPressed(VK_D);
+
+	//Restart
+	g_abKeyPressed[K_R] = isKeyPressed(VK_R);
 }
 
 //--------------------------------------------------------------
@@ -341,11 +346,11 @@ void moveCharacter()
 		}
 	}
 
-	if (g_abKeyPressed[K_SPACE])
-	{
-		g_sChar.m_bActive = !g_sChar.m_bActive;
-		bSomethingHappened = true;
-	}
+	//if (g_abKeyPressed[K_SPACE])
+	//{
+	//	g_sChar.m_bActive = !g_sChar.m_bActive;
+	//	bSomethingHappened = true;
+	//}
 
 	if (bSomethingHappened)
 	{

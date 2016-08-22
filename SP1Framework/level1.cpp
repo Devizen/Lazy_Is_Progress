@@ -1,8 +1,4 @@
 #include "level1.h"
-#include "level2.h"
-#include "ai.h"
-#include "game.h"
-#include "health.h"
 
 bool door1 = false;
 
@@ -25,24 +21,13 @@ void level1()
 		c.Y++;
 	}
 
-	COORD y;
-	y.X = 15;
-	y.Y = 15;
-
-
 	WORD charColor = 0x0C;
 	WORD charColor2 = 0x0A;
-	if (g_sChar.m_bActive)
-	{
-		charColor = 0x0A;
-	}
+
+	//First Character
 	g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, charColor);
 
-	// Draw the location of the character
-	if (g_nChar.m_bActive)
-	{
-		charColor = 0x0C;
-	}
+	//Second Character
 	g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, charColor2);
 
 	//Enemy
@@ -54,6 +39,9 @@ void level1()
 
 	//Lever
 	g_Console.writeToBuffer(g_lever1.m_cLocation, (char)219, charColor);
+
+	//Box
+	g_Console.writeToBuffer(g_box1.m_cLocation, (char)254, charColor);
 
 	motiondetect();
 
@@ -78,15 +66,19 @@ void level1()
 	}
 
 	if ((g_enemy.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_sChar.m_cLocation.Y) ||
-		(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y))
+		(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y) ||
+		g_abKeyPressed[K_R])
 	{
 		g_sChar.health -= 1;
+		g_dCountTime = 1000;
 
-		g_sChar.m_cLocation.X = 11;
-		g_sChar.m_cLocation.Y = 10;
+		//First Character
+		g_sChar.m_cLocation.X = 4;
+		g_sChar.m_cLocation.Y = 8;
 
-		g_nChar.m_cLocation.X = 49;
-		g_nChar.m_cLocation.Y = 10;
+		//Second Character
+		g_nChar.m_cLocation.X = 39;
+		g_nChar.m_cLocation.Y = 19;
 
 		//Enemy
 		g_enemy.m_cLocation.X = 11;
@@ -94,6 +86,18 @@ void level1()
 
 		g_enemy2.m_cLocation.X = 49;
 		g_enemy2.m_cLocation.Y = 1;
+
+		//Door
+		g_door1.m_cLocation.X = 8;
+		g_door1.m_cLocation.Y = 10;
+
+		//Lever
+		g_lever1.m_cLocation.X = 53;
+		g_lever1.m_cLocation.Y = 8;
+
+		//Box
+		g_box1.m_cLocation.X = 54;
+		g_box1.m_cLocation.Y = 21;
 	}
 
 	if (g_nChar.m_cLocation.X == 49 &&
@@ -111,4 +115,6 @@ void level1()
 		load = leveltwo;
 
 	}
+
+	gameover(g_sChar);
 }
