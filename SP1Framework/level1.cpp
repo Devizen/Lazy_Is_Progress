@@ -8,7 +8,7 @@
 void level1()
 {
 	string line = " ";
-	string name = "Text/level1(tutorial).txt";
+	string name = "Text/level1.txt";
 	loadlevel(name);
 
 	COORD c;
