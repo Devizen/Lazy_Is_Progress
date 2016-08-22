@@ -44,6 +44,7 @@ SGameChar   g_result;
 EGAMESTATES g_eGameState = S_SPLASHSCREEN;
 LEVELS		load = levelone;
 double  g_dBounceTime; // this is to prevent key bouncing, so we won't trigger keypresses more than once
+double ai_BounceTime;
 
 // Console object
 Console g_Console(80, 25, "SP1 Framework");
@@ -66,6 +67,7 @@ void init(void)
 	// Set precision for floating point output
 	g_dElapsedTime = 0.0;
 	g_dBounceTime = 0.0;
+	ai_BounceTime = 0.0;
 	g_dCountTime = 1000;
 
 	// sets the initial state for the game

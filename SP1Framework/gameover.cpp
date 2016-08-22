@@ -4,7 +4,7 @@ void gameover(struct SGameChar character)
 {
 	if (character.health <= 0)
 	{
-		clearScreen();
+		//clearScreen();
 		string line = " ";
 		string name = "Text/Result.txt";
 		loadlevel(name);
@@ -22,10 +22,21 @@ void gameover(struct SGameChar character)
 		}
 	}
 
+
 	if (g_abKeyPressed[K_BACK])
 	{
-		clearScreen();
-		g_eGameState = S_MENU;
-		load = mainscreen;
+		if (character.health <= 0)
+		{
+			load = defeated;
+			g_sChar.health = 3;
+		}
+		switch (load)
+		{
+			case defeated:
+				g_eGameState = S_SPLASHSCREEN;
+				load = levelone; 
+				spawn();
+				break;
+		}
 	}
 }

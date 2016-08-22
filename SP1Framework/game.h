@@ -53,6 +53,7 @@ enum EGAMESTATES
 enum LEVELS
 {
 	mainscreen,
+	defeated,
 	levelone, //Loading Level 1.
 	leveltwo,
 	levelthree

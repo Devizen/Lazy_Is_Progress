@@ -8,7 +8,6 @@ void level1()
 	string line = " ";
 	string name = "Text/level1.txt";
 	loadlevel(name);
-
 	COORD c;
 
 	c.X = 0;
@@ -113,7 +112,6 @@ void level1()
 		g_sChar.health = 3;
 
 		load = leveltwo;
-
 	}
 
 	gameover(g_sChar);

@@ -1,6 +1,6 @@
 #include "main.h"
-#include "game.h"
 #include "Framework\timer.h"
+#include "spawn.h"
 
 //Linking Timer.
 extern double  g_dBounceTime;
@@ -31,4 +31,5 @@ extern EGAMESTATES g_eGameState;
 extern LEVELS load;
 
 //Definition for function.
-void gameover(struct SGameChar character); // level 1.
+void gameover(struct SGameChar character); // Game Over.
+void level1(); // level 1.
