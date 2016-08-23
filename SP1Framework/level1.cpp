@@ -5,6 +5,12 @@ bool door1 = false;
 //Done by Eugene.
 void level1()
 {
+	/*bool bSomethingHappened = false;
+	if (g_dBounceTime > g_dElapsedTime)
+	{
+		return;
+	}*/
+
 	string line = " ";
 	string name = "Text/level1.txt";
 	loadlevel(name);
@@ -42,6 +48,9 @@ void level1()
 	//Box
 	g_Console.writeToBuffer(g_box1.m_cLocation, (char)254, charColor);
 
+	//Release A.I
+	g_Console.writeToBuffer(release_enemy.m_cLocation, (char)219, charColor);
+	
 	motiondetect();
 
 	//if (g_abKeyPressed[K_D])
@@ -53,10 +62,11 @@ void level1()
 	//	}
 	//}
 
-	if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X] == map[g_lever1.m_cLocation.Y][g_lever1.m_cLocation.X])
+	if (map[g_box1.m_cLocation.Y][g_box1.m_cLocation.X] == map[g_lever1.m_cLocation.Y][g_lever1.m_cLocation.X])
 	{
 		g_Console.writeToBuffer(g_lever1.m_cLocation, (char)219, charColor2);
 		g_Console.writeToBuffer(g_door1.m_cLocation, (char)219, charColor2);
+		g_Console.writeToBuffer(release_enemy.m_cLocation, (char)219, charColor2);
 		door1 = true;
 	}
 	else
@@ -68,41 +78,49 @@ void level1()
 		(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y) ||
 		g_abKeyPressed[K_R])
 	{
-		g_sChar.health -= 1;
-		g_dCountTime = 1000;
+		if (g_sChar.health < 1)
+		{
+			gameover(g_sChar);
+		}
 
-		//First Character
-		g_sChar.m_cLocation.X = 4;
-		g_sChar.m_cLocation.Y = 8;
+		else
+		{
+			g_sChar.health -= 1;
+			g_dCountTime = 1000;
 
-		//Second Character
-		g_nChar.m_cLocation.X = 39;
-		g_nChar.m_cLocation.Y = 19;
+			//First Character
+			g_sChar.m_cLocation.X = 4;
+			g_sChar.m_cLocation.Y = 8;
 
-		//Enemy
-		g_enemy.m_cLocation.X = 11;
-		g_enemy.m_cLocation.Y = 1;
+			//Second Character
+			g_nChar.m_cLocation.X = 39;
+			g_nChar.m_cLocation.Y = 19;
 
-		g_enemy2.m_cLocation.X = 49;
-		g_enemy2.m_cLocation.Y = 1;
+			//Enemy
+			g_enemy.m_cLocation.X = 11;
+			g_enemy.m_cLocation.Y = 1;
 
-		//Door
-		g_door1.m_cLocation.X = 8;
-		g_door1.m_cLocation.Y = 10;
+			g_enemy2.m_cLocation.X = 49;
+			g_enemy2.m_cLocation.Y = 1;
 
-		//Lever
-		g_lever1.m_cLocation.X = 53;
-		g_lever1.m_cLocation.Y = 8;
+			//Door
+			g_door1.m_cLocation.X = 8;
+			g_door1.m_cLocation.Y = 10;
 
-		//Box
-		g_box1.m_cLocation.X = 54;
-		g_box1.m_cLocation.Y = 21;
+			//Lever
+			g_lever1.m_cLocation.X = 53;
+			g_lever1.m_cLocation.Y = 8;
+
+			//Box
+			g_box1.m_cLocation.X = 54;
+			g_box1.m_cLocation.Y = 21;
+		}
 	}
 
-	if (g_nChar.m_cLocation.X == 49 &&
-		g_nChar.m_cLocation.Y == 11 &&
-		g_sChar.m_cLocation.X == 11 &&
-		g_sChar.m_cLocation.Y == 11)
+	if (g_nChar.m_cLocation.X == 39 &&
+		g_nChar.m_cLocation.Y == 22 &&
+		g_sChar.m_cLocation.X == 23 &&
+		g_sChar.m_cLocation.Y == 22)
 	{
 		g_sChar.m_cLocation.X = 11;
 		g_sChar.m_cLocation.Y = 10;
@@ -113,6 +131,4 @@ void level1()
 
 		load = leveltwo;
 	}
-
-	gameover(g_sChar);
 }

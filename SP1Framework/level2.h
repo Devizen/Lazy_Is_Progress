@@ -1,5 +1,6 @@
 #include "main.h"
 #include "game.h"
+#include "gameover.h"
 #include "Framework\timer.h"
 
 //Linking Timer.

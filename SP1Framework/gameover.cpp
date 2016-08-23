@@ -2,9 +2,9 @@
 
 void gameover(struct SGameChar character)
 {
-	if (character.health <= 0)
+	if (character.health < 1)
 	{
-		//clearScreen();
+		clearScreen();
 		string line = " ";
 		string name = "Text/Result.txt";
 		loadlevel(name);
