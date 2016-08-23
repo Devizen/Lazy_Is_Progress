@@ -2,8 +2,8 @@
 
 void gameover(struct SGameChar character)
 {
-	if (character.health < 1)
-	{
+	//if (character.health < 1)
+	//{
 		clearScreen();
 		string line = " ";
 		string name = "Text/Result.txt";
@@ -20,7 +20,7 @@ void gameover(struct SGameChar character)
 			g_Console.writeToBuffer(c, line);
 			c.Y++;
 		}
-	}
+	//}
 
 
 	if (g_abKeyPressed[K_BACK])

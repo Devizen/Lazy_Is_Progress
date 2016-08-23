@@ -69,12 +69,7 @@ void level1()
 		(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y) ||
 		g_abKeyPressed[K_R])
 	{
-		if (g_sChar.health < 1)
-		{
-			gameover(g_sChar);
-		}
-
-		else
+		if (g_sChar.health > 0)
 		{
 			g_sChar.health -= 1;
 			g_dCountTime = 1000;
@@ -105,6 +100,11 @@ void level1()
 			//Box
 			g_box1.m_cLocation.X = 54;
 			g_box1.m_cLocation.Y = 21;
+		}
+		else
+		{
+			clearScreen();
+			gameover(g_sChar);
 		}
 	}
 

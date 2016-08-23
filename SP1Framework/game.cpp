@@ -534,6 +534,62 @@ void processUserInput()
 		renderGame();
 	}
 
+	//if (g_abKeyPressed[K_R])
+	//{
+	//	bool bSomethingHappened = false;
+	//	if (g_dBounceTime > g_dElapsedTime)
+	//	{
+	//		return;
+	//	}
+	//	switch (load)
+	//	{
+	//	case levelone:
+	//		if (g_sChar.health > 0)
+	//		{
+	//			g_sChar.health -= 1;
+	//			g_dCountTime = 1000;
+
+	//			//First Character
+	//			g_sChar.m_cLocation.X = 4;
+	//			g_sChar.m_cLocation.Y = 8;
+
+	//			//Second Character
+	//			g_nChar.m_cLocation.X = 39;
+	//			g_nChar.m_cLocation.Y = 19;
+
+	//			//Enemy
+	//			g_enemy.m_cLocation.X = 11;
+	//			g_enemy.m_cLocation.Y = 1;
+
+	//			g_enemy2.m_cLocation.X = 49;
+	//			g_enemy2.m_cLocation.Y = 1;
+
+	//			//Door
+	//			g_door1.m_cLocation.X = 8;
+	//			g_door1.m_cLocation.Y = 10;
+
+	//			//Lever
+	//			g_lever1.m_cLocation.X = 53;
+	//			g_lever1.m_cLocation.Y = 8;
+
+	//			//Box
+	//			g_box1.m_cLocation.X = 54;
+	//			g_box1.m_cLocation.Y = 21;
+	//			bSomethingHappened = true;
+	//		}
+	//		else
+	//		{
+	//			gameover(g_sChar);
+	//		}
+
+	//	}
+	//	if (bSomethingHappened)
+	//	{
+	//		// set the bounce time to some time in the future to prevent accidental triggers
+	//		g_dBounceTime = g_dElapsedTime + 0.125; // 125ms should be enough
+	//	}
+	//}
+
 }
 
 void clearScreen()
