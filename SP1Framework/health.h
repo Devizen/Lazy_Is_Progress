@@ -3,6 +3,6 @@
 
 #include "Framework\console.h"
 
-void renderhealth(Console * handle, unsigned int hp);
+void renderhealth(Console * handle, int hp);
 
 #endif

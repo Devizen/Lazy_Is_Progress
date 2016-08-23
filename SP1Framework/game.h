@@ -69,7 +69,7 @@ struct SGameChar
 {
     COORD m_cLocation;
     bool  m_bActive;
-	unsigned int health;
+	int health;
 
 };
 
