@@ -6,7 +6,7 @@
 //Done by Eugene.
 void level2()
 {
-	clearScreen();
+	//clearScreen();
 
 	string line = " ";
 	string name = "Text/level2.txt";
@@ -83,5 +83,10 @@ void level2()
 
 		load = mainscreen;
 
+	}
+
+	if (g_sChar.health < 1)
+	{
+		gameover(g_sChar);
 	}
 }

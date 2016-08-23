@@ -6,4 +6,5 @@
   \_____|\__,_|_| |_| |_|\___|  \____/  \_/ \___|_|   
                                                       
                                                       
-         Press Esc. to return to Menu Screen.
+             Press Esc. to return to Quit.
+         Press Back to return to Menu Screen.

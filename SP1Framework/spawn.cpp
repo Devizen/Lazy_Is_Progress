@@ -43,6 +43,10 @@ void spawn()
 		g_box1.m_cLocation.X = 54;
 		g_box1.m_cLocation.Y = 21;
 
+		//Release A.I
+		release_enemy.m_cLocation.X = 52;
+		release_enemy.m_cLocation.Y = 6;
+
 		//Set the initial health of the player
 		g_sChar.health = 3;
 		break;

@@ -39,6 +39,7 @@ SGameChar	g_enemy2;
 SGameChar	g_door1;
 SGameChar	g_lever1;
 SGameChar	g_box1;
+SGameChar	release_enemy;
 SGameChar	g_menu;
 SGameChar   g_result;
 EGAMESTATES g_eGameState = S_SPLASHSCREEN;
@@ -131,6 +132,10 @@ void getInput(void)
 
 	//Restart
 	g_abKeyPressed[K_R] = isKeyPressed(VK_R);
+
+	//Levels
+	g_abKeyPressed[K_1] = isKeyPressed(VK_1);
+	g_abKeyPressed[K_2] = isKeyPressed(VK_2);
 }
 
 //--------------------------------------------------------------
@@ -213,7 +218,9 @@ void moveCharacter()
 	bool bSomethingHappened = false;
 	bool boost = false;
 	if (g_dBounceTime > g_dElapsedTime)
+	{
 		return;
+	}
 
 	COORD c;
 	c.X = 5;
@@ -264,29 +271,69 @@ void moveCharacter()
 	if (g_abKeyPressed[K_LSHIFT] && g_abKeyPressed[K_UP] &&
 		map[g_nChar.m_cLocation.Y - 1][g_nChar.m_cLocation.X] != (char)219)
 	{
-		g_nChar.m_cLocation.Y--;
-		boost = true;
+		if (g_nChar.m_cLocation.Y - 1 == g_box1.m_cLocation.Y &&
+			g_nChar.m_cLocation.X == g_box1.m_cLocation.X)
+		{
+			g_nChar.m_cLocation.Y--;
+			g_box1.m_cLocation.Y--;
+			bSomethingHappened = true;
+		}
+		else
+		{
+			g_nChar.m_cLocation.Y--;
+			bSomethingHappened = true;
+		}
 	}
 
 	if (g_abKeyPressed[K_LSHIFT] && g_abKeyPressed[K_LEFT] &&
 		map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != (char)219)
 	{
-		g_nChar.m_cLocation.X--;
-		boost = true;
+		if (g_nChar.m_cLocation.Y == g_box1.m_cLocation.Y &&
+			g_nChar.m_cLocation.X - 1 == g_box1.m_cLocation.X)
+		{
+			g_nChar.m_cLocation.X--;
+			g_box1.m_cLocation.X--;
+			bSomethingHappened = true;
+		}
+		else
+		{
+			g_nChar.m_cLocation.X--;
+			bSomethingHappened = true;
+		}
 	}
 
 	if (g_abKeyPressed[K_LSHIFT] && g_abKeyPressed[K_DOWN] &&
 		map[g_nChar.m_cLocation.Y + 1][g_nChar.m_cLocation.X] != (char)219)
 	{
-		g_nChar.m_cLocation.Y++;
-		boost = true;
+		if (g_nChar.m_cLocation.Y + 1 == g_box1.m_cLocation.Y &&
+			g_nChar.m_cLocation.X == g_box1.m_cLocation.X)
+		{
+			g_nChar.m_cLocation.Y++;
+			g_box1.m_cLocation.Y++;
+			bSomethingHappened = true;
+		}
+		else
+		{
+			g_nChar.m_cLocation.Y++;
+			bSomethingHappened = true;
+		}
 	}
 
 	if (g_abKeyPressed[K_LSHIFT] && g_abKeyPressed[K_RIGHT] &&
 		map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != (char)219)
 	{
-		g_nChar.m_cLocation.X++;
-		boost = true;
+		if (g_nChar.m_cLocation.Y == g_box1.m_cLocation.Y &&
+			g_nChar.m_cLocation.X + 1 == g_box1.m_cLocation.X)
+		{
+			g_nChar.m_cLocation.X++;
+			g_box1.m_cLocation.X++;
+			bSomethingHappened = true;
+		}
+		else
+		{
+			g_nChar.m_cLocation.X++;
+			bSomethingHappened = true;
+		}
 	}
 
 	if (g_abKeyPressed[K_W])
@@ -295,16 +342,6 @@ void moveCharacter()
 			map[g_sChar.m_cLocation.Y - 1][g_sChar.m_cLocation.X] != (char)219)
 		{
 			g_sChar.m_cLocation.Y--;
-			bSomethingHappened = true;
-		}
-	}
-
-	if (g_abKeyPressed[K_UP])
-	{
-		if (g_nChar.m_cLocation.Y > 0 &&
-			map[g_nChar.m_cLocation.Y - 1][g_nChar.m_cLocation.X] != (char)219)
-		{
-			g_nChar.m_cLocation.Y--;
 			bSomethingHappened = true;
 		}
 	}
@@ -343,33 +380,12 @@ void moveCharacter()
 		}
 	}
 
-	if (g_abKeyPressed[K_LEFT])
-	{
-		if (g_nChar.m_cLocation.X > 0 &&
-			map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != (char)219)
-		{
-			g_nChar.m_cLocation.X--;
-			bSomethingHappened = true;
-		}
-	}
-
 	if (g_abKeyPressed[K_S])
 	{
 		if (g_sChar.m_cLocation.Y < g_Console.getConsoleSize().Y - 1 &&
 			map[g_sChar.m_cLocation.Y + 1][g_sChar.m_cLocation.X] != (char)219)
 		{
 			g_sChar.m_cLocation.Y++;
-			bSomethingHappened = true;
-		}
-	}
-
-	if (g_abKeyPressed[K_DOWN])
-	{
-
-		if (g_nChar.m_cLocation.Y < g_Console.getConsoleSize().Y - 1 &&
-			map[g_nChar.m_cLocation.Y + 1][g_nChar.m_cLocation.X] != (char)219)
-		{
-			g_nChar.m_cLocation.Y++;
 			bSomethingHappened = true;
 		}
 	}
@@ -401,15 +417,66 @@ void moveCharacter()
 					break;
 				}
 			}
+		}
+	}
 
-			//default:
-			//	if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
-			//		map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != (char)219)
-			//	{
-			//		g_sChar.m_cLocation.X++;
-			//		bSomethingHappened = true;
-			//		break;
-			//	} -11 +14
+	if (g_abKeyPressed[K_UP])
+	{
+		if (g_nChar.m_cLocation.Y > 0 &&
+			map[g_nChar.m_cLocation.Y - 1][g_nChar.m_cLocation.X] != (char)219)
+		{
+			if (g_nChar.m_cLocation.Y - 1 == g_box1.m_cLocation.Y &&
+				g_nChar.m_cLocation.X == g_box1.m_cLocation.X)
+			{
+				g_nChar.m_cLocation.Y--;
+				g_box1.m_cLocation.Y--;
+				bSomethingHappened = true;
+			}
+			else
+			{
+				g_nChar.m_cLocation.Y--;
+				bSomethingHappened = true;
+			}
+		}
+	}
+
+	if (g_abKeyPressed[K_LEFT])
+	{
+		if (g_nChar.m_cLocation.X > 0 &&
+			map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != (char)219)
+		{
+			if (g_nChar.m_cLocation.Y == g_box1.m_cLocation.Y &&
+				g_nChar.m_cLocation.X - 1 == g_box1.m_cLocation.X)
+			{
+				g_nChar.m_cLocation.X--;
+				g_box1.m_cLocation.X--;
+				bSomethingHappened = true;
+			}
+			else
+			{
+				g_nChar.m_cLocation.X--;
+				bSomethingHappened = true;
+			}
+		}
+	}
+
+	if (g_abKeyPressed[K_DOWN])
+	{
+		if (g_nChar.m_cLocation.Y < g_Console.getConsoleSize().Y - 1 &&
+			map[g_nChar.m_cLocation.Y + 1][g_nChar.m_cLocation.X] != (char)219)
+		{
+			if (g_nChar.m_cLocation.Y + 1 == g_box1.m_cLocation.Y &&
+				g_nChar.m_cLocation.X == g_box1.m_cLocation.X)
+			{
+				g_nChar.m_cLocation.Y++;
+				g_box1.m_cLocation.Y++;
+				bSomethingHappened = true;
+			}
+			else
+			{
+				g_nChar.m_cLocation.Y++;
+				bSomethingHappened = true;
+			}
 		}
 	}
 
@@ -418,16 +485,20 @@ void moveCharacter()
 		if (g_nChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
 			map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != (char)219)
 		{
-			g_nChar.m_cLocation.X++;
-			bSomethingHappened = true;
+			if (g_nChar.m_cLocation.Y == g_box1.m_cLocation.Y &&
+				g_nChar.m_cLocation.X + 1 == g_box1.m_cLocation.X)
+			{
+				g_nChar.m_cLocation.X++;
+				g_box1.m_cLocation.X++;
+				bSomethingHappened = true;
+			}
+			else
+			{
+				g_nChar.m_cLocation.X++;
+				bSomethingHappened = true;
+			}
 		}
 	}
-
-	//if (g_abKeyPressed[K_SPACE])
-	//{
-	//	g_sChar.m_bActive = !g_sChar.m_bActive;
-	//	bSomethingHappened = true;
-	//}
 
 	if (bSomethingHappened)
 	{
@@ -446,7 +517,23 @@ void processUserInput()
 {
 	// quits the game if player hits the escape key
 	if (g_abKeyPressed[K_ESCAPE])
+	{
 		g_bQuitGame = true;
+	}
+
+	if (g_abKeyPressed[K_1])
+	{
+		load = levelone;
+		spawn();
+		level1();
+	}
+	if (g_abKeyPressed[K_2])
+	{
+		load = leveltwo;
+		spawn();
+		renderGame();
+	}
+
 }
 
 void clearScreen()

@@ -13,6 +13,7 @@ extern char map[25][80];
 extern SGameChar g_sChar;
 extern SGameChar g_nChar;
 extern SGameChar g_enemy;
+extern bool door1;
 
 //Linking variables
 extern int health;

@@ -37,6 +37,9 @@ enum EKEYS
 	K_D,
 	K_R,
 
+	K_1,
+	K_2,
+
 	K_COUNT //Must be at most bottom
 };
 
