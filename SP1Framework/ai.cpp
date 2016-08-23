@@ -45,44 +45,6 @@ void motiondetect()
 		bSomethingHappened = true;
 	}
 
-	if (g_enemy2.m_cLocation.Y > 0 &&
-		(g_enemy2.m_cLocation.Y - g_nChar.m_cLocation.Y) < 0)
-	{
-		switch (load)
-		{
-		case levelone:
-			if (door1 == true)
-			{
-				if (map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] != (char)219)
-				{
-					g_enemy2.m_cLocation.Y++;
-					bSomethingHappened = true;
-					break;
-				}
-			}
-			if (door1 == false)
-			{
-				if (g_enemy2.m_cLocation.Y < g_Console.getConsoleSize().Y - 1 &&
-					map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] != (char)219 &&
-					map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] !=
-					map[release_enemy.m_cLocation.Y][release_enemy.m_cLocation.X])
-				{
-					g_enemy2.m_cLocation.Y++;
-					bSomethingHappened = true;
-					break;
-				}
-			}
-		case leveltwo:
-			if (map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] != (char)219)
-			{
-				g_enemy2.m_cLocation.Y++;
-				bSomethingHappened = true;
-				break;
-			}
-		}
-	}
-
-
 	if (g_enemy.m_cLocation.Y > 0 &&
 		(g_enemy.m_cLocation.Y - g_sChar.m_cLocation.Y) > 0 &&
 		//g_enemy.m_cLocation.X == g_sChar.m_cLocation.X &&
@@ -115,16 +77,42 @@ void motiondetect()
 		bSomethingHappened = true;
 	}
 
-	//if (g_enemy2.m_cLocation.Y > 0 &&
-	//	(g_enemy2.m_cLocation.Y - g_nChar.m_cLocation.Y) < 0 &&
-	//	//g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X &&
-	//	//(g_enemy2.m_cLocation.Y - g_nChar.m_cLocation.Y) >= -4) &&
-	//	map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] != (char)219)
-	//{
-	//	g_enemy2.m_cLocation.Y++;
-	//	bSomethingHappened = true;
-	//}
+	if (g_enemy2.m_cLocation.Y > 0 &&
+		(g_enemy2.m_cLocation.Y - g_nChar.m_cLocation.Y) < 0)
+	{
+		switch (load)
+		{
+		case levelone:
+			if (door1 == true)
+			{
+				if (map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] != (char)219)
+				{
+					g_enemy2.m_cLocation.Y++;
+					bSomethingHappened = true;
+					break;
+				}
+			}
+			if (door1 == false)
+			{
+				if (map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] != (char)219 &&
+					map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] !=
+					map[release_enemy.m_cLocation.Y][release_enemy.m_cLocation.X])
+				{
+					g_enemy2.m_cLocation.Y++;
+					bSomethingHappened = true;
+					break;
+				}
+			}
 
+		case leveltwo:
+			if (map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] != (char)219)
+			{
+				g_enemy2.m_cLocation.Y++;
+				bSomethingHappened = true;
+				break;
+			}
+		}
+	}
 
 	if (g_enemy2.m_cLocation.Y > 0 &&
 		(g_enemy2.m_cLocation.Y - g_nChar.m_cLocation.Y) > 0 &&

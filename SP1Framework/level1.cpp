@@ -53,15 +53,6 @@ void level1()
 	
 	motiondetect();
 
-	//if (g_abKeyPressed[K_D])
-	//{
-	//	if (g_sChar.m_cLocation.X + 1 != g_door1.m_cLocation.X &&
-	//		g_sChar.m_cLocation.Y = g_door1.m_cLocation.Y)
-	//	{
-	//		g_sChar.m_cLocation.X++;
-	//	}
-	//}
-
 	if (map[g_box1.m_cLocation.Y][g_box1.m_cLocation.X] == map[g_lever1.m_cLocation.Y][g_lever1.m_cLocation.X])
 	{
 		g_Console.writeToBuffer(g_lever1.m_cLocation, (char)219, charColor2);
