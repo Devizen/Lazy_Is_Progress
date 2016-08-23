@@ -3,7 +3,7 @@
 using namespace std;
 
 //Done by Yoong Soon.
-void renderhealth(Console *handle, int hp)
+void renderhealth(Console *handle, unsigned int hp)
 {
 	WORD healthColor = 0xA1;
 	string s = "Health: " + to_string(hp);

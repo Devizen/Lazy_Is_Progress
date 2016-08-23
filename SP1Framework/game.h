@@ -16,7 +16,8 @@ extern bool g_bQuitGame;
 // Enumeration to store the control keys that your game will have
 enum EKEYS
 {
-	K_SHIFT,
+	K_LSHIFT,
+	K_RSHIFT,
     K_UP,
     K_DOWN,
     K_LEFT,
@@ -68,7 +69,7 @@ struct SGameChar
 {
     COORD m_cLocation;
     bool  m_bActive;
-	int health;
+	unsigned int health;
 
 };
 
