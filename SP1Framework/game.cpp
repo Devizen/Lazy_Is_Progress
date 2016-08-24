@@ -98,6 +98,7 @@ void init(void)
 	spawn();
 
 	// sets the width, height and the font name to use in the console
+
 	g_Console.setConsoleFont(0, 16, L"Arial");
 
 }
