@@ -195,3 +195,65 @@ void motiondetect()
 		g_box1.m_cLocation.Y = 21;
 	}
 }
+
+//Done by Eugene.
+void renderai()
+{
+	WORD charColor = 0x0C;
+	WORD charColor2 = 0x0A;
+
+	switch (load)
+	{
+	case levelone:
+
+		//First Character
+		g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, charColor);
+
+		//Second Character
+		g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, charColor2);
+
+		//Enemy
+		g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, charColor2);
+		g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, charColor2);
+
+		//Door
+		g_Console.writeToBuffer(g_door1.m_cLocation, (char)219, charColor);
+
+		//Lever
+		g_Console.writeToBuffer(g_lever1.m_cLocation, (char)219, charColor);
+
+		//Box
+		g_Console.writeToBuffer(g_box1.m_cLocation, (char)254, charColor);
+
+		//Release A.I
+		g_Console.writeToBuffer(release_enemy.m_cLocation, (char)219, charColor);
+		g_Console.writeToBuffer(release_enemy1.m_cLocation, (char)219, charColor);
+		g_Console.writeToBuffer(release_enemy2.m_cLocation, (char)219, charColor);
+		g_Console.writeToBuffer(release_enemy3.m_cLocation, (char)219, charColor);
+		g_Console.writeToBuffer(release_enemy4.m_cLocation, (char)219, charColor);
+		g_Console.writeToBuffer(release_enemy5.m_cLocation, (char)219, charColor);
+		g_Console.writeToBuffer(release_enemy6.m_cLocation, (char)219, charColor);
+		g_Console.writeToBuffer(release_enemy7.m_cLocation, (char)219, charColor);
+		g_Console.writeToBuffer(release_enemy8.m_cLocation, (char)219, charColor);
+		break;
+
+	case leveltwo:
+		if (g_sChar.m_bActive)
+		{
+			charColor = 0x0A;
+		}
+		g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, charColor);
+
+		// Draw the location of the character
+		if (g_nChar.m_bActive)
+		{
+			charColor = 0x0C;
+		}
+		g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, charColor2);
+
+		//Enemy
+		g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, charColor2);
+		g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, charColor2);
+		break;
+	}
+}

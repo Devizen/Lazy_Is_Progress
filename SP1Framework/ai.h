@@ -24,3 +24,4 @@ extern double ai_BounceTime;
 
 //Definition for function.
 void motiondetect();
+void renderai();

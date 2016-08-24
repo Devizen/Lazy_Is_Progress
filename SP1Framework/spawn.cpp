@@ -1,5 +1,5 @@
 #include "spawn.h"
-bool restarthealth = false;
+bool restarthealth = true;
 
 //Done by Eugene.
 void spawn()
@@ -73,7 +73,7 @@ void spawn()
 		release_enemy8.m_cLocation.Y = 6;
 
 		//Set the initial health of the player
-		if (restarthealth == false)
+		if (restarthealth == true)
 		{
 			g_sChar.health = 3;
 		}

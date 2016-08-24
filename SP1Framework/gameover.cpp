@@ -1,5 +1,6 @@
 #include "gameover.h"
 
+//Done by Eugene.
 void gameover()
 {
 	clearScreen();

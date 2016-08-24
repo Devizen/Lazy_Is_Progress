@@ -42,5 +42,8 @@ extern SGameChar release_enemy8;
 extern EGAMESTATES g_eGameState;
 extern LEVELS load;
 
+//Linking variables.
+extern bool restarthealth;
+
 //Definition for function.
 void level1(); // level 1.

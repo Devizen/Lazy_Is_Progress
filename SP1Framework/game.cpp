@@ -268,7 +268,7 @@ void processUserInput()
 				return;
 			}
 
-			restarthealth = true;
+			restarthealth = false;
 			g_sChar.health -= 1;
 			bSomethingHappened = true;
 
@@ -410,7 +410,7 @@ void renderFramerate()
 	{
 		//Deduct health when time over.
 		g_sChar.health--;
-		restarthealth = true;
+		restarthealth = false;
 
 		ss.str("");
 		ss << "Time Over";
