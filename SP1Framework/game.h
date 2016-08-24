@@ -59,9 +59,16 @@ enum LEVELS
 {
 	mainscreen,
 	defeated,
+	levelzero,
 	levelone, //Loading Level 1.
 	leveltwo,
 	levelthree
+};
+
+enum RESTART
+{
+	one,
+	two
 };
 
 // struct for the game character
@@ -97,5 +104,15 @@ void renderScoreBoard(); // renders scoreboard
 //void menu();				// renders the menu screen.
 void moveai();				// move ai.
 void loadlevel(string name);// load levels.
+void sprint();
+void tutorial();
+
+//Movement for Characters
+void movelevel0();
+void movelevel1();
+void movelevel2();
+
+//Linking variables.
+extern bool restarthealth;
 
 #endif // _GAME_H

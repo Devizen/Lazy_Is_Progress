@@ -7,6 +7,7 @@
 using namespace std;
 extern Console g_Console;
 
+//Done by Yoong Soon.
 void renderScoreBoard()
 {
     vector <string> line;

@@ -1,20 +1,19 @@
-#include "main.h"
 #include "game.h"
+#include "main.h"
 
 //Linking Console.
 extern Console g_Console;
 
+//Linking Map.
+extern char map[25][80];
+
 //Linking game states.
-extern EGAMESTATES g_eGameState;
 extern LEVELS load;
 
-//Linking characters and enemies.
+//Linking characters
 extern SGameChar g_sChar;
 extern SGameChar g_nChar;
-extern SGameChar g_enemy;
-extern SGameChar g_enemy2;
 extern SGameChar g_door1;
-extern SGameChar g_lever1;
 extern SGameChar g_box1;
 extern SGameChar release_enemy;
 extern SGameChar release_enemy1;
@@ -25,11 +24,10 @@ extern SGameChar release_enemy5;
 extern SGameChar release_enemy6;
 extern SGameChar release_enemy7;
 extern SGameChar release_enemy8;
-extern SGameChar g_menu;
-extern SGameChar g_result;
 
-//Linking variables
-extern double g_dCountTime;
+//Linking Timer.
+extern double  g_dBounceTime;
+extern double g_dElapsedTime;
+extern double g_dBounceTimeBoost;
 
-//Definition for function.
-void spawn();
+extern bool g_abKeyPressed[K_COUNT];

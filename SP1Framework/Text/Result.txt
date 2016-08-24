@@ -8,3 +8,4 @@
                                                       
              Press Esc. to return to Quit.
          Press Back to return to Menu Screen.
+               Press Space to try again.
