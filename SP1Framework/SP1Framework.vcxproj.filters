@@ -10,9 +10,6 @@
     <ClCompile Include="level2.cpp">
       <Filter>Levels</Filter>
     </ClCompile>
-    <ClCompile Include="ai.cpp">
-      <Filter>A.I and Characters</Filter>
-    </ClCompile>
     <ClCompile Include="loadlevel.cpp">
       <Filter>A.I and Characters</Filter>
     </ClCompile>
@@ -46,6 +43,15 @@
     <ClCompile Include="movelevel2.cpp">
       <Filter>A.I and Characters\Movement</Filter>
     </ClCompile>
+    <ClCompile Include="movelevel0.cpp">
+      <Filter>A.I and Characters\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="characters.cpp">
+      <Filter>A.I and Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="tutorial.cpp">
+      <Filter>Levels</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework\console.h" />
@@ -56,9 +62,6 @@
     </ClInclude>
     <ClInclude Include="level2.h">
       <Filter>Levels</Filter>
-    </ClInclude>
-    <ClInclude Include="ai.h">
-      <Filter>A.I and Characters</Filter>
     </ClInclude>
     <ClInclude Include="loadlevel.h">
       <Filter>A.I and Characters</Filter>
@@ -95,6 +98,15 @@
     </ClInclude>
     <ClInclude Include="movelevel2.h">
       <Filter>A.I and Characters\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="tutorial.h">
+      <Filter>Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="movelevel0.h">
+      <Filter>A.I and Characters\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="characters.h">
+      <Filter>A.I and Characters</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

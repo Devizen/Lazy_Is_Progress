@@ -5,8 +5,6 @@ bool door1 = false;
 //Done by Eugene.
 void level1()
 {
-	load = levelone;
-
 	string line = " ";
 	string name = "Text/level1.txt";
 	loadlevel(name);

@@ -1,4 +1,4 @@
-#include "ai.h"
+#include "characters.h"
 #include "level1.h"
 #include "game.h"
 #include "health.h"
@@ -14,6 +14,74 @@ void motiondetect()
 
 	switch (load)
 	{
+	case levelzero:
+		//For First Character
+		if (g_enemy.m_cLocation.X > 0 &&
+			(g_enemy.m_cLocation.X - g_sChar.m_cLocation.X) < 0 &&
+			map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X + 1] != (char)219)
+		{
+			g_enemy.m_cLocation.X++;
+			bSomethingHappened = true;
+		}
+
+		if (g_enemy.m_cLocation.X > 0 &&
+			g_enemy.m_cLocation.X - g_sChar.m_cLocation.X > 0 &&
+			map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X - 1] != (char)219)
+		{
+			g_enemy.m_cLocation.X--;
+			bSomethingHappened = true;
+		}
+
+		if (g_enemy.m_cLocation.Y > 0 &&
+			(g_enemy.m_cLocation.Y - g_sChar.m_cLocation.Y) < 0 &&
+			map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != (char)219)
+		{
+			g_enemy.m_cLocation.Y++;
+			bSomethingHappened = true;
+		}
+
+		if (g_enemy.m_cLocation.Y > 0 &&
+			(g_enemy.m_cLocation.Y - g_sChar.m_cLocation.Y) > 0 &&
+			map[g_enemy.m_cLocation.Y - 1][g_enemy.m_cLocation.X] != (char)219)
+		{
+			g_enemy.m_cLocation.Y--;
+			bSomethingHappened = true;
+		}
+
+		//For Second Character
+		if (g_enemy2.m_cLocation.X > 0 &&
+			(g_enemy2.m_cLocation.X - g_nChar.m_cLocation.X) < 0 &&
+			map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X + 1] != (char)219)
+		{
+			g_enemy2.m_cLocation.X++;
+			bSomethingHappened = true;
+		}
+
+		if (g_enemy2.m_cLocation.X > 0 &&
+			g_enemy2.m_cLocation.X - g_nChar.m_cLocation.X > 0 &&
+			map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X - 1] != (char)219)
+		{
+			g_enemy2.m_cLocation.X--;
+			bSomethingHappened = true;
+		}
+
+		if (g_enemy2.m_cLocation.Y > 0 &&
+			(g_enemy2.m_cLocation.Y - g_nChar.m_cLocation.Y) < 0 &&
+			map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] != (char)219)
+		{
+			g_enemy2.m_cLocation.Y++;
+			bSomethingHappened = true;
+		}
+
+		if (g_enemy2.m_cLocation.Y > 0 &&
+			(g_enemy2.m_cLocation.Y - g_nChar.m_cLocation.Y) > 0 &&
+			map[g_enemy2.m_cLocation.Y - 1][g_enemy2.m_cLocation.X] != (char)219)
+		{
+			g_enemy2.m_cLocation.Y--;
+			bSomethingHappened = true;
+		}
+		break;
+
 	case levelone:
 		//For First Character
 		if (g_enemy.m_cLocation.X > 0 &&
@@ -204,6 +272,18 @@ void rendercharacters()
 
 	switch (load)
 	{
+	case levelzero:
+		//First Character
+		g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, charColor);
+
+		//Second Character
+		g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, charColor2);
+
+		//Enemy
+		g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, charColor2);
+		g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, charColor2);
+
+		break;
 	case levelone:
 
 		//First Character

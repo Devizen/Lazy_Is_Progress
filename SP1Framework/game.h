@@ -59,6 +59,7 @@ enum LEVELS
 {
 	mainscreen,
 	defeated,
+	levelzero,
 	levelone, //Loading Level 1.
 	leveltwo,
 	levelthree
@@ -104,8 +105,10 @@ void renderScoreBoard(); // renders scoreboard
 void moveai();				// move ai.
 void loadlevel(string name);// load levels.
 void sprint();
+void tutorial();
 
 //Movement for Characters
+void movelevel0();
 void movelevel1();
 void movelevel2();
 

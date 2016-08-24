@@ -1,7 +1,7 @@
 #include "main.h"
 #include "gameover.h"
 #include "Framework\timer.h"
-#include "level2.h"
+#include "level1.h"
 #include "characters.h"
 #include "health.h"
 
@@ -45,6 +45,3 @@ extern RESTART level;
 
 //Linking variables.
 extern bool restarthealth;
-
-//Definition for function.
-void level1(); // level 1.

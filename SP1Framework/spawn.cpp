@@ -16,6 +16,33 @@ void spawn()
 	//For printing different characters based on levels.
 	switch (load)
 	{
+	case levelzero:
+		//First Character
+		g_sChar.m_cLocation.X = 20;
+		g_sChar.m_cLocation.Y = 23;
+
+		//Second Character
+		g_nChar.m_cLocation.X = 40;
+		g_nChar.m_cLocation.Y = 23;
+
+		//Enemy
+		g_enemy.m_cLocation.X = 22;
+		g_enemy.m_cLocation.Y = 23;
+
+		g_enemy2.m_cLocation.X = 38;
+		g_enemy2.m_cLocation.Y = 23;
+
+		//Set the initial health of the player
+		if (restarthealth == true)
+		{
+			g_sChar.health = 3;
+		}
+
+		//Set the initial time limit
+		g_dCountTime = 60;
+
+		break;
+
 	case levelone: 
 		//First Character
 		g_sChar.m_cLocation.X = 4;

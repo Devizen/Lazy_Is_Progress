@@ -14,7 +14,7 @@
 #include "health.h"
 #include "level1.h"
 #include "level2.h"
-#include "ai.h"
+#include "characters.h"
 #include "renderResult.h"
 #include "menu.h"
 #include "spawn.h"
@@ -52,7 +52,7 @@ SGameChar	release_enemy8;
 SGameChar	g_menu;
 SGameChar   g_result;
 EGAMESTATES g_eGameState = S_SPLASHSCREEN;
-LEVELS		load = levelone;
+LEVELS		load = levelzero;
 RESTART		level = one;
 
 double  g_dBounceTime; // this is to prevent key bouncing, so we won't trigger keypresses more than once
@@ -226,6 +226,10 @@ void moveCharacter()
 {
 	switch (load)
 	{
+	case levelzero:
+		sprint();
+		movelevel0();
+		break;
 	case levelone:
 		sprint();
 		movelevel1();
@@ -337,6 +341,8 @@ void renderGame()
 		break;
 	case defeated: gameover();
 		break;
+	case levelzero: tutorial();
+		break;
 	case levelone: level1();
 		break;
 	case leveltwo: level2();
@@ -399,6 +405,18 @@ void renderFramerate()
 
 		switch (load)
 		{
+		case levelzero:
+			if (g_sChar.health < 1)
+			{
+				g_eGameState = S_RESULT;
+			}
+			else
+			{
+				g_dCountTime = 60;
+				spawn();
+			}
+			break;
+
 		case levelone:
 			if (g_sChar.health < 1)
 			{
@@ -408,8 +426,8 @@ void renderFramerate()
 			{
 				g_dCountTime = 60;
 				spawn();
-				
 			}
+			break;
 		}
 	}
 }
