@@ -26,8 +26,27 @@ void gameover()
 		load = levelone; 
 		spawn();
 	}
+
 	if (g_abKeyPressed[K_ESCAPE])
 	{
 		g_bQuitGame = true;
+	}
+
+	if (g_abKeyPressed[K_SPACE])
+	{
+		switch (level)
+		{
+		case one:
+			load = levelone;
+			spawn();
+			renderGame();
+			break;
+			
+		case two:
+			load = leveltwo;
+			spawn();
+			renderGame();
+			break;
+		}
 	}
 }

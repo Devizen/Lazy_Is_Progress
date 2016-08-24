@@ -68,6 +68,7 @@ void level2()
 
 	if (g_sChar.health < 1)
 	{
+		level = two;
 		load = defeated;
 		renderGame();
 	}

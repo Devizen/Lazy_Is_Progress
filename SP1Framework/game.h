@@ -64,6 +64,12 @@ enum LEVELS
 	levelthree
 };
 
+enum RESTART
+{
+	one,
+	two
+};
+
 // struct for the game character
 struct SGameChar
 {

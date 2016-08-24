@@ -27,6 +27,7 @@ extern SGameChar g_enemy2;
 //Linking game states.
 extern EGAMESTATES g_eGameState;
 extern LEVELS load;
+extern RESTART level;
 
 //Definition for function.
 void level2(); // level 2.

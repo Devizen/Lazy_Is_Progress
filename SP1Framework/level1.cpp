@@ -60,6 +60,7 @@ void level1()
 		}
 		else
 		{
+			level = one;
 			load = defeated;
 			renderGame();
 		}

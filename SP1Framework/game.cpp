@@ -53,6 +53,8 @@ SGameChar	g_menu;
 SGameChar   g_result;
 EGAMESTATES g_eGameState = S_SPLASHSCREEN;
 LEVELS		load = levelone;
+RESTART		level = one;
+
 double  g_dBounceTime; // this is to prevent key bouncing, so we won't trigger keypresses more than once
 double ai_BounceTime;
 
@@ -288,7 +290,6 @@ void processUserInput()
 			break;
 		}
 	}
-
 }
 
 void clearScreen()
