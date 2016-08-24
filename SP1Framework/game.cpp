@@ -82,7 +82,7 @@ void init(void)
 
 	// sets the width, height and the font name to use in the console
 	g_Console.setConsoleFont(0, 20, L"Arial");
-
+	
 }
 
 //--------------------------------------------------------------
