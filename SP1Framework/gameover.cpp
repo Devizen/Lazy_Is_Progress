@@ -37,12 +37,14 @@ void gameover()
 		switch (level)
 		{
 		case one:
+			g_sChar.health = 3;
 			load = levelone;
 			spawn();
 			renderGame();
 			break;
 			
 		case two:
+			g_sChar.health = 3;
 			load = leveltwo;
 			spawn();
 			renderGame();

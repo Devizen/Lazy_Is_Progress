@@ -117,6 +117,9 @@ void spawn()
 
 		//Set the initial health of the player
 		g_sChar.health = 3;
+
+		//Set the initial time limit
+		g_dCountTime = 60;
 		break;
 	}
 }

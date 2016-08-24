@@ -197,7 +197,7 @@ void motiondetect()
 }
 
 //Done by Eugene.
-void renderai()
+void rendercharacters()
 {
 	WORD charColor = 0x0C;
 	WORD charColor2 = 0x0A;

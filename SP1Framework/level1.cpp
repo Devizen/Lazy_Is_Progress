@@ -25,7 +25,7 @@ void level1()
 	WORD charColor = 0x0C;
 	WORD charColor2 = 0x0A;
 
-	renderai();
+	rendercharacters();
 	motiondetect();
 
 	if (map[g_box1.m_cLocation.Y][g_box1.m_cLocation.X] == map[g_lever1.m_cLocation.Y][g_lever1.m_cLocation.X])

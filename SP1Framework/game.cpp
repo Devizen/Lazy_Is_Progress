@@ -264,6 +264,7 @@ void processUserInput()
 		switch (load)
 		{
 		case levelone:
+			level = one;
 			bool bSomethingHappened = false;
 			if (g_dBounceTime > g_dElapsedTime)
 			{
@@ -328,7 +329,7 @@ void renderGame()
 	renderMap();        // renders the map to the buffer first
 	renderFramerate();  // renders debug information, frame rate, elapsed time, etc
 	renderhealth(&g_Console, g_sChar.health); // draw health to the screen
-	renderCharacter();  // renders the character into the buffer
+	//renderCharacter();  // renders the character into the buffer
 
 	switch (load)
 	{
@@ -360,32 +361,9 @@ void renderMap()
 	}
 }
 
-void renderCharacter()
-{
-	// Draw the location of the character
-	//WORD charColor = 0x0C;
-	//WORD charColor2 = 0x0A;
-	//if (g_sChar.m_bActive)
-	//{
-	//	charColor = 0x0A;
-	//}
-	//g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, charColor);
-
-	//// Draw the location of the character
-	//if (g_nChar.m_bActive)
-	//{
-	//	charColor = 0x0C;
-	//}
-	//g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, charColor2);
-
-	////Enemy
-	//g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, charColor2);
-	//g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, charColor2);
-
-	////Door
-	//g_Console.writeToBuffer(g_door1.m_cLocation,(char)219, charColor);
-
-}
+//void renderCharacter()
+//{
+//}
 
 void renderFramerate()
 {

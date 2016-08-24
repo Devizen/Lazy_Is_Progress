@@ -26,7 +26,7 @@ void level2()
 	y.X = 15;
 	y.Y = 15;
 
-	renderai();
+	rendercharacters();
 	motiondetect();
 
 	if ((g_enemy.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_sChar.m_cLocation.Y) ||
