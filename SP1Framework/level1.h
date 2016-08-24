@@ -14,6 +14,7 @@ extern bool g_abKeyPressed[K_COUNT];
 
 //Linking Console.
 extern Console g_Console;
+extern LEVELS load;
 
 //Linking Map.
 extern const unsigned int x;
@@ -29,6 +30,8 @@ extern SGameChar g_door1;
 extern SGameChar g_lever1;
 extern SGameChar g_box1;
 extern SGameChar release_enemy;
+extern SGameChar g_powerup;
+extern SGameChar g_timeboost;
 
 //Linking game states.
 extern EGAMESTATES g_eGameState;

@@ -26,6 +26,8 @@ enum EKEYS
     K_SPACE,
 	K_RETURN,
 	K_BACK,
+	K_NUM1,
+	K_NUM2,
 
 	K_w,
 	K_a,
@@ -61,7 +63,10 @@ enum LEVELS
 	defeated,
 	levelone, //Loading Level 1.
 	leveltwo,
-	levelthree
+	levelthree,
+	scoreboard1,
+	scoreboard2
+
 };
 
 // struct for the game character
@@ -70,7 +75,6 @@ struct SGameChar
     COORD m_cLocation;
     bool  m_bActive;
 	int health;
-
 };
 
 void init        ( void );      // initialize your variables, allocate memory, etc

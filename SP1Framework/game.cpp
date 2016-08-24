@@ -19,6 +19,7 @@
 #include "menu.h"
 #include "spawn.h"
 #include "ScoreBoard.h"
+#include "renderLegend.h"
 
 using std::vector;
 using namespace std;
@@ -42,6 +43,8 @@ SGameChar	g_box1;
 SGameChar	release_enemy;
 SGameChar	g_menu;
 SGameChar   g_result;
+SGameChar   g_powerup;
+SGameChar   g_timeboost;
 EGAMESTATES g_eGameState = S_SPLASHSCREEN;
 LEVELS		load = levelone;
 double  g_dBounceTime; // this is to prevent key bouncing, so we won't trigger keypresses more than once
@@ -72,7 +75,7 @@ void init(void)
 	g_dElapsedTime = 0.0;
 	g_dBounceTime = 0.0;
 	ai_BounceTime = 0.0;
-	g_dCountTime = 1000;
+	g_dCountTime = 0.5;
 
 	// sets the initial state for the game
 	g_eGameState = S_SPLASHSCREEN;
@@ -123,6 +126,9 @@ void getInput(void)
 	g_abKeyPressed[K_BACK] = isKeyPressed(VK_BACK);
 	g_abKeyPressed[K_LSHIFT] = isKeyPressed(VK_LSHIFT);
 	g_abKeyPressed[K_RSHIFT] = isKeyPressed(VK_RSHIFT);
+	g_abKeyPressed[K_NUM1] = isKeyPressed(VK_NUMPAD1);
+	g_abKeyPressed[K_NUM2] = isKeyPressed(VK_NUMPAD2);
+	
 
 	//WASD
 	g_abKeyPressed[K_W] = isKeyPressed(VK_W);
@@ -190,7 +196,8 @@ void render()
 		break;
 	//case S_LEVEL1: level1();
 	//	break;
-	case S_RESULT: renderResult(&g_ResultIsDisplayed, &g_ElapsedGameTime);
+	case S_RESULT: 
+		renderResult(&g_ResultIsDisplayed, &g_ElapsedGameTime);
 		break;
 	case S_SCOREBOARD:renderScoreBoard();
 	}
@@ -533,7 +540,7 @@ void processUserInput()
 		spawn();
 		renderGame();
 	}
-
+	
 }
 
 void clearScreen()
@@ -572,6 +579,7 @@ void renderGame()
 	renderMap();        // renders the map to the buffer first
 	renderFramerate();  // renders debug information, frame rate, elapsed time, etc
 	renderhealth(&g_Console, g_sChar.health); // draw health to the screen
+	renderLegend(); //render legends regarding powerups
 	renderCharacter();  // renders the character into the buffer
 
 	switch (load)
@@ -659,6 +667,7 @@ void renderFramerate()
 
 
 		g_eGameState = S_RESULT;
+
 	}
 }
 

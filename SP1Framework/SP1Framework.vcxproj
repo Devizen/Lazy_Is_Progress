@@ -88,6 +88,7 @@
     <ClCompile Include="loadlevel.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
+    <ClCompile Include="renderLegend.cpp" />
     <ClCompile Include="renderResult.cpp" />
     <ClCompile Include="Scoreboard.cpp" />
     <ClCompile Include="spawn.cpp" />
@@ -106,6 +107,7 @@
     <ClInclude Include="loadlevel.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="menu.h" />
+    <ClInclude Include="renderLegend.h" />
     <ClInclude Include="renderResult.h" />
     <ClInclude Include="spawn.h" />
   </ItemGroup>

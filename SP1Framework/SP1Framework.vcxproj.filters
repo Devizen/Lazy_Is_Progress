@@ -37,6 +37,9 @@
     <ClCompile Include="gameover.cpp">
       <Filter>Game Status</Filter>
     </ClCompile>
+    <ClCompile Include="renderLegend.cpp">
+      <Filter>Game Status</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework\console.h" />
@@ -76,6 +79,9 @@
       <Filter>A.I and Characters</Filter>
     </ClInclude>
     <ClInclude Include="gameover.h">
+      <Filter>Game Status</Filter>
+    </ClInclude>
+    <ClInclude Include="renderLegend.h">
       <Filter>Game Status</Filter>
     </ClInclude>
   </ItemGroup>

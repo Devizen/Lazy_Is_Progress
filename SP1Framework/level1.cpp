@@ -1,20 +1,16 @@
 #include "level1.h"
-
 bool door1 = false;
+bool powerup = true;
+bool timeincrease = true;
 
 //Done by Eugene.
 void level1()
 {
-	/*bool bSomethingHappened = false;
-	if (g_dBounceTime > g_dElapsedTime)
-	{
-		return;
-	}*/
-
 	string line = " ";
 	string name = "Text/level1.txt";
 	loadlevel(name);
 	COORD c;
+
 
 	c.X = 0;
 	c.Y = 0;
@@ -28,6 +24,7 @@ void level1()
 
 	WORD charColor = 0x0C;
 	WORD charColor2 = 0x0A;
+	WORD charColor3 = 0X4D;
 
 	//First Character
 	g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, charColor);
@@ -50,7 +47,14 @@ void level1()
 
 	//Release A.I
 	g_Console.writeToBuffer(release_enemy.m_cLocation, (char)219, charColor);
-	
+
+	//Powerup
+		g_Console.writeToBuffer(g_powerup.m_cLocation, (char)206, charColor3);
+
+     //TimerUp
+		g_Console.writeToBuffer(g_timeboost.m_cLocation, (char)64, charColor3);
+
+
 	motiondetect();
 
 	//if (g_abKeyPressed[K_D])
@@ -73,6 +77,25 @@ void level1()
 	{
 		door1 = false;
 	}
+	if ((g_timeboost.m_cLocation.X == g_nChar.m_cLocation.X) && (g_timeboost.m_cLocation.Y == g_nChar.m_cLocation.Y && timeincrease == true))
+	{
+		g_dCountTime += 5.00;
+		timeincrease = false;
+	}
+	if (timeincrease == false)
+	{
+		g_Console.writeToBuffer(g_timeboost.m_cLocation, (char)64, charColor);
+	}
+
+	if ((g_powerup.m_cLocation.X == g_nChar.m_cLocation.X) && (g_powerup.m_cLocation.Y == g_nChar.m_cLocation.Y && powerup == true))
+	{
+		g_sChar.health++;
+		powerup = false;
+	}
+	if (powerup == false)
+	{
+		g_Console.writeToBuffer(g_powerup.m_cLocation, (char)206, charColor);
+	}
 
 	if ((g_enemy.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_sChar.m_cLocation.Y) ||
 		(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y) ||
@@ -82,9 +105,7 @@ void level1()
 		{
 			gameover(g_sChar);
 		}
-
-		else
-		{
+		else{
 			g_sChar.health -= 1;
 			g_dCountTime = 1000;
 
@@ -116,11 +137,10 @@ void level1()
 			g_box1.m_cLocation.Y = 21;
 		}
 	}
-
-	if (g_nChar.m_cLocation.X == 39 &&
-		g_nChar.m_cLocation.Y == 22 &&
-		g_sChar.m_cLocation.X == 23 &&
-		g_sChar.m_cLocation.Y == 22)
+	if (g_nChar.m_cLocation.X == 49 &&
+		g_nChar.m_cLocation.Y == 11 &&
+		g_sChar.m_cLocation.X == 11 &&
+		g_sChar.m_cLocation.Y == 11)
 	{
 		g_sChar.m_cLocation.X = 11;
 		g_sChar.m_cLocation.Y = 10;
@@ -131,4 +151,6 @@ void level1()
 
 		load = leveltwo;
 	}
+
+	gameover(g_sChar);
 }

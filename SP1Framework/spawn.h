@@ -19,6 +19,8 @@ extern SGameChar g_box1;
 extern SGameChar release_enemy;
 extern SGameChar g_menu;
 extern SGameChar g_result;
+extern SGameChar g_powerup;
+extern SGameChar g_timeboost;
 
 //Definition for function.
 void spawn();
