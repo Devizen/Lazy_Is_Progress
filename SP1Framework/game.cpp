@@ -40,6 +40,15 @@ SGameChar	g_door1;
 SGameChar	g_lever1;
 SGameChar	g_box1;
 SGameChar	release_enemy;
+SGameChar	release_enemy1;
+SGameChar	release_enemy2;
+SGameChar	release_enemy3;
+SGameChar	release_enemy4;
+SGameChar	release_enemy5;
+SGameChar	release_enemy6;
+SGameChar	release_enemy7;
+SGameChar	release_enemy8;
+
 SGameChar	g_menu;
 SGameChar   g_result;
 EGAMESTATES g_eGameState = S_SPLASHSCREEN;
@@ -72,7 +81,7 @@ void init(void)
 	g_dElapsedTime = 0.0;
 	g_dBounceTime = 0.0;
 	ai_BounceTime = 0.0;
-	g_dCountTime = 1000;
+	g_dCountTime = 60;
 
 	// sets the initial state for the game
 	g_eGameState = S_SPLASHSCREEN;
@@ -81,7 +90,7 @@ void init(void)
 	spawn();
 
 	// sets the width, height and the font name to use in the console
-	g_Console.setConsoleFont(0, 20, L"Arial");
+	g_Console.setConsoleFont(0, 16, L"Arial");
 
 }
 
@@ -188,8 +197,6 @@ void render()
 		break;
 	case S_GAME: renderGame();
 		break;
-	//case S_LEVEL1: level1();
-	//	break;
 	case S_RESULT: renderResult(&g_ResultIsDisplayed, &g_ElapsedGameTime);
 		break;
 	case S_SCOREBOARD:renderScoreBoard();
@@ -215,301 +222,17 @@ void gameplay()            // gameplay logic
 
 void moveCharacter()
 {
-	bool bSomethingHappened = false;
-	bool boost = false;
-	if (g_dBounceTime > g_dElapsedTime)
+	switch (load)
 	{
-		return;
-	}
+	case levelone:
+		sprint();
+		movelevel1();
+		break;
 
-	COORD c;
-	c.X = 5;
-	c.Y = 5;
-
-	// Updating the location of the character based on the key press
-	// providing a beep sound whenver we shift the character
-	if (g_abKeyPressed[K_RSHIFT] && g_abKeyPressed[K_W] &&
-		map[g_sChar.m_cLocation.Y - 1][g_sChar.m_cLocation.X] != (char)219)
-	{
-		g_sChar.m_cLocation.Y--;
-		boost = true;
-	}
-	if (g_abKeyPressed[K_RSHIFT] && g_abKeyPressed[K_A] &&
-		map[g_sChar.m_cLocation.Y ][g_sChar.m_cLocation.X-1] != (char)219)
-	{
-		if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
-			map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != (char)219 &&
-			map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] !=
-			map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
-		{
-			g_sChar.m_cLocation.X--;
-			
-			boost = true;
-		}
-	}
-	if (g_abKeyPressed[K_RSHIFT] && g_abKeyPressed[K_S] &&
-		map[g_sChar.m_cLocation.Y +1][g_sChar.m_cLocation.X] != (char)219)
-	{
-		g_sChar.m_cLocation.Y++;
-		boost = true;
-	}
-	if (g_abKeyPressed[K_RSHIFT] && g_abKeyPressed[K_D] &&
-		map[g_sChar.m_cLocation.Y ][g_sChar.m_cLocation.X +1] != (char)219)
-	{
-		if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
-			map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != (char)219 &&
-			map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] !=
-			map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
-		{
-			g_sChar.m_cLocation.X++;
-			bSomethingHappened = true;
-		}
-	}
-
-
-
-	if (g_abKeyPressed[K_LSHIFT] && g_abKeyPressed[K_UP] &&
-		map[g_nChar.m_cLocation.Y - 1][g_nChar.m_cLocation.X] != (char)219)
-	{
-		if (g_nChar.m_cLocation.Y - 1 == g_box1.m_cLocation.Y &&
-			g_nChar.m_cLocation.X == g_box1.m_cLocation.X)
-		{
-			g_nChar.m_cLocation.Y--;
-			g_box1.m_cLocation.Y--;
-			bSomethingHappened = true;
-		}
-		else
-		{
-			g_nChar.m_cLocation.Y--;
-			bSomethingHappened = true;
-		}
-	}
-
-	if (g_abKeyPressed[K_LSHIFT] && g_abKeyPressed[K_LEFT] &&
-		map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != (char)219)
-	{
-		if (g_nChar.m_cLocation.Y == g_box1.m_cLocation.Y &&
-			g_nChar.m_cLocation.X - 1 == g_box1.m_cLocation.X)
-		{
-			g_nChar.m_cLocation.X--;
-			g_box1.m_cLocation.X--;
-			bSomethingHappened = true;
-		}
-		else
-		{
-			g_nChar.m_cLocation.X--;
-			bSomethingHappened = true;
-		}
-	}
-
-	if (g_abKeyPressed[K_LSHIFT] && g_abKeyPressed[K_DOWN] &&
-		map[g_nChar.m_cLocation.Y + 1][g_nChar.m_cLocation.X] != (char)219)
-	{
-		if (g_nChar.m_cLocation.Y + 1 == g_box1.m_cLocation.Y &&
-			g_nChar.m_cLocation.X == g_box1.m_cLocation.X)
-		{
-			g_nChar.m_cLocation.Y++;
-			g_box1.m_cLocation.Y++;
-			bSomethingHappened = true;
-		}
-		else
-		{
-			g_nChar.m_cLocation.Y++;
-			bSomethingHappened = true;
-		}
-	}
-
-	if (g_abKeyPressed[K_LSHIFT] && g_abKeyPressed[K_RIGHT] &&
-		map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != (char)219)
-	{
-		if (g_nChar.m_cLocation.Y == g_box1.m_cLocation.Y &&
-			g_nChar.m_cLocation.X + 1 == g_box1.m_cLocation.X)
-		{
-			g_nChar.m_cLocation.X++;
-			g_box1.m_cLocation.X++;
-			bSomethingHappened = true;
-		}
-		else
-		{
-			g_nChar.m_cLocation.X++;
-			bSomethingHappened = true;
-		}
-	}
-
-	if (g_abKeyPressed[K_W])
-	{
-		if (g_sChar.m_cLocation.Y > 0 &&
-			map[g_sChar.m_cLocation.Y - 1][g_sChar.m_cLocation.X] != (char)219)
-		{
-			g_sChar.m_cLocation.Y--;
-			bSomethingHappened = true;
-		}
-	}
-
-	if (g_abKeyPressed[K_A])
-	{
-		
-		switch (load)
-		{
-		case levelone:
-			if (door1 == true)
-			{
-				if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
-					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != (char)219)
-				{
-					g_sChar.m_cLocation.X--;
-					bSomethingHappened = true;
-					break;
-				}
-			}
-			if (door1 == false)
-			{
-				if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
-					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != (char)219 &&
-					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] !=
-					map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X] && map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
-
-				{
-					g_sChar.m_cLocation.X--;
-					bSomethingHappened = true;
-					break;
-				}
-	
-			}
-			
-		}
-	}
-
-	if (g_abKeyPressed[K_S])
-	{
-		if (g_sChar.m_cLocation.Y < g_Console.getConsoleSize().Y - 1 &&
-			map[g_sChar.m_cLocation.Y + 1][g_sChar.m_cLocation.X] != (char)219)
-		{
-			g_sChar.m_cLocation.Y++;
-			bSomethingHappened = true;
-		}
-	}
-
-	if (g_abKeyPressed[K_D])
-	{
-		switch (load)
-		{
-		case levelone:
-			if (door1 == true)
-			{
-				if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
-					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != (char)219)
-				{
-					g_sChar.m_cLocation.X++;
-					bSomethingHappened = true;
-					break;
-				}
-			}
-			if (door1 == false)
-			{
-				if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
-					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != (char)219 &&
-					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] !=
-					map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
-				{
-					g_sChar.m_cLocation.X++;
-					bSomethingHappened = true;
-					break;
-				}
-			}
-		}
-	}
-
-	if (g_abKeyPressed[K_UP])
-	{
-		if (g_nChar.m_cLocation.Y > 0 &&
-			map[g_nChar.m_cLocation.Y - 1][g_nChar.m_cLocation.X] != (char)219)
-		{
-			if (g_nChar.m_cLocation.Y - 1 == g_box1.m_cLocation.Y &&
-				g_nChar.m_cLocation.X == g_box1.m_cLocation.X)
-			{
-				g_nChar.m_cLocation.Y--;
-				g_box1.m_cLocation.Y--;
-				bSomethingHappened = true;
-			}
-			else
-			{
-				g_nChar.m_cLocation.Y--;
-				bSomethingHappened = true;
-			}
-		}
-	}
-
-	if (g_abKeyPressed[K_LEFT])
-	{
-		if (g_nChar.m_cLocation.X > 0 &&
-			map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != (char)219)
-		{
-			if (g_nChar.m_cLocation.Y == g_box1.m_cLocation.Y &&
-				g_nChar.m_cLocation.X - 1 == g_box1.m_cLocation.X)
-			{
-				g_nChar.m_cLocation.X--;
-				g_box1.m_cLocation.X--;
-				bSomethingHappened = true;
-			}
-			else
-			{
-				g_nChar.m_cLocation.X--;
-				bSomethingHappened = true;
-			}
-		}
-	}
-
-	if (g_abKeyPressed[K_DOWN])
-	{
-		if (g_nChar.m_cLocation.Y < g_Console.getConsoleSize().Y - 1 &&
-			map[g_nChar.m_cLocation.Y + 1][g_nChar.m_cLocation.X] != (char)219)
-		{
-			if (g_nChar.m_cLocation.Y + 1 == g_box1.m_cLocation.Y &&
-				g_nChar.m_cLocation.X == g_box1.m_cLocation.X)
-			{
-				g_nChar.m_cLocation.Y++;
-				g_box1.m_cLocation.Y++;
-				bSomethingHappened = true;
-			}
-			else
-			{
-				g_nChar.m_cLocation.Y++;
-				bSomethingHappened = true;
-			}
-		}
-	}
-
-	if (g_abKeyPressed[K_RIGHT])
-	{
-		if (g_nChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
-			map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != (char)219)
-		{
-			if (g_nChar.m_cLocation.Y == g_box1.m_cLocation.Y &&
-				g_nChar.m_cLocation.X + 1 == g_box1.m_cLocation.X)
-			{
-				g_nChar.m_cLocation.X++;
-				g_box1.m_cLocation.X++;
-				bSomethingHappened = true;
-			}
-			else
-			{
-				g_nChar.m_cLocation.X++;
-				bSomethingHappened = true;
-			}
-		}
-	}
-
-	if (bSomethingHappened)
-	{
-		// set the bounce time to some time in the future to prevent accidental triggers
-		g_dBounceTime = g_dElapsedTime + 0.125; // 125ms should be enough
-	}
-
-	if (boost)
-	{
-		// set the bounce time to some time in the future to prevent accidental triggers
-		g_dBounceTimeBoost = g_dElapsedTime + 0.125; // 125ms should be enough
+	case leveltwo:
+		sprint();
+		movelevel2();
+		break;
 	}
 }
 		
@@ -525,7 +248,7 @@ void processUserInput()
 	{
 		load = levelone;
 		spawn();
-		level1();
+		renderGame();
 	}
 	if (g_abKeyPressed[K_2])
 	{
@@ -534,61 +257,37 @@ void processUserInput()
 		renderGame();
 	}
 
-	//if (g_abKeyPressed[K_R])
-	//{
-	//	bool bSomethingHappened = false;
-	//	if (g_dBounceTime > g_dElapsedTime)
-	//	{
-	//		return;
-	//	}
-	//	switch (load)
-	//	{
-	//	case levelone:
-	//		if (g_sChar.health > 0)
-	//		{
-	//			g_sChar.health -= 1;
-	//			g_dCountTime = 1000;
+	if (g_abKeyPressed[K_R])
+	{
+		switch (load)
+		{
+		case levelone:
+			bool bSomethingHappened = false;
+			if (g_dBounceTime > g_dElapsedTime)
+			{
+				return;
+			}
 
-	//			//First Character
-	//			g_sChar.m_cLocation.X = 4;
-	//			g_sChar.m_cLocation.Y = 8;
+			restarthealth = true;
+			g_sChar.health -= 1;
+			bSomethingHappened = true;
 
-	//			//Second Character
-	//			g_nChar.m_cLocation.X = 39;
-	//			g_nChar.m_cLocation.Y = 19;
-
-	//			//Enemy
-	//			g_enemy.m_cLocation.X = 11;
-	//			g_enemy.m_cLocation.Y = 1;
-
-	//			g_enemy2.m_cLocation.X = 49;
-	//			g_enemy2.m_cLocation.Y = 1;
-
-	//			//Door
-	//			g_door1.m_cLocation.X = 8;
-	//			g_door1.m_cLocation.Y = 10;
-
-	//			//Lever
-	//			g_lever1.m_cLocation.X = 53;
-	//			g_lever1.m_cLocation.Y = 8;
-
-	//			//Box
-	//			g_box1.m_cLocation.X = 54;
-	//			g_box1.m_cLocation.Y = 21;
-	//			bSomethingHappened = true;
-	//		}
-	//		else
-	//		{
-	//			gameover(g_sChar);
-	//		}
-
-	//	}
-	//	if (bSomethingHappened)
-	//	{
-	//		// set the bounce time to some time in the future to prevent accidental triggers
-	//		g_dBounceTime = g_dElapsedTime + 0.125; // 125ms should be enough
-	//	}
-	//}
+			if (bSomethingHappened)
+			{
+				// set the bounce time to some time in the future to prevent accidental triggers
+				g_dBounceTime = g_dElapsedTime + 0.125; // 125ms should be enough
+			}
+			if (g_sChar.health > 0)
+			{
+				spawn();
+			}
+			else
+			{
+				load = defeated;
+			}
+			break;
+		}
+	}
 
 }
 
@@ -633,6 +332,8 @@ void renderGame()
 	switch (load)
 	{
 	case mainscreen: menu();
+		break;
+	case defeated: gameover();
 		break;
 	case levelone: level1();
 		break;
@@ -707,14 +408,30 @@ void renderFramerate()
 	}
 	else
 	{
+		//Deduct health when time over.
+		g_sChar.health--;
+		restarthealth = true;
+
 		ss.str("");
 		ss << "Time Over";
 		c.X = g_Console.getConsoleSize().X - 10;
 		c.Y = g_Console.getConsoleSize().Y - 23;
 		g_Console.writeToBuffer(c, ss.str(), 0X4D);
 
-
-		g_eGameState = S_RESULT;
+		switch (load)
+		{
+		case levelone:
+			if (g_sChar.health < 1)
+			{
+				g_eGameState = S_RESULT;
+			}
+			else
+			{
+				g_dCountTime = 60;
+				spawn();
+				
+			}
+		}
 	}
 }
 

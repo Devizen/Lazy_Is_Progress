@@ -47,7 +47,8 @@ void menu()
 
 	if (g_menu.m_cLocation.Y == 8 && g_abKeyPressed[K_RETURN])
 	{
-		g_eGameState = S_GAME;//S_LEVEL1;
+		g_sChar.health = 3;
+		g_eGameState = S_GAME;
 	}
 	if (g_menu.m_cLocation.Y == 9 && g_abKeyPressed[K_RETURN])
 	{

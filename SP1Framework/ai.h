@@ -13,9 +13,11 @@ extern char map[25][80];
 extern SGameChar g_sChar;
 extern SGameChar g_nChar;
 extern SGameChar g_enemy;
+
+//Linking objects.
 extern bool door1;
 
-//Linking variables
+//Linking variables.
 extern int health;
 extern bool bSomethingHappened;
 extern double ai_BounceTime;

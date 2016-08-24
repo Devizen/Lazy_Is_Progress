@@ -29,6 +29,14 @@ extern SGameChar g_door1;
 extern SGameChar g_lever1;
 extern SGameChar g_box1;
 extern SGameChar release_enemy;
+extern SGameChar release_enemy1;
+extern SGameChar release_enemy2;
+extern SGameChar release_enemy3;
+extern SGameChar release_enemy4;
+extern SGameChar release_enemy5;
+extern SGameChar release_enemy6;
+extern SGameChar release_enemy7;
+extern SGameChar release_enemy8;
 
 //Linking game states.
 extern EGAMESTATES g_eGameState;

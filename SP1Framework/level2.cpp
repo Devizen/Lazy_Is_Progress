@@ -55,11 +55,11 @@ void level2()
 	{
 		g_sChar.health -= 1;
 
-		g_sChar.m_cLocation.X = 11;
-		g_sChar.m_cLocation.Y = 10;
+		g_sChar.m_cLocation.X = 4;
+		g_sChar.m_cLocation.Y = 19;
 
-		g_nChar.m_cLocation.X = 49;
-		g_nChar.m_cLocation.Y = 10;
+		g_nChar.m_cLocation.X = 39;
+		g_nChar.m_cLocation.Y = 19;
 
 		//Enemy
 		g_enemy.m_cLocation.X = 11;
@@ -67,6 +67,8 @@ void level2()
 
 		g_enemy2.m_cLocation.X = 49;
 		g_enemy2.m_cLocation.Y = 1;
+
+		g_dCountTime = 60;
 	}
 
 	if (g_nChar.m_cLocation.X == 49 &&
@@ -87,6 +89,7 @@ void level2()
 
 	if (g_sChar.health < 1)
 	{
-		gameover(g_sChar);
+		load = defeated;
+		renderGame();
 	}
 }

@@ -31,5 +31,5 @@ extern EGAMESTATES g_eGameState;
 extern LEVELS load;
 
 //Definition for function.
-void gameover(struct SGameChar character); // Game Over.
+void gameover(); // Game Over.
 void level1(); // level 1.

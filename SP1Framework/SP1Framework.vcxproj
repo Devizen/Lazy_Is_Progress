@@ -19,8 +19,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -88,9 +88,12 @@
     <ClCompile Include="loadlevel.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
+    <ClCompile Include="movelevel1.cpp" />
+    <ClCompile Include="movelevel2.cpp" />
     <ClCompile Include="renderResult.cpp" />
     <ClCompile Include="Scoreboard.cpp" />
     <ClCompile Include="spawn.cpp" />
+    <ClCompile Include="sprint.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Lazy is Progress - Copy\SP1Framework\ScoreBoard.h" />
@@ -106,8 +109,11 @@
     <ClInclude Include="loadlevel.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="menu.h" />
+    <ClInclude Include="movelevel1.h" />
+    <ClInclude Include="movelevel2.h" />
     <ClInclude Include="renderResult.h" />
     <ClInclude Include="spawn.h" />
+    <ClInclude Include="sprint.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

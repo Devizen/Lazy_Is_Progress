@@ -97,5 +97,13 @@ void renderScoreBoard(); // renders scoreboard
 //void menu();				// renders the menu screen.
 void moveai();				// move ai.
 void loadlevel(string name);// load levels.
+void sprint();
+
+//Movement for Characters
+void movelevel1();
+void movelevel2();
+
+//Linking variables.
+extern bool restarthealth;
 
 #endif // _GAME_H

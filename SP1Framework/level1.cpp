@@ -5,6 +5,8 @@ bool door1 = false;
 //Done by Eugene.
 void level1()
 {
+	load = levelone;
+
 	/*bool bSomethingHappened = false;
 	if (g_dBounceTime > g_dElapsedTime)
 	{
@@ -50,6 +52,14 @@ void level1()
 
 	//Release A.I
 	g_Console.writeToBuffer(release_enemy.m_cLocation, (char)219, charColor);
+	g_Console.writeToBuffer(release_enemy1.m_cLocation, (char)219, charColor);
+	g_Console.writeToBuffer(release_enemy2.m_cLocation, (char)219, charColor);
+	g_Console.writeToBuffer(release_enemy3.m_cLocation, (char)219, charColor);
+	g_Console.writeToBuffer(release_enemy4.m_cLocation, (char)219, charColor);
+	g_Console.writeToBuffer(release_enemy5.m_cLocation, (char)219, charColor);
+	g_Console.writeToBuffer(release_enemy6.m_cLocation, (char)219, charColor);
+	g_Console.writeToBuffer(release_enemy7.m_cLocation, (char)219, charColor);
+	g_Console.writeToBuffer(release_enemy8.m_cLocation, (char)219, charColor);
 	
 	motiondetect();
 
@@ -58,6 +68,15 @@ void level1()
 		g_Console.writeToBuffer(g_lever1.m_cLocation, (char)219, charColor2);
 		g_Console.writeToBuffer(g_door1.m_cLocation, (char)219, charColor2);
 		g_Console.writeToBuffer(release_enemy.m_cLocation, (char)219, charColor2);
+		g_Console.writeToBuffer(release_enemy1.m_cLocation, (char)219, charColor2);
+		g_Console.writeToBuffer(release_enemy2.m_cLocation, (char)219, charColor2);
+		g_Console.writeToBuffer(release_enemy3.m_cLocation, (char)219, charColor2);
+		g_Console.writeToBuffer(release_enemy4.m_cLocation, (char)219, charColor2);
+		g_Console.writeToBuffer(release_enemy5.m_cLocation, (char)219, charColor2);
+		g_Console.writeToBuffer(release_enemy6.m_cLocation, (char)219, charColor2);
+		g_Console.writeToBuffer(release_enemy7.m_cLocation, (char)219, charColor2);
+		g_Console.writeToBuffer(release_enemy8.m_cLocation, (char)219, charColor2);
+
 		door1 = true;
 	}
 	else
@@ -66,14 +85,11 @@ void level1()
 	}
 
 	if ((g_enemy.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_sChar.m_cLocation.Y) ||
-		(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y) ||
-		g_abKeyPressed[K_R])
+		(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y))
 	{
+		g_sChar.health -= 1;
 		if (g_sChar.health > 0)
 		{
-			g_sChar.health -= 1;
-			g_dCountTime = 1000;
-
 			//First Character
 			g_sChar.m_cLocation.X = 4;
 			g_sChar.m_cLocation.Y = 8;
@@ -103,8 +119,8 @@ void level1()
 		}
 		else
 		{
-			clearScreen();
-			gameover(g_sChar);
+			load = defeated;
+			renderGame();
 		}
 	}
 

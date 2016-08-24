@@ -37,6 +37,15 @@
     <ClCompile Include="gameover.cpp">
       <Filter>Game Status</Filter>
     </ClCompile>
+    <ClCompile Include="sprint.cpp">
+      <Filter>A.I and Characters\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="movelevel1.cpp">
+      <Filter>A.I and Characters\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="movelevel2.cpp">
+      <Filter>A.I and Characters\Movement</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework\console.h" />
@@ -78,6 +87,15 @@
     <ClInclude Include="gameover.h">
       <Filter>Game Status</Filter>
     </ClInclude>
+    <ClInclude Include="sprint.h">
+      <Filter>A.I and Characters\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="movelevel1.h">
+      <Filter>A.I and Characters\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="movelevel2.h">
+      <Filter>A.I and Characters\Movement</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Levels">
@@ -94,6 +112,9 @@
     </Filter>
     <Filter Include="A.I and Characters">
       <UniqueIdentifier>{8a9412b3-8a09-4fd3-9819-e9ed95710482}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="A.I and Characters\Movement">
+      <UniqueIdentifier>{faf6bc06-61a8-4d9f-be23-c4c3285b8b06}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
