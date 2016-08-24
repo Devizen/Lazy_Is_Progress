@@ -61,12 +61,19 @@ enum LEVELS
 {
 	mainscreen,
 	defeated,
+	levelzero,
 	levelone, //Loading Level 1.
 	leveltwo,
 	levelthree,
 	scoreboard1,
 	scoreboard2
 
+};
+
+enum RESTART
+{
+	one,
+	two
 };
 
 // struct for the game character
@@ -91,7 +98,7 @@ void clearScreen();         // clears the current screen and draw from scratch
 void renderSplashScreen();  // renders the splash screen
 void renderGame();          // renders the game stuff
 void renderMap();           // renders the map to the buffer first
-void renderCharacter();     // renders the character into the buffer
+//void renderCharacter();     // renders the character into the buffer
 void renderFramerate();     // renders debug information, frame rate, elapsed time, etc
 void renderToScreen();      // dump the contents of the buffer to the screen, one frame worth of game
 void renderResult();  //renders result screen
@@ -101,5 +108,15 @@ void renderScoreBoard(); // renders scoreboard
 //void menu();				// renders the menu screen.
 void moveai();				// move ai.
 void loadlevel(string name);// load levels.
+void sprint();
+void tutorial();
+
+//Movement for Characters
+void movelevel0();
+void movelevel1();
+void movelevel2();
+
+//Linking variables.
+extern bool restarthealth;
 
 #endif // _GAME_H

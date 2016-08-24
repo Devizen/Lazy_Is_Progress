@@ -2,7 +2,7 @@
 #include "gameover.h"
 #include "Framework\timer.h"
 #include "level2.h"
-#include "ai.h"
+#include "characters.h"
 #include "health.h"
 
 //Linking Timer.
@@ -32,10 +32,23 @@ extern SGameChar g_box1;
 extern SGameChar release_enemy;
 extern SGameChar g_powerup;
 extern SGameChar g_timeboost;
+extern SGameChar release_enemy1;
+extern SGameChar release_enemy2;
+extern SGameChar release_enemy3;
+extern SGameChar release_enemy4;
+extern SGameChar release_enemy5;
+extern SGameChar release_enemy6;
+extern SGameChar release_enemy7;
+extern SGameChar release_enemy8;
+
 
 //Linking game states.
 extern EGAMESTATES g_eGameState;
 extern LEVELS load;
+extern RESTART level;
+
+//Linking variables.
+extern bool restarthealth;
 
 //Definition for function.
 void level1(); // level 1.

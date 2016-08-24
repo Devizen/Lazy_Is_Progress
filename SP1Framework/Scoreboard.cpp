@@ -11,6 +11,7 @@ extern LEVELS load;
 extern EGAMESTATES g_eGameState;
 extern bool g_abKeyPressed[K_COUNT];
 
+//Done by Yoong Soon.
 void renderScoreBoard()
 {
 	vector <int> line;

@@ -12,12 +12,24 @@ void renderResult(bool *g_ResultIsDisplayed, double *g_ElapsedGameTime)
 	string buffer;
 	COORD c = g_Console.getConsoleSize();
 
+
 	switch (load)
 	{
 	case levelone:
 		if (!*g_ResultIsDisplayed){
 
 			ifstream myfile("Text/Scoreboard/Result.txt");
+
+			//if (!*g_ResultIsDisplayed){
+
+			//	ifstream myfile("Text/Result.txt");
+
+
+			//if (myfile.is_open())
+			//{
+			//	while (getline(myfile, buffer))
+			//	{
+			//		line1.push_back(buffer);
 
 
 			if (myfile.is_open())
@@ -105,4 +117,6 @@ void renderResult(bool *g_ResultIsDisplayed, double *g_ElapsedGameTime)
 		break;
 
 	}
+		
+			
 }

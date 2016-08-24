@@ -1,7 +1,9 @@
 #include "main.h"
-#include "game.h"
 #include "gameover.h"
 #include "Framework\timer.h"
+#include "level1.h"
+#include "characters.h"
+#include "health.h"
 
 //Linking Timer.
 extern double  g_dBounceTime;
@@ -23,11 +25,23 @@ extern SGameChar g_sChar;
 extern SGameChar g_nChar;
 extern SGameChar g_enemy;
 extern SGameChar g_enemy2;
+extern SGameChar g_door1;
+extern SGameChar g_lever1;
+extern SGameChar g_box1;
+extern SGameChar release_enemy;
+extern SGameChar release_enemy1;
+extern SGameChar release_enemy2;
+extern SGameChar release_enemy3;
+extern SGameChar release_enemy4;
+extern SGameChar release_enemy5;
+extern SGameChar release_enemy6;
+extern SGameChar release_enemy7;
+extern SGameChar release_enemy8;
 
 //Linking game states.
 extern EGAMESTATES g_eGameState;
 extern LEVELS load;
 extern RESTART level;
 
-//Definition for function.
-void level2(); // level 2.
+//Linking variables.
+extern bool restarthealth;

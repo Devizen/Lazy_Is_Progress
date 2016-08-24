@@ -3,9 +3,11 @@
 //Done by Eugene.
 void loadlevel(string name)
 {
+	//Coordinates for printing file cannot be file.
 	COORD c;
 	c.X = 40;
 	c.Y = 12;
+
 	string line;
 
 	unsigned int increase = 0;
