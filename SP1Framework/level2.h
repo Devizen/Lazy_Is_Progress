@@ -23,6 +23,8 @@ extern SGameChar g_sChar;
 extern SGameChar g_nChar;
 extern SGameChar g_enemy;
 extern SGameChar g_enemy2;
+extern SGameChar g_platform;
+
 
 //Linking game states.
 extern EGAMESTATES g_eGameState;

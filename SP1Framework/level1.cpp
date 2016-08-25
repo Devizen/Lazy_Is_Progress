@@ -55,6 +55,7 @@ void level1()
      //TimerUp
 		g_Console.writeToBuffer(g_timeboost.m_cLocation, (char)64, charColor3);
 
+		
 
 
 	rendercharacters();

@@ -269,6 +269,7 @@ void rendercharacters()
 {
 	WORD charColor = 0x0C;
 	WORD charColor2 = 0x0A;
+	WORD charColor3 = 0x2B;
 
 	switch (load)
 	{
@@ -334,6 +335,16 @@ void rendercharacters()
 		//Enemy
 		g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, charColor2);
 		g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, charColor2);
+
+		//platform
+		g_Console.writeToBuffer(g_platform.m_cLocation, (char)254, charColor3);
+
+		//powerup
+		COORD C;
+			C.X = 23;
+		C.Y = 10;
+
+		g_Console.writeToBuffer(C, (char)206, charColor3);
 		break;
 	}
 }

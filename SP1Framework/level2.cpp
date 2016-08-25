@@ -14,7 +14,7 @@ void level2()
 
 	c.X = 0;
 	c.Y = 0;
-
+	
 	for (int i = 0; i <= y; i++)
 	{
 		line = map[i];

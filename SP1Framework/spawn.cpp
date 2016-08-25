@@ -150,6 +150,10 @@ void spawn()
 		release_enemy.m_cLocation.X = 52;
 		release_enemy.m_cLocation.Y = 6;
 
+		//PlatForm
+		g_platform.m_cLocation.X = 4;
+		g_platform.m_cLocation.Y = 21;
+
 		//Set the initial health of the player
 		g_sChar.health = 3;
 

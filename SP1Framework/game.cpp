@@ -20,6 +20,7 @@
 #include "spawn.h"
 #include "ScoreBoard.h"
 #include "renderLegend.h"
+#include "SpeedUpPlatform.h"
 
 using std::vector;
 using namespace std;
@@ -50,6 +51,7 @@ SGameChar	release_enemy5;
 SGameChar	release_enemy6;
 SGameChar	release_enemy7;
 SGameChar	release_enemy8;
+SGameChar   g_platform;
 
 SGameChar	g_menu;
 SGameChar   g_result;
@@ -251,6 +253,7 @@ void moveCharacter()
 	case leveltwo:
 		sprint();
 		movelevel2();
+		SpeedUpPlatform();
 		break;
 	}
 }

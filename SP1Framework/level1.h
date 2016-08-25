@@ -40,6 +40,7 @@ extern SGameChar release_enemy5;
 extern SGameChar release_enemy6;
 extern SGameChar release_enemy7;
 extern SGameChar release_enemy8;
+extern SGameChar g_platform;
 
 
 //Linking game states.
