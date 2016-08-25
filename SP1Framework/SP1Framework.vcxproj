@@ -78,6 +78,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="characters.cpp" />
+    <ClCompile Include="checkrelease.cpp" />
     <ClCompile Include="Framework\console.cpp" />
     <ClCompile Include="Framework\timer.cpp" />
     <ClCompile Include="game.cpp" />
@@ -100,6 +101,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\Lazy is Progress - Copy\SP1Framework\ScoreBoard.h" />
     <ClInclude Include="characters.h" />
+    <ClInclude Include="checkrelease.h" />
     <ClInclude Include="Framework\console.h" />
     <ClInclude Include="Framework\timer.h" />
     <ClInclude Include="game.h" />

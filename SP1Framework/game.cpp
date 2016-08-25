@@ -30,30 +30,47 @@ double g_ElapsedGameTime;
 bool    g_abKeyPressed[K_COUNT];
 bool g_ResultIsDisplayed = false;
 
+RELEASE
+release_enemy,
+release_enemy1,
+release_enemy2,
+release_enemy3,
+release_enemy4,
+release_enemy5,
+release_enemy6,
+release_enemy7,
+release_enemy8;
 
 // Game specific variables here
 SGameChar   g_sChar;
 SGameChar	g_nChar;
 SGameChar	g_enemy;
 SGameChar	g_enemy2;
-SGameChar	g_door1;
-SGameChar	g_lever1;
-SGameChar	g_box1;
-SGameChar	release_enemy;
-SGameChar	release_enemy1;
-SGameChar	release_enemy2;
-SGameChar	release_enemy3;
-SGameChar	release_enemy4;
-SGameChar	release_enemy5;
-SGameChar	release_enemy6;
-SGameChar	release_enemy7;
-SGameChar	release_enemy8;
+
+objects 
+boxone,
+boxtwo,
+boxthree,
+boxfour,
+boxfive,
+g_door1,
+g_door2,
+g_door3,
+g_door4,
+closedoor1,
+closedoor2,
+g_lever1,
+g_lever2,
+g_lever3,
+g_lever4,
+g_box1;
 
 SGameChar	g_menu;
 SGameChar   g_result;
 EGAMESTATES g_eGameState = S_SPLASHSCREEN;
-LEVELS		load = levelzero;
+LEVELS		load = levelzeroa;
 RESTART		level = one;
+direction	check = upd;
 
 double  g_dBounceTime; // this is to prevent key bouncing, so we won't trigger keypresses more than once
 double ai_BounceTime;
@@ -79,6 +96,8 @@ char map[25][80];
 //--------------------------------------------------------------
 void init(void)
 {
+	//Run the spawn function to printing characters for different levels.
+	spawn();
 	// Set precision for floating point output
 	g_dElapsedTime = 0.0;
 	g_dBounceTime = 0.0;
@@ -89,7 +108,7 @@ void init(void)
 	g_eGameState = S_SPLASHSCREEN;
 
 	//Run the spawn function to printing characters for different levels.
-	spawn();
+	//spawn();
 
 	// sets the width, height and the font name to use in the console
 	g_Console.setConsoleFont(0, 16, L"Arial");
@@ -147,6 +166,8 @@ void getInput(void)
 	//Levels
 	g_abKeyPressed[K_1] = isKeyPressed(VK_1);
 	g_abKeyPressed[K_2] = isKeyPressed(VK_2);
+	g_abKeyPressed[K_9] = isKeyPressed(VK_9);
+	g_abKeyPressed[K_0] = isKeyPressed(VK_0);
 }
 
 //--------------------------------------------------------------
@@ -226,7 +247,11 @@ void moveCharacter()
 {
 	switch (load)
 	{
-	case levelzero:
+	case levelzeroa:
+		sprint();
+		movelevel0();
+		break;
+	case levelzerob:
 		sprint();
 		movelevel0();
 		break;
@@ -250,40 +275,100 @@ void processUserInput()
 		g_bQuitGame = true;
 	}
 
+	if (g_abKeyPressed[K_9])
+	{
+		load = levelzeroa;
+		clearScreen();
+		spawn();
+		renderGame();
+	}
+
+	if (g_abKeyPressed[K_0])
+	{
+		load = levelzerob;
+		clearScreen();
+		spawn();
+		renderGame();
+	}
+
 	if (g_abKeyPressed[K_1])
 	{
 		load = levelone;
+		clearScreen();
 		spawn();
 		renderGame();
 	}
 	if (g_abKeyPressed[K_2])
 	{
 		load = leveltwo;
+		clearScreen();
 		spawn();
 		renderGame();
 	}
 
 	if (g_abKeyPressed[K_R])
 	{
+		bool bSomethingHappened = false;
+		if (g_dBounceTime > g_dElapsedTime)
+		{
+			return;
+		}
+
+		restarthealth = false;
+		g_sChar.health -= 1;
+		bSomethingHappened = true;
+
+
+		if (bSomethingHappened)
+		{
+			// set the bounce time to some time in the future to prevent accidental triggers
+			g_dBounceTime = g_dElapsedTime + 0.125; // 125ms should be enough
+		}
+
 		switch (load)
 		{
+		case levelzeroa:
+			level = zeroa;
+
+			if (g_sChar.health > 0)
+			{
+				spawn();
+			}
+			else
+			{
+				load = defeated;
+			}
+			break;
+
+		case levelzerob:
+			level = zerob;
+
+			if (g_sChar.health > 0)
+			{
+				spawn();
+			}
+			else
+			{
+				load = defeated;
+			}
+			break;
+
 		case levelone:
 			level = one;
-			bool bSomethingHappened = false;
-			if (g_dBounceTime > g_dElapsedTime)
-			{
-				return;
-			}
 
-			restarthealth = false;
-			g_sChar.health -= 1;
-			bSomethingHappened = true;
-
-			if (bSomethingHappened)
+			if (g_sChar.health > 0)
 			{
-				// set the bounce time to some time in the future to prevent accidental triggers
-				g_dBounceTime = g_dElapsedTime + 0.125; // 125ms should be enough
+				spawn();
 			}
+			else
+			{
+				load = defeated;
+			}
+			break;
+
+		case leveltwo:
+			level = two;
+
 			if (g_sChar.health > 0)
 			{
 				spawn();
@@ -323,9 +408,6 @@ void renderSplashScreen()  // renders the splash screen
 	{
 		g_Console.writeToBuffer(c, "The file is not found");
 	}
-
-	//memset is clear
-
 }
 
 void renderGame()
@@ -341,7 +423,9 @@ void renderGame()
 		break;
 	case defeated: gameover();
 		break;
-	case levelzero: tutorial();
+	case levelzeroa: tutoriala();
+		break;
+	case levelzerob: tutorialb();
 		break;
 	case levelone: level1();
 		break;
@@ -369,6 +453,7 @@ void renderMap()
 
 //void renderCharacter()
 //{
+//
 //}
 
 void renderFramerate()
@@ -405,7 +490,19 @@ void renderFramerate()
 
 		switch (load)
 		{
-		case levelzero:
+		case levelzeroa:
+			if (g_sChar.health < 1)
+			{
+				g_eGameState = S_RESULT;
+			}
+			else
+			{
+				g_dCountTime = 60;
+				spawn();
+			}
+			break;
+
+		case levelzerob:
 			if (g_sChar.health < 1)
 			{
 				g_eGameState = S_RESULT;

@@ -52,6 +52,9 @@
     <ClCompile Include="tutorial.cpp">
       <Filter>Levels</Filter>
     </ClCompile>
+    <ClCompile Include="checkrelease.cpp">
+      <Filter>A.I and Characters</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework\console.h" />
@@ -106,6 +109,9 @@
       <Filter>A.I and Characters\Movement</Filter>
     </ClInclude>
     <ClInclude Include="characters.h">
+      <Filter>A.I and Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="checkrelease.h">
       <Filter>A.I and Characters</Filter>
     </ClInclude>
   </ItemGroup>

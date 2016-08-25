@@ -13,8 +13,16 @@ extern LEVELS load;
 //Linking characters
 extern SGameChar g_sChar;
 extern SGameChar g_nChar;
-extern SGameChar g_door1;
-extern SGameChar g_box1;
+
+extern objects
+boxone,
+boxtwo,
+boxthree,
+boxfour,
+boxfive,
+g_door1,
+g_lever1,
+g_box1;
 
 //Linking Timer.
 extern double  g_dBounceTime;

@@ -1,19 +1,18 @@
-#include "game.h"
 #include "main.h"
-#include "checkrelease.h"
+#include "game.h"
 
-//Linking Console.
+//Linking console.
 extern Console g_Console;
 
-//Linking Map.
+//Linking map.
+extern const unsigned int x;
+extern const unsigned int y;
 extern char map[25][80];
 
-//Linking game states.
-extern LEVELS load;
-
-//Linking characters
+//Linking characters and enemies.
 extern SGameChar g_sChar;
 extern SGameChar g_nChar;
+extern SGameChar g_enemy;
 
 extern RELEASE
 release_enemy,
@@ -46,9 +45,15 @@ g_box1;
 
 extern direction check;
 
-//Linking Timer.
-extern double  g_dBounceTime;
-extern double g_dElapsedTime;
-extern double g_dBounceTimeBoost;
+//Linking objects.
+extern bool door1;
+extern bool door2;
+extern bool door3;
+extern bool door4;
 
-extern bool g_abKeyPressed[K_COUNT];
+//Linking variables.
+extern int health;
+extern bool bSomethingHappened;
+extern double ai_BounceTime;
+
+bool releasestate(struct SGameChar character, struct RELEASE input);

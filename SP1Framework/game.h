@@ -9,6 +9,9 @@ using namespace std;
 
 //Linking boolean states.
 extern bool door1;
+extern bool door2;
+extern bool door3;
+extern bool door4;
 
 extern CStopWatch g_swTimer;
 extern bool g_bQuitGame;
@@ -39,6 +42,8 @@ enum EKEYS
 
 	K_1,
 	K_2,
+	K_9,
+	K_0,
 
 	K_COUNT //Must be at most bottom
 };
@@ -59,7 +64,8 @@ enum LEVELS
 {
 	mainscreen,
 	defeated,
-	levelzero,
+	levelzeroa,
+	levelzerob,
 	levelone, //Loading Level 1.
 	leveltwo,
 	levelthree
@@ -67,8 +73,19 @@ enum LEVELS
 
 enum RESTART
 {
+	zeroa,
+	zerob,
 	one,
 	two
+};
+
+//Structure for testing different directions.
+enum direction
+{
+	upd,
+	leftd,
+	downd,
+	rightd
 };
 
 // struct for the game character
@@ -79,6 +96,20 @@ struct SGameChar
 	int health;
 
 };
+
+//Struct for releasing enemy
+struct RELEASE
+{
+	COORD m_cLocation;
+};
+
+// struct for the objects
+
+struct objects 
+{
+	COORD m_cLocation;
+};
+
 
 void init        ( void );      // initialize your variables, allocate memory, etc
 void getInput    ( void );      // get input from player
@@ -105,7 +136,8 @@ void renderScoreBoard(); // renders scoreboard
 void moveai();				// move ai.
 void loadlevel(string name);// load levels.
 void sprint();
-void tutorial();
+void tutoriala();
+void tutorialb();
 
 //Movement for Characters
 void movelevel0();

@@ -36,6 +36,20 @@ void gameover()
 	{
 		switch (level)
 		{
+		case zeroa:
+			g_sChar.health = 3;
+			load = levelzeroa;
+			spawn();
+			renderGame();
+			break;
+
+		case zerob:
+			g_sChar.health = 3;
+			load = levelzerob;
+			spawn();
+			renderGame();
+			break;
+
 		case one:
 			g_sChar.health = 3;
 			load = levelone;

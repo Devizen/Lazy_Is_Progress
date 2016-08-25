@@ -1,7 +1,11 @@
 #include "level1.h"
 
 bool door1 = false;
+bool door2 = false;
+bool door3 = false;
+bool door4 = false;
 
+//Fix box into special wall
 //Done by Eugene.
 void level1()
 {
@@ -47,17 +51,27 @@ void level1()
 		door1 = false;
 	}
 
+	if (map[g_box1.m_cLocation.Y][g_box1.m_cLocation.X] == (char)219 ||
+		map[g_box1.m_cLocation.Y][g_box1.m_cLocation.X] ==
+		map[release_enemy.m_cLocation.Y][release_enemy.m_cLocation.X])
+	{
+		g_box1.m_cLocation.X = 54;
+		g_box1.m_cLocation.Y = 21;
+	}
+
 	if ((g_enemy.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_sChar.m_cLocation.Y) ||
 		(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y))
 	{
+		//Deduct one health.
 		g_sChar.health -= 1;
 		if (g_sChar.health > 0)
-		{
+		{	//Prevent health from reverting back to 3.
 			restarthealth = false;
+			//Revert level settings to default.
 			spawn();
 		}
 		else
-		{
+		{	//Boolean for restarting the level after gameover.
 			level = one;
 			load = defeated;
 			renderGame();

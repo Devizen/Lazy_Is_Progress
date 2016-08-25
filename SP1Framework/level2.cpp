@@ -32,22 +32,12 @@ void level2()
 	if ((g_enemy.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_sChar.m_cLocation.Y) ||
 		(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y))
 	{
+		//Set boolean to false so the health will not reset.
+		restarthealth = false;
+		//Deduct one health.
 		g_sChar.health -= 1;
-
-		g_sChar.m_cLocation.X = 4;
-		g_sChar.m_cLocation.Y = 19;
-
-		g_nChar.m_cLocation.X = 39;
-		g_nChar.m_cLocation.Y = 19;
-
-		//Enemy
-		g_enemy.m_cLocation.X = 11;
-		g_enemy.m_cLocation.Y = 1;
-
-		g_enemy2.m_cLocation.X = 49;
-		g_enemy2.m_cLocation.Y = 1;
-
-		g_dCountTime = 60;
+		//Revert the level settings.
+		spawn();
 	}
 
 	if (g_nChar.m_cLocation.X == 49 &&

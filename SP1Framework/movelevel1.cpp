@@ -83,41 +83,34 @@ void movelevel1()
 
 	if (g_abKeyPressed[K_UP])
 	{
+		check = upd;
 		if (g_nChar.m_cLocation.Y > 0 &&
 			map[g_nChar.m_cLocation.Y - 1][g_nChar.m_cLocation.X] != (char)219)
 		{
 			if (g_nChar.m_cLocation.Y - 1 == g_box1.m_cLocation.Y &&
 				g_nChar.m_cLocation.X == g_box1.m_cLocation.X)
 			{
+				g_nChar.m_cLocation.Y--;
 				g_box1.m_cLocation.Y--;
 				bSomethingHappened = true;
 			}
 
-			if (door1 == false &&
-				map[g_nChar.m_cLocation.Y - 1][g_nChar.m_cLocation.X] !=
-				map[release_enemy.m_cLocation.Y][release_enemy.m_cLocation.X] &&
-				map[g_nChar.m_cLocation.Y - 1][g_nChar.m_cLocation.X] !=
-				map[release_enemy1.m_cLocation.Y][release_enemy1.m_cLocation.X] &&
-				map[g_nChar.m_cLocation.Y - 1][g_nChar.m_cLocation.X] !=
-				map[release_enemy2.m_cLocation.Y][release_enemy2.m_cLocation.X] &&
-				map[g_nChar.m_cLocation.Y - 1][g_nChar.m_cLocation.X] !=
-				map[release_enemy3.m_cLocation.Y][release_enemy3.m_cLocation.X] &&
-				map[g_nChar.m_cLocation.Y - 1][g_nChar.m_cLocation.X] !=
-				map[release_enemy4.m_cLocation.Y][release_enemy4.m_cLocation.X] &&
-				map[g_nChar.m_cLocation.Y - 1][g_nChar.m_cLocation.X] !=
-				map[release_enemy5.m_cLocation.Y][release_enemy5.m_cLocation.X] &&
-				map[g_nChar.m_cLocation.Y - 1][g_nChar.m_cLocation.X] !=
-				map[release_enemy6.m_cLocation.Y][release_enemy6.m_cLocation.X] &&
-				map[g_nChar.m_cLocation.Y - 1][g_nChar.m_cLocation.X] !=
-				map[release_enemy7.m_cLocation.Y][release_enemy7.m_cLocation.X] &&
-				map[g_nChar.m_cLocation.Y - 1][g_nChar.m_cLocation.X] !=
-				map[release_enemy8.m_cLocation.Y][release_enemy8.m_cLocation.X])
+			else if (door1 == false &&
+				releasestate(g_nChar, release_enemy) == true ||
+				releasestate(g_nChar, release_enemy1) == true || 
+				releasestate(g_nChar, release_enemy2) == true || 
+				releasestate(g_nChar, release_enemy3) == true || 
+				releasestate(g_nChar, release_enemy4) == true || 
+				releasestate(g_nChar, release_enemy5) == true || 
+				releasestate(g_nChar, release_enemy6) == true || 
+				releasestate(g_nChar, release_enemy7) == true || 
+				releasestate(g_nChar, release_enemy8) == true)
 			{
 				g_nChar.m_cLocation.Y--;
 				bSomethingHappened = true;
 			}
 
-			if (door1 == true)
+			else if (door1 == true)
 			{
 				g_nChar.m_cLocation.Y--;
 				bSomethingHappened = true;
