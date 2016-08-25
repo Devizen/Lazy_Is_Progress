@@ -27,6 +27,8 @@ extern SGameChar release_enemy7;
 extern SGameChar release_enemy8;
 extern SGameChar g_menu;
 extern SGameChar g_result;
+extern SGameChar g_powerup;
+extern SGameChar g_timeboost;
 
 //Linking variables
 extern double g_dCountTime;

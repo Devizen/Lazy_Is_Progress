@@ -26,6 +26,8 @@ enum EKEYS
     K_SPACE,
 	K_RETURN,
 	K_BACK,
+	K_NUM1,
+	K_NUM2,
 
 	K_w,
 	K_a,
@@ -62,7 +64,10 @@ enum LEVELS
 	levelzero,
 	levelone, //Loading Level 1.
 	leveltwo,
-	levelthree
+	levelthree,
+	scoreboard1,
+	scoreboard2
+
 };
 
 enum RESTART
@@ -77,7 +82,6 @@ struct SGameChar
     COORD m_cLocation;
     bool  m_bActive;
 	int health;
-
 };
 
 void init        ( void );      // initialize your variables, allocate memory, etc
@@ -94,7 +98,7 @@ void clearScreen();         // clears the current screen and draw from scratch
 void renderSplashScreen();  // renders the splash screen
 void renderGame();          // renders the game stuff
 void renderMap();           // renders the map to the buffer first
-void renderCharacter();     // renders the character into the buffer
+//void renderCharacter();     // renders the character into the buffer
 void renderFramerate();     // renders debug information, frame rate, elapsed time, etc
 void renderToScreen();      // dump the contents of the buffer to the screen, one frame worth of game
 void renderResult();  //renders result screen

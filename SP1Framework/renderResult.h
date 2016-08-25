@@ -4,6 +4,7 @@
 
 //Linking Console.
 extern Console g_Console;
+extern LEVELS load;
 
 //Linking game states.
 extern EGAMESTATES g_eGameState;

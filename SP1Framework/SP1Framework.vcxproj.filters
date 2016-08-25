@@ -34,6 +34,8 @@
     <ClCompile Include="gameover.cpp">
       <Filter>Game Status</Filter>
     </ClCompile>
+    <ClCompile Include="renderLegend.cpp">
+      <Filter>Game Status</Filter>
     <ClCompile Include="sprint.cpp">
       <Filter>A.I and Characters\Movement</Filter>
     </ClCompile>
@@ -51,6 +53,9 @@
     </ClCompile>
     <ClCompile Include="tutorial.cpp">
       <Filter>Levels</Filter>
+
+	  
+	  
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -90,6 +95,10 @@
     <ClInclude Include="gameover.h">
       <Filter>Game Status</Filter>
     </ClInclude>
+
+    <ClInclude Include="renderLegend.h">
+      <Filter>Game Status</Filter>
+
     <ClInclude Include="sprint.h">
       <Filter>A.I and Characters\Movement</Filter>
     </ClInclude>
@@ -107,6 +116,8 @@
     </ClInclude>
     <ClInclude Include="characters.h">
       <Filter>A.I and Characters</Filter>
+
+	  
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -20,8 +20,12 @@
 #include "menu.h"
 #include "spawn.h"
 #include "ScoreBoard.h"
+<<<<<<< HEAD
 #include "Windows.h"
 #include "MMSystem.h"
+=======
+#include "renderLegend.h"
+>>>>>>> f373e2df11c0e32e405ccd22a06155d5a00afa27
 
 using std::vector;
 using namespace std;
@@ -32,6 +36,7 @@ double g_dCountTime;
 double g_ElapsedGameTime;
 bool    g_abKeyPressed[K_COUNT];
 bool g_ResultIsDisplayed = false;
+
 
 
 // Game specific variables here
@@ -54,6 +59,8 @@ SGameChar	release_enemy8;
 
 SGameChar	g_menu;
 SGameChar   g_result;
+SGameChar   g_powerup;
+SGameChar   g_timeboost;
 EGAMESTATES g_eGameState = S_SPLASHSCREEN;
 LEVELS		load = levelzero;
 RESTART		level = one;
@@ -86,7 +93,9 @@ void init(void)
 	g_dElapsedTime = 0.0;
 	g_dBounceTime = 0.0;
 	ai_BounceTime = 0.0;
+	g_dCountTime = 0.5;
 	g_dCountTime = 60;
+
 
 	// sets the initial state for the game
 	g_eGameState = S_SPLASHSCREEN;
@@ -140,6 +149,9 @@ void getInput(void)
 	g_abKeyPressed[K_BACK] = isKeyPressed(VK_BACK);
 	g_abKeyPressed[K_LSHIFT] = isKeyPressed(VK_LSHIFT);
 	g_abKeyPressed[K_RSHIFT] = isKeyPressed(VK_RSHIFT);
+	g_abKeyPressed[K_NUM1] = isKeyPressed(VK_NUMPAD1);
+	g_abKeyPressed[K_NUM2] = isKeyPressed(VK_NUMPAD2);
+	
 
 	//WASD
 	g_abKeyPressed[K_W] = isKeyPressed(VK_W);
@@ -205,7 +217,10 @@ void render()
 		break;
 	case S_GAME: renderGame();
 		break;
-	case S_RESULT: renderResult(&g_ResultIsDisplayed, &g_ElapsedGameTime);
+	//case S_LEVEL1: level1();
+	//	break;
+	case S_RESULT: 
+		renderResult(&g_ResultIsDisplayed, &g_ElapsedGameTime);
 		break;
 	case S_SCOREBOARD:renderScoreBoard();
 	}
@@ -250,6 +265,7 @@ void moveCharacter()
 		
 void processUserInput()
 {
+	bool bSomethingHappened = false;
 	// quits the game if player hits the escape key
 	if (g_abKeyPressed[K_ESCAPE])
 	{
@@ -275,7 +291,7 @@ void processUserInput()
 		{
 		case levelone:
 			level = one;
-			bool bSomethingHappened = false;
+			
 			if (g_dBounceTime > g_dElapsedTime)
 			{
 				return;
@@ -301,7 +317,49 @@ void processUserInput()
 			break;
 		}
 	}
+
+
+	if (g_abKeyPressed[K_DOWN])
+	{
+		if (g_nChar.m_cLocation.Y < g_Console.getConsoleSize().Y - 1 &&
+			map[g_nChar.m_cLocation.Y + 1][g_nChar.m_cLocation.X] != (char)219)
+		{
+			if (g_nChar.m_cLocation.Y + 1 == g_box1.m_cLocation.Y &&
+				g_nChar.m_cLocation.X == g_box1.m_cLocation.X)
+			{
+				g_nChar.m_cLocation.Y++;
+				g_box1.m_cLocation.Y++;
+				bSomethingHappened = true;
+			}
+			else
+			{
+				g_nChar.m_cLocation.Y++;
+				bSomethingHappened = true;
+			}
+		}
+	}
+
+	if (g_abKeyPressed[K_RIGHT])
+	{
+		if (g_nChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
+			map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != (char)219)
+		{
+			if (g_nChar.m_cLocation.Y == g_box1.m_cLocation.Y &&
+				g_nChar.m_cLocation.X + 1 == g_box1.m_cLocation.X)
+			{
+				g_nChar.m_cLocation.X++;
+				g_box1.m_cLocation.X++;
+				bSomethingHappened = true;
+			}
+			else
+			{
+				g_nChar.m_cLocation.X++;
+				bSomethingHappened = true;
+			}
+		}
+	}
 }
+	
 
 void clearScreen()
 {
@@ -339,7 +397,10 @@ void renderGame()
 	renderMap();        // renders the map to the buffer first
 	renderFramerate();  // renders debug information, frame rate, elapsed time, etc
 	renderhealth(&g_Console, g_sChar.health); // draw health to the screen
+	renderLegend(); //render legends regarding powerups
 	//renderCharacter();  // renders the character into the buffer
+	//renderCharacter();  // renders the character into the buffer
+
 
 	switch (load)
 	{
@@ -423,6 +484,10 @@ void renderFramerate()
 			}
 			break;
 
+
+		g_eGameState = S_RESULT;
+
+
 		case levelone:
 			if (g_sChar.health < 1)
 			{
@@ -435,6 +500,7 @@ void renderFramerate()
 			}
 			break;
 		}
+
 	}
 }
 

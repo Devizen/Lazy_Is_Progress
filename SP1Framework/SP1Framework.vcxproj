@@ -88,9 +88,13 @@
     <ClCompile Include="loadlevel.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
+
+    <ClCompile Include="renderLegend.cpp" />
+
     <ClCompile Include="movelevel0.cpp" />
     <ClCompile Include="movelevel1.cpp" />
     <ClCompile Include="movelevel2.cpp" />
+
     <ClCompile Include="renderResult.cpp" />
     <ClCompile Include="Scoreboard.cpp" />
     <ClCompile Include="spawn.cpp" />
@@ -111,9 +115,13 @@
     <ClInclude Include="loadlevel.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="menu.h" />
+
+    <ClInclude Include="renderLegend.h" />
+
     <ClInclude Include="movelevel0.h" />
     <ClInclude Include="movelevel1.h" />
     <ClInclude Include="movelevel2.h" />
+
     <ClInclude Include="renderResult.h" />
     <ClInclude Include="spawn.h" />
     <ClInclude Include="sprint.h" />

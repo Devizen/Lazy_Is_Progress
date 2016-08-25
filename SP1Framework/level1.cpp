@@ -1,6 +1,7 @@
 #include "level1.h"
-
 bool door1 = false;
+bool powerup = true;
+bool timeincrease = true;
 
 //Done by Eugene.
 void level1()
@@ -9,6 +10,7 @@ void level1()
 	string name = "Text/level1.txt";
 	loadlevel(name);
 	COORD c;
+
 
 	c.X = 0;
 	c.Y = 0;
@@ -22,8 +24,41 @@ void level1()
 
 	WORD charColor = 0x0C;
 	WORD charColor2 = 0x0A;
+	WORD charColor3 = 0X4D;
+
+
+	//First Character
+	g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, charColor);
+
+	//Second Character
+	g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, charColor2);
+
+	//Enemy
+	g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, charColor2);
+	g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, charColor2);
+
+	//Door
+	g_Console.writeToBuffer(g_door1.m_cLocation, (char)219, charColor);
+
+	//Lever
+	g_Console.writeToBuffer(g_lever1.m_cLocation, (char)219, charColor);
+
+	//Box
+	g_Console.writeToBuffer(g_box1.m_cLocation, (char)254, charColor);
+
+	//Release A.I
+	g_Console.writeToBuffer(release_enemy.m_cLocation, (char)219, charColor);
+
+	//Powerup
+		g_Console.writeToBuffer(g_powerup.m_cLocation, (char)206, charColor3);
+
+     //TimerUp
+		g_Console.writeToBuffer(g_timeboost.m_cLocation, (char)64, charColor3);
+
+
 
 	rendercharacters();
+
 	motiondetect();
 
 	if (map[g_box1.m_cLocation.Y][g_box1.m_cLocation.X] == map[g_lever1.m_cLocation.Y][g_lever1.m_cLocation.X])
@@ -46,6 +81,25 @@ void level1()
 	{
 		door1 = false;
 	}
+	if ((g_timeboost.m_cLocation.X == g_nChar.m_cLocation.X) && (g_timeboost.m_cLocation.Y == g_nChar.m_cLocation.Y && timeincrease == true))
+	{
+		g_dCountTime += 5.00;
+		timeincrease = false;
+	}
+	if (timeincrease == false)
+	{
+		g_Console.writeToBuffer(g_timeboost.m_cLocation, (char)64, charColor);
+	}
+
+	if ((g_powerup.m_cLocation.X == g_nChar.m_cLocation.X) && (g_powerup.m_cLocation.Y == g_nChar.m_cLocation.Y && powerup == true))
+	{
+		g_sChar.health++;
+		powerup = false;
+	}
+	if (powerup == false)
+	{
+		g_Console.writeToBuffer(g_powerup.m_cLocation, (char)206, charColor);
+	}
 
 	if ((g_enemy.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_sChar.m_cLocation.Y) ||
 		(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y))
@@ -56,18 +110,51 @@ void level1()
 			restarthealth = false;
 			spawn();
 		}
+
+		else{
+			g_sChar.health -= 1;
+			g_dCountTime = 1000;
+
+			//First Character
+			g_sChar.m_cLocation.X = 4;
+			g_sChar.m_cLocation.Y = 8;
+
+			//Second Character
+			g_nChar.m_cLocation.X = 39;
+			g_nChar.m_cLocation.Y = 19;
+
+			//Enemy
+			g_enemy.m_cLocation.X = 11;
+			g_enemy.m_cLocation.Y = 1;
+
+			g_enemy2.m_cLocation.X = 49;
+			g_enemy2.m_cLocation.Y = 1;
+
+			//Door
+			g_door1.m_cLocation.X = 8;
+			g_door1.m_cLocation.Y = 10;
+
+			//Lever
+			g_lever1.m_cLocation.X = 53;
+			g_lever1.m_cLocation.Y = 8;
+
+			//Box
+			g_box1.m_cLocation.X = 54;
+			g_box1.m_cLocation.Y = 21;
+		}
+	}
 		else
 		{
 			level = one;
 			load = defeated;
 			renderGame();
-		}
-	}
 
-	if (g_nChar.m_cLocation.X == 39 &&
-		g_nChar.m_cLocation.Y == 22 &&
-		g_sChar.m_cLocation.X == 23 &&
-		g_sChar.m_cLocation.Y == 22)
+		}
+	
+	if (g_nChar.m_cLocation.X == 49 &&
+		g_nChar.m_cLocation.Y == 11 &&
+		g_sChar.m_cLocation.X == 11 &&
+		g_sChar.m_cLocation.Y == 11)
 	{
 		g_sChar.m_cLocation.X = 11;
 		g_sChar.m_cLocation.Y = 10;
@@ -79,4 +166,6 @@ void level1()
 		g_dCountTime = 60;
 		load = leveltwo;
 	}
+
+
 }
