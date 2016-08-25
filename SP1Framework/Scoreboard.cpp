@@ -10,6 +10,7 @@ extern Console g_Console;
 extern LEVELS load;
 extern EGAMESTATES g_eGameState;
 extern bool g_abKeyPressed[K_COUNT];
+bool showscoreboard = true;
 
 //Done by Yoong Soon.
 void renderScoreBoard()
@@ -21,12 +22,24 @@ void renderScoreBoard()
 	WORD color = 0x5E;
 	COORD A = g_Console.getConsoleSize();
 
-
-		if (g_abKeyPressed[K_NUM1])
-		{
-			load = scoreboard1;
+	if (showscoreboard == true)
+	{
+		load = scoreboard1; 
+		
+			if (g_abKeyPressed[K_NUM2])
+			{
+				load = scoreboard2;
+				showscoreboard = false;
+			}
 		}
-	
+	else {
+			if (g_abKeyPressed[K_NUM1])
+			{
+				load = scoreboard1;
+				showscoreboard=true;
+			}
+		
+	}
 		switch (load)
 		{
 		case scoreboard1:
@@ -93,12 +106,7 @@ void renderScoreBoard()
 
 		}
 		}
-	
-		if (g_abKeyPressed[K_NUM2])
-		{
-			load = scoreboard2;
-		}
-		
+
 		switch (load)
 		{
 		case scoreboard2:
@@ -165,7 +173,7 @@ void renderScoreBoard()
 		}
 
 		}
-
+	
 
 		if (g_abKeyPressed[K_BACK])
 		{
