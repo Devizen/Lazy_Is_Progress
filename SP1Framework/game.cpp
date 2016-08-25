@@ -8,6 +8,7 @@
 #include <sstream>
 #include <vector>
 
+
 //Add-ons
 #include <fstream>
 #include <string>
@@ -19,6 +20,8 @@
 #include "menu.h"
 #include "spawn.h"
 #include "ScoreBoard.h"
+#include "Windows.h"
+#include "MMSystem.h"
 
 using std::vector;
 using namespace std;
@@ -94,7 +97,9 @@ void init(void)
 	// sets the width, height and the font name to use in the console
 
 	g_Console.setConsoleFont(0, 16, L"Arial");
-
+	// Added by Daniel \/
+	PlaySound(TEXT("Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
+	
 }
 
 //--------------------------------------------------------------
