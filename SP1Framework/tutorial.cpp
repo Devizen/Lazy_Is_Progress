@@ -37,16 +37,15 @@ void tutoriala()
 			//Revert level settings to default.
 			spawn();
 		}
-		else
+		if (g_sChar.health < 1)
 		{	//Boolean for restarting the level after gameover.
 			level = zeroa;
-			load = levelzeroa;
+			load = defeated;
 			renderGame();
 		}
 	}
 
-	if (
-		g_sChar.m_cLocation.X == 29 &&
+	if (g_sChar.m_cLocation.X == 29 &&
 		g_sChar.m_cLocation.Y == 0 &&
 		g_nChar.m_cLocation.X == 31 &&
 		g_nChar.m_cLocation.Y == 0)
@@ -79,13 +78,21 @@ void tutorialb()
 		c.Y++;
 	}
 
-	COORD y;
-	y.X = 15;
-	y.Y = 15;
+	COORD d;
+	d.X = 63;
+	d.Y = 15;
+	g_Console.writeToBuffer(d, "Push the");
+	d.Y = 16;
+	g_Console.writeToBuffer(d, "Red Box");
+	d.Y = 17;
+	g_Console.writeToBuffer(d, "into the");
+	d.Y = 18;
+	g_Console.writeToBuffer(d, "Yellow Platform.");
+
 
 	rendercharacters();
 	motiondetect();
-	
+
 	if (boxreturn(boxone) == true)
 	{
 		boxone.m_cLocation.X = 25;
@@ -94,8 +101,8 @@ void tutorialb()
 
 	if (boxreturn(boxtwo) == true)
 	{
-		boxtwo.m_cLocation.X = 59;
-		boxtwo.m_cLocation.Y = 22;
+		boxtwo.m_cLocation.X = 35;
+		boxtwo.m_cLocation.Y = 17;
 	}
 
 	if (boxreturn(boxthree) == true)
@@ -163,31 +170,31 @@ void tutorialb()
 		door4 = false;
 	}
 
-	if ((g_enemy.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_sChar.m_cLocation.Y) ||
-		(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y))
-	{
-		restarthealth = false;
-		g_sChar.health -= 1;
+	//if ((g_enemy.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_sChar.m_cLocation.Y) ||
+	//	(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y))
+	//{
+	//	restarthealth = false;
+	//	g_sChar.health -= 1;
 
-		spawn();
+	//	spawn();
 
-		////First Character
-		//g_sChar.m_cLocation.X = 20;
-		//g_sChar.m_cLocation.Y = 23;
+	//	////First Character
+	//	//g_sChar.m_cLocation.X = 20;
+	//	//g_sChar.m_cLocation.Y = 23;
 
-		////Second Character
-		//g_nChar.m_cLocation.X = 40;
-		//g_nChar.m_cLocation.Y = 23;
+	//	////Second Character
+	//	//g_nChar.m_cLocation.X = 40;
+	//	//g_nChar.m_cLocation.Y = 23;
 
-		////Enemy
-		//g_enemy.m_cLocation.X = 22;
-		//g_enemy.m_cLocation.Y = 23;
+	//	////Enemy
+	//	//g_enemy.m_cLocation.X = 22;
+	//	//g_enemy.m_cLocation.Y = 23;
 
-		//g_enemy2.m_cLocation.X = 38;
-		//g_enemy2.m_cLocation.Y = 23;
+	//	//g_enemy2.m_cLocation.X = 38;
+	//	//g_enemy2.m_cLocation.Y = 23;
 
-	/*	g_dCountTime = 60;*/
-	}
+	///*	g_dCountTime = 60;*/
+	//}
 
 	if (g_sChar.m_cLocation.X == 15 &&
 		g_sChar.m_cLocation.Y == 2 &&

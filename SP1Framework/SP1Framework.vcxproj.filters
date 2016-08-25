@@ -1,181 +1,171 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="characters.cpp" />
-    <ClCompile Include="Framework\console.cpp" />
-    <ClCompile Include="Framework\timer.cpp" />
-    <ClCompile Include="game.cpp" />
-    <ClCompile Include="gameover.cpp" />
-    <ClCompile Include="health.cpp" />
-    <ClCompile Include="level1.cpp" />
-    <ClCompile Include="level2.cpp" />
-    <ClCompile Include="loadlevel.cpp" />
-    <ClCompile Include="main.cpp" />
-
-    <ClCompile Include="level1.cpp">
-      <Filter>Levels</Filter>
+    <ClCompile Include="characters.cpp">
+      <Filter>Character and A.I\Render and Tracking</Filter>
     </ClCompile>
-    <ClCompile Include="level2.cpp">
-      <Filter>Levels</Filter>
+    <ClCompile Include="checkrelease.cpp">
+      <Filter>Character and A.I\Movement</Filter>
     </ClCompile>
-    <ClCompile Include="loadlevel.cpp">
-      <Filter>A.I and Characters</Filter>
+    <ClCompile Include="gameover.cpp">
+      <Filter>Game Scene</Filter>
     </ClCompile>
     <ClCompile Include="health.cpp">
       <Filter>Game Status</Filter>
     </ClCompile>
-    <ClCompile Include="renderResult.cpp">
-      <Filter>Game Status</Filter>
+    <ClCompile Include="level1.cpp">
+      <Filter>Game Level</Filter>
     </ClCompile>
-    <ClCompile Include="Scoreboard.cpp">
-      <Filter>Game Status</Filter>
+    <ClCompile Include="level2.cpp">
+      <Filter>Game Level</Filter>
     </ClCompile>
-    <ClCompile Include="Framework\timer.cpp">
-      <Filter>Game Status</Filter>
+    <ClCompile Include="loadlevel.cpp">
+      <Filter>Game Scene</Filter>
     </ClCompile>
     <ClCompile Include="menu.cpp">
-      <Filter>Screens</Filter>
-    </ClCompile>
-    <ClCompile Include="spawn.cpp">
-      <Filter>A.I and Characters</Filter>
-    </ClCompile>
-    <ClCompile Include="gameover.cpp">
-      <Filter>Game Status</Filter>
-    </ClCompile>
-    <ClCompile Include="sprint.cpp">
-      <Filter>A.I and Characters\Movement</Filter>
-    </ClCompile>
-    <ClCompile Include="movelevel1.cpp">
-      <Filter>A.I and Characters\Movement</Filter>
-    </ClCompile>
-    <ClCompile Include="movelevel2.cpp">
-      <Filter>A.I and Characters\Movement</Filter>
+      <Filter>Game Scene</Filter>
     </ClCompile>
     <ClCompile Include="movelevel0.cpp">
-      <Filter>A.I and Characters\Movement</Filter>
+      <Filter>Character and A.I\Movement</Filter>
     </ClCompile>
-    <ClCompile Include="characters.cpp">
-      <Filter>A.I and Characters</Filter>
+    <ClCompile Include="movelevel1.cpp">
+      <Filter>Character and A.I\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="movelevel2.cpp">
+      <Filter>Character and A.I\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="renderLegend.cpp">
+      <Filter>Game Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="renderResult.cpp">
+      <Filter>Game Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="spawn.cpp">
+      <Filter>Character and A.I\Spawn</Filter>
+    </ClCompile>
+    <ClCompile Include="sprint.cpp">
+      <Filter>Character and A.I\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="Scoreboard.cpp">
+      <Filter>Game Scene</Filter>
     </ClCompile>
     <ClCompile Include="tutorial.cpp">
-      <Filter>Levels</Filter>
+      <Filter>Game Level</Filter>
     </ClCompile>
-    <ClCompile Include="checkrelease.cpp">
-      <Filter>A.I and Characters</Filter>
+    <ClCompile Include="SpeedUpPlatform.cpp">
+      <Filter>Character and A.I\Movement</Filter>
     </ClCompile>
-
-    <ClCompile Include="menu.cpp" />
-    <ClCompile Include="renderLegend.cpp" />
-    <ClCompile Include="movelevel0.cpp" />
-    <ClCompile Include="movelevel1.cpp" />
-    <ClCompile Include="movelevel2.cpp" />
-    <ClCompile Include="renderResult.cpp" />
-    <ClCompile Include="Scoreboard.cpp" />
-    <ClCompile Include="spawn.cpp" />
-    <ClCompile Include="sprint.cpp" />
-    <ClCompile Include="tutorial.cpp" />
-    <ClCompile Include="SpeedUpPlatform.cpp" />
-
+    <ClCompile Include="Framework\console.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\timer.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Lazy is Progress - Copy\SP1Framework\ScoreBoard.h" />
-    <ClInclude Include="characters.h" />
-    <ClInclude Include="Framework\console.h" />
-    <ClInclude Include="Framework\timer.h" />
-    <ClInclude Include="game.h" />
-    <ClInclude Include="gameover.h" />
-    <ClInclude Include="health.h" />
-    <ClInclude Include="keyboard.h" />
-    <ClInclude Include="level1.h" />
-    <ClInclude Include="level2.h" />
-    <ClInclude Include="loadlevel.h" />
-    <ClInclude Include="main.h" />
-
-    <ClInclude Include="level1.h">
-      <Filter>Levels</Filter>
+    <ClInclude Include="characters.h">
+      <Filter>Character and A.I\Render and Tracking</Filter>
     </ClInclude>
-    <ClInclude Include="level2.h">
-      <Filter>Levels</Filter>
+    <ClInclude Include="checkrelease.h">
+      <Filter>Character and A.I\Movement</Filter>
     </ClInclude>
-    <ClInclude Include="loadlevel.h">
-      <Filter>A.I and Characters</Filter>
+    <ClInclude Include="gameover.h">
+      <Filter>Game Scene</Filter>
     </ClInclude>
     <ClInclude Include="health.h">
       <Filter>Game Status</Filter>
     </ClInclude>
-    <ClInclude Include="renderResult.h">
-      <Filter>Game Status</Filter>
+    <ClInclude Include="level1.h">
+      <Filter>Game Level</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Lazy is Progress - Copy\SP1Framework\ScoreBoard.h">
-      <Filter>Game Status</Filter>
+    <ClInclude Include="level2.h">
+      <Filter>Game Level</Filter>
     </ClInclude>
-    <ClInclude Include="Framework\timer.h">
-      <Filter>Game Status</Filter>
-    </ClInclude>
-    <ClInclude Include="keyboard.h">
-      <Filter>Misc</Filter>
+    <ClInclude Include="loadlevel.h">
+      <Filter>Game Scene</Filter>
     </ClInclude>
     <ClInclude Include="menu.h">
-      <Filter>Screens</Filter>
-    </ClInclude>
-    <ClInclude Include="spawn.h">
-      <Filter>A.I and Characters</Filter>
-    </ClInclude>
-    <ClInclude Include="gameover.h">
-      <Filter>Game Status</Filter>
-    </ClInclude>
-    <ClInclude Include="sprint.h">
-      <Filter>A.I and Characters\Movement</Filter>
-    </ClInclude>
-    <ClInclude Include="movelevel1.h">
-      <Filter>A.I and Characters\Movement</Filter>
-    </ClInclude>
-    <ClInclude Include="movelevel2.h">
-      <Filter>A.I and Characters\Movement</Filter>
-    </ClInclude>
-    <ClInclude Include="tutorial.h">
-      <Filter>Levels</Filter>
+      <Filter>Game Scene</Filter>
     </ClInclude>
     <ClInclude Include="movelevel0.h">
-      <Filter>A.I and Characters\Movement</Filter>
+      <Filter>Character and A.I\Movement</Filter>
     </ClInclude>
-    <ClInclude Include="characters.h">
-      <Filter>A.I and Characters</Filter>
+    <ClInclude Include="movelevel1.h">
+      <Filter>Character and A.I\Movement</Filter>
     </ClInclude>
-    <ClInclude Include="checkrelease.h">
-      <Filter>A.I and Characters</Filter>
+    <ClInclude Include="movelevel2.h">
+      <Filter>Character and A.I\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="renderLegend.h">
+      <Filter>Game Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="renderResult.h">
+      <Filter>Game Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="spawn.h">
+      <Filter>Character and A.I\Spawn</Filter>
+    </ClInclude>
+    <ClInclude Include="sprint.h">
+      <Filter>Character and A.I\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="keyboard.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Lazy is Progress - Copy\SP1Framework\ScoreBoard.h">
+      <Filter>Game Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="tutorial.h">
+      <Filter>Game Level</Filter>
+    </ClInclude>
+    <ClInclude Include="SpeedUpPlatform.h">
+      <Filter>Character and A.I\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\console.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\timer.h">
+      <Filter>Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Levels">
-      <UniqueIdentifier>{d6571e63-489c-47ff-b6c4-3d642a6a110a}</UniqueIdentifier>
+    <Filter Include="Character and A.I">
+      <UniqueIdentifier>{6359948c-55ee-4cee-b7ee-64c6e0128e99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Character and A.I\Spawn">
+      <UniqueIdentifier>{9685637a-10c5-451a-a4b9-86473e518dab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Character and A.I\Movement">
+      <UniqueIdentifier>{c83986cb-3d5b-4f2b-aa70-170b7f98852f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Character and A.I\Render and Tracking">
+      <UniqueIdentifier>{b1b52efc-418c-416a-9b05-fb58c15012fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Scene">
+      <UniqueIdentifier>{c7b41325-3dd7-48ee-9c3b-a553b1f1b683}</UniqueIdentifier>
     </Filter>
     <Filter Include="Game Status">
-      <UniqueIdentifier>{f7a9100b-a04a-42fa-aa83-8062c1b510dc}</UniqueIdentifier>
+      <UniqueIdentifier>{f425c708-e9c5-4233-887f-6cd8a1c0063e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Misc">
-      <UniqueIdentifier>{db602885-fa91-4086-84cd-52169522b559}</UniqueIdentifier>
+    <Filter Include="Game Level">
+      <UniqueIdentifier>{3c50f8e1-a2b2-468e-8771-f564582476c1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Screens">
-      <UniqueIdentifier>{bb112255-ea5b-4729-b6e9-381b0d83d9a5}</UniqueIdentifier>
+    <Filter Include="Miscellaneous">
+      <UniqueIdentifier>{35b1fdc1-729f-446c-8b92-0469f81fd11c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="A.I and Characters">
-      <UniqueIdentifier>{8a9412b3-8a09-4fd3-9819-e9ed95710482}</UniqueIdentifier>
+    <Filter Include="Base">
+      <UniqueIdentifier>{7bc4e92b-db6a-400d-82eb-0660a0ee7ce1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="A.I and Characters\Movement">
-      <UniqueIdentifier>{faf6bc06-61a8-4d9f-be23-c4c3285b8b06}</UniqueIdentifier>
-    </Filter>
-
-    <ClInclude Include="menu.h" />
-    <ClInclude Include="renderLegend.h" />
-    <ClInclude Include="movelevel0.h" />
-    <ClInclude Include="movelevel1.h" />
-    <ClInclude Include="movelevel2.h" />
-    <ClInclude Include="renderResult.h" />
-    <ClInclude Include="spawn.h" />
-    <ClInclude Include="sprint.h" />
-    <ClInclude Include="tutorial.h" />
-    <ClInclude Include="SpeedUpPlatform.h" />
-
   </ItemGroup>
 </Project>

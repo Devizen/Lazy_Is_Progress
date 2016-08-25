@@ -1,6 +1,4 @@
 // This is the main file for the game logic and function
-//
-//
 #include "game.h"
 #include "Framework\console.h"
 #include <iostream>
@@ -74,19 +72,6 @@ g_lever3,
 g_lever4,
 g_box1;
 
-SGameChar	g_door1;
-SGameChar	g_lever1;
-SGameChar	g_box1;
-SGameChar	release_enemy;
-SGameChar	release_enemy1;
-SGameChar	release_enemy2;
-SGameChar	release_enemy3;
-SGameChar	release_enemy4;
-SGameChar	release_enemy5;
-SGameChar	release_enemy6;
-SGameChar	release_enemy7;
-SGameChar	release_enemy8;
-
 //Speed up
 SGameChar   g_platform;
 
@@ -138,7 +123,7 @@ void init(void)
 	g_eGameState = S_SPLASHSCREEN;
 
 	//Run the spawn function to printing characters for different levels.
-	//spawn();
+	spawn();
 
 	// sets the width, height and the font name to use in the console
 
@@ -202,6 +187,8 @@ void getInput(void)
 	//Levels
 	g_abKeyPressed[K_1] = isKeyPressed(VK_1);
 	g_abKeyPressed[K_2] = isKeyPressed(VK_2);
+	g_abKeyPressed[K_3] = isKeyPressed(VK_3);
+	g_abKeyPressed[K_4] = isKeyPressed(VK_4);
 	g_abKeyPressed[K_9] = isKeyPressed(VK_9);
 	g_abKeyPressed[K_0] = isKeyPressed(VK_0);
 }
@@ -262,6 +249,7 @@ void render()
 		renderResult(&g_ResultIsDisplayed, &g_ElapsedGameTime);
 		break;
 	case S_SCOREBOARD:renderScoreBoard();
+		break;
 	}
 
 	renderToScreen();   // dump the contents of the buffer to the screen, one frame worth of game
@@ -290,10 +278,12 @@ void moveCharacter()
 		sprint();
 		movelevel0();
 		break;
+
 	case levelzerob:
 		sprint();
 		movelevel0();
 		break;
+
 	case levelone:
 		sprint();
 		movelevel1();
@@ -316,31 +306,35 @@ void processUserInput()
 		g_bQuitGame = true;
 	}
 
-	if (g_abKeyPressed[K_9])
+	if (g_abKeyPressed[K_1])
 	{
+		restarthealth = true;
 		load = levelzeroa;
 		clearScreen();
 		spawn();
 		renderGame();
 	}
 
-	if (g_abKeyPressed[K_0])
+	if (g_abKeyPressed[K_2])
 	{
+		restarthealth = true;
 		load = levelzerob;
 		clearScreen();
 		spawn();
 		renderGame();
 	}
 
-	if (g_abKeyPressed[K_1])
+	if (g_abKeyPressed[K_3])
 	{
+		restarthealth = true;
 		load = levelone;
 		clearScreen();
 		spawn();
 		renderGame();
 	}
-	if (g_abKeyPressed[K_2])
+	if (g_abKeyPressed[K_4])
 	{
+		restarthealth = true;
 		load = leveltwo;
 		clearScreen();
 		spawn();
@@ -422,47 +416,6 @@ void processUserInput()
 			break;
 		}
 	}
-
-
-	if (g_abKeyPressed[K_DOWN])
-	{
-		if (g_nChar.m_cLocation.Y < g_Console.getConsoleSize().Y - 1 &&
-			map[g_nChar.m_cLocation.Y + 1][g_nChar.m_cLocation.X] != (char)219)
-		{
-			if (g_nChar.m_cLocation.Y + 1 == g_box1.m_cLocation.Y &&
-				g_nChar.m_cLocation.X == g_box1.m_cLocation.X)
-			{
-				g_nChar.m_cLocation.Y++;
-				g_box1.m_cLocation.Y++;
-				bSomethingHappened = true;
-			}
-			else
-			{
-				g_nChar.m_cLocation.Y++;
-				bSomethingHappened = true;
-			}
-		}
-	}
-
-	if (g_abKeyPressed[K_RIGHT])
-	{
-		if (g_nChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
-			map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != (char)219)
-		{
-			if (g_nChar.m_cLocation.Y == g_box1.m_cLocation.Y &&
-				g_nChar.m_cLocation.X + 1 == g_box1.m_cLocation.X)
-			{
-				g_nChar.m_cLocation.X++;
-				g_box1.m_cLocation.X++;
-				bSomethingHappened = true;
-			}
-			else
-			{
-				g_nChar.m_cLocation.X++;
-				bSomethingHappened = true;
-			}
-		}
-	}
 }
 	
 
@@ -501,8 +454,6 @@ void renderGame()
 	renderhealth(&g_Console, g_sChar.health); // draw health to the screen
 	renderLegend(); //render legends regarding powerups
 	//renderCharacter();  // renders the character into the buffer
-	//renderCharacter();  // renders the character into the buffer
-
 
 	switch (load)
 	{
@@ -601,11 +552,19 @@ void renderFramerate()
 			}
 			break;
 
-
-		g_eGameState = S_RESULT;
-
-
 		case levelone:
+			if (g_sChar.health < 1)
+			{
+				g_eGameState = S_RESULT;
+			}
+			else
+			{
+				g_dCountTime = 60;
+				spawn();
+			}
+			break;
+
+		case leveltwo:
 			if (g_sChar.health < 1)
 			{
 				g_eGameState = S_RESULT;

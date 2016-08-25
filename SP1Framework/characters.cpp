@@ -80,6 +80,12 @@ void motiondetect()
 			g_enemy2.m_cLocation.Y--;
 			bSomethingHappened = true;
 		}
+
+		if (bSomethingHappened)
+		{
+			// set the bounce time to some time in the future to prevent accidental triggers
+			ai_BounceTime = g_dElapsedTime + 0.115; // 125ms should be enough
+		}
 		break;
 
 	/*case levelzerob:*/
@@ -389,6 +395,12 @@ void motiondetect()
 			g_enemy2.m_cLocation.Y--;
 			bSomethingHappened = true;
 		}
+
+		if (bSomethingHappened)
+		{
+			// set the bounce time to some time in the future to prevent accidental triggers
+			ai_BounceTime = g_dElapsedTime + 0.125; // 125ms should be enough
+		}
 		break;
 
 	case leveltwo:
@@ -457,14 +469,20 @@ void motiondetect()
 			g_enemy2.m_cLocation.Y--;
 			bSomethingHappened = true;
 		}
+
+		if (bSomethingHappened)
+		{
+			// set the bounce time to some time in the future to prevent accidental triggers
+			ai_BounceTime = g_dElapsedTime + 0.125; // 125ms should be enough
+		}
 		break;
 	}
 
-	if (bSomethingHappened)
-	{
-		// set the bounce time to some time in the future to prevent accidental triggers
-		ai_BounceTime = g_dElapsedTime + 0.175; // 125ms should be enough
-	}
+	//if (bSomethingHappened)
+	//{
+	//	// set the bounce time to some time in the future to prevent accidental triggers
+	//	ai_BounceTime = g_dElapsedTime + 0.175; // 125ms should be enough
+	//}
 }
 
 //Done by Eugene.
@@ -509,8 +527,8 @@ void rendercharacters()
 		g_Console.writeToBuffer(g_door4.m_cLocation, (char)219, charColor);
 
 		//Close Doors
-		g_Console.writeToBuffer(closedoor1.m_cLocation, (char)0);
-		g_Console.writeToBuffer(closedoor2.m_cLocation, (char)0);
+		g_Console.writeToBuffer(closedoor1.m_cLocation, (char)219, charColor);
+		g_Console.writeToBuffer(closedoor2.m_cLocation, (char)219, charColor);
 
 		//Levers
 		g_Console.writeToBuffer(g_lever1.m_cLocation, (char)219, yellow);

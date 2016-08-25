@@ -23,7 +23,7 @@ void gameover()
 	if (g_abKeyPressed[K_BACK])
 	{
 		g_eGameState = S_MENU;
-		load = levelone; 
+		load = levelzeroa; 
 		spawn();
 	}
 

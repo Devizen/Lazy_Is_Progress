@@ -72,35 +72,164 @@ void sprint()
 		break;
 
 	case levelzerob:
+		//Up
 		if (g_abKeyPressed[K_RSHIFT] && g_abKeyPressed[K_W] &&
 			g_sChar.m_cLocation.Y > 0 &&
 			map[g_sChar.m_cLocation.Y - 1][g_sChar.m_cLocation.X] != (char)219)
 		{
-			g_sChar.m_cLocation.Y--;
-			boost = true;
+			if (g_sChar.m_cLocation.Y - 1 == boxone.m_cLocation.Y &&
+				g_sChar.m_cLocation.X == boxone.m_cLocation.X)
+			{
+				g_sChar.m_cLocation.Y--;
+				boxone.m_cLocation.Y--;
+				boost = true;
+			}
+
+			else if (g_sChar.m_cLocation.Y - 1 == boxthree.m_cLocation.Y &&
+				g_sChar.m_cLocation.X == boxthree.m_cLocation.X)
+			{
+				g_sChar.m_cLocation.Y--;
+				boxthree.m_cLocation.Y--;
+				boost = true;
+			}
+
+			else if (door2 == true &&
+				door4 == false &&
+				g_sChar.m_cLocation.Y - 1 != g_door4.m_cLocation.Y)
+			{
+				g_sChar.m_cLocation.Y--;
+				boost = true;
+			}
+
+			else if (door2 == false &&
+				door4 == true &&
+				g_sChar.m_cLocation.Y - 1 != g_door2.m_cLocation.Y)
+			{
+				g_sChar.m_cLocation.Y--;
+				boost = true;
+			}
+
+			else if (door2 == false &&
+				door4 == false &&
+				g_sChar.m_cLocation.Y - 1 != g_door2.m_cLocation.Y &&
+				g_sChar.m_cLocation.Y - 1 != g_door4.m_cLocation.Y)
+			{
+				g_sChar.m_cLocation.Y--;
+				boost = true;
+			}
+
+			else if (door2 == true && door4 == true)
+			{
+				g_sChar.m_cLocation.Y--;
+				boost = true;
+			}
 		}
 
+		//Left
 		if (g_abKeyPressed[K_RSHIFT] && g_abKeyPressed[K_A] &&
 			map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != (char)219)
 		{
-			g_sChar.m_cLocation.X--;
-			boost = true;
+			if (g_sChar.m_cLocation.Y == boxone.m_cLocation.Y &&
+				g_sChar.m_cLocation.X - 1 == boxone.m_cLocation.X)
+			{
+				g_sChar.m_cLocation.X--;
+				boxone.m_cLocation.X--;
+				boost = true;
+			}
+
+			else if (g_sChar.m_cLocation.Y == boxthree.m_cLocation.Y &&
+				g_sChar.m_cLocation.X - 1 == boxthree.m_cLocation.X)
+			{
+				g_sChar.m_cLocation.X--;
+				boxthree.m_cLocation.X--;
+				boost = true;
+			}
+			else
+			{
+				g_sChar.m_cLocation.X--;
+				boost = true;
+			}
 		}
 
+		//Down
 		if (g_abKeyPressed[K_RSHIFT] && g_abKeyPressed[K_S] &&
 			map[g_sChar.m_cLocation.Y + 1][g_sChar.m_cLocation.X] != (char)219)
 		{
-			g_sChar.m_cLocation.Y++;
-			boost = true;
+			if (g_sChar.m_cLocation.Y + 1 == boxone.m_cLocation.Y &&
+				g_sChar.m_cLocation.X == boxone.m_cLocation.X)
+			{
+				g_sChar.m_cLocation.Y++;
+				boxone.m_cLocation.Y++;
+				boost = true;
+			}
+
+			else if (g_sChar.m_cLocation.Y + 1 == boxthree.m_cLocation.Y &&
+				g_sChar.m_cLocation.X == boxthree.m_cLocation.X)
+			{
+				g_sChar.m_cLocation.Y++;
+				boxthree.m_cLocation.Y++;
+				boost = true;
+			}
+
+			else if (door2 == true &&
+				door4 == false &&
+				g_sChar.m_cLocation.Y + 1 != g_door4.m_cLocation.Y)
+			{
+				g_sChar.m_cLocation.Y++;
+				boost = true;
+			}
+
+			else if (door2 == false &&
+				door4 == true &&
+				g_sChar.m_cLocation.Y + 1 != g_door2.m_cLocation.Y)
+			{
+				g_sChar.m_cLocation.Y++;
+				boost = true;
+			}
+
+			else if (door2 == false &&
+				door4 == false &&
+				g_sChar.m_cLocation.Y + 1 != g_door2.m_cLocation.Y &&
+				g_sChar.m_cLocation.Y + 1 != g_door4.m_cLocation.Y)
+			{
+				g_sChar.m_cLocation.Y++;
+				boost = true;
+			}
+
+			else if (door2 == true && door4 == true)
+			{
+				g_sChar.m_cLocation.Y++;
+				boost = true;
+			}
 		}
 
+		//Right
 		if (g_abKeyPressed[K_RSHIFT] && g_abKeyPressed[K_D] &&
 			map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != (char)219)
 		{
-			g_sChar.m_cLocation.X++;
-			boost = true;
+			if (g_sChar.m_cLocation.Y == boxone.m_cLocation.Y &&
+				g_sChar.m_cLocation.X + 1 == boxone.m_cLocation.X)
+			{
+				g_sChar.m_cLocation.X++;
+				boxone.m_cLocation.X++;
+				boost = true;
+			}
+
+			else if (g_sChar.m_cLocation.Y == boxthree.m_cLocation.Y &&
+				g_sChar.m_cLocation.X + 1 == boxthree.m_cLocation.X)
+			{
+				g_sChar.m_cLocation.X++;
+				boxthree.m_cLocation.X++;
+				boost = true;
+			}
+			else
+			{
+				g_sChar.m_cLocation.X++;
+				boost = true;
+			}
 		}
 
+		//Up
 		if (g_abKeyPressed[K_LSHIFT] && g_abKeyPressed[K_UP] &&
 			g_nChar.m_cLocation.Y > 0 &&
 			map[g_nChar.m_cLocation.Y - 1][g_nChar.m_cLocation.X] != (char)219)
@@ -121,28 +250,38 @@ void sprint()
 				boost = true;
 			}
 
-			else if (g_nChar.m_cLocation.Y - 1 == boxfour.m_cLocation.Y &&
-				g_nChar.m_cLocation.X == boxfour.m_cLocation.X)
-			{
-				boxfour.m_cLocation.Y--;
-				boost = true;
-			}
-
-			else if (door3 == false &&
-				map[g_nChar.m_cLocation.Y - 1][g_nChar.m_cLocation.X] !=
-				map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X])
+			else if (door1 == true &&
+				door3 == false &&
+				g_nChar.m_cLocation.Y - 1 != g_door3.m_cLocation.Y)
 			{
 				g_nChar.m_cLocation.Y--;
 				boost = true;
 			}
 
-			else if (door3 == true)
+			else if (door1 == false &&
+				door3 == true &&
+				g_nChar.m_cLocation.Y - 1 != g_door1.m_cLocation.Y)
+			{
+				g_nChar.m_cLocation.Y--;
+				boost = true;
+			}
+
+			else if (door1 == false &&
+				door3 == false &&
+				g_nChar.m_cLocation.Y - 1 != g_door3.m_cLocation.Y)
+			{
+				g_nChar.m_cLocation.Y--;
+				boost = true;
+			}
+
+			else if (door1 == true && door3 == true)
 			{
 				g_nChar.m_cLocation.Y--;
 				boost = true;
 			}
 		}
 
+		//Left
 		if (g_abKeyPressed[K_LSHIFT] && g_abKeyPressed[K_LEFT] &&
 			map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != (char)219)
 		{
@@ -179,6 +318,7 @@ void sprint()
 			}
 		}
 
+		//Down
 		if (g_abKeyPressed[K_LSHIFT] && g_abKeyPressed[K_DOWN] &&
 			map[g_nChar.m_cLocation.Y + 1][g_nChar.m_cLocation.X] != (char)219)
 		{
@@ -220,6 +360,7 @@ void sprint()
 			}
 		}
 
+		//Right
 		if (g_abKeyPressed[K_LSHIFT] && g_abKeyPressed[K_RIGHT] &&
 			map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != (char)219)
 		{
