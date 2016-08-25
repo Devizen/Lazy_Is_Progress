@@ -22,6 +22,9 @@ extern SGameChar g_enemy2;
 
 extern SGameChar g_menu;
 extern SGameChar g_result;
+extern SGameChar g_powerup;
+extern SGameChar g_timeboost;
+extern SGameChar g_platform;
 
 extern RELEASE
 release_enemy,

@@ -14,6 +14,7 @@ extern bool g_abKeyPressed[K_COUNT];
 
 //Linking Console.
 extern Console g_Console;
+extern LEVELS load;
 
 //Linking Map.
 extern const unsigned int x;
@@ -37,8 +38,6 @@ release_enemy6,
 release_enemy7,
 release_enemy8;
 
-
-
 extern objects
 boxone,
 boxtwo,
@@ -48,6 +47,13 @@ boxfive,
 g_door1,
 g_lever1,
 g_box1;
+
+//Heal and Time Boost.
+extern SGameChar g_powerup;
+extern SGameChar g_timeboost;
+
+//Speed up platform
+extern SGameChar g_platform;
 
 
 //Linking game states.

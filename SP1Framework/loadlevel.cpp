@@ -19,7 +19,7 @@ void loadlevel(string name)
 
 	if (myfile.is_open())
 	{
-		while (getline(myfile, line))
+ 		while (getline(myfile, line))
 		{
 			for (unsigned int i = 0; i < line.length(); i++)
 			{

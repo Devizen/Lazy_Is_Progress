@@ -1,9 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <ClCompile Include="characters.cpp" />
     <ClCompile Include="Framework\console.cpp" />
+    <ClCompile Include="Framework\timer.cpp" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="gameover.cpp" />
+    <ClCompile Include="health.cpp" />
+    <ClCompile Include="level1.cpp" />
+    <ClCompile Include="level2.cpp" />
+    <ClCompile Include="loadlevel.cpp" />
     <ClCompile Include="main.cpp" />
+
     <ClCompile Include="level1.cpp">
       <Filter>Levels</Filter>
     </ClCompile>
@@ -55,11 +63,34 @@
     <ClCompile Include="checkrelease.cpp">
       <Filter>A.I and Characters</Filter>
     </ClCompile>
+
+    <ClCompile Include="menu.cpp" />
+    <ClCompile Include="renderLegend.cpp" />
+    <ClCompile Include="movelevel0.cpp" />
+    <ClCompile Include="movelevel1.cpp" />
+    <ClCompile Include="movelevel2.cpp" />
+    <ClCompile Include="renderResult.cpp" />
+    <ClCompile Include="Scoreboard.cpp" />
+    <ClCompile Include="spawn.cpp" />
+    <ClCompile Include="sprint.cpp" />
+    <ClCompile Include="tutorial.cpp" />
+    <ClCompile Include="SpeedUpPlatform.cpp" />
+
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Lazy is Progress - Copy\SP1Framework\ScoreBoard.h" />
+    <ClInclude Include="characters.h" />
     <ClInclude Include="Framework\console.h" />
+    <ClInclude Include="Framework\timer.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="gameover.h" />
+    <ClInclude Include="health.h" />
+    <ClInclude Include="keyboard.h" />
+    <ClInclude Include="level1.h" />
+    <ClInclude Include="level2.h" />
+    <ClInclude Include="loadlevel.h" />
     <ClInclude Include="main.h" />
+
     <ClInclude Include="level1.h">
       <Filter>Levels</Filter>
     </ClInclude>
@@ -134,5 +165,17 @@
     <Filter Include="A.I and Characters\Movement">
       <UniqueIdentifier>{faf6bc06-61a8-4d9f-be23-c4c3285b8b06}</UniqueIdentifier>
     </Filter>
+
+    <ClInclude Include="menu.h" />
+    <ClInclude Include="renderLegend.h" />
+    <ClInclude Include="movelevel0.h" />
+    <ClInclude Include="movelevel1.h" />
+    <ClInclude Include="movelevel2.h" />
+    <ClInclude Include="renderResult.h" />
+    <ClInclude Include="spawn.h" />
+    <ClInclude Include="sprint.h" />
+    <ClInclude Include="tutorial.h" />
+    <ClInclude Include="SpeedUpPlatform.h" />
+
   </ItemGroup>
 </Project>

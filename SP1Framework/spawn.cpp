@@ -141,6 +141,14 @@ void spawn()
 		g_box1.m_cLocation.X = 54;
 		g_box1.m_cLocation.Y = 21;
 
+		//PowerUp
+		g_powerup.m_cLocation.X = 40;
+		g_powerup.m_cLocation.Y = 20;
+
+		//TimerUp;
+		g_timeboost.m_cLocation.X = 55;
+		g_timeboost.m_cLocation.Y = 15;
+
 		//Release A.I
 		release_enemy.m_cLocation.X = 53;
 		release_enemy.m_cLocation.Y = 6;
@@ -211,6 +219,10 @@ void spawn()
 		//Release A.I
 		release_enemy.m_cLocation.X = 52;
 		release_enemy.m_cLocation.Y = 6;
+
+		//PlatForm
+		g_platform.m_cLocation.X = 4;
+		g_platform.m_cLocation.Y = 21;
 
 		//Set the initial health of the player
 		g_sChar.health = 3;
