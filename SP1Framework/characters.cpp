@@ -495,6 +495,12 @@ void rendercharacters()
 	WORD purple = 0x780F;
 
 
+	//const WORD colors[] =
+	//{
+	//	0x1A, 0x2B, 0x3C, 0x4D, 0x5E, 0x6F,
+	//	0xA1, 0xB2, 0xC3, 0xD4, 0xE5, 0xF6
+	//};
+
 	switch (load)
 	{
 	case levelzeroa:
@@ -564,7 +570,7 @@ void rendercharacters()
 		g_Console.writeToBuffer(g_lever1.m_cLocation, (char)219, yellow);
 
 		//Teleporter
-		g_Console.writeToBuffer(g_lever2.m_cLocation, (char)219, charColor3);
+		g_Console.writeToBuffer(g_lever2.m_cLocation, (char)234, charColor3);
 
 		//Box
 		g_Console.writeToBuffer(g_box1.m_cLocation, (char)254, charColor);

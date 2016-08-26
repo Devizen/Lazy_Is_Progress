@@ -12,6 +12,7 @@ void renderLegend()
 	string legends = "LEGENDS:";
 	string timepowerup = "Time Boost";
 	string platform = "Speed pad";
+	string teleporter = "Teleporter";
 
 	c.X = 66;
 	c.Y = 4;
@@ -29,6 +30,8 @@ void renderLegend()
 	c.Y = 11;
 	g_Console.writeToBuffer(c,platform); //output the word "platform ";
 
+
+	g_Console.writeToBuffer(c, teleporter); //Output the word Teleporter.
 
 	c.X = 64;
 	c.Y = 9;
