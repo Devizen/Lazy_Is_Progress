@@ -177,7 +177,10 @@ void renderScoreBoard()
 
 		if (g_abKeyPressed[K_BACK])
 		{
+			clearScreen();
 			g_eGameState = S_MENU;
+			load = levelzeroa;
+			renderGame();
 		}
 
 

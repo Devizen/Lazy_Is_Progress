@@ -137,6 +137,10 @@ void spawn()
 		g_lever1.m_cLocation.X = 53;
 		g_lever1.m_cLocation.Y = 8;
 
+		//Teleporter
+		g_lever2.m_cLocation.X = 8;
+		g_lever2.m_cLocation.Y = 22;
+
 		//Box
 		g_box1.m_cLocation.X = 54;
 		g_box1.m_cLocation.Y = 21;

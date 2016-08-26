@@ -399,7 +399,7 @@ void motiondetect()
 		if (bSomethingHappened)
 		{
 			// set the bounce time to some time in the future to prevent accidental triggers
-			ai_BounceTime = g_dElapsedTime + 0.125; // 125ms should be enough
+			ai_BounceTime = g_dElapsedTime + 0.15; // 125ms should be enough
 		}
 		break;
 
@@ -492,6 +492,7 @@ void rendercharacters()
 	WORD charColor2 = 0x0A;
 	WORD charColor3 = 0x2B;
 	WORD yellow = 0xFFE0;
+	WORD purple = 0x780F;
 
 
 	switch (load)
@@ -561,6 +562,9 @@ void rendercharacters()
 
 		//Lever
 		g_Console.writeToBuffer(g_lever1.m_cLocation, (char)219, yellow);
+
+		//Teleporter
+		g_Console.writeToBuffer(g_lever2.m_cLocation, (char)219, purple);
 
 		//Box
 		g_Console.writeToBuffer(g_box1.m_cLocation, (char)254, charColor);

@@ -132,10 +132,20 @@ void level1()
 		}
 	}
 	
-	if (g_nChar.m_cLocation.X == 39 &&
-		g_nChar.m_cLocation.Y == 22 &&
-		g_sChar.m_cLocation.X == 23 &&
+
+	//Teleport character to the top.
+	if (g_sChar.m_cLocation.X == 8 &&
 		g_sChar.m_cLocation.Y == 22)
+	{
+		g_sChar.m_cLocation.X = 29;
+		g_sChar.m_cLocation.Y = 5;
+	}
+
+	//Progress to next level.
+	if (g_sChar.m_cLocation.X == 1 &&
+		g_sChar.m_cLocation.Y == 1 &&
+		g_nChar.m_cLocation.X == 39 &&
+		g_nChar.m_cLocation.Y == 22)
 	{
 		//g_sChar.m_cLocation.X = 11;
 		//g_sChar.m_cLocation.Y = 10;
