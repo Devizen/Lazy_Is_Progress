@@ -84,6 +84,7 @@
     <ClCompile Include="game.cpp" />
     <ClCompile Include="gameover.cpp" />
     <ClCompile Include="health.cpp" />
+    <ClCompile Include="instructions.cpp" />
     <ClCompile Include="level1.cpp" />
     <ClCompile Include="level2.cpp" />
     <ClCompile Include="loadlevel.cpp" />
@@ -109,6 +110,7 @@
     <ClInclude Include="game.h" />
     <ClInclude Include="gameover.h" />
     <ClInclude Include="health.h" />
+    <ClInclude Include="instructions.h" />
     <ClInclude Include="keyboard.h" />
     <ClInclude Include="level1.h" />
     <ClInclude Include="level2.h" />

@@ -67,6 +67,9 @@
     <ClCompile Include="Framework\timer.cpp">
       <Filter>Base</Filter>
     </ClCompile>
+    <ClCompile Include="instructions.cpp">
+      <Filter>Game Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="characters.h">
@@ -137,6 +140,9 @@
     </ClInclude>
     <ClInclude Include="Framework\timer.h">
       <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="instructions.h">
+      <Filter>Game Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
