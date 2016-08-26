@@ -564,7 +564,7 @@ void rendercharacters()
 		g_Console.writeToBuffer(g_lever1.m_cLocation, (char)219, yellow);
 
 		//Teleporter
-		g_Console.writeToBuffer(g_lever2.m_cLocation, (char)219, purple);
+		g_Console.writeToBuffer(g_lever2.m_cLocation, (char)219, charColor3);
 
 		//Box
 		g_Console.writeToBuffer(g_box1.m_cLocation, (char)254, charColor);
