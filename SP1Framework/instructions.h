@@ -38,4 +38,4 @@ extern EGAMESTATES g_eGameState;
 extern LEVELS load;
 
 //Definition for function.
-void instructions;
+void instructions();
