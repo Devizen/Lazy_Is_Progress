@@ -491,7 +491,7 @@ void rendercharacters()
 	WORD charColor = 0x0C;
 	WORD charColor2 = 0x0A;
 	WORD charColor3 = 0x2B;
-	WORD yellow = 0xFFE0;
+	WORD yellow = 0x5E;
 	WORD purple = 0x780F;
 
 
