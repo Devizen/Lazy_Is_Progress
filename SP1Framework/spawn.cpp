@@ -96,8 +96,8 @@ void spawn()
 		boxfour.m_cLocation.Y = 2;
 
 		//Enemy
-		//g_enemy.m_cLocation.X = 22;
-		//g_enemy.m_cLocation.Y = 2;
+		g_enemy.m_cLocation.X = 33;
+		g_enemy.m_cLocation.Y = 8;
 
 		//g_enemy2.m_cLocation.X = 38;
 		//g_enemy2.m_cLocation.Y = 2;

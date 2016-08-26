@@ -101,6 +101,7 @@ struct SGameChar
     COORD m_cLocation;
     bool  m_bActive;
 	int health;
+	double slowdown= 0;
 };
 
 //Struct for releasing enemy
@@ -154,5 +155,6 @@ void movelevel2();
 extern bool restarthealth;
 extern bool powerup;
 extern bool timeincrease;
+
 
 #endif // _GAME_H

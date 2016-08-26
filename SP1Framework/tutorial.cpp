@@ -91,7 +91,8 @@ void tutorialb()
 
 
 	rendercharacters();
-	motiondetect();
+	//motiondetect();
+	patrolenemy(g_enemy);
 
 	if (boxreturn(boxone) == true)
 	{

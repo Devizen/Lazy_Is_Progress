@@ -59,3 +59,4 @@ extern direction check;
 //Definition for function.
 void motiondetect();
 void rendercharacters();
+void patrolenemy(struct SGameChar enemy);

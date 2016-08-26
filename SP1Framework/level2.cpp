@@ -2,6 +2,7 @@
 #include "characters.h"
 #include "game.h"
 #include "health.h"
+SGameChar enemy;
 
 //Done by Eugene.
 void level2()
@@ -14,7 +15,7 @@ void level2()
 
 	c.X = 0;
 	c.Y = 0;
-	
+
 	for (int i = 0; i <= y; i++)
 	{
 		line = map[i];
