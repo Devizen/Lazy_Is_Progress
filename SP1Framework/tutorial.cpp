@@ -4,7 +4,7 @@
 void tutoriala()
 {
 	string line = " ";
-	string name = "Text/level0_0.txt";
+	string name = "Text/Level/level0_0.txt";
 	loadlevel(name);
 
 	COORD c;
@@ -26,11 +26,24 @@ void tutoriala()
 	rendercharacters();
 	motiondetect();
 
+	if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X] == map[13][11])
+	{
+		g_Console.writeToBuffer(release_enemy.m_cLocation, (char)0);
+		g_Console.writeToBuffer(release_enemy1.m_cLocation, (char)0);
+		door1 = true;
+	}
+	else
+	{
+		door1 = false;
+	}
+
 	if ((g_enemy.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_sChar.m_cLocation.Y) ||
 		(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y))
 	{
 		//Deduct one health.
-		g_sChar.health -= 1;
+		g_sChar.health--;
+
+		//g_sChar.health -= 1;
 		if (g_sChar.health > 0)
 		{	//Prevent health from reverting back to 3.
 			restarthealth = false;
@@ -63,7 +76,7 @@ void tutorialb()
 	WORD yellow = 0xFFE0;
 
 	string line = " ";
-	string name = "Text/level0_1.txt";
+	string name = "Text/Level/level0_1.txt";
 	loadlevel(name);
 
 	COORD c;
@@ -88,7 +101,6 @@ void tutorialb()
 	g_Console.writeToBuffer(d, "into the");
 	d.Y = 18;
 	g_Console.writeToBuffer(d, "Yellow Platform.");
-
 
 	rendercharacters();
 	motiondetect();

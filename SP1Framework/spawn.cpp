@@ -32,6 +32,7 @@ void spawn()
 		g_enemy2.m_cLocation.X = 31;
 		g_enemy2.m_cLocation.Y = 23;
 
+
 		//Set the initial health of the player
 		if (restarthealth == true)
 		{

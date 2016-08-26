@@ -80,17 +80,23 @@ void sprint()
 			if (g_sChar.m_cLocation.Y - 1 == boxone.m_cLocation.Y &&
 				g_sChar.m_cLocation.X == boxone.m_cLocation.X)
 			{
-				g_sChar.m_cLocation.Y--;
-				boxone.m_cLocation.Y--;
-				boost = true;
+				if (map[boxone.m_cLocation.Y - 1][boxone.m_cLocation.X] != map[g_door2.m_cLocation.Y][g_door2.m_cLocation.X])
+				{
+					g_sChar.m_cLocation.Y--;
+					boxone.m_cLocation.Y--;
+					boost = true;
+				}
 			}
 
 			else if (g_sChar.m_cLocation.Y - 1 == boxthree.m_cLocation.Y &&
 				g_sChar.m_cLocation.X == boxthree.m_cLocation.X)
 			{
-				g_sChar.m_cLocation.Y--;
-				boxthree.m_cLocation.Y--;
-				boost = true;
+				if (map[boxthree.m_cLocation.Y - 1][boxthree.m_cLocation.X] != map[g_door4.m_cLocation.Y][g_door4.m_cLocation.X])
+				{
+					g_sChar.m_cLocation.Y--;
+					boxthree.m_cLocation.Y--;
+					boost = true;
+				}
 			}
 
 			else if (door2 == true &&
@@ -468,7 +474,7 @@ void sprint()
 			else if (g_nChar.m_cLocation.Y == boxfour.m_cLocation.Y &&
 				g_nChar.m_cLocation.X + 1 == boxfour.m_cLocation.X)
 			{
-				g_nChar.m_cLocation.X++;
+				g_nChar.m_cLocation.X++; 
 				boxfour.m_cLocation.X++;
 				boost = true;
 			}

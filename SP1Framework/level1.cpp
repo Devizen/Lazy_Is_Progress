@@ -11,7 +11,7 @@ bool timeincrease = true;
 void level1()
 {
 	string line = " ";
-	string name = "Text/level1.txt";
+	string name = "Text/Level/level1.txt";
 	loadlevel(name);
 	COORD c;
 
