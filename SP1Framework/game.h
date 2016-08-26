@@ -152,5 +152,7 @@ void movelevel2();
 
 //Linking variables.
 extern bool restarthealth;
+extern bool powerup;
+extern bool timeincrease;
 
 #endif // _GAME_H

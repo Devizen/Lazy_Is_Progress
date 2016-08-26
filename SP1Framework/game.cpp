@@ -327,6 +327,8 @@ void processUserInput()
 	if (g_abKeyPressed[K_3])
 	{
 		restarthealth = true;
+		powerup = true;
+		timeincrease = true;
 		load = levelone;
 		clearScreen();
 		spawn();

@@ -579,6 +579,12 @@ void rendercharacters()
 		g_Console.writeToBuffer(release_enemy6.m_cLocation, (char)219, charColor);
 		g_Console.writeToBuffer(release_enemy7.m_cLocation, (char)219, charColor);
 		g_Console.writeToBuffer(release_enemy8.m_cLocation, (char)219, charColor);
+
+		//Powerup
+		g_Console.writeToBuffer(g_powerup.m_cLocation, (char)206, charColor3);
+
+		//TimerUp
+		g_Console.writeToBuffer(g_timeboost.m_cLocation, (char)64, charColor3);
 		break;
 
 	case leveltwo:

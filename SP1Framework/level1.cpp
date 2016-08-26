@@ -31,33 +31,33 @@ void level1()
 	WORD charColor3 = 0X4D;
 
 
-	//First Character
-	g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, charColor);
+	////First Character
+	//g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, charColor);
 
-	//Second Character
-	g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, charColor2);
+	////Second Character
+	//g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, charColor2);
 
-	//Enemy
-	g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, charColor2);
-	g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, charColor2);
+	////Enemy
+	//g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, charColor2);
+	//g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, charColor2);
 
-	//Door
-	g_Console.writeToBuffer(g_door1.m_cLocation, (char)219, charColor);
+	////Door
+	//g_Console.writeToBuffer(g_door1.m_cLocation, (char)219, charColor);
 
-	//Lever
-	g_Console.writeToBuffer(g_lever1.m_cLocation, (char)219, charColor);
+	////Lever
+	//g_Console.writeToBuffer(g_lever1.m_cLocation, (char)219, charColor);
 
-	//Box
-	g_Console.writeToBuffer(g_box1.m_cLocation, (char)254, charColor);
+	////Box	
+	//g_Console.writeToBuffer(g_box1.m_cLocation, (char)254, charColor);
 
-	//Release A.I
-	g_Console.writeToBuffer(release_enemy.m_cLocation, (char)219, charColor);
+	////Release A.I
+	//g_Console.writeToBuffer(release_enemy.m_cLocation, (char)219, charColor);
 
-	//Powerup
-	g_Console.writeToBuffer(g_powerup.m_cLocation, (char)206, charColor3);
+	////Powerup
+	//g_Console.writeToBuffer(g_powerup.m_cLocation, (char)206, charColor3);
 
-     //TimerUp
-	g_Console.writeToBuffer(g_timeboost.m_cLocation, (char)64, charColor3);
+	//TimerUp
+	//g_Console.writeToBuffer(g_timeboost.m_cLocation, (char)64, charColor3);
 
 	rendercharacters();
 
@@ -83,6 +83,17 @@ void level1()
 	{
 		door1 = false;
 	}
+
+	if (timeincrease == true)
+	{
+		g_Console.writeToBuffer(g_timeboost.m_cLocation, (char)64, charColor3);
+	}
+
+	if (powerup == true)
+	{
+		g_Console.writeToBuffer(g_powerup.m_cLocation, (char)206, charColor3);
+	}
+
 	if ((g_timeboost.m_cLocation.X == g_nChar.m_cLocation.X) && (g_timeboost.m_cLocation.Y == g_nChar.m_cLocation.Y && timeincrease == true))
 	{
 		g_dCountTime += 5.00;
