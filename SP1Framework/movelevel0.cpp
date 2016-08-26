@@ -14,7 +14,13 @@ void movelevel0()
 	case levelzeroa:
 		if (g_abKeyPressed[K_W])
 		{
-			if (g_sChar.m_cLocation.Y > 0 &&
+			if (map[g_sChar.m_cLocation.Y - 1][g_sChar.m_cLocation.X] == map[release_enemy.m_cLocation.Y][release_enemy.m_cLocation.X] &&
+				door1 == false)
+			{
+
+			}
+
+			else if (g_sChar.m_cLocation.Y > 0 &&
 				map[g_sChar.m_cLocation.Y - 1][g_sChar.m_cLocation.X] != (char)219)
 			{
 				g_sChar.m_cLocation.Y--;
@@ -102,17 +108,23 @@ void movelevel0()
 				if (g_sChar.m_cLocation.Y - 1 == boxone.m_cLocation.Y &&
 					g_sChar.m_cLocation.X == boxone.m_cLocation.X)
 				{
-					g_sChar.m_cLocation.Y--;
-					boxone.m_cLocation.Y--;
-					bSomethingHappened = true;
+					if (map[boxone.m_cLocation.Y - 1][boxone.m_cLocation.X] != map[g_door2.m_cLocation.Y][g_door2.m_cLocation.X])
+					{
+						g_sChar.m_cLocation.Y--;
+						boxone.m_cLocation.Y--;
+						bSomethingHappened = true;
+					}
 				}
 
 				else if (g_sChar.m_cLocation.Y - 1 == boxthree.m_cLocation.Y &&
 					g_sChar.m_cLocation.X == boxthree.m_cLocation.X)
 				{
-					g_sChar.m_cLocation.Y--;
-					boxthree.m_cLocation.Y--;
-					bSomethingHappened = true;
+					if (map[boxthree.m_cLocation.Y - 1][boxthree.m_cLocation.X] != map[g_door4.m_cLocation.Y][g_door4.m_cLocation.X])
+					{
+						g_sChar.m_cLocation.Y--;
+						boxthree.m_cLocation.Y--;
+						bSomethingHappened = true;
+					}
 				}
 
 				else if (door2 == true && 

@@ -16,6 +16,7 @@ void motiondetect()
 	{
 	case levelzeroa:
 		//For First Character
+		//Right
 		if (g_enemy.m_cLocation.X > 0 &&
 			(g_enemy.m_cLocation.X - g_sChar.m_cLocation.X) < 0 &&
 			map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X + 1] != (char)219)
@@ -23,7 +24,8 @@ void motiondetect()
 			g_enemy.m_cLocation.X++;
 			bSomethingHappened = true;
 		}
-
+		
+		//Left
 		if (g_enemy.m_cLocation.X > 0 &&
 			g_enemy.m_cLocation.X - g_sChar.m_cLocation.X > 0 &&
 			map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X - 1] != (char)219)
@@ -32,6 +34,7 @@ void motiondetect()
 			bSomethingHappened = true;
 		}
 
+		//Down
 		if (g_enemy.m_cLocation.Y > 0 &&
 			(g_enemy.m_cLocation.Y - g_sChar.m_cLocation.Y) < 0 &&
 			map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != (char)219)
@@ -40,7 +43,8 @@ void motiondetect()
 			bSomethingHappened = true;
 		}
 
-		if (g_enemy.m_cLocation.Y > 0 &&
+		//Up
+		 if (g_enemy.m_cLocation.Y > 0 &&
 			(g_enemy.m_cLocation.Y - g_sChar.m_cLocation.Y) > 0 &&
 			map[g_enemy.m_cLocation.Y - 1][g_enemy.m_cLocation.X] != (char)219)
 		{
@@ -84,7 +88,7 @@ void motiondetect()
 		if (bSomethingHappened)
 		{
 			// set the bounce time to some time in the future to prevent accidental triggers
-			ai_BounceTime = g_dElapsedTime + 0.115; // 125ms should be enough
+			ai_BounceTime = g_dElapsedTime + 0.124; // 125ms should be enough
 		}
 		break;
 

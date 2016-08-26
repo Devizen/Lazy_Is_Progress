@@ -32,6 +32,17 @@ g_lever3,
 g_lever4,
 g_box1;
 
+extern RELEASE
+release_enemy,
+release_enemy1,
+release_enemy2,
+release_enemy3,
+release_enemy4,
+release_enemy5,
+release_enemy6,
+release_enemy7,
+release_enemy8;
+
 //Linking Timer.
 extern double  g_dBounceTime;
 extern double g_dElapsedTime;
