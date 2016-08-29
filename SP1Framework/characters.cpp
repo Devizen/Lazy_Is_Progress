@@ -620,7 +620,7 @@ void rendercharacters()
 
 		//powerup
 		COORD C;
-			C.X = 23;
+		C.X = 23;
 		C.Y = 10;
 
 		g_Console.writeToBuffer(C, (char)206, charColor3);
@@ -790,12 +790,8 @@ void epatrolenemy()
 			g_enemy.m_cLocation.X++;
 			bSomethingHappened = true;
 		}
-		//else if (map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X + 18] == (char)219 && check == rightd)
-		//{
-		//	check = downd;
-		//}
-		check = downd;
 		break;
+		check = downd;
 
 	case downd:
 		if (map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != (char)219 && check == downd)
@@ -803,11 +799,8 @@ void epatrolenemy()
 			g_enemy.m_cLocation.Y++;
 			bSomethingHappened = true;
 		}
-		//else
-		//{
-		//	check = leftd;
-		//}
 		break;
+		check = leftd;
 
 	case leftd:
 		if (map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X - 2] != (char)219 && check == leftd)
@@ -815,11 +808,8 @@ void epatrolenemy()
 			g_enemy.m_cLocation.X--;
 			bSomethingHappened = true;
 		}
-		else
-		{
-			check = upd;
-		}
 		break;
+		check = upd;
 
 	case upd:
 		if (map[g_enemy.m_cLocation.Y - 8][g_enemy.m_cLocation.X] != (char)219 && check == upd)
@@ -827,11 +817,8 @@ void epatrolenemy()
 			g_enemy.m_cLocation.Y--;
 			bSomethingHappened = true;
 		}
-		else
-		{
-			check = rightd;
-		}
 		break;
+		check = rightd;
 	}
 
 	if (bSomethingHappened)

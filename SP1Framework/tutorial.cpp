@@ -64,6 +64,7 @@ void tutoriala()
 		g_nChar.m_cLocation.Y == 0)
 	{
 		clearScreen();
+		restarthealth = true;
 		load = levelzerob;
 		spawn();
 	}
@@ -104,8 +105,8 @@ void tutorialb()
 
 	rendercharacters();
 	//motiondetect();
-	//patrolenemy(g_enemy);
-	epatrolenemy();
+	patrolenemy(g_enemy);
+	
 
 
 	if (boxreturn(boxone) == true)
@@ -185,31 +186,31 @@ void tutorialb()
 		door4 = false;
 	}
 
-	//if ((g_enemy.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_sChar.m_cLocation.Y) ||
-	//	(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y))
-	//{
-	//	restarthealth = false;
-	//	g_sChar.health -= 1;
+	if ((g_enemy.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_sChar.m_cLocation.Y)/* ||
+		(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y)*/)
+	{
+		restarthealth = false;
+		g_sChar.health -= 1;
 
-	//	spawn();
+		spawn();
 
-	//	////First Character
-	//	//g_sChar.m_cLocation.X = 20;
-	//	//g_sChar.m_cLocation.Y = 23;
+		////First Character
+		//g_sChar.m_cLocation.X = 20;
+		//g_sChar.m_cLocation.Y = 23;
 
-	//	////Second Character
-	//	//g_nChar.m_cLocation.X = 40;
-	//	//g_nChar.m_cLocation.Y = 23;
+		////Second Character
+		//g_nChar.m_cLocation.X = 40;
+		//g_nChar.m_cLocation.Y = 23;
 
-	//	////Enemy
-	//	//g_enemy.m_cLocation.X = 22;
-	//	//g_enemy.m_cLocation.Y = 23;
+		////Enemy
+		//g_enemy.m_cLocation.X = 22;
+		//g_enemy.m_cLocation.Y = 23;
 
-	//	//g_enemy2.m_cLocation.X = 38;
-	//	//g_enemy2.m_cLocation.Y = 23;
+		//g_enemy2.m_cLocation.X = 38;
+		//g_enemy2.m_cLocation.Y = 23;
 
-	///*	g_dCountTime = 60;*/
-	//}
+	/*	g_dCountTime = 60;*/
+	}
 
 	if (g_sChar.m_cLocation.X == 15 &&
 		g_sChar.m_cLocation.Y == 2 &&
@@ -217,6 +218,7 @@ void tutorialb()
 		g_nChar.m_cLocation.Y == 2)
 	{
 		clearScreen();
+		restarthealth = true;
 		load = levelone;
 		spawn();
 	}

@@ -167,6 +167,7 @@ void level1()
 
 		g_dCountTime = 60;
 		load = leveltwo;
+		restarthealth = true;
 		spawn();
 		renderGame();
 	}
