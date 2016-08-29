@@ -269,7 +269,7 @@ void splashScreenWait()    // waits for time to pass in splash screen
 {
 	if (g_dElapsedTime > 3.0) // wait for 3 seconds to switch to game mode, else do nothing
 		//g_eGameState = S_GAME;
-		g_eGameState = S_MENU;
+		g_eGameState = S_INSTRUCTIONS;
 }
 
 void gameplay()            // gameplay logic
