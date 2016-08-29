@@ -626,7 +626,7 @@ void rendercharacters()
 		g_Console.writeToBuffer(C, (char)206, charColor3);
 		break;
 
-	case levelthree:
+	case levelfour:
 		if (g_sChar.m_bActive)
 		{
 			charColor = 0x0A;

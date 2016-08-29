@@ -13,7 +13,7 @@
 #include "health.h"
 #include "level1.h"
 #include "level2.h"
-#include "level3.h"
+#include "level4.h"
 #include "characters.h"
 #include "renderResult.h"
 #include "menu.h"
@@ -193,7 +193,7 @@ void getInput(void)
 	g_abKeyPressed[K_2] = isKeyPressed(VK_2);
 	g_abKeyPressed[K_3] = isKeyPressed(VK_3);
 	g_abKeyPressed[K_4] = isKeyPressed(VK_4);
-	g_abKeyPressed[K_5] = isKeyPressed(VK_5);
+	g_abKeyPressed[K_6] = isKeyPressed(VK_6);
 	g_abKeyPressed[K_9] = isKeyPressed(VK_9);
 	g_abKeyPressed[K_0] = isKeyPressed(VK_0);
 }
@@ -347,11 +347,10 @@ void processUserInput()
 		spawn();
 		renderGame();
 	}
-
-	if (g_abKeyPressed[K_5])
+	if (g_abKeyPressed[K_6])
 	{
 		restarthealth = true;
-		load = levelthree;
+		load = levelfour;
 		clearScreen();
 		spawn();
 		renderGame();
@@ -430,6 +429,19 @@ void processUserInput()
 				load = defeated;
 			}
 			break;
+
+		case levelfour:
+			level = four;
+
+			if (g_sChar.health > 0)
+			{
+				spawn();
+			}
+			else
+			{
+				load = defeated;
+			}
+			break;
 		}
 	}
 }
@@ -485,10 +497,8 @@ void renderGame()
 		break;
 	case leveltwo: level2();
 		break;
-	case levelthree: level3();
+	case levelfour: level4();
 		break;
-	//case levelthree: levelthree();
-	//	break;
 	}
 }
 
@@ -583,6 +593,17 @@ void renderFramerate()
 			break;
 
 		case leveltwo:
+			if (g_sChar.health < 1)
+			{
+				g_eGameState = S_RESULT;
+			}
+			else
+			{
+				g_dCountTime = 60;
+				spawn();
+			}
+			break;
+		case levelfour:
 			if (g_sChar.health < 1)
 			{
 				g_eGameState = S_RESULT;

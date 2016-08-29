@@ -46,10 +46,7 @@ enum EKEYS
 	K_2,
 	K_3,
 	K_4,
-	K_5,
 	K_6,
-	K_7,
-	K_8,
 	K_9,
 	K_0,
 
@@ -77,6 +74,7 @@ enum LEVELS
 	levelone, //Loading Level 1.
 	leveltwo,
 	levelthree,
+	levelfour,
 	scoreboard1,
 	scoreboard2
 
@@ -87,7 +85,9 @@ enum RESTART
 	zeroa,
 	zerob,
 	one,
-	two
+	two,
+	three,
+    four
 };
 
 

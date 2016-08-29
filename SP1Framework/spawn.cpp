@@ -239,36 +239,36 @@ void spawn()
 		g_dCountTime = 60;
 		break;
 
-	case levelthree:
+	case levelfour:
 		//First Character
-		g_sChar.m_cLocation.X = 9;
-		g_sChar.m_cLocation.Y = 22;
+		g_sChar.m_cLocation.X = 4;
+		g_sChar.m_cLocation.Y = 19;
 
 		//Second Character
-		g_nChar.m_cLocation.X = 52;
-		g_nChar.m_cLocation.Y = 22;
+		g_nChar.m_cLocation.X = 39;
+		g_nChar.m_cLocation.Y = 19;
 
 		//Enemy
-		g_enemy.m_cLocation.X = 15;
-		g_enemy.m_cLocation.Y = 3;
+		g_enemy.m_cLocation.X = 11;
+		g_enemy.m_cLocation.Y = 1;
 
 		g_enemy2.m_cLocation.X = 49;
-		g_enemy2.m_cLocation.Y = 10;
+		g_enemy2.m_cLocation.Y = 1;
 
 		//Door
-		g_door1.m_cLocation.X = 4;
+		g_door1.m_cLocation.X = 8;
 		g_door1.m_cLocation.Y = 10;
 
 		//Lever
-		g_lever1.m_cLocation.X = 45;
-		g_lever1.m_cLocation.Y = 2;
+		g_lever1.m_cLocation.X = 53;
+		g_lever1.m_cLocation.Y = 8;
 
 		//Box
-		g_box1.m_cLocation.X = 16;
-		g_box1.m_cLocation.Y = 30;
+		g_box1.m_cLocation.X = 54;
+		g_box1.m_cLocation.Y = 21;
 
 		//Release A.I
-		release_enemy.m_cLocation.X = 10;
+		release_enemy.m_cLocation.X = 52;
 		release_enemy.m_cLocation.Y = 6;
 
 		//PlatForm
