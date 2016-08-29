@@ -305,6 +305,11 @@ void moveCharacter()
 		SpeedUpPlatform();
 		break;
 
+	case levelthree:
+		sprint();
+		movelevel3();
+		break;
+
 	case levelfour:
 		sprint();
 		movelevel4();

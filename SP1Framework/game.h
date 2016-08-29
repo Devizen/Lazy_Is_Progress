@@ -156,6 +156,7 @@ void tutorialb();
 void movelevel0();
 void movelevel1();
 void movelevel2();
+void movelevel3();
 void movelevel4();
 
 //Linking variables.

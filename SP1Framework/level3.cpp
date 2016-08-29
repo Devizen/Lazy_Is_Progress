@@ -60,5 +60,6 @@ void level3()
 		level = two;
 		load = defeated;
 		renderGame();
+		rendercharacters();
 	}
 }
