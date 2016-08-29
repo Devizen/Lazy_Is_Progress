@@ -76,9 +76,15 @@
     <ClCompile Include="level4.cpp">
       <Filter>Game Level</Filter>
     </ClCompile>
+
     <ClCompile Include="level3.cpp">
       <Filter>Game Level</Filter>
+	</ClInclude>
+	
+    <ClCompile Include="movelevel4.cpp">
+      <Filter>Character and A.I\Movement</Filter>
     </ClCompile>
+	
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="characters.h">
@@ -156,12 +162,19 @@
     <ClInclude Include="timeover.h">
       <Filter>Game Scene</Filter>
     </ClInclude>
+	
     <ClInclude Include="level4.h">
       <Filter>Game Level</Filter>
     </ClInclude>
+
     <ClInclude Include="level3.h">
       <Filter>Game Level</Filter>
+	</ClInclude>
+	
+    <ClInclude Include="movelevel4.h">
+      <Filter>Character and A.I\Movement</Filter>
     </ClInclude>
+	
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Character and A.I">

@@ -60,6 +60,7 @@ enum EGAMESTATES
 	S_SPLASHSCREEN,
 	S_MENU,
 	S_GAME,
+	S_INSTRUCTIONS,
 	S_SCOREBOARD,
 	S_LEVEL1,
 	S_RESULT, //This and COUNT must be at bottom
@@ -155,6 +156,7 @@ void tutorialb();
 void movelevel0();
 void movelevel1();
 void movelevel2();
+void movelevel4();
 
 //Linking variables.
 extern bool restarthealth;
