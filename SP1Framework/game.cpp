@@ -19,6 +19,7 @@
 #include "menu.h"
 #include "spawn.h"
 #include "ScoreBoard.h"
+#include "timeover.h"
 
 #include "Windows.h"
 #include "MMSystem.h"
@@ -86,12 +87,8 @@ LEVELS		load = levelzeroa;
 RESTART		level = one;
 direction	check = upd;
 
-
-
-double  g_dBounceTime; // this is to prevent key bouncing, so we won't trigger keypresses more than once
+double g_dBounceTime; // this is to prevent key bouncing, so we won't trigger keypresses more than once
 double ai_BounceTime;
-
-
 
 double  g_dBounceTimeBoost = 0.0; // this is to prevent key bouncing, so we won't trigger keypresses more than once
 
@@ -102,7 +99,6 @@ const unsigned int x = 80;
 const unsigned int y = 25;
 
 char map[25][80];
-
 
 //--------------------------------------------------------------
 // Purpose  : Initialisation function
@@ -133,7 +129,8 @@ void init(void)
 
 	g_Console.setConsoleFont(0, 16, L"Arial");
 	// Added by Daniel \/
-	PlaySound(TEXT("Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
+	//PlaySound(TEXT("Soundtracks/BGM/Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
+	PlaySound(TEXT("Soundtracks/BGM/Jupiter_Lighthouse.mp3"),NULL, SND_SYNC | SND_LOOP | SND_ASYNC);
 	
 }
 
@@ -525,6 +522,13 @@ void renderMap()
 void renderFramerate()
 {
 	COORD c;
+
+	WORD charColor = 0x0C;
+	WORD charColor2 = 0x0A;
+	WORD charColor3 = 0x2B;
+	WORD yellow = 0x5E;
+	WORD purple = 0x780F;
+
 	// displays the framerate
 	std::ostringstream ss;
 	ss << std::fixed << std::setprecision(1);
@@ -541,25 +545,38 @@ void renderFramerate()
 		c.X = g_Console.getConsoleSize().X - 10;
 		c.Y = g_Console.getConsoleSize().Y - 23;
 		g_Console.writeToBuffer(c, ss.str(), 0xE5);
+
+		if (g_dCountTime <= 30 && g_dCountTime >= 10)
+		{
+			g_Console.writeToBuffer(c, ss.str(), yellow);
+		}
+
+		if (g_dCountTime <= 10)
+		{
+			g_Console.writeToBuffer(c, ss.str(), charColor);
+		}
 	}
+
 	else
 	{
 		//Deduct health when time over.
 		g_sChar.health--;
 		restarthealth = false;
 
-		ss.str("");
-		ss << "Time Over";
-		c.X = g_Console.getConsoleSize().X - 10;
-		c.Y = g_Console.getConsoleSize().Y - 23;
-		g_Console.writeToBuffer(c, ss.str(), 0X4D);
+		//ss.str("");
+		//ss << "Time Over";
+		//c.X = g_Console.getConsoleSize().X - 10;
+		//c.Y = g_Console.getConsoleSize().Y - 23;
+		//g_Console.writeToBuffer(c, ss.str(), 0X4D);
 
 		switch (load)
 		{
 		case levelzeroa:
 			if (g_sChar.health < 1)
 			{
-				g_eGameState = S_RESULT;
+				level = zeroa;
+				load = defeated;
+				renderGame();
 			}
 			else
 			{
@@ -571,7 +588,9 @@ void renderFramerate()
 		case levelzerob:
 			if (g_sChar.health < 1)
 			{
-				g_eGameState = S_RESULT;
+				level = zerob;
+				load = defeated;
+				renderGame();
 			}
 			else
 			{
@@ -583,7 +602,9 @@ void renderFramerate()
 		case levelone:
 			if (g_sChar.health < 1)
 			{
-				g_eGameState = S_RESULT;
+				level = one;
+				load = defeated;
+				renderGame();
 			}
 			else
 			{
@@ -595,7 +616,9 @@ void renderFramerate()
 		case leveltwo:
 			if (g_sChar.health < 1)
 			{
-				g_eGameState = S_RESULT;
+				level = two;
+				load = defeated;
+				renderGame();
 			}
 			else
 			{
@@ -615,7 +638,6 @@ void renderFramerate()
 			}
 			break;
 		}
-
 	}
 }
 
