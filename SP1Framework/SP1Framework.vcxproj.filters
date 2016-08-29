@@ -72,6 +72,8 @@
     </ClCompile>
     <ClCompile Include="timeover.cpp">
       <Filter>Game Scene</Filter>
+    <ClCompile Include="level4.cpp">
+      <Filter>Game Level</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +151,8 @@
     </ClInclude>
     <ClInclude Include="timeover.h">
       <Filter>Game Scene</Filter>
+    <ClInclude Include="level4.h">
+      <Filter>Game Level</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

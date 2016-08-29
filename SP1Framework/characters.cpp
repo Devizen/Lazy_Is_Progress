@@ -408,6 +408,34 @@ void rendercharacters()
 
 		g_Console.writeToBuffer(C, (char)206, charColor3);
 		break;
+
+	case levelfour:
+		if (g_sChar.m_bActive)
+		{
+			charColor = 0x0A;
+		}
+		g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, charColor);
+
+		// Draw the location of the character
+		if (g_nChar.m_bActive)
+		{
+			charColor = 0x0C;
+		}
+		g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, charColor2);
+
+		//Enemy
+		g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, charColor2);
+		g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, charColor2);
+
+		//platform
+		g_Console.writeToBuffer(g_platform.m_cLocation, (char)254, charColor3);
+
+		//powerup
+		C.X = 23;
+		C.Y = 10;
+
+		g_Console.writeToBuffer(C, (char)206, charColor3);
+		break;
 	}
 }
 
