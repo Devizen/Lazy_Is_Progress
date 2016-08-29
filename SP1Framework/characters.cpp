@@ -447,8 +447,8 @@ void rendercharacters()
 		g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, charColor2);
 		g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, charColor2);
 
-		//platform
-		g_Console.writeToBuffer(g_platform.m_cLocation, (char)254, charColor3);
+		//Teleporter
+		g_Console.writeToBuffer(g_lever2.m_cLocation, (char)234, charColor3);
 
 		//powerup
 		C.X = 23;

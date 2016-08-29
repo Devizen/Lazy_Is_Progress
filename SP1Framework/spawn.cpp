@@ -287,19 +287,19 @@ void spawn()
 
 	case levelfour:
 		//First Character
-		g_sChar.m_cLocation.X = 4;
-		g_sChar.m_cLocation.Y = 19;
+		g_sChar.m_cLocation.X = 9;
+		g_sChar.m_cLocation.Y = 22;
 
 		//Second Character
-		g_nChar.m_cLocation.X = 39;
-		g_nChar.m_cLocation.Y = 19;
+		g_nChar.m_cLocation.X = 48;
+		g_nChar.m_cLocation.Y = 22;
 
 		//Enemy
-		g_enemy.m_cLocation.X = 11;
-		g_enemy.m_cLocation.Y = 1;
+		g_enemy.m_cLocation.X = 13;
+		g_enemy.m_cLocation.Y = 11;
 
-		g_enemy2.m_cLocation.X = 49;
-		g_enemy2.m_cLocation.Y = 1;
+		g_enemy2.m_cLocation.X = 48;
+		g_enemy2.m_cLocation.Y = 8;
 
 		//Door
 		g_door1.m_cLocation.X = 8;
@@ -317,9 +317,9 @@ void spawn()
 		release_enemy.m_cLocation.X = 52;
 		release_enemy.m_cLocation.Y = 6;
 
-		//PlatForm
-		g_platform.m_cLocation.X = 4;
-		g_platform.m_cLocation.Y = 21;
+		//Teleporter
+		g_lever2.m_cLocation.X = 3;
+		g_lever2.m_cLocation.Y = 1;
 
 		//Set the initial health of the player
 		if (restarthealth == true)
