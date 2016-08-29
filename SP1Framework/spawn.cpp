@@ -40,7 +40,7 @@ void spawn()
 		}
 
 		//Set the initial time limit
-		g_dCountTime = 2;
+		g_dCountTime = 60;
 
 		break;
 
