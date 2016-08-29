@@ -1,5 +1,6 @@
 #include "instructions.h"
 
+//Done by Eugene.
 void instructions()
 {
 	string line;
@@ -69,7 +70,7 @@ void instructions()
 	g_Console.writeToBuffer(c, "[Backspace]");
 
 	c.Y = 19;
-	g_Console.writeToBuffer(c, "to Main Menu.");
+	g_Console.writeToBuffer(c, "to Main Menu/Pause.");
 
 	c.Y = 21;
 	g_Console.writeToBuffer(c, "[Enter]");
@@ -80,9 +81,37 @@ void instructions()
 
 	if (g_abKeyPressed[K_BACK])
 	{
-		clearScreen();
-		g_eGameState = S_MENU;
-		load = levelzeroa;
-		renderGame();
+		switch (load)
+		{
+		case levelzeroa:
+			clearScreen();
+			g_eGameState = S_MENU;
+			load = levelzeroa;
+			break;
+
+		case levelzerob:
+			clearScreen();
+			g_eGameState = S_MENU;
+			load = levelzerob;
+			break;
+
+		case levelone:
+			clearScreen();
+			g_eGameState = S_MENU;
+			load = levelone;
+			break;
+
+		case leveltwo:
+			clearScreen();
+			g_eGameState = S_MENU;
+			load = leveltwo;
+			break;
+
+		case levelfour:
+			clearScreen();
+			g_eGameState = S_MENU;
+			load = levelfour;
+			break;
+		}
 	}
 }

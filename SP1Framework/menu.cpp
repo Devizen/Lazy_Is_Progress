@@ -30,14 +30,14 @@ void menu()
 
 	if (g_abKeyPressed[K_UP] &&
 		g_menu.m_cLocation.Y > 8 &&
-		g_menu.m_cLocation.Y <= 11)
+		g_menu.m_cLocation.Y <= 12)
 	{
 		g_menu.m_cLocation.Y--;
 		bSomethingHappened = true;
 	}
 
 	if (g_abKeyPressed[K_DOWN] &&
-		g_menu.m_cLocation.Y < 11 &&
+		g_menu.m_cLocation.Y < 12 &&
 		g_menu.m_cLocation.Y >= 8)
 	{
 		g_menu.m_cLocation.Y++;
@@ -47,19 +47,27 @@ void menu()
 	if (g_menu.m_cLocation.Y == 8 && g_abKeyPressed[K_RETURN])
 	{
 		g_sChar.health = 3;
+		g_dCountTime = 60;
+		load = levelzeroa;
 		g_eGameState = S_GAME;
 	}
 
 	if (g_menu.m_cLocation.Y == 9 && g_abKeyPressed[K_RETURN])
 	{
-		g_eGameState = S_INSTRUCTIONS;
+		g_sChar.health = 3;
+		g_eGameState = S_GAME;
 	}
 
 	if (g_menu.m_cLocation.Y == 10 && g_abKeyPressed[K_RETURN])
 	{
+		g_eGameState = S_INSTRUCTIONS;
+	}
+
+	if (g_menu.m_cLocation.Y == 11 && g_abKeyPressed[K_RETURN])
+	{
 		g_eGameState = S_SCOREBOARD;
 	}
-	if (g_menu.m_cLocation.Y == 11 && g_abKeyPressed[K_RETURN])
+	if (g_menu.m_cLocation.Y == 12 && g_abKeyPressed[K_RETURN])
 	{
 		g_bQuitGame = true;
 	}
