@@ -36,6 +36,3 @@ g_box1;
 //Linking game states.
 extern EGAMESTATES g_eGameState;
 extern LEVELS load;
-
-//Definition for function.
-void instructions();
