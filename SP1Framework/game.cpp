@@ -443,6 +443,56 @@ void processUserInput()
 			break;
 		}
 	}
+
+	if (g_abKeyPressed[K_BACK])
+	{
+		switch (load)
+		{
+		case levelzeroa:
+			restarthealth = true;
+			clearScreen();
+			g_eGameState = S_MENU;
+			load = levelzeroa;
+			renderGame();
+			break;
+
+		case levelzerob:
+			restarthealth = true;
+			clearScreen();
+			g_eGameState = S_MENU;
+			load = levelzerob;
+			renderGame();
+			break;
+
+		case levelone:
+			restarthealth = true;
+			clearScreen();
+			g_eGameState = S_MENU;
+			load = levelone;
+			renderGame();
+			break;
+
+		case leveltwo:
+			restarthealth = true;
+			clearScreen();
+			g_eGameState = S_MENU;
+			load = leveltwo;
+			renderGame();
+			break;
+
+		case levelfour:
+			restarthealth = true;
+			clearScreen();
+			g_eGameState = S_MENU;
+			load = levelfour;
+			renderGame();
+			break;
+		}
+
+
+
+
+	}
 }
 	
 
