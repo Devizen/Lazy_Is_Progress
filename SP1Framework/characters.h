@@ -15,6 +15,7 @@ extern SGameChar g_sChar;
 extern SGameChar g_nChar;
 extern SGameChar g_enemy;
 
+
 extern RELEASE
 release_enemy,
 release_enemy1,
@@ -55,6 +56,7 @@ extern int health;
 extern bool bSomethingHappened;
 extern double ai_BounceTime;
 extern direction check;
+
 
 //Definition for function.
 void motiondetect();

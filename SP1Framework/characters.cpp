@@ -635,36 +635,53 @@ void patrolenemy(struct SGameChar enemy)
 	{
 		return;
 	}
+	int randtemp;
+	randtemp = 1 + rand() % 4;
 
-	if (/*map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != (char)219 && 
-		map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X]*/
-		g_enemy.m_cLocation.X != 59)
+	switch (randtemp)
 	{
-			g_enemy.m_cLocation.X++;
+	case 1:
+	{
+		if (map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != (char)219 && g_enemy.m_cLocation.Y != 12 && g_enemy.m_cLocation.X == 33)
+		{
+			g_enemy.m_cLocation.Y++;
 			bSomethingHappened = true;
-	}
-	else if (/*map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != (char)219 &&
-		map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X]*/
-		g_enemy.m_cLocation.Y != 1)
-	{
-		g_enemy.m_cLocation.Y--;
-		bSomethingHappened = true;
-	}
-	else if (/*map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != (char)219 &&
-			 map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X]*/
-			 g_enemy.m_cLocation.X != 31)
-	{
-		g_enemy.m_cLocation.X--;
-		bSomethingHappened = true;
-	}
-	else if (/*map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != (char)219 &&
-			 map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X]*/
-			 g_enemy.m_cLocation.Y != 11)
-	{
-		g_enemy.m_cLocation.Y++;
-		bSomethingHappened = true;
-	}
+		}
 
+		break;
+	}
+		
+	case 2:
+	{
+			if (map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X + 1] != (char)219 && g_enemy.m_cLocation.X != 44 && g_enemy.m_cLocation.Y == 11)
+			{
+
+				g_enemy.m_cLocation.X++;
+				bSomethingHappened = true;
+			}
+			break;
+	}
+	case 3:
+	{
+		if (map[g_enemy.m_cLocation.Y - 1][g_enemy.m_cLocation.X] != (char)219 && g_enemy.m_cLocation.Y != 8 && g_enemy.m_cLocation.X == 44)
+		{
+			g_enemy.m_cLocation.Y--;
+			bSomethingHappened = true;
+		}
+		break;
+	}
+	case 4:
+	{
+		if (map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X - 1] != (char)219 && g_enemy.m_cLocation.X != 33 && g_enemy.m_cLocation.Y == 8)
+		{
+			g_enemy.m_cLocation.X--;
+			bSomethingHappened = true;
+		}
+		break;
+	
+	}
+	}
+	
 	//else if (map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X + 1] != (char)219)
 	//{
 	//	g_enemy.m_cLocation.X++;
@@ -741,7 +758,7 @@ void patrolenemy(struct SGameChar enemy)
 	if (bSomethingHappened)
 	{
 		// set the bounce time to some time in the future to prevent accidental triggers
-		ai_BounceTime = g_dElapsedTime + 0.05f; // 125ms should be enough
+		ai_BounceTime = g_dElapsedTime + 0.5f; // 125ms should be enough
 
 	}
 }

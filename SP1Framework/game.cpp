@@ -85,6 +85,8 @@ LEVELS		load = levelzeroa;
 RESTART		level = one;
 direction	check = upd;
 
+
+
 double  g_dBounceTime; // this is to prevent key bouncing, so we won't trigger keypresses more than once
 double ai_BounceTime;
 

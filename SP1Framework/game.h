@@ -86,6 +86,7 @@ enum RESTART
 	two
 };
 
+
 //Structure for testing different directions.
 enum direction
 {
