@@ -60,3 +60,4 @@ extern direction check;
 void motiondetect();
 void rendercharacters();
 void patrolenemy(struct SGameChar enemy);
+void epatrolenemy();

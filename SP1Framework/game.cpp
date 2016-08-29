@@ -130,7 +130,7 @@ void init(void)
 
 	g_Console.setConsoleFont(0, 16, L"Arial");
 	// Added by Daniel \/
-	PlaySound(TEXT("Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
+	//PlaySound(TEXT("Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
 	
 }
 
