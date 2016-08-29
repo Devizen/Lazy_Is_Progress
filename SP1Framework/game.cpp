@@ -13,6 +13,7 @@
 #include "health.h"
 #include "level1.h"
 #include "level2.h"
+#include "level3.h"
 #include "level4.h"
 #include "characters.h"
 #include "renderResult.h"
@@ -129,7 +130,11 @@ void init(void)
 
 	g_Console.setConsoleFont(0, 16, L"Arial");
 	// Added by Daniel \/
+
+	PlaySound(TEXT("Soundtracks/BGM/Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
+
 	//PlaySound(TEXT("Soundtracks/BGM/Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
+
 	//PlaySound(TEXT("Soundtracks/BGM/Jupiter_Lighthouse.mp3"),NULL, SND_SYNC | SND_LOOP | SND_ASYNC);
 	
 }
@@ -190,6 +195,7 @@ void getInput(void)
 	g_abKeyPressed[K_2] = isKeyPressed(VK_2);
 	g_abKeyPressed[K_3] = isKeyPressed(VK_3);
 	g_abKeyPressed[K_4] = isKeyPressed(VK_4);
+	g_abKeyPressed[K_5] = isKeyPressed(VK_5);
 	g_abKeyPressed[K_6] = isKeyPressed(VK_6);
 	g_abKeyPressed[K_9] = isKeyPressed(VK_9);
 	g_abKeyPressed[K_0] = isKeyPressed(VK_0);
@@ -298,6 +304,16 @@ void moveCharacter()
 		movelevel2();
 		SpeedUpPlatform();
 		break;
+
+	case levelthree:
+		sprint();
+		movelevel3();
+		break;
+
+	case levelfour:
+		sprint();
+		movelevel4();
+		break;
 	}
 }
 		
@@ -342,6 +358,15 @@ void processUserInput()
 	{
 		restarthealth = true;
 		load = leveltwo;
+		clearScreen();
+		spawn();
+		renderGame();
+	}
+
+	if (g_abKeyPressed[K_5])
+	{
+		restarthealth = true;
+		load = levelthree;
 		clearScreen();
 		spawn();
 		renderGame();
@@ -546,6 +571,8 @@ void renderGame()
 		break;
 	case leveltwo: level2();
 		break;
+	case levelthree: level3();
+		break;
 	case levelfour: level4();
 		break;
 	}
@@ -666,6 +693,19 @@ void renderFramerate()
 			break;
 
 		case leveltwo:
+			if (g_sChar.health < 1)
+			{
+				level = two;
+				load = defeated;
+				renderGame();
+			}
+			else
+			{
+				g_dCountTime = 60;
+				spawn();
+			}
+			break;
+		case levelthree:
 			if (g_sChar.health < 1)
 			{
 				level = two;
