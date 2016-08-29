@@ -30,3 +30,4 @@ extern SGameChar g_sChar;
 
 //Definition for function.
 void menu();
+void instructions();
