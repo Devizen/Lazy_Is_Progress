@@ -46,6 +46,7 @@ enum EKEYS
 	K_2,
 	K_3,
 	K_4,
+	K_5,
 	K_6,
 	K_9,
 	K_0,
@@ -155,6 +156,7 @@ void tutorialb();
 void movelevel0();
 void movelevel1();
 void movelevel2();
+void movelevel3();
 void movelevel4();
 
 //Linking variables.

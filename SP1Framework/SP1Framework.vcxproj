@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -14,6 +14,7 @@
     <ProjectGuid>{1A587CA1-7340-416F-94D6-7C400A833946}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>SP1Framework</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -27,7 +28,7 @@
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -87,10 +88,12 @@
     <ClCompile Include="instructions.cpp" />
     <ClCompile Include="level1.cpp" />
     <ClCompile Include="level2.cpp" />
+    <ClCompile Include="level3.cpp" />
     <ClCompile Include="level4.cpp" />
     <ClCompile Include="loadlevel.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
+    <ClCompile Include="movelevel3.cpp" />
     <ClCompile Include="movelevel4.cpp" />
     <ClCompile Include="renderLegend.cpp" />
     <ClCompile Include="movelevel0.cpp" />
@@ -117,10 +120,12 @@
     <ClInclude Include="keyboard.h" />
     <ClInclude Include="level1.h" />
     <ClInclude Include="level2.h" />
+    <ClInclude Include="level3.h" />
     <ClInclude Include="level4.h" />
     <ClInclude Include="loadlevel.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="menu.h" />
+    <ClInclude Include="movelevel3.h" />
     <ClInclude Include="movelevel4.h" />
     <ClInclude Include="renderLegend.h" />
     <ClInclude Include="movelevel0.h" />
