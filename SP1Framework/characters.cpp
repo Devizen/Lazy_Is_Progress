@@ -7,6 +7,7 @@
 void motiondetect()
 {
 	bool bSomethingHappened = false;
+
 	if (ai_BounceTime > g_dElapsedTime)
 	{
 		return;
@@ -91,219 +92,6 @@ void motiondetect()
 			ai_BounceTime = g_dElapsedTime + 0.124; // 125ms should be enough
 		}
 		break;
-
-	/*case levelzerob:*/
-		//For First Character
-		//Move Right
-		//if (g_enemy.m_cLocation.X > 0 &&
-		//	(g_enemy.m_cLocation.X - g_sChar.m_cLocation.X) < 0 &&
-		//	map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X + 1] != (char)219)
-		//{
-		//	if (door2 == true || door4 == true)
-		//	{
-		//		g_enemy.m_cLocation.X++;
-		//		bSomethingHappened = true;
-		//	}
-		//	else if (door2 == false || door4 == false)
-		//	{
-		//		if (map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X + 1] !=
-		//			map[g_door2.m_cLocation.Y][g_door2.m_cLocation.X] ||
-		//			map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X + 1] !=
-		//			map[g_door4.m_cLocation.Y][g_door4.m_cLocation.X])
-		//		{
-		//			g_enemy.m_cLocation.X++;
-		//			bSomethingHappened = true;
-		//		}
-		//	}
-		//}
-
-		////Move Left
-		//if (g_enemy.m_cLocation.X > 0 &&
-		//	g_enemy.m_cLocation.X - g_sChar.m_cLocation.X > 0 &&
-		//	map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X - 1] != (char)219)
-		//{
-		//	if (door2 == true || door4 == true)
-		//	{
-		//		g_enemy.m_cLocation.X--;
-		//		bSomethingHappened = true;
-		//	}
-		//	else if (door2 == false || door4 == false)
-		//	{
-		//		if (map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X - 1] !=
-		//			map[g_door2.m_cLocation.Y][g_door2.m_cLocation.X] ||
-		//			map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X - 1] !=
-		//			map[g_door4.m_cLocation.Y][g_door4.m_cLocation.X])
-		//		{
-		//			g_enemy.m_cLocation.X--;
-		//			bSomethingHappened = true;
-		//		}
-		//	}
-		//}
-
-		////Move Down
-		//if (g_enemy.m_cLocation.Y > 0 &&
-		//	(g_enemy.m_cLocation.Y - g_sChar.m_cLocation.Y) < 0 &&
-		//	map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != (char)219)
-		//{
-		//	//if (map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] == map[g_door2.m_cLocation.Y][g_door2.m_cLocation.X] &&
-		//	//	door2 == true)
-		//	//{
-		//	//	g_enemy.m_cLocation.Y++;
-		//	//	bSomethingHappened = true;
-		//	//}
-		//	//else if (map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] == map[g_door4.m_cLocation.Y][g_door4.m_cLocation.X] &&
-		//	//	door4 == true)
-		//	//{
-		//	//	g_enemy.m_cLocation.Y++;
-		//	//	bSomethingHappened = true;
-		//	//}
-		//	if (map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != map[g_door2.m_cLocation.Y][g_door2.m_cLocation.X] &&
-		//		door4 == true)
-		//	{
-		//		g_enemy.m_cLocation.Y++;
-		//		bSomethingHappened = true;
-		//	}
-		//	else if (map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != map[g_door4.m_cLocation.Y][g_door4.m_cLocation.X] &&
-		//		door2 == true)
-		//	{
-		//		g_enemy.m_cLocation.Y++;
-		//		bSomethingHappened = true;
-		//	}
-		//	else if (door2 == false && door4 == false)
-		//	{
-		//		if (map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] !=
-		//			map[g_door2.m_cLocation.Y][g_door2.m_cLocation.X] ||
-		//			map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X ] !=
-		//			map[g_door4.m_cLocation.Y][g_door4.m_cLocation.X])
-		//		{
-		//			g_enemy.m_cLocation.Y++;
-		//			bSomethingHappened = true;
-		//		}
-		//	}
-		//	else if (door4 == true && 
-		//		map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] !=
-		//		map[g_door2.m_cLocation.Y][g_door2.m_cLocation.X])
-		//	{
-		//		g_enemy.m_cLocation.Y++;
-		//	}
-		//}
-
-		////Move Up
-		//if (g_enemy.m_cLocation.Y > 0 &&
-		//	(g_enemy.m_cLocation.Y - g_sChar.m_cLocation.Y) > 0 &&
-		//	map[g_enemy.m_cLocation.Y - 1][g_enemy.m_cLocation.X] != (char)219)
-		//{
-		//	if (door2 == true || door4 == true)
-		//	{
-		//		g_enemy.m_cLocation.Y--;
-		//		bSomethingHappened = true;
-		//	}
-		//	else if (door2 == false || door4 == false)
-		//	{
-		//		if (map[g_enemy.m_cLocation.Y - 1][g_enemy.m_cLocation.X] !=
-		//			map[g_door2.m_cLocation.Y][g_door2.m_cLocation.X] ||
-		//			map[g_enemy.m_cLocation.Y - 1][g_enemy.m_cLocation.X] !=
-		//			map[g_door4.m_cLocation.Y][g_door4.m_cLocation.X])
-		//		{
-		//			g_enemy.m_cLocation.Y--;
-		//			bSomethingHappened = true;
-		//		}
-		//	}
-		//}
-
-		////For Second Character
-		////Move Right
-		//if (g_enemy2.m_cLocation.X > 0 &&
-		//	(g_enemy2.m_cLocation.X - g_nChar.m_cLocation.X) < 0 &&
-		//	map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X + 1] != (char)219)
-		//{
-		//	if (door1 == true || door3 == true)
-		//	{
-		//		g_enemy2.m_cLocation.X++;
-		//		bSomethingHappened = true;
-		//	}
-		//	else if (door1 == false || door3 == false)
-		//	{
-		//		if (map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X + 1] !=
-		//			map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X] ||
-		//			map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X + 1] !=
-		//			map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X])
-		//		{
-		//			g_enemy2.m_cLocation.X++;
-		//			bSomethingHappened = true;
-		//		}
-		//	}
-		//}
-
-		////Move Left
-		//if (g_enemy2.m_cLocation.X > 0 &&
-		//	g_enemy2.m_cLocation.X - g_nChar.m_cLocation.X > 0 &&
-		//	map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X - 1] != (char)219)
-		//{
-		//	if (door1 == true || door3 == true)
-		//	{
-		//		g_enemy2.m_cLocation.X--;
-		//		bSomethingHappened = true;
-		//	}
-		//	else if (door1 == false || door3 == false)
-		//	{
-		//		if (map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X - 1] !=
-		//			map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X] ||
-		//			map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X - 1] !=
-		//			map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X])
-		//		{
-		//			g_enemy2.m_cLocation.X--;
-		//			bSomethingHappened = true;
-		//		}
-		//	}
-		//}
-
-		////Move Down
-		//if (g_enemy2.m_cLocation.Y > 0 &&
-		//	(g_enemy2.m_cLocation.Y - g_nChar.m_cLocation.Y) < 0 &&
-		//	map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] != (char)219)
-		//{
-		//	if (door1 == true || door3 == true)
-		//	{
-		//		g_enemy2.m_cLocation.Y++;
-		//		bSomethingHappened = true;
-		//	}
-		//	else if (door1 == false || door3 == false)
-		//	{
-		//		if (map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] !=
-		//			map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X] || 
-		//			map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] !=
-		//			map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X])
-		//		{
-		//			g_enemy2.m_cLocation.Y++;
-		//			bSomethingHappened = true;
-		//		}
-		//	}
-		//}
-
-		////Move Up
-		//if (g_enemy2.m_cLocation.Y > 0 &&
-		//	(g_enemy2.m_cLocation.Y - g_nChar.m_cLocation.Y) > 0 &&
-		//	map[g_enemy2.m_cLocation.Y - 1][g_enemy2.m_cLocation.X] != (char)219)
-		//{
-		//	if (door1 == true || door3 == true)
-		//	{
-		//		g_enemy2.m_cLocation.Y--;
-		//		bSomethingHappened = true;
-		//	}
-		//	else if (door1 == false || door3 == false)
-		//	{
-		//		if (map[g_enemy2.m_cLocation.Y - 1][g_enemy2.m_cLocation.X] !=
-		//			map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X] ||
-		//			map[g_enemy2.m_cLocation.Y - 1][g_enemy2.m_cLocation.X] !=
-		//			map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X])
-		//		{
-		//			g_enemy2.m_cLocation.Y--;
-		//			bSomethingHappened = true;
-		//		}
-		//	}
-		//}
-	/*	break;*/
 
 	case levelone:
 		//For First Character
@@ -403,8 +191,9 @@ void motiondetect()
 		if (bSomethingHappened)
 		{
 			// set the bounce time to some time in the future to prevent accidental triggers
-			ai_BounceTime = g_dElapsedTime + 0.15; // 125ms should be enough
+			ai_BounceTime = g_dElapsedTime + 0.175; // 125ms should be enough
 		}
+
 		break;
 
 	case leveltwo:
@@ -481,12 +270,6 @@ void motiondetect()
 		}
 		break;
 	}
-
-	//if (bSomethingHappened)
-	//{
-	//	// set the bounce time to some time in the future to prevent accidental triggers
-	//	ai_BounceTime = g_dElapsedTime + 0.175; // 125ms should be enough
-	//}
 }
 
 //Done by Eugene.
@@ -636,9 +419,6 @@ void patrolenemy(struct SGameChar enemy)
 	{
 		return;
 	}
-
-	unsigned int randtemp;
-	randtemp = 1 + rand() % 4;
 
 	switch (load)
 	{
