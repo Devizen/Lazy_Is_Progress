@@ -106,7 +106,6 @@ struct SGameChar
     COORD m_cLocation;
     bool  m_bActive;
 	int health;
-	double slowdown= 0;
 };
 
 //Struct for releasing enemy

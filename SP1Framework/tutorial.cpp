@@ -64,6 +64,7 @@ void tutoriala()
 		g_nChar.m_cLocation.Y == 0)
 	{
 		clearScreen();
+		restarthealth = true;
 		load = levelzerob;
 		spawn();
 	}
@@ -105,6 +106,9 @@ void tutorialb()
 	rendercharacters();
 	//motiondetect();
 	patrolenemy(g_enemy);
+	// epatrolenemy();
+	
+
 
 	if (boxreturn(boxone) == true)
 	{
@@ -183,8 +187,17 @@ void tutorialb()
 		door4 = false;
 	}
 
-	//if ((g_enemy.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_sChar.m_cLocation.Y) ||
-	//	(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y))
+	//if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X] == map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X])
+	//{
+	//	restarthealth = false;
+	//	g_sChar.health -= 1;
+
+	//	spawn();
+
+	//}
+
+	//if ((g_enemy.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_sChar.m_cLocation.Y)/* ||
+	//	(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y)*/)
 	//{
 	//	restarthealth = false;
 	//	g_sChar.health -= 1;
@@ -215,6 +228,7 @@ void tutorialb()
 		g_nChar.m_cLocation.Y == 2)
 	{
 		clearScreen();
+		restarthealth = true;
 		load = levelone;
 		spawn();
 	}
