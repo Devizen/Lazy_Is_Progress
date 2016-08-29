@@ -238,6 +238,52 @@ void spawn()
 		//Set the initial time limit
 		g_dCountTime = 60;
 		break;
+
+	case levelthree:
+		//First Character
+		g_sChar.m_cLocation.X = 9;
+		g_sChar.m_cLocation.Y = 22;
+
+		//Second Character
+		g_nChar.m_cLocation.X = 52;
+		g_nChar.m_cLocation.Y = 22;
+
+		//Enemy
+		g_enemy.m_cLocation.X = 15;
+		g_enemy.m_cLocation.Y = 3;
+
+		g_enemy2.m_cLocation.X = 49;
+		g_enemy2.m_cLocation.Y = 10;
+
+		//Door
+		g_door1.m_cLocation.X = 4;
+		g_door1.m_cLocation.Y = 10;
+
+		//Lever
+		g_lever1.m_cLocation.X = 45;
+		g_lever1.m_cLocation.Y = 2;
+
+		//Box
+		g_box1.m_cLocation.X = 16;
+		g_box1.m_cLocation.Y = 30;
+
+		//Release A.I
+		release_enemy.m_cLocation.X = 10;
+		release_enemy.m_cLocation.Y = 6;
+
+		//PlatForm
+		g_platform.m_cLocation.X = 4;
+		g_platform.m_cLocation.Y = 21;
+
+		//Set the initial health of the player
+		if (restarthealth == true)
+		{
+			g_sChar.health = 3;
+		}
+
+		//Set the initial time limit
+		g_dCountTime = 60;
+		break;
 	}
 }
 

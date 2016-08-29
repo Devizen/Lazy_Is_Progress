@@ -70,6 +70,9 @@
     <ClCompile Include="instructions.cpp">
       <Filter>Game Scene</Filter>
     </ClCompile>
+    <ClCompile Include="level3.cpp">
+      <Filter>Game Level</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="characters.h">
@@ -143,6 +146,9 @@
     </ClInclude>
     <ClInclude Include="instructions.h">
       <Filter>Game Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="level3.h">
+      <Filter>Game Level</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

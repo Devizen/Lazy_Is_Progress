@@ -13,6 +13,7 @@
 #include "health.h"
 #include "level1.h"
 #include "level2.h"
+#include "level3.h"
 #include "characters.h"
 #include "renderResult.h"
 #include "menu.h"
@@ -192,6 +193,7 @@ void getInput(void)
 	g_abKeyPressed[K_2] = isKeyPressed(VK_2);
 	g_abKeyPressed[K_3] = isKeyPressed(VK_3);
 	g_abKeyPressed[K_4] = isKeyPressed(VK_4);
+	g_abKeyPressed[K_5] = isKeyPressed(VK_5);
 	g_abKeyPressed[K_9] = isKeyPressed(VK_9);
 	g_abKeyPressed[K_0] = isKeyPressed(VK_0);
 }
@@ -346,6 +348,15 @@ void processUserInput()
 		renderGame();
 	}
 
+	if (g_abKeyPressed[K_5])
+	{
+		restarthealth = true;
+		load = levelthree;
+		clearScreen();
+		spawn();
+		renderGame();
+	}
+
 	if (g_abKeyPressed[K_R])
 	{
 		bool bSomethingHappened = false;
@@ -473,6 +484,8 @@ void renderGame()
 	case levelone: level1();
 		break;
 	case leveltwo: level2();
+		break;
+	case levelthree: level3();
 		break;
 	//case levelthree: levelthree();
 	//	break;
