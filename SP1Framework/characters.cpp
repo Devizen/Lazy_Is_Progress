@@ -628,6 +628,7 @@ void rendercharacters()
 	}
 }
 
+//Done by Yoong Soon and Eugene.
 void patrolenemy(struct SGameChar enemy)
 {
 	bool bSomethingHappened = false;
@@ -635,125 +636,79 @@ void patrolenemy(struct SGameChar enemy)
 	{
 		return;
 	}
-	int randtemp;
+
+	unsigned int randtemp;
 	randtemp = 1 + rand() % 4;
 
-	switch (randtemp)
+	switch (load)
 	{
-	case 1:
-	{
-		if (map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != (char)219 && g_enemy.m_cLocation.Y != 12 && g_enemy.m_cLocation.X == 33)
+	case levelzerob:
 		{
-			g_enemy.m_cLocation.Y++;
-			bSomethingHappened = true;
-		}
-
-		break;
-	}
-		
-	case 2:
-	{
-			if (map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X + 1] != (char)219 && g_enemy.m_cLocation.X != 44 && g_enemy.m_cLocation.Y == 11)
+			for (unsigned loop = 1; loop != 5; loop++)
 			{
+				switch (loop)
+				{
+				case 1:
+				{
+					if (map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != (char)219 &&
+						g_enemy.m_cLocation.Y != 12 && g_enemy.m_cLocation.X == 33)
+					{
+						g_enemy.m_cLocation.Y++;
+						bSomethingHappened = true;
+					}
+					break;
+				}
 
-				g_enemy.m_cLocation.X++;
-				bSomethingHappened = true;
+				case 2:
+				{
+					if (map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X + 1] != (char)219 &&
+						g_enemy.m_cLocation.X != 44 && g_enemy.m_cLocation.Y == 11)
+					{
+
+						g_enemy.m_cLocation.X++;
+						bSomethingHappened = true;
+					}
+					break;
+				}
+				case 3:
+				{
+					if (map[g_enemy.m_cLocation.Y - 1][g_enemy.m_cLocation.X] != (char)219 &&
+						g_enemy.m_cLocation.Y != 8 && g_enemy.m_cLocation.X == 44)
+					{
+						g_enemy.m_cLocation.Y--;
+						bSomethingHappened = true;
+					}
+					break;
+				}
+				case 4:
+				{
+					if (map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X - 1] != (char)219 &&
+						g_enemy.m_cLocation.X != 33 && g_enemy.m_cLocation.Y == 8)
+					{
+						g_enemy.m_cLocation.X--;
+						bSomethingHappened = true;
+					}
+					break;
+
+				}
+
+					if (loop = 4)
+					{
+						loop = 1;
+					}
+				}
 			}
-			break;
-	}
-	case 3:
-	{
-		if (map[g_enemy.m_cLocation.Y - 1][g_enemy.m_cLocation.X] != (char)219 && g_enemy.m_cLocation.Y != 8 && g_enemy.m_cLocation.X == 44)
-		{
-			g_enemy.m_cLocation.Y--;
-			bSomethingHappened = true;
 		}
-		break;
-	}
-	case 4:
-	{
-		if (map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X - 1] != (char)219 && g_enemy.m_cLocation.X != 33 && g_enemy.m_cLocation.Y == 8)
+
+		if (g_enemy.m_cLocation.X == g_nChar.m_cLocation.X && g_enemy.m_cLocation.Y == g_nChar.m_cLocation.Y)
 		{
-			g_enemy.m_cLocation.X--;
-			bSomethingHappened = true;
+			restarthealth = false;
+			g_sChar.health -= 1;
+
+			spawn();
 		}
-		break;
-	
 	}
-	}
-	
-	//else if (map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X + 1] != (char)219)
-	//{
-	//	g_enemy.m_cLocation.X++;
-	//	bSomethingHappened = true;
-	//}
-	//else if (map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X + 1] == (char)219 &&
-	//	map[g_enemy.m_cLocation.Y - 1][g_enemy.m_cLocation.X] != (char)219)
-	//{
-	//	g_enemy.m_cLocation.Y--;
-	//	bSomethingHappened = true;
-	//}
 
-	//else if (map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != (char)219)
-	//{
-	//	g_enemy.m_cLocation.Y++;
-	//	bSomethingHappened = true;
-	//}
-	//else if (map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X - 1] != (char)219)
-	//{
-	//	g_enemy.m_cLocation.X--;
-	//	bSomethingHappened = true;
-	//}
-
-	//else	if (g_enemy.m_cLocation.X == 33 && g_enemy.m_cLocation.Y == 11)
-	//{
-	//	if (g_enemy.m_cLocation.Y == 11)
-	//	{
-	//		g_enemy.m_cLocation.X +=10;
-	//		bSomethingHappened = true;
-	//	}
-	//}
-	//else if (g_enemy.m_cLocation.X == 43 && g_enemy.m_cLocation.Y == 11)
-	//{
-	//	if (g_enemy.m_cLocation.X == 43)
-	//	{
-	//		g_enemy.m_cLocation.Y -=3;
-	//		bSomethingHappened = true;
-	//	}
-	//}
-	//else if (g_enemy.m_cLocation.X == 43 && g_enemy.m_cLocation.Y == 8)
-	//{
-	//	if (g_enemy.m_cLocation.Y == 8)
-	//	{
-	//		g_enemy.m_cLocation.X ++;
-	//		bSomethingHappened = true;
-	//	}
-
-	//}
-	////if (g_enemy.m_cLocation.Y > 0 && map[g_enemy.m_cLocation.Y+1][g_enemy.m_cLocation.X ] != (char)219)
-	////{
-	////		g_enemy.m_cLocation.Y+=3;
-	////		bSomethingHappened = true;
-	////}
-	////else if (g_enemy.m_cLocation.X >0 &&  )
-	////{
-	////		g_enemy.m_cLocation.X += 10;
-	////		C = g_enemy.cLocation.X;
-	////		bSomethingHappened = true;
-	////}
-	////else if (g_enemy.m_cLocation.Y < 0 && map[g_enemy.m_cLocation.Y -1][g_enemy.m_cLocation.X ] != (char)219)
-	////{
-	////		g_enemy.m_cLocation.Y -= 3;
-	////		bSomethingHappened = true;
-	////}
-	////else if (g_enemy.m_cLocation.X <0  )
-	////{
-	////		g_enemy.m_cLocation.X -= 10;
-	////		bSomethingHappened = true;
-	////	
-	////}
-
-	
 
 	if (bSomethingHappened)
 	{
