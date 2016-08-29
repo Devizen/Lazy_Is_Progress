@@ -24,6 +24,18 @@ void renderLegend()
 
 	switch (load)
 	{
+	case levelzeroa:
+		//Coordinates for LEGENDS:
+		c.X = 66;
+		c.Y = 4;
+		g_Console.writeToBuffer(c, legends, color1);  //Display "LEGENDS:".
+
+		//Coordinates for "Level".
+		c.X = 66;
+		c.Y = 24;
+		g_Console.writeToBuffer(c, "Tutorial A");  //Display "Level".
+		break;
+
 	case levelzerob:
 		//Coordinates for LEGENDS:
 		c.X = 66;
@@ -32,24 +44,26 @@ void renderLegend()
 
 		//Coordinates for Box icon.
 		c.X = 64;
-		c.Y = 7;
+		c.Y = 5;
 		g_Console.writeToBuffer(c, (char)254, red); //Display the Box icon.
 
 		//Coordinates for "Box".
 		c.X = 66;
-		c.Y = 7;
+		c.Y = 5;
 		g_Console.writeToBuffer(c, box);  //Display "Box".
 
 		//Coordinates for Platform icon.
 		c.X = 64;
-		c.Y = 9;
+		c.Y = 6;
 		g_Console.writeToBuffer(c, (char)219, yellow); //Display the Platform icon.
 
 		c.X = 66;
-		c.Y = 9;
+		c.Y = 6;
 		g_Console.writeToBuffer(c, platform);  //Display "Platform".
 
-
+		c.X = 66;
+		c.Y = 24;
+		g_Console.writeToBuffer(c, "Tutorial B");  //Display "Level".
 		break;
 
 	case levelone:
