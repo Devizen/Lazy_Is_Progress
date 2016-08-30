@@ -61,7 +61,7 @@ void level4()
 		//loadlevel(name);
 		//COORD c;
 
-<<<<<<< HEAD
+
 	//Unlock Door 2
 	if (map[boxtwo.m_cLocation.Y][boxtwo.m_cLocation.X] == map[g_lever3.m_cLocation.Y][g_lever3.m_cLocation.X])
 	{
@@ -74,11 +74,11 @@ void level4()
 	{
 		door2 = false;
 	}
-=======
+
 
 		//c.X = 0;
 		//c.Y = 0;
->>>>>>> 0c2a74ed3dd3f4619b4557af1552e8ca0c52293f
+
 
 		//for (int i = 0; i <= y; i++)
 		//{
