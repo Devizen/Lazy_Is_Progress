@@ -62,20 +62,6 @@ void level4()
 		//COORD c;
 
 
-	//Unlock Door 2
-	if (map[boxtwo.m_cLocation.Y][boxtwo.m_cLocation.X] == map[g_lever3.m_cLocation.Y][g_lever3.m_cLocation.X])
-	{
-		g_Console.writeToBuffer(boxtwo.m_cLocation, (char)219, charColor2);
-		g_Console.writeToBuffer(g_door5.m_cLocation, (char)219, charColor2);
-
-		door2 = true;
-	}
-	else
-	{
-		door2 = false;
-	}
-
-
 		//c.X = 0;
 		//c.Y = 0;
 
@@ -87,10 +73,10 @@ void level4()
 		//	c.Y++;
 		//}
 
+	
 		rendercharacters();
 		//motiondetect();
-		patrolfour();
-
+		//patrolfour();
 
 		if (boxreturn(boxone) == true)
 		{
@@ -114,28 +100,31 @@ void level4()
 			g_Console.writeToBuffer(g_door4.m_cLocation, (char)219, charColor2);
 
 			door1 = true;
+			door2 = true;
+			door3 = true;
+			door4 = true;
 		}
 		else
 		{
 			door1 = false;
+			door2 = false;
+			door3 = false;
+			door4 = false;
 		}
 
-		////Unlock Door 2
-		//if (map[boxtwo.m_cLocation.Y][boxtwo.m_cLocation.X] == map[g_lever3.m_cLocation.Y][g_lever3.m_cLocation.X])
-		//{
-		//	g_Console.writeToBuffer(boxtwo.m_cLocation, (char)219, charColor2);
-		//	g_Console.writeToBuffer(g_door5.m_cLocation, (char)219, charColor2);
+		//Unlock Door 2
+		if (map[boxtwo.m_cLocation.Y][boxtwo.m_cLocation.X] == map[g_lever3.m_cLocation.Y][g_lever3.m_cLocation.X])
+		{
+			g_Console.writeToBuffer(boxtwo.m_cLocation, (char)219, charColor2);
+			g_Console.writeToBuffer(g_door5.m_cLocation, (char)219, charColor2);
 
-		//	door2 = true;
-		//}
-		//else
-		//{
-		//	door2 = false;
-		//}
-
-
-
-
+			door2 = true;
+		}
+		else
+		{
+			door2 = false;
+		}
+	
 		if ((g_enemy.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_sChar.m_cLocation.Y) ||
 			(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y))
 		{
@@ -152,6 +141,34 @@ void level4()
 			//Revert the level settings.
 			spawn();
 		}
+
+		//Teleport character to the right.
+
+		if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X] == map[g_lever2.m_cLocation.Y][g_lever2.m_cLocation.X])
+		{
+			g_sChar.m_cLocation.X = 48;
+			g_sChar.m_cLocation.Y = 8;
+		}
+	    if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X] == map[g_portal.m_cLocation.Y][g_portal.m_cLocation.X])
+		{
+			g_sChar.m_cLocation.X = 3;
+			g_sChar.m_cLocation.Y = 1;
+		}
+		
+
+
+		//Teleport character to the left.
+		if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X] == map[g_portal.m_cLocation.Y][g_portal.m_cLocation.X])
+		{
+			g_nChar.m_cLocation.X = 3;
+			g_nChar.m_cLocation.Y = 1;
+		}
+		if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X] == map[g_lever2.m_cLocation.Y][g_lever2.m_cLocation.X])
+		{
+			g_nChar.m_cLocation.X = 48;
+			g_nChar.m_cLocation.Y = 8;
+		}
+
 
 	}
 
