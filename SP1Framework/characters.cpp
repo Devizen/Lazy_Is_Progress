@@ -531,6 +531,7 @@ void patrolenemy(struct SGameChar enemy)
 		if (g_enemy.m_cLocation.X == g_nChar.m_cLocation.X && g_enemy.m_cLocation.Y == g_nChar.m_cLocation.Y)
 		{
 			restarthealth = false;
+			splash = true;
 			g_sChar.health -= 1;
 
 			spawn();

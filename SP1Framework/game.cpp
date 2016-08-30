@@ -336,55 +336,62 @@ void processUserInput()
 	if (g_abKeyPressed[K_1])
 	{
 		restarthealth = true;
+		splash = true;
 		load = levelzeroa;
 		clearScreen();
 		spawn();
-		renderGame();
+		g_eGameState = S_GAME;
+		//renderGame();
 	}
 
 	if (g_abKeyPressed[K_2])
 	{
 		restarthealth = true;
+		splash = true;
 		load = levelzerob;
 		clearScreen();
 		spawn();
-		renderGame();
+		g_eGameState = S_GAME;
 	}
 
 	if (g_abKeyPressed[K_3])
 	{
 		restarthealth = true;
+		splash = true;
 		powerup = true;
 		timeincrease = true;
 		load = levelone;
 		clearScreen();
 		spawn();
-		renderGame();
+		g_eGameState = S_GAME;
 	}
 	if (g_abKeyPressed[K_4])
 	{
 		restarthealth = true;
+		splash = true;
 		load = leveltwo;
 		clearScreen();
 		spawn();
-		renderGame();
+		g_eGameState = S_GAME;
 	}
 
 	if (g_abKeyPressed[K_5])
 	{
 		restarthealth = true;
+		splash = true;
 		load = levelthree;
 		clearScreen();
 		spawn();
-		renderGame();
+		g_eGameState = S_GAME;
 	}
 	if (g_abKeyPressed[K_6])
 	{
 		restarthealth = true;
+		splash = true;
 		load = levelfour;
 		clearScreen();
 		spawn();
-		renderGame();
+		g_eGameState = S_GAME;
 	}
 
 	if (g_abKeyPressed[K_R])
@@ -396,6 +403,7 @@ void processUserInput()
 		}
 
 		restarthealth = false;
+		splash = true;
 		g_sChar.health -= 1;
 		bSomethingHappened = true;
 
