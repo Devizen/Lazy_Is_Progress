@@ -242,11 +242,11 @@ void spawn()
 
 	case levelthree:
 		//First Character
-		g_sChar.m_cLocation.X = 17;
+		g_sChar.m_cLocation.X = 39;
 		g_sChar.m_cLocation.Y = 19;
 
 		//Second Character
-		g_nChar.m_cLocation.X = 39;
+		g_nChar.m_cLocation.X = 17;
 		g_nChar.m_cLocation.Y = 19;
 
 		//Enemy
@@ -256,25 +256,42 @@ void spawn()
 		g_enemy2.m_cLocation.X = 15;
 		g_enemy2.m_cLocation.Y = 9;
 
+		//PowerUp
+		g_powerup.m_cLocation.X = 40;
+		g_powerup.m_cLocation.Y = 20;
+
 		//Door
-		g_door1.m_cLocation.X = 8;
-		g_door1.m_cLocation.Y = 10;
+		g_door1.m_cLocation.X = 16;
+		g_door1.m_cLocation.Y = 11;
+		g_door2.m_cLocation.X = 3;
+		g_door2.m_cLocation.Y = 17;
+		g_door3.m_cLocation.X = 26;
+		g_door3.m_cLocation.Y = 17;
+		g_door4.m_cLocation.X = 45;
+		g_door4.m_cLocation.Y = 17;
 
 		//Lever
-		g_lever1.m_cLocation.X = 53;
-		g_lever1.m_cLocation.Y = 8;
+		g_lever1.m_cLocation.X = 7;
+		g_lever1.m_cLocation.Y = 18;
+		g_lever4.m_cLocation.X = 50;
+		g_lever4.m_cLocation.Y = 23;
 
 		//Box
-		g_box1.m_cLocation.X = 10;
-		g_box1.m_cLocation.Y = 10;
+		boxone.m_cLocation.X = 10;
+		boxone.m_cLocation.Y = 18;
+		boxfour.m_cLocation.X = 50;
+		boxfour.m_cLocation.Y = 23;
+		
+
+		
 
 		//Release A.I
 		release_enemy.m_cLocation.X = 16;
 		release_enemy.m_cLocation.Y = 9;
 
 		//PlatForm
-		g_platform.m_cLocation.X = 10;
-		g_platform.m_cLocation.Y = 19;
+		g_platform.m_cLocation.X = 7;
+		g_platform.m_cLocation.Y = 21;
 
 		//Set the initial health of the player
 		if (restarthealth == true)
