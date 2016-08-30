@@ -50,5 +50,5 @@ extern RESTART level;
 
 //Linking variables.
 extern bool restarthealth;
-
+extern bool splash;
 

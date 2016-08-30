@@ -4,69 +4,101 @@
 void tutoriala()
 {
 	string line = " ";
-	string name = "Text/Level/level0_0.txt";
-	loadlevel(name);
-
 	COORD c;
 
-	c.X = 0;
-	c.Y = 0;
-	
-	for (int i = 0; i <= y; i++)
+	if (splash == true)
 	{
-		line = map[i];
-		g_Console.writeToBuffer(c, line);
-		c.Y++;
-	}
+		string name = "Text/Screen/level0_0.txt";
+		loadlevel(name);
 
-	COORD y;
-	y.X = 15;
-	y.Y = 15;
+		c.X = 15;
+		c.Y = 7;
 
-	rendercharacters();
-	motiondetect();
-
-	if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X] == map[13][11])
-	{
-		g_Console.writeToBuffer(release_enemy.m_cLocation, (char)0);
-		g_Console.writeToBuffer(release_enemy1.m_cLocation, (char)0);
-		door1 = true;
-	}
-	else
-	{
-		door1 = false;
-	}
-
-	if ((g_enemy.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_sChar.m_cLocation.Y) ||
-		(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y))
-	{
-		//Deduct one health.
-		g_sChar.health--;
-
-		//g_sChar.health -= 1;
-		if (g_sChar.health > 0)
-		{	//Prevent health from reverting back to 3.
-			restarthealth = false;
-			//Revert level settings to default.
-			spawn();
+		clearScreen();
+		for (int i = 0; i <= y; i++)
+		{
+			line = map[i];
+			g_Console.writeToBuffer(c, line);
+			c.Y++;
 		}
-		if (g_sChar.health < 1)
-		{	//Boolean for restarting the level after gameover.
-			level = zeroa;
-			load = defeated;
+
+		if (g_dCountTime < 59)
+		{
+			splash = false;
 			renderGame();
 		}
 	}
 
-	if (g_sChar.m_cLocation.X == 29 &&
-		g_sChar.m_cLocation.Y == 0 &&
-		g_nChar.m_cLocation.X == 31 &&
-		g_nChar.m_cLocation.Y == 0)
+	if (splash == false)
 	{
-		clearScreen();
-		restarthealth = true;
-		load = levelzerob;
-		spawn();
+		string name = "Text/Level/level0_0.txt";
+		loadlevel(name);
+
+		//COORD c;
+
+		c.X = 0;
+		c.Y = 0;
+
+		for (int i = 0; i <= y; i++)
+		{
+			line = map[i];
+			g_Console.writeToBuffer(c, line);
+			c.Y++;
+		}
+
+		COORD y;
+		y.X = 15;
+		y.Y = 15;
+
+		rendercharacters();
+		motiondetect();
+
+		if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X] == map[13][11])
+		{
+			g_Console.writeToBuffer(release_enemy.m_cLocation, (char)0);
+			g_Console.writeToBuffer(release_enemy1.m_cLocation, (char)0);
+			door1 = true;
+		}
+		else
+		{
+			door1 = false;
+		}
+
+		if ((g_enemy.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_sChar.m_cLocation.Y) ||
+			(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y))
+		{
+			//Deduct one health.
+			g_sChar.health--;
+
+			//g_sChar.health -= 1;
+			if (g_sChar.health > 0)
+			{	//Prevent health from reverting back to 3.
+				restarthealth = false;
+
+				//Display Splash Screen.
+				splash = true;
+
+				//Revert level settings to default.
+				spawn();
+			}
+			if (g_sChar.health < 1)
+			{	//Boolean for restarting the level after gameover.
+				level = zeroa;
+				load = defeated;
+				renderGame();
+			}
+		}
+
+		if (g_sChar.m_cLocation.X == 29 &&
+			g_sChar.m_cLocation.Y == 0 &&
+			g_nChar.m_cLocation.X == 31 &&
+			g_nChar.m_cLocation.Y == 0)
+		{
+			clearScreen();
+			restarthealth = true;
+			load = levelzerob;
+			spawn();
+		}
 	}
 }
 

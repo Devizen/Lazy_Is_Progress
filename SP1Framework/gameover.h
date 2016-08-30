@@ -38,6 +38,9 @@ extern EGAMESTATES g_eGameState;
 extern LEVELS load;
 extern RESTART level;
 
+//Linking variables.
+extern bool splash;
+
 //Definition for function.
 void gameover(); // Game Over.
 void level1(); // level 1.
