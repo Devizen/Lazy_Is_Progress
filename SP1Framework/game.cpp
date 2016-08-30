@@ -57,7 +57,7 @@ SGameChar	g_nChar;
 SGameChar	g_enemy;
 SGameChar	g_enemy2;
 
-objects 
+objects
 boxone,
 boxtwo,
 boxthree,
@@ -67,13 +67,15 @@ g_door1,
 g_door2,
 g_door3,
 g_door4,
+g_door5,
 closedoor1,
 closedoor2,
 g_lever1,
 g_lever2,
 g_lever3,
 g_lever4,
-g_box1;
+g_box1,
+g_portal;
 
 //Speed up
 SGameChar   g_platform;

@@ -21,7 +21,16 @@ boxthree,
 boxfour,
 boxfive,
 g_door1,
+g_door2,
+g_door3,
+g_door4,
+g_door5,
+closedoor1,
+closedoor2,
 g_lever1,
+g_lever2,
+g_lever3,
+g_lever4,
 g_box1;
 
 //Linking Timer.

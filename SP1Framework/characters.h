@@ -43,7 +43,8 @@ g_lever1,
 g_lever2,
 g_lever3,
 g_lever4,
-g_box1;
+g_box1,
+g_portal;
 
 //Linking objects.
 extern bool door1;

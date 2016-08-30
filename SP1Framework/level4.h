@@ -1,7 +1,8 @@
 #include "main.h"
-#include "game.h"
 #include "gameover.h"
 #include "Framework\timer.h"
+#include "characters.h"
+#include "health.h"
 
 //Linking Timer.
 extern double  g_dBounceTime;
