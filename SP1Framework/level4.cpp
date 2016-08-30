@@ -58,18 +58,18 @@ void level4()
 		door1 = false;
 	}
 
-	////Unlock Door 2
-	//if (map[boxtwo.m_cLocation.Y][boxtwo.m_cLocation.X] == map[g_lever3.m_cLocation.Y][g_lever3.m_cLocation.X])
-	//{
-	//	g_Console.writeToBuffer(boxtwo.m_cLocation, (char)219, charColor2);
-	//	g_Console.writeToBuffer(g_door5.m_cLocation, (char)219, charColor2);
+	//Unlock Door 2
+	if (map[boxtwo.m_cLocation.Y][boxtwo.m_cLocation.X] == map[g_lever3.m_cLocation.Y][g_lever3.m_cLocation.X])
+	{
+		g_Console.writeToBuffer(boxtwo.m_cLocation, (char)219, charColor2);
+		g_Console.writeToBuffer(g_door5.m_cLocation, (char)219, charColor2);
 
-	//	door2 = true;
-	//}
-	//else
-	//{
-	//	door2 = false;
-	//}
+		door2 = true;
+	}
+	else
+	{
+		door2 = false;
+	}
 
 
 
