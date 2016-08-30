@@ -1,5 +1,6 @@
 #include "game.h"
 #include "main.h"
+#include "spawn.h"
 
 //Music
 

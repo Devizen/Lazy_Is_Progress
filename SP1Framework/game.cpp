@@ -38,6 +38,7 @@ double g_dCountTime;
 double g_ElapsedGameTime;
 bool    g_abKeyPressed[K_COUNT];
 bool g_ResultIsDisplayed = false;
+bool splash = true;
 
 RELEASE
 release_enemy,
@@ -94,7 +95,7 @@ double ai_BounceTime;
 double  g_dBounceTimeBoost = 0.0; // this is to prevent key bouncing, so we won't trigger keypresses more than once
 
 // Console object
-Console g_Console(80, 25, "SP1 Framework");
+Console g_Console(80, 25, "Too Hearts");
 
 const unsigned int x = 80;
 const unsigned int y = 25;
@@ -110,8 +111,6 @@ char map[25][80];
 //--------------------------------------------------------------
 void init(void)
 {
-	//Run the spawn function to printing characters for different levels.
-	spawn();
 	// Set precision for floating point output
 	g_dElapsedTime = 0.0;
 	g_dBounceTime = 0.0;
@@ -131,7 +130,7 @@ void init(void)
 	g_Console.setConsoleFont(0, 16, L"Arial");
 	// Added by Daniel \/
 
-	PlaySound(TEXT("Soundtracks/BGM/Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
+	//PlaySound(TEXT("Soundtracks/BGM/Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
 
 	//PlaySound(TEXT("Soundtracks/BGM/Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
 
@@ -268,8 +267,8 @@ void render()
 void splashScreenWait()    // waits for time to pass in splash screen
 {
 	if (g_dElapsedTime > 3.0) // wait for 3 seconds to switch to game mode, else do nothing
-		//g_eGameState = S_GAME;
-		g_eGameState = S_MENU;
+		//Displaying instructions to player.
+		g_eGameState = S_INSTRUCTIONS;
 }
 
 void gameplay()            // gameplay logic
@@ -282,38 +281,46 @@ void gameplay()            // gameplay logic
 
 void moveCharacter()
 {
-	switch (load)
+	if (splash == true)
 	{
-	case levelzeroa:
-		sprint();
-		movelevel0();
-		break;
+		
+	}
 
-	case levelzerob:
-		sprint();
-		movelevel0();
-		break;
+	else if (splash == false)
+	{
+		switch (load)
+		{
+		case levelzeroa:
+			sprint();
+			movelevel0();
+			break;
 
-	case levelone:
-		sprint();
-		movelevel1();
-		break;
+		case levelzerob:
+			sprint();
+			movelevel0();
+			break;
 
-	case leveltwo:
-		sprint();
-		movelevel2();
-		SpeedUpPlatform();
-		break;
+		case levelone:
+			sprint();
+			movelevel1();
+			break;
 
-	case levelthree:
-		sprint();
-		movelevel3();
-		break;
+		case leveltwo:
+			sprint();
+			movelevel2();
+			SpeedUpPlatform();
+			break;
 
-	case levelfour:
-		sprint();
-		movelevel4();
-		break;
+		case levelthree:
+			sprint();
+			movelevel3();
+			break;
+
+		case levelfour:
+			sprint();
+			movelevel4();
+			break;
+		}
 	}
 }
 		
@@ -468,6 +475,56 @@ void processUserInput()
 			break;
 		}
 	}
+
+	if (g_abKeyPressed[K_BACK])
+	{
+		switch (load)
+		{
+		case levelzeroa:
+			restarthealth = true;
+			clearScreen();
+			g_eGameState = S_MENU;
+			load = levelzeroa;
+			renderGame();
+			break;
+
+		case levelzerob:
+			restarthealth = true;
+			clearScreen();
+			g_eGameState = S_MENU;
+			load = levelzerob;
+			renderGame();
+			break;
+
+		case levelone:
+			restarthealth = true;
+			clearScreen();
+			g_eGameState = S_MENU;
+			load = levelone;
+			renderGame();
+			break;
+
+		case leveltwo:
+			restarthealth = true;
+			clearScreen();
+			g_eGameState = S_MENU;
+			load = leveltwo;
+			renderGame();
+			break;
+
+		case levelfour:
+			restarthealth = true;
+			clearScreen();
+			g_eGameState = S_MENU;
+			load = levelfour;
+			renderGame();
+			break;
+		}
+
+
+
+
+	}
 }
 	
 
@@ -550,6 +607,8 @@ void renderMap()
 
 void renderFramerate()
 {
+	//Optimised by Eugene.
+
 	COORD c;
 
 	WORD charColor = 0x0C;
@@ -560,22 +619,22 @@ void renderFramerate()
 
 	// displays the framerate
 	std::ostringstream ss;
-	ss << std::fixed << std::setprecision(1);
-	ss << 1.0 / g_dDeltaTime << "fps";
-	c.X = g_Console.getConsoleSize().X - 9;
+	ss << std::fixed << std::setprecision(0);
+	//ss << 1.0 / g_dDeltaTime << "fps";
+	c.X = g_Console.getConsoleSize().X - 13;
 	c.Y = 0;
-	g_Console.writeToBuffer(c, ss.str());
+	g_Console.writeToBuffer(c, "Time Left");
 
 	// displays the elapsed time
 	if (g_dCountTime >= 0)
 	{
 		ss.str("");
-		ss << g_dCountTime << "secs";
-		c.X = g_Console.getConsoleSize().X - 10;
-		c.Y = g_Console.getConsoleSize().Y - 23;
+		ss << g_dCountTime << " secs";
+		c.X = g_Console.getConsoleSize().X - 12;
+		c.Y = g_Console.getConsoleSize().Y - 24;
 		g_Console.writeToBuffer(c, ss.str(), 0xE5);
 
-		if (g_dCountTime <= 30 && g_dCountTime >= 10)
+		if (g_dCountTime <= 30 && g_dCountTime > 10)
 		{
 			g_Console.writeToBuffer(c, ss.str(), yellow);
 		}

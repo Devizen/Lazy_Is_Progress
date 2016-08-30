@@ -1,5 +1,6 @@
 #include "instructions.h"
 
+//Done by Eugene.
 void instructions()
 {
 	string line;
@@ -37,39 +38,44 @@ void instructions()
 		g_Console.writeToBuffer(c, "The file is not found");
 	}
 
-	//Displaying Players' movement for both hearts.
+	//Displaying Players' movement for both hearts icons.
 	c.X = 26;
 	c.Y = 9;
 	g_Console.writeToBuffer(c, (char)3, charColor);
 	c.X = 49;
 	g_Console.writeToBuffer(c, (char)3, charColor2);
 
-	//Displaying Players' run for both hearts.
+	//Displaying Players' run for both hearts icons.
 	c.X = 31;
 	c.Y = 14;
 	g_Console.writeToBuffer(c, (char)3, charColor);
 
-	//Displaying Enemy.
 	c.X = 54;
 	g_Console.writeToBuffer(c, (char)3, charColor2);
 
-	//Displaying objective for both hearts.
+	//Displaying enemy icon.
 	c.X = 29;
 	c.Y = 16;
 	g_Console.writeToBuffer(c, (char)1, charColor2);
 
+	//Displaying objective for both hearts icons.
 	c.X = 36;
 	c.Y = 20;
 	g_Console.writeToBuffer(c, (char)3, charColor);
 	c.Y = 21;
 	g_Console.writeToBuffer(c, (char)3, charColor2);
 
+	//Displaying Text.
+	c.X = 45;
+	c.Y = 16;
+	g_Console.writeToBuffer(c, "[R] Reset Level.");
+
 	c.X = 45;
 	c.Y = 18;
 	g_Console.writeToBuffer(c, "[Backspace]");
 
 	c.Y = 19;
-	g_Console.writeToBuffer(c, "to Main Menu.");
+	g_Console.writeToBuffer(c, "to Main Menu/Pause.");
 
 	c.Y = 21;
 	g_Console.writeToBuffer(c, "[Enter]");
@@ -80,9 +86,37 @@ void instructions()
 
 	if (g_abKeyPressed[K_BACK])
 	{
-		clearScreen();
-		g_eGameState = S_MENU;
-		load = levelzeroa;
-		renderGame();
+		switch (load)
+		{
+		case levelzeroa:
+			clearScreen();
+			g_eGameState = S_MENU;
+			load = levelzeroa;
+			break;
+
+		case levelzerob:
+			clearScreen();
+			g_eGameState = S_MENU;
+			load = levelzerob;
+			break;
+
+		case levelone:
+			clearScreen();
+			g_eGameState = S_MENU;
+			load = levelone;
+			break;
+
+		case leveltwo:
+			clearScreen();
+			g_eGameState = S_MENU;
+			load = leveltwo;
+			break;
+
+		case levelfour:
+			clearScreen();
+			g_eGameState = S_MENU;
+			load = levelfour;
+			break;
+		}
 	}
 }

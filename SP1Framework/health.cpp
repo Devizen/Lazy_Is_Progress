@@ -12,8 +12,8 @@ void renderhealth(Console *handle,  int hp)
 	string s = "Health: " + to_string(hp);
 
 	COORD c;
-	c.X = handle->getConsoleSize().X - 12;
-	c.Y = handle->getConsoleSize().Y -1 ;
+	c.X = handle->getConsoleSize().X - 13;
+	c.Y = handle->getConsoleSize().Y -23 ;
 	
 	handle->writeToBuffer(c, s, healthColor);
 	

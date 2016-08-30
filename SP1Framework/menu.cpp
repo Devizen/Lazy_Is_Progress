@@ -6,8 +6,8 @@ void menu()
 	string line;
 	ifstream myfile("Text/menu.txt");
 	COORD c = g_Console.getConsoleSize();
-	c.X = 20;
-	c.Y = 1;
+	c.X = 13;
+	c.Y = 3;
 	if (myfile.is_open())
 	{
 		while (getline(myfile, line))
@@ -29,37 +29,45 @@ void menu()
 		return;
 
 	if (g_abKeyPressed[K_UP] &&
-		g_menu.m_cLocation.Y > 8 &&
-		g_menu.m_cLocation.Y <= 11)
+		g_menu.m_cLocation.Y > 12 &&
+		g_menu.m_cLocation.Y <= 16)
 	{
 		g_menu.m_cLocation.Y--;
 		bSomethingHappened = true;
 	}
 
 	if (g_abKeyPressed[K_DOWN] &&
-		g_menu.m_cLocation.Y < 11 &&
-		g_menu.m_cLocation.Y >= 8)
+		g_menu.m_cLocation.Y < 16 &&
+		g_menu.m_cLocation.Y >= 12)
 	{
 		g_menu.m_cLocation.Y++;
 		bSomethingHappened = true;
 	}
 
-	if (g_menu.m_cLocation.Y == 8 && g_abKeyPressed[K_RETURN])
+	if (g_menu.m_cLocation.Y == 12 && g_abKeyPressed[K_RETURN])
 	{
 		g_sChar.health = 3;
+		g_dCountTime = 60;	
+		load = levelzeroa;
+		spawn();
 		g_eGameState = S_GAME;
 	}
 
-	if (g_menu.m_cLocation.Y == 9 && g_abKeyPressed[K_RETURN])
+	if (g_menu.m_cLocation.Y == 13 && g_abKeyPressed[K_RETURN])
+	{
+		g_eGameState = S_GAME;
+	}
+
+	if (g_menu.m_cLocation.Y == 14 && g_abKeyPressed[K_RETURN])
 	{
 		g_eGameState = S_INSTRUCTIONS;
 	}
 
-	if (g_menu.m_cLocation.Y == 10 && g_abKeyPressed[K_RETURN])
+	if (g_menu.m_cLocation.Y == 15 && g_abKeyPressed[K_RETURN])
 	{
 		g_eGameState = S_SCOREBOARD;
 	}
-	if (g_menu.m_cLocation.Y == 11 && g_abKeyPressed[K_RETURN])
+	if (g_menu.m_cLocation.Y == 16 && g_abKeyPressed[K_RETURN])
 	{
 		g_bQuitGame = true;
 	}

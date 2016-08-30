@@ -9,7 +9,7 @@
             Movement for:
 
                [W]                    [^]
-            [A][S][D]              [<][V][>]
+            [A][S][D]              [<][v][>]
 
             To run, hold:
             [RShift]               [LShift]
@@ -20,4 +20,4 @@
             Reaching 
             Point [1] for 
             Point [2] for
-            Together.
+            at the same time.
