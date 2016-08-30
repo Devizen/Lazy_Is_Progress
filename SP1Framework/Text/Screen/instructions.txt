@@ -17,7 +17,7 @@
             Enemy:
 
             Objective:
-            Reaching 
+            Reach 
             Point [1] for 
             Point [2] for
             at the same time.

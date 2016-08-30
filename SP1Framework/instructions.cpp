@@ -71,16 +71,16 @@ void instructions()
 	g_Console.writeToBuffer(c, "[R] Reset Level.");
 
 	c.X = 45;
-	c.Y = 18;
+	c.Y = 21;
 	g_Console.writeToBuffer(c, "[Backspace]");
 
-	c.Y = 19;
+	c.Y = 22;
 	g_Console.writeToBuffer(c, "to Main Menu/Pause.");
 
-	c.Y = 21;
+	c.Y = 18;
 	g_Console.writeToBuffer(c, "[Enter]");
 
-	c.Y = 22;
+	c.Y = 19;
 	g_Console.writeToBuffer(c, "to Select.");
 
 
