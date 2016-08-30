@@ -38,6 +38,7 @@ double g_dCountTime;
 double g_ElapsedGameTime;
 bool    g_abKeyPressed[K_COUNT];
 bool g_ResultIsDisplayed = false;
+bool splash = true;
 
 RELEASE
 release_enemy,
@@ -110,8 +111,6 @@ char map[25][80];
 //--------------------------------------------------------------
 void init(void)
 {
-	//Run the spawn function to printing characters for different levels.
-	spawn();
 	// Set precision for floating point output
 	g_dElapsedTime = 0.0;
 	g_dBounceTime = 0.0;
@@ -282,38 +281,46 @@ void gameplay()            // gameplay logic
 
 void moveCharacter()
 {
-	switch (load)
+	if (splash == true)
 	{
-	case levelzeroa:
-		sprint();
-		movelevel0();
-		break;
+		
+	}
 
-	case levelzerob:
-		sprint();
-		movelevel0();
-		break;
+	else if (splash == false)
+	{
+		switch (load)
+		{
+		case levelzeroa:
+			sprint();
+			movelevel0();
+			break;
 
-	case levelone:
-		sprint();
-		movelevel1();
-		break;
+		case levelzerob:
+			sprint();
+			movelevel0();
+			break;
 
-	case leveltwo:
-		sprint();
-		movelevel2();
-		SpeedUpPlatform();
-		break;
+		case levelone:
+			sprint();
+			movelevel1();
+			break;
 
-	case levelthree:
-		sprint();
-		movelevel3();
-		break;
+		case leveltwo:
+			sprint();
+			movelevel2();
+			SpeedUpPlatform();
+			break;
 
-	case levelfour:
-		sprint();
-		movelevel4();
-		break;
+		case levelthree:
+			sprint();
+			movelevel3();
+			break;
+
+		case levelfour:
+			sprint();
+			movelevel4();
+			break;
+		}
 	}
 }
 		

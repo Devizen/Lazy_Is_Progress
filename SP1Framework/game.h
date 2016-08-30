@@ -59,6 +59,7 @@ enum EGAMESTATES
 {
 	S_SPLASHSCREEN,
 	S_MENU,
+	S_LEVELSPLASH,
 	S_GAME,
 	S_INSTRUCTIONS,
 	S_SCOREBOARD,
@@ -71,6 +72,7 @@ enum LEVELS
 {
 	mainscreen,
 	defeated,
+	levelscreen,
 	levelzeroa,
 	levelzerob,
 	levelone, //Loading Level 1.
@@ -153,6 +155,7 @@ void tutoriala();
 void tutorialb();
 
 //Movement for Characters
+void nomovement();
 void movelevel0();
 void movelevel1();
 void movelevel2();
@@ -163,6 +166,5 @@ void movelevel4();
 extern bool restarthealth;
 extern bool powerup;
 extern bool timeincrease;
-
 
 #endif // _GAME_H
