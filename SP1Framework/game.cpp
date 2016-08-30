@@ -38,6 +38,7 @@ double g_dCountTime;
 double g_ElapsedGameTime;
 bool    g_abKeyPressed[K_COUNT];
 bool g_ResultIsDisplayed = false;
+bool splash = true;
 
 RELEASE
 release_enemy,
@@ -96,7 +97,7 @@ double ai_BounceTime;
 double  g_dBounceTimeBoost = 0.0; // this is to prevent key bouncing, so we won't trigger keypresses more than once
 
 // Console object
-Console g_Console(80, 25, "SP1 Framework");
+Console g_Console(80, 25, "Too Hearts");
 
 const unsigned int x = 80;
 const unsigned int y = 25;
@@ -112,8 +113,6 @@ char map[25][80];
 //--------------------------------------------------------------
 void init(void)
 {
-	//Run the spawn function to printing characters for different levels.
-	spawn();
 	// Set precision for floating point output
 	g_dElapsedTime = 0.0;
 	g_dBounceTime = 0.0;
@@ -133,7 +132,7 @@ void init(void)
 	g_Console.setConsoleFont(0, 16, L"Arial");
 	// Added by Daniel \/
 
-	PlaySound(TEXT("Soundtracks/BGM/Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
+	//PlaySound(TEXT("Soundtracks/BGM/Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
 
 	//PlaySound(TEXT("Soundtracks/BGM/Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
 
@@ -284,38 +283,46 @@ void gameplay()            // gameplay logic
 
 void moveCharacter()
 {
-	switch (load)
+	if (splash == true)
 	{
-	case levelzeroa:
-		sprint();
-		movelevel0();
-		break;
+		
+	}
 
-	case levelzerob:
-		sprint();
-		movelevel0();
-		break;
+	else if (splash == false)
+	{
+		switch (load)
+		{
+		case levelzeroa:
+			sprint();
+			movelevel0();
+			break;
 
-	case levelone:
-		sprint();
-		movelevel1();
-		break;
+		case levelzerob:
+			sprint();
+			movelevel0();
+			break;
 
-	case leveltwo:
-		sprint();
-		movelevel2();
-		SpeedUpPlatform();
-		break;
+		case levelone:
+			sprint();
+			movelevel1();
+			break;
 
-	case levelthree:
-		sprint();
-		movelevel3();
-		break;
+		case leveltwo:
+			sprint();
+			movelevel2();
+			SpeedUpPlatform();
+			break;
 
-	case levelfour:
-		sprint();
-		movelevel4();
-		break;
+		case levelthree:
+			sprint();
+			movelevel3();
+			break;
+
+		case levelfour:
+			sprint();
+			movelevel4();
+			break;
+		}
 	}
 }
 		
@@ -331,55 +338,62 @@ void processUserInput()
 	if (g_abKeyPressed[K_1])
 	{
 		restarthealth = true;
+		splash = true;
 		load = levelzeroa;
 		clearScreen();
 		spawn();
-		renderGame();
+		g_eGameState = S_GAME;
+		//renderGame();
 	}
 
 	if (g_abKeyPressed[K_2])
 	{
 		restarthealth = true;
+		splash = true;
 		load = levelzerob;
 		clearScreen();
 		spawn();
-		renderGame();
+		g_eGameState = S_GAME;
 	}
 
 	if (g_abKeyPressed[K_3])
 	{
 		restarthealth = true;
+		splash = true;
 		powerup = true;
 		timeincrease = true;
 		load = levelone;
 		clearScreen();
 		spawn();
-		renderGame();
+		g_eGameState = S_GAME;
 	}
 	if (g_abKeyPressed[K_4])
 	{
 		restarthealth = true;
+		splash = true;
 		load = leveltwo;
 		clearScreen();
 		spawn();
-		renderGame();
+		g_eGameState = S_GAME;
 	}
 
 	if (g_abKeyPressed[K_5])
 	{
 		restarthealth = true;
+		splash = true;
 		load = levelthree;
 		clearScreen();
 		spawn();
-		renderGame();
+		g_eGameState = S_GAME;
 	}
 	if (g_abKeyPressed[K_6])
 	{
 		restarthealth = true;
+		splash = true;
 		load = levelfour;
 		clearScreen();
 		spawn();
-		renderGame();
+		g_eGameState = S_GAME;
 	}
 
 	if (g_abKeyPressed[K_R])
@@ -391,6 +405,7 @@ void processUserInput()
 		}
 
 		restarthealth = false;
+		splash = true;
 		g_sChar.health -= 1;
 		bSomethingHappened = true;
 

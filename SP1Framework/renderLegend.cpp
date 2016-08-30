@@ -67,20 +67,40 @@ void renderLegend()
 		break;
 
 	case levelone:
+		//Coordinates for LEGENDS:
 		c.X = 66;
 		c.Y = 4;
-		g_Console.writeToBuffer(c, legends, color1);  //output the word "LEGENDS:"
+		g_Console.writeToBuffer(c, legends, color1);  //Display "LEGENDS:".
+
+		//Coordinates for Box icon.
+		c.X = 64;
+		c.Y = 5;
+		g_Console.writeToBuffer(c, (char)254, red); //Display the Box icon.
+
+		//Coordinates for "Box".
+		c.X = 66;
+		c.Y = 5;
+		g_Console.writeToBuffer(c, box);  //Display "Box".
+
+		//Coordinates for Platform icon.
+		c.X = 64;
+		c.Y = 6;
+		g_Console.writeToBuffer(c, (char)219, yellow); //Display the Platform icon.
+
+		c.X = 66;
+		c.Y = 6;
+		g_Console.writeToBuffer(c, platform);  //Display "Platform".
 
 		c.X = 66;
 		c.Y = 7;
 		g_Console.writeToBuffer(c, healthpowerup);  //output the word" Health PowerUp:";
 
 		c.X = 66;
-		c.Y = 9;
+		c.Y = 8;
 		g_Console.writeToBuffer(c, timepowerup); //output the word "time boost";
 
 		c.X = 66;
-		c.Y = 11;
+		c.Y = 9;
 		g_Console.writeToBuffer(c, platform); //output the word "platform ";
 
 
@@ -92,12 +112,12 @@ void renderLegend()
 		g_Console.writeToBuffer(c, (char)206, color); //output the health powerup icon
 
 		c.X = 64;
-		c.Y = 9;
+		c.Y = 8;
 		g_Console.writeToBuffer(c, (char)64, color); // output the time boost icon
 
 		c.X = 64;
-		c.Y = 11;
-		g_Console.writeToBuffer(c, (char)254, color2); //output the speed pad icon
+		c.Y = 9;
+		g_Console.writeToBuffer(c, (char)234, charColor3); //output the teleporter icon
 		break;
 	}
 

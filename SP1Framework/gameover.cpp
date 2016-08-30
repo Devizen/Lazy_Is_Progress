@@ -37,6 +37,7 @@ void gameover()
 		switch (level)
 		{
 		case zeroa:
+			splash = true;
 			g_sChar.health = 3;
 			load = levelzeroa;
 			spawn();
@@ -44,6 +45,7 @@ void gameover()
 			break;
 
 		case zerob:
+			splash = true;
 			g_sChar.health = 3;
 			load = levelzerob;
 			spawn();
@@ -51,6 +53,7 @@ void gameover()
 			break;
 
 		case one:
+			splash = true;
 			g_sChar.health = 3;
 			load = levelone;
 			spawn();
@@ -58,6 +61,7 @@ void gameover()
 			break;
 			
 		case two:
+			splash = true;
 			g_sChar.health = 3;
 			load = leveltwo;
 			spawn();

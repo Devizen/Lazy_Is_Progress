@@ -9,8 +9,8 @@ void spawn()
 	{
 	case S_SPLASHSCREEN:
 		//Menu Arrow
-		g_menu.m_cLocation.X = 30;
-		g_menu.m_cLocation.Y = 8;
+		g_menu.m_cLocation.X = 32;
+		g_menu.m_cLocation.Y = 12;
 	}
 
 	//For printing different characters based on levels.
@@ -242,7 +242,7 @@ void spawn()
 
 	case levelthree:
 		//First Character
-		g_sChar.m_cLocation.X = 2;
+		g_sChar.m_cLocation.X = 17;
 		g_sChar.m_cLocation.Y = 19;
 
 		//Second Character
@@ -250,11 +250,11 @@ void spawn()
 		g_nChar.m_cLocation.Y = 19;
 
 		//Enemy
-		g_enemy.m_cLocation.X = 11;
-		g_enemy.m_cLocation.Y = 1;
+		g_enemy.m_cLocation.X = 17;
+		g_enemy.m_cLocation.Y = 9;
 
-		g_enemy2.m_cLocation.X = 49;
-		g_enemy2.m_cLocation.Y = 1;
+		g_enemy2.m_cLocation.X = 15;
+		g_enemy2.m_cLocation.Y = 9;
 
 		//Door
 		g_door1.m_cLocation.X = 8;
@@ -269,12 +269,12 @@ void spawn()
 		g_box1.m_cLocation.Y = 10;
 
 		//Release A.I
-		release_enemy.m_cLocation.X = 52;
-		release_enemy.m_cLocation.Y = 6;
+		release_enemy.m_cLocation.X = 16;
+		release_enemy.m_cLocation.Y = 9;
 
 		//PlatForm
-		g_platform.m_cLocation.X = 4;
-		g_platform.m_cLocation.Y = 21;
+		g_platform.m_cLocation.X = 10;
+		g_platform.m_cLocation.Y = 19;
 
 		//Set the initial health of the player
 		if (restarthealth == true)
