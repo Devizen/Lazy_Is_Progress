@@ -279,7 +279,7 @@ void spawn()
 		//Box
 		boxone.m_cLocation.X = 10;
 		boxone.m_cLocation.Y = 18;
-		boxfour.m_cLocation.X = 50;
+		boxfour.m_cLocation.X = 48;
 		boxfour.m_cLocation.Y = 23;
 		
 
