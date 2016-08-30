@@ -94,18 +94,13 @@ void movelevel4()
 
 			}
 
-			else if (door1 == true &&
-				g_nChar.m_cLocation.Y + 1 != g_door2.m_cLocation.Y)
-			{
-				g_nChar.m_cLocation.Y++;
-				bSomethingHappened = true;
-			}
 			else
 			{
 				g_sChar.m_cLocation.Y++;
 				bSomethingHappened = true;
 			}
 		}
+	
 
 
 	}
@@ -140,6 +135,28 @@ void movelevel4()
 
 	if (g_abKeyPressed[K_UP])
 	{
+		if (door2 == true)
+		{
+			if (g_nChar.m_cLocation.Y > g_Console.getConsoleSize().Y - 1 &&
+				map[g_nChar.m_cLocation.Y-1][g_nChar.m_cLocation.X ] != (char)219)
+			{
+				g_nChar.m_cLocation.Y--;
+				bSomethingHappened = true;
+			}
+		}
+		if (door2 == false)
+		{
+			if (g_nChar.m_cLocation.Y > g_Console.getConsoleSize().Y - 1 &&
+				map[g_nChar.m_cLocation.Y-1][g_nChar.m_cLocation.X ] != (char)219 &&
+				map[g_nChar.m_cLocation.Y-1][g_nChar.m_cLocation.X ] !=
+				map[g_door2.m_cLocation.Y][g_door2.m_cLocation.X])
+			{
+				g_nChar.m_cLocation.Y--;
+				bSomethingHappened = true;
+			}
+		}
+
+
 		if (g_nChar.m_cLocation.Y > 0 &&
 			map[g_nChar.m_cLocation.Y - 1][g_nChar.m_cLocation.X] != (char)219)
 		{
@@ -162,20 +179,13 @@ void movelevel4()
 				bSomethingHappened = true;
 
 			}
-		
-			else if (door1 == false &&
-				map[g_nChar.m_cLocation.Y-1][g_nChar.m_cLocation.X] !=
-				map[g_door1.m_cLocation.Y-1][g_door1.m_cLocation.X])
-			{
-				g_nChar.m_cLocation.Y--;
-				bSomethingHappened = true;
-			}
 
-			else if (door1 == true)
+			else
 			{
 				g_nChar.m_cLocation.Y--;
 				bSomethingHappened = true;
 			}
+		
 		}
 
 
@@ -257,6 +267,7 @@ void movelevel4()
 		}
 	}
 
+
 	if (g_abKeyPressed[K_DOWN])
 	{
 		if (g_nChar.m_cLocation.Y < g_Console.getConsoleSize().Y - 2 &&
@@ -284,15 +295,7 @@ void movelevel4()
 				}
 			}
 
-			else if (door1 == false &&
-				map[g_nChar.m_cLocation.Y + 1][g_nChar.m_cLocation.X] !=
-				map[g_door1.m_cLocation.Y + 1][g_door1.m_cLocation.X])
-			{
-				g_nChar.m_cLocation.Y++;
-				bSomethingHappened = true;
-			}
-
-			else if (door1 == true)
+			else
 			{
 				g_nChar.m_cLocation.Y++;
 				bSomethingHappened = true;
@@ -351,7 +354,7 @@ void movelevel4()
 				bSomethingHappened = true;
 			}
 
-			else if (door1 == false &&
+			else if (door1== false &&
 				map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] !=
 				map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
 			{
