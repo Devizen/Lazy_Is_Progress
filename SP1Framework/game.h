@@ -155,12 +155,12 @@ void tutoriala();
 void tutorialb();
 
 //Movement for Characters
-void nomovement();
 void movelevel0();
 void movelevel1();
 void movelevel2();
 void movelevel3();
 void movelevel4();
+void movetogether();
 
 //Linking variables.
 extern bool restarthealth;

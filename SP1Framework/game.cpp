@@ -38,7 +38,9 @@ double g_dCountTime;
 double g_ElapsedGameTime;
 bool    g_abKeyPressed[K_COUNT];
 bool g_ResultIsDisplayed = false;
-bool splash = true;
+bool splash = true; 
+bool partb = false;
+bool partc = false;
 
 RELEASE
 release_enemy,
@@ -76,7 +78,8 @@ g_lever2,
 g_lever3,
 g_lever4,
 g_box1,
-g_portal;
+g_portal,
+g_portal1;
 
 //Speed up
 SGameChar   g_platform;
