@@ -183,7 +183,7 @@ void tutorialb()
 
 		rendercharacters();
 		//motiondetect();
-		patrolenemy(g_enemy);
+		patrolzerob();
 		// epatrolenemy();
 
 
