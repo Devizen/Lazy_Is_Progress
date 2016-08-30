@@ -94,7 +94,7 @@ double ai_BounceTime;
 double  g_dBounceTimeBoost = 0.0; // this is to prevent key bouncing, so we won't trigger keypresses more than once
 
 // Console object
-Console g_Console(80, 25, "SP1 Framework");
+Console g_Console(80, 25, "Too Hearts");
 
 const unsigned int x = 80;
 const unsigned int y = 25;

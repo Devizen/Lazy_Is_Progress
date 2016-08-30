@@ -9,8 +9,8 @@ void spawn()
 	{
 	case S_SPLASHSCREEN:
 		//Menu Arrow
-		g_menu.m_cLocation.X = 30;
-		g_menu.m_cLocation.Y = 8;
+		g_menu.m_cLocation.X = 32;
+		g_menu.m_cLocation.Y = 12;
 	}
 
 	//For printing different characters based on levels.

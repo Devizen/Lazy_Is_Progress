@@ -541,73 +541,7 @@ void patrolenemy(struct SGameChar enemy)
 	if (bSomethingHappened)
 	{
 		// set the bounce time to some time in the future to prevent accidental triggers
-		ai_BounceTime = g_dElapsedTime + 0.05f; // 125ms should be enough
-
-	}
-}
-
-void epatrolenemy()
-{
-	enum direction
-	{
-		rightd,
-		downd,
-		leftd,
-		upd
-	};
-	direction check = rightd;
-
-
-	bool bSomethingHappened = false;
-	if (ai_BounceTime > g_dElapsedTime)
-	{
-		return;
-	}
-
-
-	switch (check)
-	{
-	case rightd:
-		if (map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X + 18] != (char)219 && check == rightd)
-		{
-			g_enemy.m_cLocation.X++;
-			bSomethingHappened = true;
-		}
-		break;
-		check = downd;
-
-	case downd:
-		if (map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != (char)219 && check == downd)
-		{
-			g_enemy.m_cLocation.Y++;
-			bSomethingHappened = true;
-		}
-		break;
-		check = leftd;
-
-	case leftd:
-		if (map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X - 2] != (char)219 && check == leftd)
-		{
-			g_enemy.m_cLocation.X--;
-			bSomethingHappened = true;
-		}
-		break;
-		check = upd;
-
-	case upd:
-		if (map[g_enemy.m_cLocation.Y - 8][g_enemy.m_cLocation.X] != (char)219 && check == upd)
-		{
-			g_enemy.m_cLocation.Y--;
-			bSomethingHappened = true;
-		}
-		break;
-		check = rightd;
-	}
-
-	if (bSomethingHappened)
-	{
-		// set the bounce time to some time in the future to prevent accidental triggers
-		ai_BounceTime = g_dElapsedTime + 0.05f; // 125ms should be enough
+		ai_BounceTime = g_dElapsedTime + 0.03f; // 125ms should be enough
 
 	}
 }
