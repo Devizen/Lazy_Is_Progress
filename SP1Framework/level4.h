@@ -33,3 +33,6 @@ extern LEVELS load;
 extern RESTART level;
 
 void level4();
+
+//Linking variables.
+extern bool story;
