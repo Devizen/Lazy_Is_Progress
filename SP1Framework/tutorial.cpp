@@ -22,7 +22,31 @@ void tutoriala()
 			c.Y++;
 		}
 
-		if (g_dCountTime < 59)
+		if (g_dCountTime < 59 && story == true)
+		{
+			name = "Text/Story/level0_0.txt";
+			loadlevel(name);
+
+			c.X = 0;
+			c.Y = 0;
+
+			clearScreen();
+			for (int i = 0; i <= y; i++)
+			{
+				line = map[i];
+				g_Console.writeToBuffer(c, line);
+				c.Y++;
+			}
+
+			if (g_dCountTime < 55)
+			{
+				splash = false;
+				story = false;
+				renderGame();
+			}
+		}
+
+		if (g_dCountTime < 59 && story == false)
 		{
 			splash = false;
 			renderGame();
@@ -100,6 +124,7 @@ void tutoriala()
 			}
 		}
 
+		//Progress to next level.
 		if (g_sChar.m_cLocation.X == 29 &&
 			g_sChar.m_cLocation.Y == 0 &&
 			g_nChar.m_cLocation.X == 31 &&
@@ -108,6 +133,7 @@ void tutoriala()
 			clearScreen();
 			restarthealth = true;
 			splash = true;
+			story = true;
 			load = levelzerob;
 			spawn();
 		}
@@ -151,7 +177,31 @@ void tutorialb()
 			c.Y++;
 		}
 
-		if (g_dCountTime < 59)
+		if (g_dCountTime < 59 && story == true)
+		{
+			name = "Text/Story/level0_1.txt";
+			loadlevel(name);
+
+			c.X = 0;
+			c.Y = 0;
+
+			clearScreen();
+			for (int i = 0; i <= y; i++)
+			{
+				line = map[i];
+				g_Console.writeToBuffer(c, line);
+				c.Y++;
+			}
+
+			if (g_dCountTime < 55)
+			{
+				splash = false;
+				story = false;
+				renderGame();
+			}
+		}
+
+		if (g_dCountTime < 59 && story == false)
 		{
 			splash = false;
 			renderGame();
@@ -309,6 +359,7 @@ void tutorialb()
 		///*	g_dCountTime = 60;*/
 		//}
 
+		//Progress to next level.
 		if (g_sChar.m_cLocation.X == 15 &&
 			g_sChar.m_cLocation.Y == 2 &&
 			g_nChar.m_cLocation.X == 33 &&
@@ -317,6 +368,10 @@ void tutorialb()
 			clearScreen();
 			restarthealth = true;
 			splash = true;
+
+			//Displaying Story Screen.
+			story = true;
+
 			load = levelone;
 			spawn();
 		}

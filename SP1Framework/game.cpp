@@ -39,6 +39,7 @@ double g_ElapsedGameTime;
 bool    g_abKeyPressed[K_COUNT];
 bool g_ResultIsDisplayed = false;
 bool splash = true; 
+bool story = true;
 bool partb = false;
 bool partc = false;
 bool door1 = false;
@@ -149,7 +150,7 @@ void init(void)
 	g_Console.setConsoleFont(0, 16, L"Arial");
 	// Added by Daniel \/
 
-	PlaySound(TEXT("Soundtracks/BGM/Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
+	//PlaySound(TEXT("Soundtracks/BGM/Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
 
 	//PlaySound(TEXT("Soundtracks/BGM/Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
 
@@ -695,6 +696,9 @@ void renderFramerate()
 			}
 			else
 			{
+				//Displaying Splash Screen.
+				splash = true;
+				//Resetting Time Left.
 				g_dCountTime = 60;
 				spawn();
 			}
@@ -709,6 +713,9 @@ void renderFramerate()
 			}
 			else
 			{
+				//Displaying Splash Screen.
+				splash = true;
+				//Resetting Time Left.
 				g_dCountTime = 60;
 				spawn();
 			}
@@ -723,6 +730,9 @@ void renderFramerate()
 			}
 			else
 			{
+				//Displaying Splash Screen.
+				splash = true;
+				//Resetting Time Left.
 				g_dCountTime = 60;
 				spawn();
 			}
@@ -737,10 +747,14 @@ void renderFramerate()
 			}
 			else
 			{
+				//Displaying Splash Screen.
+				splash = true;
+				//Resetting Time Left.
 				g_dCountTime = 60;
 				spawn();
 			}
 			break;
+
 		case levelthree:
 			if (g_sChar.health < 1)
 			{
@@ -750,10 +764,14 @@ void renderFramerate()
 			}
 			else
 			{
+				//Displaying Splash Screen.
+				splash = true;
+				//Resetting Time Left.
 				g_dCountTime = 60;
 				spawn();
 			}
 			break;
+
 		case levelfour:
 			if (g_sChar.health < 1)
 			{
@@ -761,6 +779,9 @@ void renderFramerate()
 			}
 			else
 			{
+				//Displaying Splash Screen.
+				splash = true;
+				//Resetting Time Left.
 				g_dCountTime = 60;
 				spawn();
 			}
