@@ -85,6 +85,9 @@
     <ClCompile Include="movelevel3.cpp">
       <Filter>Character and A.I\Movement</Filter>
     </ClCompile>
+    <ClCompile Include="story1.cpp">
+      <Filter>Game Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="characters.h">
@@ -173,6 +176,9 @@
     </ClInclude>
     <ClInclude Include="movelevel3.h">
       <Filter>Character and A.I\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="story1.h">
+      <Filter>Game Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
