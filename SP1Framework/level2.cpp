@@ -45,7 +45,7 @@ void level2()
 
 	if (splash == false)
 	{
-		string name = "Text/Level/level2_0.txt";
+		string name = "Text/Level/level2.txt";
 		loadlevel(name);
 
 		//COORD c;
@@ -104,6 +104,7 @@ void level2()
 			COORD d;
 			d.X = 63;
 			d.Y = 15;
+			g_Console.writeToBuffer(d, "                       ");
 			g_Console.writeToBuffer(d, "You are now");
 			d.Y = 16;
 			g_Console.writeToBuffer(d, "MERGED as ONE.");
@@ -136,7 +137,7 @@ void level2()
 		motiondetect();
 		
 
-		if (/*g_dCountTime < 58 && */partb == false)
+		if (g_dCountTime < 50 && partb == false)
 		{
 			//Teleporter
 			g_portal.m_cLocation.X = 3;
