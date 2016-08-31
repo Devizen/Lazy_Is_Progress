@@ -124,6 +124,7 @@ void tutoriala()
 			}
 		}
 
+		//Progress to next level.
 		if (g_sChar.m_cLocation.X == 29 &&
 			g_sChar.m_cLocation.Y == 0 &&
 			g_nChar.m_cLocation.X == 31 &&
@@ -132,6 +133,7 @@ void tutoriala()
 			clearScreen();
 			restarthealth = true;
 			splash = true;
+			story = true;
 			load = levelzerob;
 			spawn();
 		}
@@ -357,6 +359,7 @@ void tutorialb()
 		///*	g_dCountTime = 60;*/
 		//}
 
+		//Progress to next level.
 		if (g_sChar.m_cLocation.X == 15 &&
 			g_sChar.m_cLocation.Y == 2 &&
 			g_nChar.m_cLocation.X == 33 &&
@@ -365,6 +368,10 @@ void tutorialb()
 			clearScreen();
 			restarthealth = true;
 			splash = true;
+
+			//Displaying Story Screen.
+			story = true;
+
 			load = levelone;
 			spawn();
 		}

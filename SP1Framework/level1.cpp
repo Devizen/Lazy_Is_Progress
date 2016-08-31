@@ -254,6 +254,10 @@ void level1()
 			load = leveltwo;
 			restarthealth = true;
 			splash = true;
+
+			//Displaying Story Screen.
+			story = true;
+
 			spawn();
 			renderGame();
 		}

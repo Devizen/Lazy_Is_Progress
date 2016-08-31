@@ -162,6 +162,19 @@ void renderResult(bool *g_ResultIsDisplayed, double *g_ElapsedGameTime)
 			spawn();
 			renderGame();
 			break;
+
+		case three:
+			g_sChar.health = 3;
+			load = levelthree;
+			renderGame();
+			break;
+
+		case four:
+			g_sChar.health = 3;
+			load = levelfour;
+			renderGame();
+			break;
+
 		}
 	}
 			
