@@ -36,3 +36,6 @@ extern RESTART level;
 void level2(); // level 2.
 void level2b(); // level 2.
 void level2c(); // level 2.
+
+//Linking variables.
+extern bool story;

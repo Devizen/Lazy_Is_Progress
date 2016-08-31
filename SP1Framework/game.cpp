@@ -39,6 +39,7 @@ double g_ElapsedGameTime;
 bool    g_abKeyPressed[K_COUNT];
 bool g_ResultIsDisplayed = false;
 bool splash = true; 
+bool story = true;
 bool partb = false;
 bool partc = false;
 
@@ -690,6 +691,9 @@ void renderFramerate()
 			}
 			else
 			{
+				//Displaying Splash Screen.
+				splash = true;
+				//Resetting Time Left.
 				g_dCountTime = 60;
 				spawn();
 			}
@@ -704,6 +708,9 @@ void renderFramerate()
 			}
 			else
 			{
+				//Displaying Splash Screen.
+				splash = true;
+				//Resetting Time Left.
 				g_dCountTime = 60;
 				spawn();
 			}
@@ -718,6 +725,9 @@ void renderFramerate()
 			}
 			else
 			{
+				//Displaying Splash Screen.
+				splash = true;
+				//Resetting Time Left.
 				g_dCountTime = 60;
 				spawn();
 			}
@@ -732,10 +742,14 @@ void renderFramerate()
 			}
 			else
 			{
+				//Displaying Splash Screen.
+				splash = true;
+				//Resetting Time Left.
 				g_dCountTime = 60;
 				spawn();
 			}
 			break;
+
 		case levelthree:
 			if (g_sChar.health < 1)
 			{
@@ -745,10 +759,14 @@ void renderFramerate()
 			}
 			else
 			{
+				//Displaying Splash Screen.
+				splash = true;
+				//Resetting Time Left.
 				g_dCountTime = 60;
 				spawn();
 			}
 			break;
+
 		case levelfour:
 			if (g_sChar.health < 1)
 			{
@@ -756,6 +774,9 @@ void renderFramerate()
 			}
 			else
 			{
+				//Displaying Splash Screen.
+				splash = true;
+				//Resetting Time Left.
 				g_dCountTime = 60;
 				spawn();
 			}

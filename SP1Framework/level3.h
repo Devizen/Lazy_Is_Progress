@@ -32,3 +32,6 @@ extern RESTART level;
 
 //Definition for function.
 void level3(); // level 3.
+
+//Linking variables.
+extern bool story;
