@@ -85,9 +85,6 @@
     <ClCompile Include="movelevel3.cpp">
       <Filter>Character and A.I\Movement</Filter>
     </ClCompile>
-    <ClCompile Include="movetogether.cpp">
-      <Filter>Character and A.I\Movement</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="characters.h">
@@ -176,12 +173,6 @@
     </ClInclude>
     <ClInclude Include="movelevel3.h">
       <Filter>Character and A.I\Movement</Filter>
-    </ClInclude>
-    <ClInclude Include="movetogether.h">
-      <Filter>Character and A.I\Movement</Filter>
-    </ClInclude>
-    <ClInclude Include="colours.h">
-      <Filter>Miscellaneous</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

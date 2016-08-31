@@ -42,6 +42,11 @@ bool splash = true;
 bool story = true;
 bool partb = false;
 bool partc = false;
+bool door1 = false;
+bool door2 = false;
+bool door3 = false;
+bool door4 = false;
+bool door5 = false;
 
 RELEASE
 release_enemy,

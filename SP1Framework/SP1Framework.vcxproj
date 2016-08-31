@@ -95,7 +95,6 @@
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="movelevel3.cpp" />
     <ClCompile Include="movelevel4.cpp" />
-    <ClCompile Include="movetogether.cpp" />
     <ClCompile Include="renderLegend.cpp" />
     <ClCompile Include="movelevel0.cpp" />
     <ClCompile Include="movelevel1.cpp" />
@@ -112,7 +111,6 @@
     <ClInclude Include="..\..\Lazy is Progress - Copy\SP1Framework\ScoreBoard.h" />
     <ClInclude Include="characters.h" />
     <ClInclude Include="checkrelease.h" />
-    <ClInclude Include="colours.h" />
     <ClInclude Include="Framework\console.h" />
     <ClInclude Include="Framework\timer.h" />
     <ClInclude Include="game.h" />
@@ -129,7 +127,6 @@
     <ClInclude Include="menu.h" />
     <ClInclude Include="movelevel3.h" />
     <ClInclude Include="movelevel4.h" />
-    <ClInclude Include="movetogether.h" />
     <ClInclude Include="renderLegend.h" />
     <ClInclude Include="movelevel0.h" />
     <ClInclude Include="movelevel1.h" />

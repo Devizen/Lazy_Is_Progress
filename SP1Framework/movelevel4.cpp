@@ -11,36 +11,98 @@ void movelevel4()
 
 	if (g_abKeyPressed[K_W])
 	{
-		if (g_sChar.m_cLocation.Y > 0 &&
-			map[g_sChar.m_cLocation.Y - 1][g_sChar.m_cLocation.X] != (char)219)
+		if (door2 == true && door4 == true)
 		{
-			if (g_sChar.m_cLocation.Y - 1 == boxone.m_cLocation.Y &&
-				g_sChar.m_cLocation.X == boxone.m_cLocation.X)
+			if (g_sChar.m_cLocation.Y < g_Console.getConsoleSize().Y - 1 &&
+				map[g_sChar.m_cLocation.Y - 1][g_sChar.m_cLocation.X] != (char)219)
 			{
-				/*if (map[boxone.m_cLocation.Y - 1][boxone.m_cLocation.X] != map[g_door2.m_cLocation.Y][g_door2.m_cLocation.X])
-				{*/
-				g_sChar.m_cLocation.Y--;
-				boxone.m_cLocation.Y--;
-				bSomethingHappened = true;
-				/*}*/
-			}
-
-			else if (g_sChar.m_cLocation.Y - 1 == boxtwo.m_cLocation.Y &&
-				g_sChar.m_cLocation.X == boxtwo.m_cLocation.X)
-			{
-
-				g_sChar.m_cLocation.Y--;
-				boxtwo.m_cLocation.Y--;
-				bSomethingHappened = true;
-
-			}
-
-			else
-			{
-				g_sChar.m_cLocation.Y--;
-				bSomethingHappened = true;
+				if (g_sChar.m_cLocation.Y - 1 == boxone.m_cLocation.Y &&
+					g_sChar.m_cLocation.X == boxone.m_cLocation.X)
+				{
+					g_sChar.m_cLocation.Y--;
+					boxone.m_cLocation.Y--;
+					bSomethingHappened = true;
+				}
+				else if (g_sChar.m_cLocation.Y-1 == boxtwo.m_cLocation.Y &&
+					g_sChar.m_cLocation.X == boxtwo.m_cLocation.X)
+				{
+					g_sChar.m_cLocation.Y--;
+					boxtwo.m_cLocation.Y--;
+					bSomethingHappened = true;
+				}
+				else
+				{
+					g_sChar.m_cLocation.Y--;
+					bSomethingHappened = true;
+				}
 			}
 		}
+		if (door2 == false && door4 == false)
+		{
+			if (g_sChar.m_cLocation.Y > 0 &&
+				map[g_sChar.m_cLocation.Y - 1][g_sChar.m_cLocation.X] != (char)219 &&
+				map[g_sChar.m_cLocation.Y - 1][g_sChar.m_cLocation.X] !=
+				map[g_door2.m_cLocation.Y][g_door2.m_cLocation.X] && map[g_sChar.m_cLocation.Y - 1][g_sChar.m_cLocation.X]
+				&& map[g_sChar.m_cLocation.Y - 1][g_sChar.m_cLocation.X] != map[g_door4.m_cLocation.Y][g_door4.m_cLocation.X])
+
+			{
+				if (g_sChar.m_cLocation.Y - 1 == boxone.m_cLocation.Y &&
+					g_sChar.m_cLocation.X == boxone.m_cLocation.X)
+				{
+					g_sChar.m_cLocation.Y--;
+					boxone.m_cLocation.Y--;
+					bSomethingHappened = true;
+				}
+				else if (g_sChar.m_cLocation.Y - 1 == boxtwo.m_cLocation.Y &&
+					g_sChar.m_cLocation.X == boxtwo.m_cLocation.X)
+				{
+					g_sChar.m_cLocation.Y--;
+					boxtwo.m_cLocation.Y--;
+					bSomethingHappened = true;
+				}
+
+				else
+				{
+					g_sChar.m_cLocation.Y--;
+					bSomethingHappened = true;
+				}
+			}
+		}
+
+
+
+
+
+		//if (g_sChar.m_cLocation.Y > 0 &&
+		//	map[g_sChar.m_cLocation.Y - 1][g_sChar.m_cLocation.X] != (char)219)
+		//{
+		//	if (g_sChar.m_cLocation.Y - 1 == boxone.m_cLocation.Y &&
+		//		g_sChar.m_cLocation.X == boxone.m_cLocation.X)
+		//	{
+		//		/*if (map[boxone.m_cLocation.Y - 1][boxone.m_cLocation.X] != map[g_door2.m_cLocation.Y][g_door2.m_cLocation.X])
+		//		{*/
+		//		g_sChar.m_cLocation.Y--;
+		//		boxone.m_cLocation.Y--;
+		//		bSomethingHappened = true;
+		//		/*}*/
+		//	}
+
+		//	else if (g_sChar.m_cLocation.Y - 1 == boxtwo.m_cLocation.Y &&
+		//		g_sChar.m_cLocation.X == boxtwo.m_cLocation.X)
+		//	{
+
+		//		g_sChar.m_cLocation.Y--;
+		//		boxtwo.m_cLocation.Y--;
+		//		bSomethingHappened = true;
+
+		//	}
+
+		//	else
+		//	{
+		//		g_sChar.m_cLocation.Y--;
+		//		bSomethingHappened = true;
+		//	}
+		//}
 	}
 
 
@@ -59,7 +121,68 @@ void movelevel4()
 			}*/
 		/*}*/
 
-			if (door5 == true)
+		if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
+			map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != (char)219)
+		{
+			if (g_sChar.m_cLocation.Y == boxtwo.m_cLocation.Y &&
+				g_sChar.m_cLocation.X - 1 == boxtwo.m_cLocation.X)
+			{
+				g_sChar.m_cLocation.X--;
+				boxtwo.m_cLocation.X--;
+				bSomethingHappened = true;
+			}
+
+			else if (g_sChar.m_cLocation.Y == boxone.m_cLocation.Y &&
+				g_sChar.m_cLocation.X - 1 == boxone.m_cLocation.X)
+			{
+				g_sChar.m_cLocation.X--;
+				boxone.m_cLocation.X--;
+				bSomethingHappened = true;
+			}
+
+			else if (door1 == false && door5 == false)
+			{
+				if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X] &&
+					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X])
+				{
+					g_sChar.m_cLocation.X--;
+					bSomethingHappened = true;
+				}
+			}
+
+			else if (door1 == true && door5 == false)
+			{
+				if (map[g_sChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X])
+				{
+					g_sChar.m_cLocation.X--;
+					bSomethingHappened = true;
+				}
+			}
+
+			else if (door1 == false && door5 == true)
+			{
+				if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
+				{
+					g_sChar.m_cLocation.X--;
+					bSomethingHappened = true;
+				}
+			}
+
+			else if (door1 == true && door5 == true)
+			{
+
+				g_sChar.m_cLocation.X--;
+				bSomethingHappened = true;
+
+			}
+		}
+
+
+
+
+
+
+		/*if ((door5 == true && door1 == true && door3 == true) || (door5 == true && door1 == false && door3 == false))
 			{
 				if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
 					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != (char)219)
@@ -85,7 +208,7 @@ void movelevel4()
 					}
 				}
 			}
-		  	if (door5 == false)
+		if ((door5 == false && door1 == true && door3 == true) || (door5 == false && door1 == false && door3 == false))
 			{
 				if (g_sChar.m_cLocation.X > 0 &&
 					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != (char)219 &&
@@ -117,7 +240,7 @@ void movelevel4()
 		}
 
 
-
+*/
 
 		/*if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
 			map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != (char)219)
@@ -147,6 +270,65 @@ void movelevel4()
 
 	if (g_abKeyPressed[K_S])
 	{
+		if (door2 == true && door4 == true)
+		{
+			if (g_sChar.m_cLocation.Y < g_Console.getConsoleSize().Y - 1 &&
+				map[g_sChar.m_cLocation.Y + 1][g_sChar.m_cLocation.X] != (char)219)
+			{
+				if (g_sChar.m_cLocation.Y + 1 == boxone.m_cLocation.Y &&
+					g_sChar.m_cLocation.X == boxone.m_cLocation.X)
+				{
+					g_sChar.m_cLocation.Y++;
+					boxone.m_cLocation.Y++;
+					bSomethingHappened = true;
+				}
+				else if (g_sChar.m_cLocation.Y + 1 == boxtwo.m_cLocation.Y &&
+					g_sChar.m_cLocation.X == boxtwo.m_cLocation.X)
+				{
+					g_sChar.m_cLocation.Y++;
+					boxtwo.m_cLocation.Y++;
+					bSomethingHappened = true;
+				}
+				else
+				{
+					g_sChar.m_cLocation.Y++;
+					bSomethingHappened = true;
+				}
+			}
+		}
+		if (door2 == false && door4 == false)
+		{
+			if (g_sChar.m_cLocation.Y > 0 &&
+				map[g_sChar.m_cLocation.Y + 1][g_sChar.m_cLocation.X] != (char)219 &&
+				map[g_sChar.m_cLocation.Y + 1][g_sChar.m_cLocation.X] !=
+				map[g_door2.m_cLocation.Y][g_door2.m_cLocation.X] && map[g_sChar.m_cLocation.Y + 1][g_sChar.m_cLocation.X]
+				&& map[g_sChar.m_cLocation.Y + 1][g_sChar.m_cLocation.X] != map[g_door4.m_cLocation.Y][g_door4.m_cLocation.X])
+
+			{
+				if (g_sChar.m_cLocation.Y + 1 == boxone.m_cLocation.Y &&
+					g_sChar.m_cLocation.X == boxone.m_cLocation.X)
+				{
+					g_sChar.m_cLocation.Y++;
+					boxone.m_cLocation.Y++;
+					bSomethingHappened = true;
+				}
+				else if (g_sChar.m_cLocation.Y + 1 == boxtwo.m_cLocation.Y &&
+					g_sChar.m_cLocation.X == boxtwo.m_cLocation.X)
+				{
+					g_sChar.m_cLocation.Y++;
+					boxtwo.m_cLocation.Y++;
+					bSomethingHappened = true;
+				}
+
+				else
+				{
+					g_sChar.m_cLocation.Y++;
+					bSomethingHappened = true;
+				}
+			}
+		}
+		
+		/*
 		if (g_sChar.m_cLocation.Y < g_Console.getConsoleSize().Y - 2 &&
 			map[g_sChar.m_cLocation.Y + 1][g_sChar.m_cLocation.X] != (char)219)
 		{
@@ -174,13 +356,72 @@ void movelevel4()
 			}
 		}
 	
-
+*/
 
 	}
 
 	if (g_abKeyPressed[K_D])
 	{
-		if (door5 == true)
+
+		if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
+			map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != (char)219)
+		{
+			if (g_sChar.m_cLocation.Y == boxtwo.m_cLocation.Y &&
+				g_sChar.m_cLocation.X + 1 == boxtwo.m_cLocation.X)
+			{
+				g_sChar.m_cLocation.X++;
+				boxtwo.m_cLocation.X++;
+				bSomethingHappened = true;
+			}
+
+			else if (g_sChar.m_cLocation.Y == boxone.m_cLocation.Y &&
+				g_sChar.m_cLocation.X + 1 == boxone.m_cLocation.X)
+			{
+				g_sChar.m_cLocation.X++;
+				boxone.m_cLocation.X++;
+				bSomethingHappened = true;
+			}
+
+			else if (door3 == false && door5 == false)
+			{
+				if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X] &&
+					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X])
+				{
+					g_sChar.m_cLocation.X++;
+					bSomethingHappened = true;
+				}
+			}
+
+			else if (door3 == true && door5 == false)
+			{
+				if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X])
+				{
+					g_sChar.m_cLocation.X++;
+					bSomethingHappened = true;
+				}
+			}
+
+			else if (door3 == false && door5 == true)
+			{
+				if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X])
+				{
+					g_sChar.m_cLocation.X++;
+					bSomethingHappened = true;
+				}
+			}
+
+			else if (door3 == true && door5 == true)
+			{
+
+				g_sChar.m_cLocation.X++;
+				bSomethingHappened = true;
+
+			}
+		}
+
+
+
+		/*if ((door5 == true && door1 == true && door3 == true) || (door5 == true && door1 == false && door3 == false))
 		{
 			if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
 				map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != (char)219)
@@ -206,12 +447,12 @@ void movelevel4()
 				}
 			}
 		}
-		if (door5 == false)
+		if ((door5 == false && door1 == true && door3 == true) || (door5 == false && door1 == false && door3 == false))
 		{
 			if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
 				map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != (char)219 &&
 				map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] !=
-				map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
+				map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X])
 			{
 				if (g_sChar.m_cLocation.Y == boxone.m_cLocation.Y &&
 					g_sChar.m_cLocation.X +1 == boxone.m_cLocation.X)
@@ -234,7 +475,7 @@ void movelevel4()
 				}
 			}
 		}
-
+*/
 
 
 
@@ -267,37 +508,96 @@ void movelevel4()
 
 	if (g_abKeyPressed[K_UP])
 	{
-		
-		if (g_nChar.m_cLocation.Y > 0 &&
-			map[g_nChar.m_cLocation.Y - 1][g_nChar.m_cLocation.X] != (char)219)
+
+		//if (g_nChar.m_cLocation.Y > 0 &&
+		//	map[g_nChar.m_cLocation.Y - 1][g_nChar.m_cLocation.X] != (char)219)
+		//{
+		//	if (g_nChar.m_cLocation.Y - 1 == boxtwo.m_cLocation.Y &&
+		//		g_nChar.m_cLocation.X == boxtwo.m_cLocation.X)
+		//	{
+		//		//if (map[boxtwo.m_cLocation.Y - 1][boxtwo.m_cLocation.X] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X])
+		//		//{
+		//		g_nChar.m_cLocation.Y--;
+		//		boxtwo.m_cLocation.Y--;
+		//		bSomethingHappened = true;
+		//		//}
+		//	}
+		//	else if (g_nChar.m_cLocation.Y - 1 == boxone.m_cLocation.Y &&
+		//		g_nChar.m_cLocation.X == boxone.m_cLocation.X)
+		//	{
+
+		//		g_nChar.m_cLocation.Y--;
+		//		boxone.m_cLocation.Y--;
+		//		bSomethingHappened = true;
+
+		//	}
+
+		//	else
+		//	{
+		//		g_nChar.m_cLocation.Y--;
+		//		bSomethingHappened = true;
+		//	}
+		if (door2 == true && door4 == true)
 		{
-			if (g_nChar.m_cLocation.Y - 1 == boxtwo.m_cLocation.Y &&
-				g_nChar.m_cLocation.X == boxtwo.m_cLocation.X)
+			if (g_nChar.m_cLocation.Y < g_Console.getConsoleSize().Y - 1 &&
+				map[g_nChar.m_cLocation.Y - 1][g_nChar.m_cLocation.X] != (char)219)
 			{
-				//if (map[boxtwo.m_cLocation.Y - 1][boxtwo.m_cLocation.X] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X])
-				//{
-				g_nChar.m_cLocation.Y--;
-				boxtwo.m_cLocation.Y--;
-				bSomethingHappened = true;
-				//}
+				if (g_nChar.m_cLocation.Y - 1 == boxone.m_cLocation.Y &&
+					g_nChar.m_cLocation.X == boxone.m_cLocation.X)
+				{
+					g_nChar.m_cLocation.Y--;
+					boxone.m_cLocation.Y--;
+					bSomethingHappened = true;
+				}
+				else if (g_nChar.m_cLocation.Y-1 == boxtwo.m_cLocation.Y &&
+					g_nChar.m_cLocation.X == boxtwo.m_cLocation.X)
+				{
+					g_nChar.m_cLocation.Y--;
+					boxtwo.m_cLocation.Y--;
+					bSomethingHappened = true;
+				}
+				else
+				{
+					g_nChar.m_cLocation.Y--;
+					bSomethingHappened = true;
+				}
 			}
-			else if (g_nChar.m_cLocation.Y - 1 == boxone.m_cLocation.Y &&
-				g_nChar.m_cLocation.X == boxone.m_cLocation.X)
-			{
-
-				g_nChar.m_cLocation.Y--;
-				boxone.m_cLocation.Y--;
-				bSomethingHappened = true;
-
-			}
-
-			else
-			{
-				g_nChar.m_cLocation.Y--;
-				bSomethingHappened = true;
-			}
-		
 		}
+		if (door2 == false && door4 == false)
+		{
+			if (g_nChar.m_cLocation.Y > 0 &&
+				map[g_nChar.m_cLocation.Y-1][g_nChar.m_cLocation.X ] != (char)219 &&
+				map[g_nChar.m_cLocation.Y-1][g_nChar.m_cLocation.X] !=
+				map[g_door2.m_cLocation.Y][g_door2.m_cLocation.X] && map[g_nChar.m_cLocation.Y-1][g_nChar.m_cLocation.X]
+				&& map[g_nChar.m_cLocation.Y-1][g_nChar.m_cLocation.X ] != map[g_door4.m_cLocation.Y][g_door4.m_cLocation.X])
+
+			{
+				if (g_nChar.m_cLocation.Y-1 == boxone.m_cLocation.Y &&
+					g_nChar.m_cLocation.X == boxone.m_cLocation.X)
+				{
+					g_nChar.m_cLocation.Y--;
+					boxone.m_cLocation.Y--;
+					bSomethingHappened = true;
+				}
+				else if (g_nChar.m_cLocation.Y-1 == boxtwo.m_cLocation.Y &&
+					g_nChar.m_cLocation.X == boxtwo.m_cLocation.X)
+				{
+					g_nChar.m_cLocation.Y--;
+					boxtwo.m_cLocation.Y--;
+					bSomethingHappened = true;
+				}
+
+				else
+				{
+					g_nChar.m_cLocation.Y--;
+					bSomethingHappened = true;
+				}
+			}
+		}
+	
+
+	
+		
 
 
 		//if (g_nChar.m_cLocation.Y - 1 == boxtwo.m_cLocation.Y &&
@@ -341,9 +641,65 @@ void movelevel4()
 
 	if (g_abKeyPressed[K_LEFT])
 	{
+		if (g_nChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
+			map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != (char)219)
+		{
+			if (g_nChar.m_cLocation.Y == boxtwo.m_cLocation.Y &&
+				g_nChar.m_cLocation.X - 1 == boxtwo.m_cLocation.X)
+			{
+				g_nChar.m_cLocation.X--;
+				boxtwo.m_cLocation.X--;
+				bSomethingHappened = true;
+			}
+
+			else if (g_nChar.m_cLocation.Y == boxone.m_cLocation.Y &&
+				g_nChar.m_cLocation.X - 1 == boxone.m_cLocation.X)
+			{
+				g_nChar.m_cLocation.X--;
+				boxone.m_cLocation.X--;
+				bSomethingHappened = true;
+			}
+
+			else if (door1 == false && door5 == false)
+			{
+				if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X] &&
+					map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X])
+				{
+					g_nChar.m_cLocation.X--;
+					bSomethingHappened = true;
+				}
+			}
+
+			else if (door1 == true && door5 == false)
+			{
+				if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X])
+				{
+					g_nChar.m_cLocation.X--;
+					bSomethingHappened = true;
+				}
+			}
+
+			else if (door1 == false && door5 == true)
+			{
+				if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
+				{
+					g_nChar.m_cLocation.X--;
+					bSomethingHappened = true;
+				}
+			}
+
+			else if (door1 == true && door5 == true)
+			{
+
+				g_nChar.m_cLocation.X--;
+				bSomethingHappened = true;
+
+			}
+		}
 
 
-		if (door5 == true)
+		
+		/*if ((door5 == true && door1 == true && door3 == true) || (door5 == true && door1 == false && door3 == false))
 		{
 			if (g_nChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
 				map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != (char)219)
@@ -369,7 +725,7 @@ void movelevel4()
 				}
 			}
 		}
-		if (door5 == false)
+		if ((door5 == false && door1 == true && door3 == true) || (door5 == false && door1 == false && door3 == false))
 		{
 			if (g_nChar.m_cLocation.X > 0 &&
 				map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != (char)219 &&
@@ -398,8 +754,67 @@ void movelevel4()
 					bSomethingHappened = true;
 				}
 			}
-
+		}*/
+			/*if (door1 == true && door3 == true)
+			{
+				if (g_nChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
+					map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != (char)219)
+				{
+					if (g_nChar.m_cLocation.Y == boxone.m_cLocation.Y &&
+						g_nChar.m_cLocation.X - 1 == boxone.m_cLocation.X)
+					{
+						g_nChar.m_cLocation.X--;
+						boxone.m_cLocation.X--;
+						bSomethingHappened = true;
+					}
+					else if (g_nChar.m_cLocation.Y == boxtwo.m_cLocation.Y &&
+						g_nChar.m_cLocation.X - 1 == boxtwo.m_cLocation.X)
+					{
+						g_nChar.m_cLocation.X--;
+						boxtwo.m_cLocation.X--;
+						bSomethingHappened = true;
+					}
+					else
+					{
+						g_nChar.m_cLocation.X--;
+						bSomethingHappened = true;
+					}
+				}
+			}
 		}
+		if (door1 == false && door3 == false)
+		{
+			if (g_nChar.m_cLocation.X > 0 &&
+				map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != (char)219 &&
+				map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] !=
+				map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X] && map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1]
+				&& map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X])
+
+			{
+				if (g_nChar.m_cLocation.Y == boxone.m_cLocation.Y &&
+					g_nChar.m_cLocation.X - 1 == boxone.m_cLocation.X)
+				{
+					g_nChar.m_cLocation.X--;
+					boxone.m_cLocation.X--;
+					bSomethingHappened = true;
+				}
+				else if (g_nChar.m_cLocation.Y == boxtwo.m_cLocation.Y &&
+					g_nChar.m_cLocation.X - 1 == boxtwo.m_cLocation.X)
+				{
+					g_nChar.m_cLocation.X--;
+					boxtwo.m_cLocation.X--;
+					bSomethingHappened = true;
+				}
+
+				else
+				{
+					g_nChar.m_cLocation.X--;
+					bSomethingHappened = true;
+				}
+			}
+		
+
+		}*/
 
 		/*if (g_nChar.m_cLocation.X > 0 &&
 			map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != (char)219)
@@ -441,35 +856,95 @@ void movelevel4()
 
 	if (g_abKeyPressed[K_DOWN])
 	{
-		if (g_nChar.m_cLocation.Y < g_Console.getConsoleSize().Y - 2 &&
-			map[g_nChar.m_cLocation.Y + 1][g_nChar.m_cLocation.X] != (char)219)
+		if (door2 == true && door4 == true)
 		{
-			if (g_nChar.m_cLocation.Y + 1 == boxtwo.m_cLocation.Y &&
-				g_nChar.m_cLocation.X == boxtwo.m_cLocation.X)
+			if (g_nChar.m_cLocation.Y < g_Console.getConsoleSize().Y - 1 &&
+				map[g_nChar.m_cLocation.Y + 1][g_nChar.m_cLocation.X] != (char)219)
 			{
-				//if (map[boxtwo.m_cLocation.Y + 1][boxtwo.m_cLocation.X] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
-				//{
+				if (g_nChar.m_cLocation.Y + 1 == boxone.m_cLocation.Y &&
+					g_nChar.m_cLocation.X == boxone.m_cLocation.X)
+				{
+					g_nChar.m_cLocation.Y++;
+					boxone.m_cLocation.Y++;
+					bSomethingHappened = true;
+				}
+				else if (g_nChar.m_cLocation.Y+1 == boxtwo.m_cLocation.Y &&
+					g_nChar.m_cLocation.X == boxtwo.m_cLocation.X)
+				{
 					g_nChar.m_cLocation.Y++;
 					boxtwo.m_cLocation.Y++;
 					bSomethingHappened = true;
-				//}
+				}
+				else
+				{
+					g_nChar.m_cLocation.Y++;
+					bSomethingHappened = true;
+				}
 			}
+		}
+		if (door2 == false && door4 == false)
+		{
+			if (g_nChar.m_cLocation.Y > 0 &&
+				map[g_nChar.m_cLocation.Y + 1][g_nChar.m_cLocation.X] != (char)219 &&
+				map[g_nChar.m_cLocation.Y + 1][g_nChar.m_cLocation.X] !=
+				map[g_door2.m_cLocation.Y][g_door2.m_cLocation.X] && map[g_nChar.m_cLocation.Y + 1][g_nChar.m_cLocation.X]
+				&& map[g_nChar.m_cLocation.Y + 1][g_nChar.m_cLocation.X] != map[g_door4.m_cLocation.Y][g_door4.m_cLocation.X])
 
-			else if (g_nChar.m_cLocation.Y + 1 == boxone.m_cLocation.Y &&
-				g_nChar.m_cLocation.X == boxone.m_cLocation.X)
 			{
-				
-				    g_nChar.m_cLocation.Y++;
+				if (g_nChar.m_cLocation.Y + 1 == boxone.m_cLocation.Y &&
+					g_nChar.m_cLocation.X == boxone.m_cLocation.X)
+				{
+					g_nChar.m_cLocation.Y++;
 					boxone.m_cLocation.Y++;
 					bSomethingHappened = true;
-	
+				}
+				else if (g_nChar.m_cLocation.Y + 1 == boxtwo.m_cLocation.Y &&
+					g_nChar.m_cLocation.X == boxtwo.m_cLocation.X)
+				{
+					g_nChar.m_cLocation.Y++;
+					boxtwo.m_cLocation.Y++;
+					bSomethingHappened = true;
+				}
+
+				else
+				{
+					g_nChar.m_cLocation.Y++;
+					bSomethingHappened = true;
+				}
 			}
 
-			else
-			{
-				g_nChar.m_cLocation.Y++;
-				bSomethingHappened = true;
-			}
+
+
+
+		//if (g_nChar.m_cLocation.Y < g_Console.getConsoleSize().Y - 2 &&
+		//	map[g_nChar.m_cLocation.Y + 1][g_nChar.m_cLocation.X] != (char)219)
+		//{
+		//	if (g_nChar.m_cLocation.Y + 1 == boxtwo.m_cLocation.Y &&
+		//		g_nChar.m_cLocation.X == boxtwo.m_cLocation.X)
+		//	{
+		//		//if (map[boxtwo.m_cLocation.Y + 1][boxtwo.m_cLocation.X] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
+		//		//{
+		//			g_nChar.m_cLocation.Y++;
+		//			boxtwo.m_cLocation.Y++;
+		//			bSomethingHappened = true;
+		//		//}
+		//	}
+
+		//	else if (g_nChar.m_cLocation.Y + 1 == boxone.m_cLocation.Y &&
+		//		g_nChar.m_cLocation.X == boxone.m_cLocation.X)
+		//	{
+		//		
+		//		    g_nChar.m_cLocation.Y++;
+		//			boxone.m_cLocation.Y++;
+		//			bSomethingHappened = true;
+	
+		//	}
+
+		//	else
+		//	{
+		//		g_nChar.m_cLocation.Y++;
+		//		bSomethingHappened = true;
+		//	}
 
 			//if (g_nChar.m_cLocation.Y + 1 == boxtwo.m_cLocation.Y &&
 			//	g_nChar.m_cLocation.X == boxtwo.m_cLocation.X)
@@ -505,11 +980,57 @@ void movelevel4()
 
 	if (g_abKeyPressed[K_RIGHT])
 	{
+		/*if (g_nChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
+			map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != (char)219)
+			{
+				if (g_nChar.m_cLocation.Y == boxone.m_cLocation.Y &&
+					g_nChar.m_cLocation.X + 1 == boxone.m_cLocation.X)
+				{
+					g_nChar.m_cLocation.X++;
+					boxone.m_cLocation.X++;
+					bSomethingHappened = true;
+				}
 
-		if (door5 == true)
+				else if (g_nChar.m_cLocation.Y == boxtwo.m_cLocation.Y &&
+					g_nChar.m_cLocation.X + 1 == boxtwo.m_cLocation.X)
+				{
+					g_nChar.m_cLocation.X++;
+					boxtwo.m_cLocation.X++;
+					bSomethingHappened = true;
+				}
+
+				else if (door5 == true && door1 == true)
+				{
+					g_nChar.m_cLocation.X++;
+					bSomethingHappened = true;
+				}
+				else if ((map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X]) &&
+					door1 == true)
+				{
+					g_nChar.m_cLocation.X++;
+					bSomethingHappened = true;
+				}
+				else if ((map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X]) &&
+					door1 == false)
+				{
+					g_nChar.m_cLocation.X++;
+					bSomethingHappened = true;
+				}
+
+				else if (door5 == false &&
+					map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X] &&
+					door1 == false &&
+					map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X])
+				{
+					g_nChar.m_cLocation.X++;
+					bSomethingHappened = true;
+				}
+		}*/
+
+		/*if ((door5 == true && door1 == true && door3 == true) || (door5 == true && door1 == false && door3 == false))
 		{
 			if (g_nChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
-				map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != (char)219)
+				map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != (char)219)
 			{
 				if (g_nChar.m_cLocation.Y == boxone.m_cLocation.Y &&
 					g_nChar.m_cLocation.X + 1 == boxone.m_cLocation.X)
@@ -532,12 +1053,13 @@ void movelevel4()
 				}
 			}
 		}
-		if (door5 == false)
+		if ((door5 == false && door1 == true && door3 == true) || (door5 == false && door1 == false && door3 == false))
 		{
-			if (g_nChar.m_cLocation.X > 0 &&
+			if (g_nChar.m_cLocation.X>0 &&
 				map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != (char)219 &&
 				map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] !=
-				map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X] && map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1])
+				map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X] && map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] && map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] !=
+				map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X] && map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
 
 			{
 				if (g_nChar.m_cLocation.Y == boxone.m_cLocation.Y &&
@@ -562,12 +1084,10 @@ void movelevel4()
 				}
 			}
 
+		}*/
 
 
-		}
-
-
-	/*	if (g_nChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
+		if (g_nChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
 			map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != (char)219)
 		{
 			if (g_nChar.m_cLocation.Y == boxtwo.m_cLocation.Y &&
@@ -586,20 +1106,72 @@ void movelevel4()
 				bSomethingHappened = true;
 			}
 
-			else if (door1== false &&
-				map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] !=
-				map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
+			else if (door3 == false && door5 == false)
 			{
-				g_nChar.m_cLocation.X++;
-				bSomethingHappened = true;
+				if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X] &&
+					map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X])
+				{
+					g_nChar.m_cLocation.X++;
+					bSomethingHappened = true;
+				}
 			}
 
-			else if (door1 == true)
+			else if (door3 == true && door5 == false)
 			{
+				if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X])
+				{
+					g_nChar.m_cLocation.X++;
+					bSomethingHappened = true;
+				}
+			}
+
+			else if (door3 == false && door5 == true)
+			{
+				if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X])
+				{
+					g_nChar.m_cLocation.X++;
+					bSomethingHappened = true;
+				}
+			}
+
+			else if (door3 == true && door5 == true)
+			{
+
 				g_nChar.m_cLocation.X++;
 				bSomethingHappened = true;
+
 			}
-		}*/
+			//if (door3== false &&
+			//	map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] !=
+			//	map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X] && door5 == false && map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] !=
+			//	map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X])
+			//{
+			//	g_nChar.m_cLocation.X++;
+			//	bSomethingHappened = true;
+			//}
+			//else if (door3 == false &&
+			//	map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] !=
+			//	map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X] && door5 ==true)
+			//{
+			//	g_nChar.m_cLocation.X++;
+			//	bSomethingHappened = true;
+			//}
+			//else if (door3 == true &&
+			//	   door5 == false && map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] !=
+			//	map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X])
+			//{
+			//	g_nChar.m_cLocation.X++;
+			//	bSomethingHappened = true;
+			//}
+
+
+			//else if (door3 == true && door5 == true)
+			//{
+			//	g_nChar.m_cLocation.X++;
+			//	bSomethingHappened = true;
+			//}
+			
+		}
 	}
 
 if (bSomethingHappened)
