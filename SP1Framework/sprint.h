@@ -53,3 +53,7 @@ extern double g_dElapsedTime;
 extern double g_dBounceTimeBoost;
 
 extern bool g_abKeyPressed[K_COUNT];
+
+//Linking variables
+extern bool partb;
+extern bool partc;

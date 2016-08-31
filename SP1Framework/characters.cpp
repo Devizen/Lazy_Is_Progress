@@ -198,7 +198,8 @@ void motiondetect()
 
 	case leveltwo:
 		if (partb == false)
-		{//For First Character
+		{
+			//For First Character
 			if (g_enemy.m_cLocation.X > 0 &&
 				(g_enemy.m_cLocation.X - g_sChar.m_cLocation.X) < 0 &&
 				map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X + 1] != (char)219)
@@ -270,7 +271,7 @@ void motiondetect()
 				ai_BounceTime = g_dElapsedTime + 0.225; // 125ms should be enough
 			}
 		}
-		else if (partb == true)
+		else if (partb == true && partc == false)
 		{
 			if (g_enemy.m_cLocation.X > 0 &&
 				(g_enemy.m_cLocation.X - g_nChar.m_cLocation.X) < 0 &&
@@ -341,6 +342,79 @@ void motiondetect()
 			{
 				// set the bounce time to some time in the future to prevent accidental triggers
 				ai_BounceTime = g_dElapsedTime + 0.325; // 125ms should be enough
+			}
+		}
+		else if (partc == true)
+		{
+			if (g_enemy.m_cLocation.X > 0 &&
+				(g_enemy.m_cLocation.X - g_sChar.m_cLocation.X) < 0 &&
+				map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X + 1] != (char)219)
+			{
+				g_enemy.m_cLocation.X++;
+				bSomethingHappened = true;
+			}
+
+			if (g_enemy.m_cLocation.X > 0 &&
+				g_enemy.m_cLocation.X - g_sChar.m_cLocation.X > 0 &&
+				map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X - 1] != (char)219)
+			{
+				g_enemy.m_cLocation.X--;
+				bSomethingHappened = true;
+			}
+
+			if (g_enemy.m_cLocation.Y > 0 &&
+				(g_enemy.m_cLocation.Y - g_sChar.m_cLocation.Y) < 0 &&
+				map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != (char)219)
+			{
+				g_enemy.m_cLocation.Y++;
+				bSomethingHappened = true;
+			}
+
+			if (g_enemy.m_cLocation.Y > 0 &&
+				(g_enemy.m_cLocation.Y - g_sChar.m_cLocation.Y) > 0 &&
+				map[g_enemy.m_cLocation.Y - 1][g_enemy.m_cLocation.X] != (char)219)
+			{
+				g_enemy.m_cLocation.Y--;
+				bSomethingHappened = true;
+			}
+
+			//For Second Character
+			if (g_enemy2.m_cLocation.X > 0 &&
+				(g_enemy2.m_cLocation.X - g_nChar.m_cLocation.X) < 0 &&
+				map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X + 1] != (char)219)
+			{
+				g_enemy2.m_cLocation.X++;
+				bSomethingHappened = true;
+			}
+
+			if (g_enemy2.m_cLocation.X > 0 &&
+				g_enemy2.m_cLocation.X - g_nChar.m_cLocation.X > 0 &&
+				map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X - 1] != (char)219)
+			{
+				g_enemy2.m_cLocation.X--;
+				bSomethingHappened = true;
+			}
+
+			if (g_enemy2.m_cLocation.Y > 0 &&
+				(g_enemy2.m_cLocation.Y - g_nChar.m_cLocation.Y) < 0 &&
+				map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] != (char)219)
+			{
+				g_enemy2.m_cLocation.Y++;
+				bSomethingHappened = true;
+			}
+
+			if (g_enemy2.m_cLocation.Y > 0 &&
+				(g_enemy2.m_cLocation.Y - g_nChar.m_cLocation.Y) > 0 &&
+				map[g_enemy2.m_cLocation.Y - 1][g_enemy2.m_cLocation.X] != (char)219)
+			{
+				g_enemy2.m_cLocation.Y--;
+				bSomethingHappened = true;
+			}
+
+			if (bSomethingHappened)
+			{
+				// set the bounce time to some time in the future to prevent accidental triggers
+				ai_BounceTime = g_dElapsedTime + 0.4; // 125ms should be enough
 			}
 		}
 		break;
@@ -427,6 +501,13 @@ void motiondetect()
 //Done by Eugene.
 void rendercharacters()
 {
+	WORD greenwithbg = 0x1A;
+	WORD lightbluewithbg = 0x2B;
+	WORD redwithbg = 0x3C;
+	WORD purplewithbg = 0x4D;
+	WORD yellowwithbg = 0x5E;
+	WORD milkwithbg = 0x6F;
+	WORD blackwithbg = 0xA1;
 	WORD charColor = 0x0C;
 	WORD charColor2 = 0x0A;
 	WORD charColor3 = 0x2B;
@@ -436,8 +517,8 @@ void rendercharacters()
 
 	//const WORD colors[] =
 	//{
-	//	0x1A, 0x2B, 0x3C, 0x4D, 0x5E, 0x6F,
-	//	0xA1, 0xB2, 0xC3, 0xD4, 0xE5, 0xF6
+	//	
+	//	0xB2, 0xC3, 0xD4, 0xE5, 0xF6
 	//};
 
 	switch (load)
