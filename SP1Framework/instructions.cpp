@@ -5,21 +5,6 @@ void instructions()
 {
 	string line;
 
-	WORD charColor = 0x0C;
-	WORD charColor2 = 0x0A;
-	WORD charColor3 = 0x2B;
-	WORD yellow = 0x5E;
-	WORD purple = 0x780F;
-
-	const WORD colors[] =
-	{
-		0x1A, 0x2B, 0x3C, 0x4D, 0x5E, 0x6F,
-		0xA1, 0xB2, 0xC3, 0xD4, 0xE5, 0xF6
-	};
-
-	WORD red = 0x1A;
-
-
 	ifstream myfile("Text/Screen/instructions.txt");
 	COORD c = g_Console.getConsoleSize();
 	c.X = 10;
@@ -41,29 +26,29 @@ void instructions()
 	//Displaying Players' movement for both hearts icons.
 	c.X = 26;
 	c.Y = 9;
-	g_Console.writeToBuffer(c, (char)3, 0xA1);
+	g_Console.writeToBuffer(c, (char)3, red);
 	c.X = 49;
-	g_Console.writeToBuffer(c, (char)3, charColor2);
+	g_Console.writeToBuffer(c, (char)3, green);
 
 	//Displaying Players' run for both hearts icons.
 	c.X = 31;
 	c.Y = 14;
-	g_Console.writeToBuffer(c, (char)3, charColor);
+	g_Console.writeToBuffer(c, (char)3, red);
 
 	c.X = 54;
-	g_Console.writeToBuffer(c, (char)3, charColor2);
+	g_Console.writeToBuffer(c, (char)3, green);
 
 	//Displaying enemy icon.
 	c.X = 29;
 	c.Y = 16;
-	g_Console.writeToBuffer(c, (char)1, charColor2);
+	g_Console.writeToBuffer(c, (char)1, green);
 
 	//Displaying objective for both hearts icons.
 	c.X = 36;
 	c.Y = 20;
-	g_Console.writeToBuffer(c, (char)3, charColor);
+	g_Console.writeToBuffer(c, (char)3, red);
 	c.Y = 21;
-	g_Console.writeToBuffer(c, (char)3, charColor2);
+	g_Console.writeToBuffer(c, (char)3, green);
 
 	//Displaying Text.
 	c.X = 45;

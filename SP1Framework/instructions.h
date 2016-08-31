@@ -1,6 +1,8 @@
 #include "main.h"
+#include "game.h"
 #include "Framework\timer.h"
 #include "spawn.h"
+#include "colours.h"
 
 //Linking Timer.
 extern double  g_dBounceTime;

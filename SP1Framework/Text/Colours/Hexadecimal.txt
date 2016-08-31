@@ -1,0 +1,28 @@
+	WORD greenwithbg = 0x1A;
+	WORD lightbluewithbg = 0x2B;
+	WORD redwithbg = 0x3C;
+	WORD purplewithbg = 0x4D;
+	WORD yellowwithbg = 0x5E;
+	WORD milkwithbg = 0x6F;
+	WORD darkbluewithbg = 0xA1;
+	WORD darkgreenwithbg = 0xB2;
+	WORD ddarkgreenwithbg = 0xC3;
+	WORD dredwithbg = 0xD4;
+	WORD dpurplewithbg = 0xE5;
+	WORD ddarkgreen2withbg = 0xF6;
+	WORD charColor = 0x0C;
+	WORD charColor2 = 0x0A;
+	WORD charColor3 = 0x2B;
+	WORD yellow = 0x5E;
+	WORD purple = 0x780F;
+
+	WORD green = 0x0A;
+	WORD lightblue = 0x0B;
+	WORD red = 0x0C;
+	WORD purple = 0x0D;
+	WORD yellow = 0x0E;
+	WORD milk = 0x0F;
+	WORD darkblue = 0x01;
+	WORD darkgreen = 0x02;
+
+	

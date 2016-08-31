@@ -3,6 +3,7 @@
 #include "game.h"
 #include "main.h"
 #include "Framework\console.h"
+#include "colours.h"
 
 extern Console g_Console;
 
