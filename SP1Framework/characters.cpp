@@ -495,6 +495,121 @@ void motiondetect()
 			ai_BounceTime = g_dElapsedTime + 0.124; // 125ms should be enough
 		}
 		break;
+	case levelfour:
+		//For First Character
+		//Right
+		//if (g_enemy.m_cLocation.X > 0 &&
+		//	(g_enemy.m_cLocation.X - g_sChar.m_cLocation.X) < 0 &&
+		//	map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X + 1] != (char)219)
+		//{
+		//	g_enemy.m_cLocation.X++;
+		//	bSomethingHappened = true;
+		//}
+
+		////Left
+		//if (g_enemy.m_cLocation.X > 0 &&
+		//	g_enemy.m_cLocation.X - g_sChar.m_cLocation.X > 0 &&
+		//	map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X - 1] != (char)219)
+		//{
+		//	g_enemy.m_cLocation.X--;
+		//	bSomethingHappened = true;
+		//}
+
+		////Down
+		//if (g_enemy.m_cLocation.Y > 0 &&
+		//	(g_enemy.m_cLocation.Y - g_sChar.m_cLocation.Y) < 0 &&
+		//	map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != (char)219)
+		//{
+		//	g_enemy.m_cLocation.Y++;
+		//	bSomethingHappened = true;
+		//}
+
+		////Up
+		//if (g_enemy.m_cLocation.Y > 0 &&
+		//	(g_enemy.m_cLocation.Y - g_sChar.m_cLocation.Y) > 0 &&
+		//	map[g_enemy.m_cLocation.Y - 1][g_enemy.m_cLocation.X] != (char)219)
+		//{
+		//	g_enemy.m_cLocation.Y--;
+		//	bSomethingHappened = true;
+		//}
+
+		//For Second Character
+		if (g_enemy2.m_cLocation.X > 0 &&
+			(g_enemy2.m_cLocation.X - g_nChar.m_cLocation.X) < 0 &&
+			map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X + 1] != (char)219)
+		{
+			if (map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X + 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X] && door1 == false)
+			{
+				g_enemy2.m_cLocation.X++;
+				bSomethingHappened = true;
+			}
+
+			if (map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X+1] && door1 == true)
+			{
+				g_enemy2.m_cLocation.X++;
+				bSomethingHappened = true;
+			}
+		}
+
+		if (g_enemy2.m_cLocation.X > 0 &&
+			g_enemy2.m_cLocation.X - g_nChar.m_cLocation.X > 0 &&
+			map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X - 1] != (char)219)
+		{
+			if (map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X-1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X] && door3 == false)
+			{
+				g_enemy2.m_cLocation.X--;
+				bSomethingHappened = true;
+			}
+
+			if (map[g_enemy2.m_cLocation.Y ][g_enemy2.m_cLocation.X-1] && door3 == true)
+			{
+				g_enemy2.m_cLocation.X--;
+				bSomethingHappened = true;
+			}
+		}
+
+		if (g_enemy2.m_cLocation.Y > 0 &&
+			(g_enemy2.m_cLocation.Y - g_nChar.m_cLocation.Y) < 0 &&
+			map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] != (char)219)
+		{
+			if (map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] != map[g_door2.m_cLocation.Y][g_door2.m_cLocation.X] && door2 == false)
+			{
+				g_enemy2.m_cLocation.Y++;
+				bSomethingHappened = true;
+			}
+
+			if (map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] && door2 == true)
+			{
+				g_enemy2.m_cLocation.Y++;
+				bSomethingHappened = true;
+			}
+		}
+
+		if (g_enemy2.m_cLocation.Y > 0 &&
+			(g_enemy2.m_cLocation.Y - g_nChar.m_cLocation.Y) > 0 &&
+			map[g_enemy2.m_cLocation.Y - 1][g_enemy2.m_cLocation.X] != (char)219)
+		{
+			if (map[g_enemy2.m_cLocation.Y - 1][g_enemy2.m_cLocation.X] != map[g_door4.m_cLocation.Y][g_door4.m_cLocation.X] && door4 == false
+				&& map[g_enemy2.m_cLocation.Y - 1][g_enemy2.m_cLocation.X] != (char)219)
+			{
+				g_enemy2.m_cLocation.Y--;
+				bSomethingHappened = true;
+			}
+
+			if (map[g_enemy2.m_cLocation.Y - 1][g_enemy2.m_cLocation.X] && door4 == true)
+			{
+				g_enemy2.m_cLocation.Y--;
+				bSomethingHappened = true;
+			}
+		}
+
+		if (bSomethingHappened)
+		{
+			// set the bounce time to some time in the future to prevent accidental triggers
+			ai_BounceTime = g_dElapsedTime + 0.124; // 125ms should be enough
+		}
+		break;
+
 	}
 }
 
