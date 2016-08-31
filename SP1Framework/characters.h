@@ -51,8 +51,12 @@ extern bool door1;
 extern bool door2;
 extern bool door3;
 extern bool door4;
+<<<<<<< HEAD
+extern bool door5;
+=======
 extern bool partb;
 extern bool partc;
+>>>>>>> fb6547964d375ce00c9a2964ac8880ee507b2b29
 
 //Linking variables.
 extern int health;

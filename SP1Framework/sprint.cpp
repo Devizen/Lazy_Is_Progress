@@ -1072,8 +1072,15 @@ void sprint()
 		if (g_abKeyPressed[K_RSHIFT] && g_abKeyPressed[K_A] &&
 			map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != (char)219)
 		{
-			g_sChar.m_cLocation.X--;
-			boost = true;
+			if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
+				map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != (char)219 &&
+				map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] !=
+				map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X])
+			{
+				g_sChar.m_cLocation.X--;
+
+				boost = true;
+			}
 		}
 
 		if (g_abKeyPressed[K_RSHIFT] && g_abKeyPressed[K_S] &&
@@ -1086,8 +1093,14 @@ void sprint()
 		if (g_abKeyPressed[K_RSHIFT] && g_abKeyPressed[K_D] &&
 			map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != (char)219)
 		{
-			g_sChar.m_cLocation.X++;
-			boost = true;
+			if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
+				map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != (char)219 &&
+				map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] !=
+				map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X])
+			{
+				g_sChar.m_cLocation.X++;
+				boost = true;
+			}
 		}
 
 		if (g_abKeyPressed[K_LSHIFT] && g_abKeyPressed[K_UP] &&

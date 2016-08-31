@@ -3,6 +3,8 @@
 #include "game.h"
 #include "health.h"
 
+bool door5 = false;
+
 void level4()
 {
 	WORD charColor = 0x0C;
@@ -118,11 +120,11 @@ void level4()
 			g_Console.writeToBuffer(boxtwo.m_cLocation, (char)219, charColor2);
 			g_Console.writeToBuffer(g_door5.m_cLocation, (char)219, charColor2);
 
-			door2 = true;
+			door5 = true;
 		}
 		else
 		{
-			door2 = false;
+			door5 = false;
 		}
 	
 		if ((g_enemy.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_sChar.m_cLocation.Y) ||
