@@ -7,16 +7,6 @@ SGameChar enemy;
 //Done by Eugene.
 void level2()
 {
-
-	WORD color = 0X4D;
-	WORD color1 = 0x3C;
-	WORD color2 = 0x2B;
-	WORD red = 0x0C;
-	WORD charColor2 = 0x0A;
-	WORD charColor3 = 0x2B;
-	WORD yellow = 0x5E;
-	WORD purple = 0x780F;
-
 	string line = " ";
 	COORD c;
 
@@ -68,6 +58,8 @@ void level2()
 		{
 			COORD d;
 			d.X = 63;
+			d.Y = 14;
+			g_Console.writeToBuffer(d, "Hint:", yellow);
 			d.Y = 15;
 			g_Console.writeToBuffer(d, "Run away from");
 			d.Y = 16;
@@ -79,6 +71,8 @@ void level2()
 		{
 			COORD d;
 			d.X = 63;
+			d.Y = 14;
+			g_Console.writeToBuffer(d, "Hint:", yellow);
 			d.Y = 15;
 			g_Console.writeToBuffer(d, "Hurry to the");
 			d.Y = 16;
@@ -89,6 +83,8 @@ void level2()
 		{
 			COORD d;
 			d.X = 63;
+			d.Y = 14;
+			g_Console.writeToBuffer(d, "Hint:", yellow);
 			d.Y = 15;
 			g_Console.writeToBuffer(d, "Empty your mind.");
 			d.Y = 16;
@@ -103,6 +99,8 @@ void level2()
 		{
 			COORD d;
 			d.X = 63;
+			d.Y = 14;
+			g_Console.writeToBuffer(d, "Hint:", yellow);
 			d.Y = 15;
 			g_Console.writeToBuffer(d, "                       ");
 			g_Console.writeToBuffer(d, "You are now");
@@ -147,8 +145,8 @@ void level2()
 			g_portal1.m_cLocation.Y = 22;
 
 			//Teleporter
-			g_Console.writeToBuffer(g_portal.m_cLocation, (char)234);
-			g_Console.writeToBuffer(g_portal1.m_cLocation, (char)234);
+			g_Console.writeToBuffer(g_portal.m_cLocation, (char)234, lightblue);
+			g_Console.writeToBuffer(g_portal1.m_cLocation, (char)234, lightblue);
 
 			if (g_sChar.m_cLocation.X == 3 &&
 				g_sChar.m_cLocation.Y == 2 &&
@@ -174,8 +172,8 @@ void level2()
 			g_portal1.m_cLocation.Y = 2;
 
 			//Teleporter
-			g_Console.writeToBuffer(g_portal.m_cLocation, (char)234);
-			g_Console.writeToBuffer(g_portal1.m_cLocation, (char)234);
+			g_Console.writeToBuffer(g_portal.m_cLocation, (char)234, lightblue);
+			g_Console.writeToBuffer(g_portal1.m_cLocation, (char)234, lightblue);
 
 			if (g_nChar.m_cLocation.X == 3 &&
 				g_nChar.m_cLocation.Y == 22 &&
@@ -201,8 +199,8 @@ void level2()
 			g_portal1.m_cLocation.Y = 19;
 
 			//Teleporter
-			g_Console.writeToBuffer(g_portal.m_cLocation, (char)234);
-			g_Console.writeToBuffer(g_portal1.m_cLocation, (char)234);
+			g_Console.writeToBuffer(g_portal.m_cLocation, (char)234, lightblue);
+			g_Console.writeToBuffer(g_portal1.m_cLocation, (char)234, lightblue);
 
 			if (g_sChar.m_cLocation.X == 15 &&
 				g_sChar.m_cLocation.Y == 19 &&
