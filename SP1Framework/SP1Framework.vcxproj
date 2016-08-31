@@ -90,11 +90,13 @@
     <ClCompile Include="level2.cpp" />
     <ClCompile Include="level3.cpp" />
     <ClCompile Include="level4.cpp" />
+    <ClCompile Include="level5.cpp" />
     <ClCompile Include="loadlevel.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="movelevel3.cpp" />
     <ClCompile Include="movelevel4.cpp" />
+    <ClCompile Include="movelevel5.cpp" />
     <ClCompile Include="renderLegend.cpp" />
     <ClCompile Include="movelevel0.cpp" />
     <ClCompile Include="movelevel1.cpp" />
@@ -122,11 +124,13 @@
     <ClInclude Include="level2.h" />
     <ClInclude Include="level3.h" />
     <ClInclude Include="level4.h" />
+    <ClInclude Include="level5.h" />
     <ClInclude Include="loadlevel.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="movelevel3.h" />
     <ClInclude Include="movelevel4.h" />
+    <ClInclude Include="movelevel5.h" />
     <ClInclude Include="renderLegend.h" />
     <ClInclude Include="movelevel0.h" />
     <ClInclude Include="movelevel1.h" />

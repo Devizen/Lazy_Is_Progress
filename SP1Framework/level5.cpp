@@ -1,20 +1,24 @@
-#include "level3.h"
+#include  "level5.h"
 #include "characters.h"
-#include "health.h"
 #include "game.h"
+#include "health.h"
 
-//Done by Daniel.
-void level3()
+//Done by Yoong Soon.
+void level5()
 {
+	WORD charColor = 0x0C;
+	WORD charColor2 = 0x0A;
+	WORD yellow = 0xFFE0;
+
 	string line = " ";
 	COORD c;
 
 	if (splash == true)
 	{
-		string name = "Text/Screen/level3.txt";
+		string name = "Text/Screen/level5.txt";
 		loadlevel(name);
 
-		c.X = 11;
+		c.X = 15;
 		c.Y = 7;
 
 		clearScreen();
@@ -27,7 +31,7 @@ void level3()
 
 		if (g_dCountTime < 59 && story == true)
 		{
-			name = "Text/Story/level3.txt";
+			name = "Text/Story/level5.txt";
 			loadlevel(name);
 
 			c.X = 0;
@@ -58,7 +62,7 @@ void level3()
 
 	if (splash == false)
 	{
-		string name = "Text/Level/level3.txt";
+		string name = "Text/Level/level5.txt";
 		loadlevel(name);
 
 		//COORD c;
@@ -76,14 +80,16 @@ void level3()
 		COORD y;
 		y.X = 15;
 		y.Y = 15;
-		//string line = " ";
-		//string name = "Text/Level/level3.txt";
-		//loadlevel(name);
 
+		//string line = " ";
+		//string name = "Text/Level/level4.txt";
+		//loadlevel(name);
 		//COORD c;
+
 
 		//c.X = 0;
 		//c.Y = 0;
+
 
 		//for (int i = 0; i <= y; i++)
 		//{
@@ -92,29 +98,18 @@ void level3()
 		//	c.Y++;
 		//}
 
-		//COORD y;
-		//y.X = 15;
-		//y.Y = 15;
-
-		COORD d;
-		d.X = 63;
-		d.Y = 15;
-		g_Console.writeToBuffer(d, "Run Away From");
-		d.Y = 16;
-		g_Console.writeToBuffer(d, "The Bad Neighbour");
-		d.Y = 17;
-		g_Console.writeToBuffer(d, "Or You Will");
-		d.Y = 18;
-		g_Console.writeToBuffer(d, "Die");
 
 		rendercharacters();
-		motiondetect();
+		//motiondetect();
+		//patrolfour();
 
 		if ((g_enemy.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_sChar.m_cLocation.Y) ||
 			(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y))
 		{
 			//Set boolean to false so the health will not reset.
 			restarthealth = false;
+
+
 			//Deduct one health.
 			g_sChar.health -= 1;
 
@@ -125,27 +120,14 @@ void level3()
 			spawn();
 		}
 
-		//if (g_nChar.m_cLocation.X == 49 &&
-		//	g_nChar.m_cLocation.Y == 11 &&
-		//	g_sChar.m_cLocation.X == 11 &&
-		//	g_sChar.m_cLocation.Y == 11)
-		//{
-		//	g_sChar.m_cLocation.X = 11;
-		//	g_sChar.m_cLocation.Y = 10;
-
-		//	g_nChar.m_cLocation.X = 49;
-		//	g_nChar.m_cLocation.Y = 10;
-		//	g_sChar.health = 3;
-
-		//	load = mainscreen;
-
-		//}
 		if (g_sChar.health < 1)
 		{
-			level = three;
+			level = five;
 			load = defeated;
 			renderGame();
 			rendercharacters();
 		}
 	}
+
 }
+

@@ -179,7 +179,7 @@ void level1()
 		}
 		if (timeincrease == false)
 		{
-			g_Console.writeToBuffer(g_timeboost.m_cLocation, (char)0);
+			g_Console.writeToBuffer(g_timeboost.m_cLocation, (char)64, darkblue);
 		}
 
 		if ((g_powerup.m_cLocation.X == g_nChar.m_cLocation.X) && (g_powerup.m_cLocation.Y == g_nChar.m_cLocation.Y && powerup == true))
@@ -189,7 +189,7 @@ void level1()
 		}
 		if (powerup == false)
 		{
-			g_Console.writeToBuffer(g_powerup.m_cLocation, (char)0);
+			g_Console.writeToBuffer(g_powerup.m_cLocation, (char)206, darkblue);
 		}
 
 		if (map[g_box1.m_cLocation.Y][g_box1.m_cLocation.X] == (char)219 ||

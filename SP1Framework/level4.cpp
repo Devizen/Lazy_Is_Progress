@@ -3,6 +3,8 @@
 #include "game.h"
 #include "health.h"
 
+//Done by Yoong Soon.
+
 void level4()
 {
 	WORD charColor = 0x0C;
@@ -194,6 +196,15 @@ void level4()
 			g_nChar.m_cLocation.Y = 9;
 		}
 
+
+
+		if (g_sChar.health < 1)
+		{
+			level = four;
+			load = defeated;
+			renderGame();
+			rendercharacters();
+		}
 
 	}
 

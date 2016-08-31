@@ -15,6 +15,7 @@
 #include "level2.h"
 #include "level3.h"
 #include "level4.h"
+#include "level5.h"
 #include "characters.h"
 #include "renderResult.h"
 #include "menu.h"
@@ -150,7 +151,7 @@ void init(void)
 	g_Console.setConsoleFont(0, 16, L"Arial");
 	// Added by Daniel \/
 
-	//PlaySound(TEXT("Soundtracks/BGM/Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
+	PlaySound(TEXT("Soundtracks/BGM/Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
 
 	//PlaySound(TEXT("Soundtracks/BGM/Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
 
@@ -216,6 +217,7 @@ void getInput(void)
 	g_abKeyPressed[K_4] = isKeyPressed(VK_4);
 	g_abKeyPressed[K_5] = isKeyPressed(VK_5);
 	g_abKeyPressed[K_6] = isKeyPressed(VK_6);
+	g_abKeyPressed[K_7] = isKeyPressed(VK_7);
 	g_abKeyPressed[K_9] = isKeyPressed(VK_9);
 	g_abKeyPressed[K_0] = isKeyPressed(VK_0);
 }
@@ -340,6 +342,11 @@ void moveCharacter()
 			sprint();
 			movelevel4();
 			break;
+
+		case levelfive:
+			sprint();
+			movelevel5();
+			break;
 		}
 	}
 }
@@ -404,11 +411,22 @@ void processUserInput()
 		spawn();
 		g_eGameState = S_GAME;
 	}
+
 	if (g_abKeyPressed[K_6])
 	{
 		restarthealth = true;
 		splash = true;
 		load = levelfour;
+		clearScreen();
+		spawn();
+		g_eGameState = S_GAME;
+	}
+
+	if (g_abKeyPressed[K_7])
+	{
+		restarthealth = true;
+		splash = true;
+		load = levelfive;
 		clearScreen();
 		spawn();
 		g_eGameState = S_GAME;
@@ -610,6 +628,8 @@ void renderGame()
 		break;
 	case levelfour: level4();
 		break;
+	case levelfive: level5();
+		break;
 	}
 }
 
@@ -773,6 +793,21 @@ void renderFramerate()
 			break;
 
 		case levelfour:
+			if (g_sChar.health < 1)
+			{
+				g_eGameState = S_RESULT;
+			}
+			else
+			{
+				//Displaying Splash Screen.
+				splash = true;
+				//Resetting Time Left.
+				g_dCountTime = 60;
+				spawn();
+			}
+			break;
+
+		case levelfive:
 			if (g_sChar.health < 1)
 			{
 				g_eGameState = S_RESULT;

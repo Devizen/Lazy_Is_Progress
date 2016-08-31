@@ -67,6 +67,30 @@ void gameover()
 			spawn();
 			renderGame();
 			break;
+
+		case three:
+			splash = true;
+			g_sChar.health = 3;
+			load = levelthree;
+			spawn();
+			renderGame();
+			break;
+
+		case four:
+			splash = true;
+			g_sChar.health = 3;
+			load = levelfour;
+			spawn();
+			renderGame();
+			break;
+
+		case five:
+			splash = true;
+			g_sChar.health = 3;
+			load = levelfive;
+			spawn();
+			renderGame();
+			break;
 		}
 	}
 }
