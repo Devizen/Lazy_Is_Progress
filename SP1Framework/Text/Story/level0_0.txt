@@ -1,25 +1,25 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
++                BBBBBBBBBB                                 +
++            BBBBBBBBBBBBBBBBBB                             +
++         BBBBBBBB         BBBBBB                           +
++       BBB    BBB          BBBBBBBB                        +
++    BBBBB     BBB           BBBBBBBBB                      +
++   BBBB       BBB            BBBBBBBBB                     +
++   BBB        BBB              BBBBBBBBBB                  +
++   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB         +
++ BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB      +
++ BBBBBB)BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB((0   +
++ 000000)BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB((000  +
++   0000)BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB((000  +
++     BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB(0    +
++         BBBBBBBBB                  BBBBBBBBBBB            +
++          BBBBBBB                      BBBBBBB             +
++            BBBB                         BBBB              +
++                                                           + 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-+ Peanut and Butter are lovers, they were capture and       +
-+ seperated by a Evil Master called the Bread, so that he   +
-+ could create the ultimate filling for his bread company.  +
-+ They were put into different chambers inside a giantic    +
-+ with lots of diferent levels to complete. The only way    +
-+ for them to be together again is to complete the Bread    +
-+ Tower and escape from the grasp of the evil Bread.        +
++ Peanut and Butter are lovers, they were captured in a car +
++ and was seperated by the evil Bread. So he could create   +
++ the ultimate filling for his company. In order for them to+       
++ escape is to complete the Bread tower and escape from     +
++ the grasp of evil Bread.                                  +
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
