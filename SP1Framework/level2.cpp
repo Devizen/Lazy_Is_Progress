@@ -26,7 +26,31 @@ void level2()
 			c.Y++;
 		}
 
-		if (g_dCountTime < 59)
+		if (g_dCountTime < 59 && story == true)
+		{
+			name = "Text/Story/level2.txt";
+			loadlevel(name);
+
+			c.X = 0;
+			c.Y = 0;
+
+			clearScreen();
+			for (int i = 0; i <= y; i++)
+			{
+				line = map[i];
+				g_Console.writeToBuffer(c, line);
+				c.Y++;
+			}
+
+			if (g_dCountTime < 55)
+			{
+				splash = false;
+				story = false;
+				renderGame();
+			}
+		}
+
+		if (g_dCountTime < 59 && story == false)
 		{
 			splash = false;
 			renderGame();
@@ -213,6 +237,10 @@ void level2()
 				load = levelthree;
 				restarthealth = true;
 				splash = true;
+
+				//Displaying Story Screen.
+				story = true;
+
 				spawn();
 				renderGame();
 			}
