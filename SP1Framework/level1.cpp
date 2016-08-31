@@ -1,8 +1,5 @@
 #include "level1.h"
-bool door1 = false;
-bool door2 = false;
-bool door3 = false;
-bool door4 = false;
+
 bool powerup = true;
 bool timeincrease = true;
 

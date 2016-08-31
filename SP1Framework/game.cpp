@@ -43,6 +43,11 @@ bool splash = true;
 bool story = true;
 bool partb = false;
 bool partc = false;
+bool door1 = false;
+bool door2 = false;
+bool door3 = false;
+bool door4 = false;
+bool door5 = false;
 
 RELEASE
 release_enemy,
@@ -146,7 +151,7 @@ void init(void)
 	g_Console.setConsoleFont(0, 16, L"Arial");
 	// Added by Daniel \/
 
-	//PlaySound(TEXT("Soundtracks/BGM/Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
+	PlaySound(TEXT("Soundtracks/BGM/Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
 
 	//PlaySound(TEXT("Soundtracks/BGM/Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
 

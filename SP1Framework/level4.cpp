@@ -3,9 +3,8 @@
 #include "game.h"
 #include "health.h"
 
-bool door5 = false;
-
 //Done by Yoong Soon.
+
 void level4()
 {
 	WORD charColor = 0x0C;
