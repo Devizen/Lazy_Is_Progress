@@ -50,6 +50,17 @@ void tutoriala()
 		y.X = 15;
 		y.Y = 15;
 
+		COORD d;
+		d.X = 63;
+		d.Y = 14;
+		g_Console.writeToBuffer(d, "Hint:", yellow);
+		d.Y = 15;
+		g_Console.writeToBuffer(d, "Shortest path");
+		d.Y = 16;
+		g_Console.writeToBuffer(d, "is always the");
+		d.Y = 17;
+		g_Console.writeToBuffer(d, "safest route.");
+
 		rendercharacters();
 		motiondetect();
 
@@ -105,10 +116,6 @@ void tutoriala()
 
 void tutorialb()
 {
-	WORD charColor = 0x0C;
-	WORD charColor2 = 0x0A;
-	WORD yellow = 0xFFE0;
-
 	//string line = " ";
 	//string name = "Text/Level/level0_1.txt";
 	//loadlevel(name);
@@ -172,6 +179,8 @@ void tutorialb()
 
 		COORD d;
 		d.X = 63;
+		d.Y = 14;
+		g_Console.writeToBuffer(d, "Hint:", yellow);
 		d.Y = 15;
 		g_Console.writeToBuffer(d, "Push the");
 		d.Y = 16;
@@ -216,8 +225,8 @@ void tutorialb()
 		//Unlock Door 1
 		if (map[boxone.m_cLocation.Y][boxone.m_cLocation.X] == map[g_lever1.m_cLocation.Y][g_lever1.m_cLocation.X])
 		{
-			g_Console.writeToBuffer(boxone.m_cLocation, (char)219, charColor2);
-			g_Console.writeToBuffer(g_door1.m_cLocation, (char)219, charColor2);
+			g_Console.writeToBuffer(boxone.m_cLocation, (char)219, green);
+			g_Console.writeToBuffer(g_door1.m_cLocation, (char)219, green);
 
 			door1 = true;
 		}
@@ -229,8 +238,8 @@ void tutorialb()
 		//Unlock Door 2
 		if (map[boxtwo.m_cLocation.Y][boxtwo.m_cLocation.X] == map[g_lever2.m_cLocation.Y][g_lever2.m_cLocation.X])
 		{
-			g_Console.writeToBuffer(boxtwo.m_cLocation, (char)219, charColor2);
-			g_Console.writeToBuffer(g_door2.m_cLocation, (char)219, charColor2);
+			g_Console.writeToBuffer(boxtwo.m_cLocation, (char)219, green);
+			g_Console.writeToBuffer(g_door2.m_cLocation, (char)219, green);
 
 			door2 = true;
 		}
@@ -242,8 +251,8 @@ void tutorialb()
 		//Unlock Door 3
 		if (map[boxthree.m_cLocation.Y][boxthree.m_cLocation.X] == map[g_lever3.m_cLocation.Y][g_lever3.m_cLocation.X])
 		{
-			g_Console.writeToBuffer(boxthree.m_cLocation, (char)219, charColor2);
-			g_Console.writeToBuffer(g_door3.m_cLocation, (char)219, charColor2);
+			g_Console.writeToBuffer(boxthree.m_cLocation, (char)219, green);
+			g_Console.writeToBuffer(g_door3.m_cLocation, (char)219, green);
 
 			door3 = true;
 		}
@@ -255,8 +264,8 @@ void tutorialb()
 		//Unlock Door 4
 		if (map[boxfour.m_cLocation.Y][boxfour.m_cLocation.X] == map[g_lever4.m_cLocation.Y][g_lever4.m_cLocation.X])
 		{
-			g_Console.writeToBuffer(boxfour.m_cLocation, (char)219, charColor2);
-			g_Console.writeToBuffer(g_door4.m_cLocation, (char)219, charColor2);
+			g_Console.writeToBuffer(boxfour.m_cLocation, (char)219, green);
+			g_Console.writeToBuffer(g_door4.m_cLocation, (char)219, green);
 
 			door4 = true;
 		}

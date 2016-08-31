@@ -66,3 +66,4 @@ extern bool partc;
 //Definition for function.
 void spawn();
 bool boxreturn(struct objects box);
+bool boxreturndoor(struct objects box, struct objects door);

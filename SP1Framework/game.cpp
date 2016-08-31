@@ -84,7 +84,6 @@ g_portal1;
 //Speed up
 SGameChar   g_platform;
 
-
 SGameChar	g_menu;
 SGameChar   g_result;
 SGameChar   g_powerup;
@@ -93,6 +92,16 @@ EGAMESTATES g_eGameState = S_SPLASHSCREEN;
 LEVELS		load = levelzeroa;
 RESTART		level = one;
 direction	check = upd;
+
+//Colours
+WORD green = 0x0A;
+WORD lightblue = 0x0B;
+WORD red = 0x0C;
+WORD purple = 0x0D;
+WORD yellow = 0x0E;
+WORD milk = 0x0F;
+WORD darkblue = 0x01;
+WORD darkgreen = 0x02;
 
 double g_dBounceTime; // this is to prevent key bouncing, so we won't trigger keypresses more than once
 double ai_BounceTime;
@@ -152,7 +161,7 @@ void init(void)
 //--------------------------------------------------------------
 void shutdown(void)
 {
-	// Reset to white text on black background
+	// Reset to white text on darkblue background
 	colour(FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED);
 
 	g_Console.clearBuffer();
@@ -624,11 +633,11 @@ void renderFramerate()
 
 	COORD c;
 
-	WORD charColor = 0x0C;
-	WORD charColor2 = 0x0A;
-	WORD charColor3 = 0x2B;
-	WORD yellow = 0x5E;
-	WORD purple = 0x780F;
+	//WORD charColor = 0x0C;
+	//WORD charColor2 = 0x0A;
+	//WORD charColor3 = 0x2B;
+	//WORD yellow = 0x5E;
+	//WORD purple = 0x780F;
 
 	// displays the framerate
 	std::ostringstream ss;
@@ -645,7 +654,7 @@ void renderFramerate()
 		ss << g_dCountTime << " secs";
 		c.X = g_Console.getConsoleSize().X - 12;
 		c.Y = g_Console.getConsoleSize().Y - 24;
-		g_Console.writeToBuffer(c, ss.str(), 0xE5);
+		g_Console.writeToBuffer(c, ss.str(), green);
 
 		if (g_dCountTime <= 30 && g_dCountTime > 10)
 		{
@@ -654,7 +663,7 @@ void renderFramerate()
 
 		if (g_dCountTime <= 10)
 		{
-			g_Console.writeToBuffer(c, ss.str(), charColor);
+			g_Console.writeToBuffer(c, ss.str(), red);
 		}
 	}
 

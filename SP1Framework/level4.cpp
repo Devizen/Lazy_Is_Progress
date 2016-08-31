@@ -80,7 +80,7 @@ void level4()
 		//motiondetect();
 		//patrolfour();
 
-		if (boxreturn(boxone) == true)
+		if (boxreturn(boxone) == true || boxreturndoor(boxone, g_door5) == true)
 		{
 			boxone.m_cLocation.X = 14;
 			boxone.m_cLocation.Y = 8;
@@ -91,6 +91,7 @@ void level4()
 			boxtwo.m_cLocation.X = 41;
 			boxtwo.m_cLocation.Y = 18;
 		}
+
 
 		//Unlock Door 1
 		if (map[boxone.m_cLocation.Y][boxone.m_cLocation.X] == map[g_lever1.m_cLocation.Y][g_lever1.m_cLocation.X])
@@ -151,11 +152,11 @@ void level4()
 			g_sChar.m_cLocation.X = 48;
 			g_sChar.m_cLocation.Y = 8;
 		}
-	    if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X] == map[g_portal.m_cLocation.Y][g_portal.m_cLocation.X])
+	   /* if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X] == map[g_portal.m_cLocation.Y][g_portal.m_cLocation.X])
 		{
 			g_sChar.m_cLocation.X = 3;
 			g_sChar.m_cLocation.Y = 1;
-		}
+		}*/
 		
 
 
@@ -165,12 +166,12 @@ void level4()
 			g_nChar.m_cLocation.X = 3;
 			g_nChar.m_cLocation.Y = 1;
 		}
-		if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X] == map[g_lever2.m_cLocation.Y][g_lever2.m_cLocation.X])
+	/*	if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X] == map[g_lever2.m_cLocation.Y][g_lever2.m_cLocation.X])
 		{
 			g_nChar.m_cLocation.X = 48;
 			g_nChar.m_cLocation.Y = 8;
 		}
-
+*/
 
 	}
 

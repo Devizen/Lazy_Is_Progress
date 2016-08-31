@@ -180,6 +180,9 @@
     <ClInclude Include="movetogether.h">
       <Filter>Character and A.I\Movement</Filter>
     </ClInclude>
+    <ClInclude Include="colours.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Character and A.I">

@@ -58,6 +58,11 @@ extern bool partb;
 extern bool partc;
 
 
+
+
+
+
+
 //Linking variables.
 extern int health;
 extern bool bSomethingHappened;
