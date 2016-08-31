@@ -380,3 +380,15 @@ bool boxreturn(struct objects input)
 		return false;
 	}
 }
+
+bool boxreturndoor(struct objects box, struct objects door)
+{
+	if (map[box.m_cLocation.Y][box.m_cLocation.X] == map[door.m_cLocation.Y][door.m_cLocation.X])
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
