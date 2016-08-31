@@ -789,7 +789,7 @@ void patrolzerob()
 	if (bSomethingHappened)
 	{
 		// set the bounce time to some time in the future to prevent accidental triggers
-		ai_BounceTime = g_dElapsedTime + 0.03f; // 125ms should be enough
+		ai_BounceTime = g_dElapsedTime + 0.02f; // 125ms should be enough
 
 	}
 }
