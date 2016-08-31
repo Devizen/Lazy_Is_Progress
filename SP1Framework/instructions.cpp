@@ -41,7 +41,7 @@ void instructions()
 	//Displaying Players' movement for both hearts icons.
 	c.X = 26;
 	c.Y = 9;
-	g_Console.writeToBuffer(c, (char)3, charColor);
+	g_Console.writeToBuffer(c, (char)3, 0xA1);
 	c.X = 49;
 	g_Console.writeToBuffer(c, (char)3, charColor2);
 
