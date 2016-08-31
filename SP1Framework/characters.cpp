@@ -562,7 +562,7 @@ void rendercharacters()
 		g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, charColor2);
 
 		//Enemy
-		g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, charColor2);
+		
 		g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, charColor2);
 
 		//Lever
