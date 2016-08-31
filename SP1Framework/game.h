@@ -49,6 +49,7 @@ enum EKEYS
 	K_4,
 	K_5,
 	K_6,
+	K_7,
 	K_9,
 	K_0,
 
@@ -80,6 +81,7 @@ enum LEVELS
 	leveltwo,
 	levelthree,
 	levelfour,
+	levelfive,
 	scoreboard1,
 	scoreboard2
 
@@ -92,7 +94,8 @@ enum RESTART
 	one,
 	two,
 	three,
-    four
+    four,
+	five
 };
 
 
@@ -161,6 +164,7 @@ void movelevel1();
 void movelevel2();
 void movelevel3();
 void movelevel4();
+void movelevel5();
 void movetogether();
 
 //Linking variables.
