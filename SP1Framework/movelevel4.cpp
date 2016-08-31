@@ -25,7 +25,7 @@ void movelevel4()
 				/*}*/
 			}
 
-			else if (g_nChar.m_cLocation.Y - 1 == boxtwo.m_cLocation.Y &&
+			/*else if (g_nChar.m_cLocation.Y - 1 == boxtwo.m_cLocation.Y &&
 				g_nChar.m_cLocation.X == boxtwo.m_cLocation.X)
 			{
 
@@ -33,7 +33,7 @@ void movelevel4()
 				boxtwo.m_cLocation.Y--;
 				bSomethingHappened = true;
 
-			}
+			}*/
 
 			else
 			{
@@ -46,28 +46,62 @@ void movelevel4()
 
 	if (g_abKeyPressed[K_A])
 	{
-		if (door5 == true)
+
+	/*	if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
+			map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != (char)219)
 		{
-			if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
-				map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != (char)219)
+			if (g_sChar.m_cLocation.Y == boxone.m_cLocation.Y &&
+				g_sChar.m_cLocation.X - 1 == boxone.m_cLocation.X)
 			{
 				g_sChar.m_cLocation.X--;
+				boxone.m_cLocation.X--;
 				bSomethingHappened = true;
-			}
-		}
-		if (door5 == false)
-		{
-			if (g_sChar.m_cLocation.X > 0 &&
-				map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != (char)219 &&
-				map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] !=
-				map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
+			}*/
+		/*}*/
 
+			if (door5 == true)
 			{
-				g_sChar.m_cLocation.X--;
-				bSomethingHappened = true;
+				if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
+					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != (char)219)
+				{
+					if (g_sChar.m_cLocation.Y == boxone.m_cLocation.Y &&
+						g_sChar.m_cLocation.X - 1 == boxone.m_cLocation.X)
+					{
+						g_sChar.m_cLocation.X--;
+						boxone.m_cLocation.X--;
+						bSomethingHappened = true;
+					}
+					else
+					{
+						g_sChar.m_cLocation.X--;
+						bSomethingHappened = true;
+					}
+				}
 			}
+			if (door5 == false)
+			{
+				if (g_sChar.m_cLocation.X > 0 &&
+					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != (char)219 &&
+					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] !=
+					map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X] && map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1])
 
+				{
+					if (g_sChar.m_cLocation.Y == boxone.m_cLocation.Y &&
+						g_sChar.m_cLocation.X - 1 == boxone.m_cLocation.X)
+					{
+						g_sChar.m_cLocation.X--;
+						boxone.m_cLocation.X--;
+						bSomethingHappened = true;
+					}
+					else
+					{
+						g_sChar.m_cLocation.X--;
+						bSomethingHappened = true;
+					}
+				}
 		}
+
+
 
 
 		/*if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
@@ -136,8 +170,18 @@ void movelevel4()
 			if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
 				map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != (char)219)
 			{
-				g_sChar.m_cLocation.X++;
-				bSomethingHappened = true;
+				if (g_sChar.m_cLocation.Y == boxone.m_cLocation.Y &&
+					g_sChar.m_cLocation.X + 1 == boxone.m_cLocation.X)
+				{
+					g_sChar.m_cLocation.X++;
+					boxone.m_cLocation.X++;
+					bSomethingHappened = true;
+				}
+				else
+				{
+					g_sChar.m_cLocation.X++;
+					bSomethingHappened = true;
+				}
 			}
 		}
 		if (door5 == false)
@@ -147,8 +191,18 @@ void movelevel4()
 				map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] !=
 				map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
 			{
-				g_sChar.m_cLocation.X++;
-				bSomethingHappened = true;
+				if (g_sChar.m_cLocation.Y == boxone.m_cLocation.Y &&
+					g_sChar.m_cLocation.X +1 == boxone.m_cLocation.X)
+				{
+					g_sChar.m_cLocation.X++;
+					boxone.m_cLocation.X++;
+					bSomethingHappened = true;
+				}
+				else
+				{
+					g_sChar.m_cLocation.X++;
+					bSomethingHappened = true;
+				}
 			}
 		}
 

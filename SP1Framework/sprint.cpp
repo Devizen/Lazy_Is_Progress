@@ -760,8 +760,20 @@ void sprint()
 			g_sChar.m_cLocation.Y > 0 &&
 			map[g_sChar.m_cLocation.Y - 1][g_sChar.m_cLocation.X] != (char)219)
 		{
-			g_sChar.m_cLocation.Y--;
-			boost = true;
+			if (g_sChar.m_cLocation.Y - 1 == boxone.m_cLocation.Y &&
+				g_sChar.m_cLocation.X == boxone.m_cLocation.X)
+			{
+					g_sChar.m_cLocation.Y--;
+					boxone.m_cLocation.Y--;
+					boost = true;
+			}
+
+			else 
+			{
+				g_sChar.m_cLocation.Y--;
+				boost = true;
+			}
+
 		}
 
 		if (g_abKeyPressed[K_RSHIFT] && g_abKeyPressed[K_A] &&
@@ -776,13 +788,25 @@ void sprint()
 
 				boost = true;
 			}
+
 		}
 
 		if (g_abKeyPressed[K_RSHIFT] && g_abKeyPressed[K_S] &&
 			map[g_sChar.m_cLocation.Y + 1][g_sChar.m_cLocation.X] != (char)219)
 		{
-			g_sChar.m_cLocation.Y++;
-			boost = true;
+			if (g_sChar.m_cLocation.Y + 1 == boxone.m_cLocation.Y &&
+				g_sChar.m_cLocation.X == boxone.m_cLocation.X)
+			{
+				g_sChar.m_cLocation.Y++;
+				boxone.m_cLocation.Y++;
+				boost = true;
+			}
+
+			else
+			{
+				g_sChar.m_cLocation.Y++;
+				boost = true;
+			}
 		}
 
 		if (g_abKeyPressed[K_RSHIFT] && g_abKeyPressed[K_D] &&
