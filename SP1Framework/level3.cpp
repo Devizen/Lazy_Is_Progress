@@ -14,7 +14,7 @@ void level3()
 		string name = "Text/Screen/level3.txt";
 		loadlevel(name);
 
-		c.X = 15;
+		c.X = 12;
 		c.Y = 7;
 
 		clearScreen();
