@@ -55,11 +55,15 @@ g_lever2,
 g_lever3,
 g_lever4,
 g_box1,
-g_portal;
+g_portal,
+g_portal1;
 
 //Linking variables
 extern double g_dCountTime;
+extern bool partb;
+extern bool partc;
 
 //Definition for function.
 void spawn();
 bool boxreturn(struct objects box);
+bool boxreturndoor(struct objects box, struct objects door);

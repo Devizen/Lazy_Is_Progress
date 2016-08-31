@@ -6,16 +6,13 @@ using namespace std;
 //Done by Yoong Soon and Eugene.
 void renderhealth(Console *handle,  int hp)
 {
-	WORD healthColor = 0xA1;
-	WORD red = 0x0C;
-	WORD yellow = 0x5E;
 	string s = "Health: " + to_string(hp);
 
 	COORD c;
 	c.X = handle->getConsoleSize().X - 13;
 	c.Y = handle->getConsoleSize().Y -23 ;
 	
-	handle->writeToBuffer(c, s, healthColor);
+	handle->writeToBuffer(c, s, green);
 	
 	if (g_sChar.health == 2)
 	{

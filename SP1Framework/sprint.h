@@ -36,6 +36,7 @@ g_door1,
 g_door2,
 g_door3,
 g_door4,
+g_door5,
 closedoor1,
 closedoor2,
 g_lever1,
@@ -52,3 +53,7 @@ extern double g_dElapsedTime;
 extern double g_dBounceTimeBoost;
 
 extern bool g_abKeyPressed[K_COUNT];
+
+//Linking variables
+extern bool partb;
+extern bool partc;

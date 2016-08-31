@@ -36,11 +36,25 @@ void menu()
 		bSomethingHappened = true;
 	}
 
+	else if (g_abKeyPressed[K_UP] &&
+		g_menu.m_cLocation.Y - 1 == 11)
+	{
+		g_menu.m_cLocation.Y = 16;
+		bSomethingHappened = true;
+	}
+
 	if (g_abKeyPressed[K_DOWN] &&
 		g_menu.m_cLocation.Y < 16 &&
 		g_menu.m_cLocation.Y >= 12)
 	{
 		g_menu.m_cLocation.Y++;
+		bSomethingHappened = true;
+	}
+
+	else if (g_abKeyPressed[K_DOWN] &&
+		g_menu.m_cLocation.Y + 1 == 17)
+	{
+		g_menu.m_cLocation.Y = 12;
 		bSomethingHappened = true;
 	}
 

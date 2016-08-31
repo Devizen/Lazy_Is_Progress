@@ -197,76 +197,225 @@ void motiondetect()
 		break;
 
 	case leveltwo:
-		//For First Character
-		if (g_enemy.m_cLocation.X > 0 &&
-			(g_enemy.m_cLocation.X - g_sChar.m_cLocation.X) < 0 &&
-			map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X + 1] != (char)219)
+		if (partb == false)
 		{
-			g_enemy.m_cLocation.X++;
-			bSomethingHappened = true;
-		}
+			//For First Character
+			if (g_enemy.m_cLocation.X > 0 &&
+				(g_enemy.m_cLocation.X - g_sChar.m_cLocation.X) < 0 &&
+				map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X + 1] != (char)219)
+			{
+				g_enemy.m_cLocation.X++;
+				bSomethingHappened = true;
+			}
 
-		if (g_enemy.m_cLocation.X > 0 &&
-			g_enemy.m_cLocation.X - g_sChar.m_cLocation.X > 0 &&
-			map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X - 1] != (char)219)
-		{
-			g_enemy.m_cLocation.X--;
-			bSomethingHappened = true;
-		}
+			if (g_enemy.m_cLocation.X > 0 &&
+				g_enemy.m_cLocation.X - g_sChar.m_cLocation.X > 0 &&
+				map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X - 1] != (char)219)
+			{
+				g_enemy.m_cLocation.X--;
+				bSomethingHappened = true;
+			}
 
-		if (g_enemy.m_cLocation.Y > 0 &&
-			(g_enemy.m_cLocation.Y - g_sChar.m_cLocation.Y) < 0 &&
-			map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != (char)219)
-		{
-			g_enemy.m_cLocation.Y++;
-			bSomethingHappened = true;
-		}
+			if (g_enemy.m_cLocation.Y > 0 &&
+				(g_enemy.m_cLocation.Y - g_sChar.m_cLocation.Y) < 0 &&
+				map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != (char)219)
+			{
+				g_enemy.m_cLocation.Y++;
+				bSomethingHappened = true;
+			}
 
-		if (g_enemy.m_cLocation.Y > 0 &&
-			(g_enemy.m_cLocation.Y - g_sChar.m_cLocation.Y) > 0 &&
-			map[g_enemy.m_cLocation.Y - 1][g_enemy.m_cLocation.X] != (char)219)
-		{
-			g_enemy.m_cLocation.Y--;
-			bSomethingHappened = true;
-		}
+			if (g_enemy.m_cLocation.Y > 0 &&
+				(g_enemy.m_cLocation.Y - g_sChar.m_cLocation.Y) > 0 &&
+				map[g_enemy.m_cLocation.Y - 1][g_enemy.m_cLocation.X] != (char)219)
+			{
+				g_enemy.m_cLocation.Y--;
+				bSomethingHappened = true;
+			}
 
-		//For Second Character
-		if (g_enemy2.m_cLocation.X > 0 &&
-			(g_enemy2.m_cLocation.X - g_nChar.m_cLocation.X) < 0 &&
-			map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X + 1] != (char)219)
-		{
-			g_enemy2.m_cLocation.X++;
-			bSomethingHappened = true;
-		}
+			//For Second Character
+			if (g_enemy2.m_cLocation.X > 0 &&
+				(g_enemy2.m_cLocation.X - g_nChar.m_cLocation.X) < 0 &&
+				map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X + 1] != (char)219)
+			{
+				g_enemy2.m_cLocation.X++;
+				bSomethingHappened = true;
+			}
 
-		if (g_enemy2.m_cLocation.X > 0 &&
-			g_enemy2.m_cLocation.X - g_nChar.m_cLocation.X > 0 &&
-			map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X - 1] != (char)219)
-		{
-			g_enemy2.m_cLocation.X--;
-			bSomethingHappened = true;
-		}
+			if (g_enemy2.m_cLocation.X > 0 &&
+				g_enemy2.m_cLocation.X - g_nChar.m_cLocation.X > 0 &&
+				map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X - 1] != (char)219)
+			{
+				g_enemy2.m_cLocation.X--;
+				bSomethingHappened = true;
+			}
 
-		if (g_enemy2.m_cLocation.Y > 0 &&
-			(g_enemy2.m_cLocation.Y - g_nChar.m_cLocation.Y) < 0 &&
-			map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] != (char)219)
-		{
-			g_enemy2.m_cLocation.Y++;
-			bSomethingHappened = true;
-		}
+			if (g_enemy2.m_cLocation.Y > 0 &&
+				(g_enemy2.m_cLocation.Y - g_nChar.m_cLocation.Y) < 0 &&
+				map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] != (char)219)
+			{
+				g_enemy2.m_cLocation.Y++;
+				bSomethingHappened = true;
+			}
 
-		if (g_enemy2.m_cLocation.Y > 0 &&
-			(g_enemy2.m_cLocation.Y - g_nChar.m_cLocation.Y) > 0 &&
-			map[g_enemy2.m_cLocation.Y - 1][g_enemy2.m_cLocation.X] != (char)219)
-		{
-			g_enemy2.m_cLocation.Y--;
-			bSomethingHappened = true;
-		}
+			if (g_enemy2.m_cLocation.Y > 0 &&
+				(g_enemy2.m_cLocation.Y - g_nChar.m_cLocation.Y) > 0 &&
+				map[g_enemy2.m_cLocation.Y - 1][g_enemy2.m_cLocation.X] != (char)219)
+			{
+				g_enemy2.m_cLocation.Y--;
+				bSomethingHappened = true;
+			}
 
-		if (bSomethingHappened)
+			if (bSomethingHappened)
+			{
+				// set the bounce time to some time in the future to prevent accidental triggers
+				ai_BounceTime = g_dElapsedTime + 0.225; // 125ms should be enough
+			}
+		}
+		else if (partb == true && partc == false)
 		{
-			// set the bounce time to some time in the future to prevent accidental triggers
-			ai_BounceTime = g_dElapsedTime + 0.125; // 125ms should be enough
+			if (g_enemy.m_cLocation.X > 0 &&
+				(g_enemy.m_cLocation.X - g_nChar.m_cLocation.X) < 0 &&
+				map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X + 1] != (char)219)
+			{
+				g_enemy.m_cLocation.X++;
+				bSomethingHappened = true;
+			}
+
+			if (g_enemy.m_cLocation.X > 0 &&
+				g_enemy.m_cLocation.X - g_nChar.m_cLocation.X > 0 &&
+				map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X - 1] != (char)219)
+			{
+				g_enemy.m_cLocation.X--;
+				bSomethingHappened = true;
+			}
+
+			if (g_enemy.m_cLocation.Y > 0 &&
+				(g_enemy.m_cLocation.Y - g_nChar.m_cLocation.Y) < 0 &&
+				map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != (char)219)
+			{
+				g_enemy.m_cLocation.Y++;
+				bSomethingHappened = true;
+			}
+
+			if (g_enemy.m_cLocation.Y > 0 &&
+				(g_enemy.m_cLocation.Y - g_nChar.m_cLocation.Y) > 0 &&
+				map[g_enemy.m_cLocation.Y - 1][g_enemy.m_cLocation.X] != (char)219)
+			{
+				g_enemy.m_cLocation.Y--;
+				bSomethingHappened = true;
+			}
+
+			//For Second Character
+			if (g_enemy2.m_cLocation.X > 0 &&
+				(g_enemy2.m_cLocation.X - g_sChar.m_cLocation.X) < 0 &&
+				map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X + 1] != (char)219)
+			{
+				g_enemy2.m_cLocation.X++;
+				bSomethingHappened = true;
+			}
+
+			if (g_enemy2.m_cLocation.X > 0 &&
+				g_enemy2.m_cLocation.X - g_sChar.m_cLocation.X > 0 &&
+				map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X - 1] != (char)219)
+			{
+				g_enemy2.m_cLocation.X--;
+				bSomethingHappened = true;
+			}
+
+			if (g_enemy2.m_cLocation.Y > 0 &&
+				(g_enemy2.m_cLocation.Y - g_sChar.m_cLocation.Y) < 0 &&
+				map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] != (char)219)
+			{
+				g_enemy2.m_cLocation.Y++;
+				bSomethingHappened = true;
+			}
+
+			if (g_enemy2.m_cLocation.Y > 0 &&
+				(g_enemy2.m_cLocation.Y - g_sChar.m_cLocation.Y) > 0 &&
+				map[g_enemy2.m_cLocation.Y - 1][g_enemy2.m_cLocation.X] != (char)219)
+			{
+				g_enemy2.m_cLocation.Y--;
+				bSomethingHappened = true;
+			}
+
+			if (bSomethingHappened)
+			{
+				// set the bounce time to some time in the future to prevent accidental triggers
+				ai_BounceTime = g_dElapsedTime + 0.325; // 125ms should be enough
+			}
+		}
+		else if (partc == true)
+		{
+			if (g_enemy.m_cLocation.X > 0 &&
+				(g_enemy.m_cLocation.X - g_sChar.m_cLocation.X) < 0 &&
+				map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X + 1] != (char)219)
+			{
+				g_enemy.m_cLocation.X++;
+				bSomethingHappened = true;
+			}
+
+			if (g_enemy.m_cLocation.X > 0 &&
+				g_enemy.m_cLocation.X - g_sChar.m_cLocation.X > 0 &&
+				map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X - 1] != (char)219)
+			{
+				g_enemy.m_cLocation.X--;
+				bSomethingHappened = true;
+			}
+
+			if (g_enemy.m_cLocation.Y > 0 &&
+				(g_enemy.m_cLocation.Y - g_sChar.m_cLocation.Y) < 0 &&
+				map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != (char)219)
+			{
+				g_enemy.m_cLocation.Y++;
+				bSomethingHappened = true;
+			}
+
+			if (g_enemy.m_cLocation.Y > 0 &&
+				(g_enemy.m_cLocation.Y - g_sChar.m_cLocation.Y) > 0 &&
+				map[g_enemy.m_cLocation.Y - 1][g_enemy.m_cLocation.X] != (char)219)
+			{
+				g_enemy.m_cLocation.Y--;
+				bSomethingHappened = true;
+			}
+
+			//For Second Character
+			if (g_enemy2.m_cLocation.X > 0 &&
+				(g_enemy2.m_cLocation.X - g_nChar.m_cLocation.X) < 0 &&
+				map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X + 1] != (char)219)
+			{
+				g_enemy2.m_cLocation.X++;
+				bSomethingHappened = true;
+			}
+
+			if (g_enemy2.m_cLocation.X > 0 &&
+				g_enemy2.m_cLocation.X - g_nChar.m_cLocation.X > 0 &&
+				map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X - 1] != (char)219)
+			{
+				g_enemy2.m_cLocation.X--;
+				bSomethingHappened = true;
+			}
+
+			if (g_enemy2.m_cLocation.Y > 0 &&
+				(g_enemy2.m_cLocation.Y - g_nChar.m_cLocation.Y) < 0 &&
+				map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] != (char)219)
+			{
+				g_enemy2.m_cLocation.Y++;
+				bSomethingHappened = true;
+			}
+
+			if (g_enemy2.m_cLocation.Y > 0 &&
+				(g_enemy2.m_cLocation.Y - g_nChar.m_cLocation.Y) > 0 &&
+				map[g_enemy2.m_cLocation.Y - 1][g_enemy2.m_cLocation.X] != (char)219)
+			{
+				g_enemy2.m_cLocation.Y--;
+				bSomethingHappened = true;
+			}
+
+			if (bSomethingHappened)
+			{
+				// set the bounce time to some time in the future to prevent accidental triggers
+				ai_BounceTime = g_dElapsedTime + 0.4; // 125ms should be enough
+			}
 		}
 		break;
 	case levelthree:
@@ -352,54 +501,41 @@ void motiondetect()
 //Done by Eugene.
 void rendercharacters()
 {
-	WORD charColor = 0x0C;
-	WORD charColor2 = 0x0A;
-	WORD charColor3 = 0x2B;
-	WORD yellow = 0x5E;
-	WORD purple = 0x780F;
-
-
-	//const WORD colors[] =
-	//{
-	//	0x1A, 0x2B, 0x3C, 0x4D, 0x5E, 0x6F,
-	//	0xA1, 0xB2, 0xC3, 0xD4, 0xE5, 0xF6
-	//};
-
 	switch (load)
 	{
 	case levelzeroa:
 		//First Character
-		g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, charColor);
+		g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, red);
 
 		//Second Character
-		g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, charColor2);
+		g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, green);
 
 		//Enemy
-		g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, charColor2);
-		g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, charColor2);
+		g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, green);
+		g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, green);
 
 		break;
 
 	case levelzerob:
 		//First Character
-		g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, charColor);
+		g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, red);
 
 		//Second Character
-		g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, charColor2);
+		g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, green);
 
 		//Enemy
-		g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, charColor2);
-		//g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, charColor2);
+		g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, green);
+		//g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, green);
 
 		//Doors
-		g_Console.writeToBuffer(g_door1.m_cLocation, (char)219, charColor);
-		g_Console.writeToBuffer(g_door2.m_cLocation, (char)219, charColor);
-		g_Console.writeToBuffer(g_door3.m_cLocation, (char)219, charColor);
-		g_Console.writeToBuffer(g_door4.m_cLocation, (char)219, charColor);
+		g_Console.writeToBuffer(g_door1.m_cLocation, (char)219, red);
+		g_Console.writeToBuffer(g_door2.m_cLocation, (char)219, red);
+		g_Console.writeToBuffer(g_door3.m_cLocation, (char)219, red);
+		g_Console.writeToBuffer(g_door4.m_cLocation, (char)219, red);
 
 		//Close Doors
-		g_Console.writeToBuffer(closedoor1.m_cLocation, (char)219, charColor);
-		g_Console.writeToBuffer(closedoor2.m_cLocation, (char)219, charColor);
+		g_Console.writeToBuffer(closedoor1.m_cLocation, (char)219, red);
+		g_Console.writeToBuffer(closedoor2.m_cLocation, (char)219, red);
 
 		//Levers
 		g_Console.writeToBuffer(g_lever1.m_cLocation, (char)219, yellow);
@@ -408,93 +544,91 @@ void rendercharacters()
 		g_Console.writeToBuffer(g_lever4.m_cLocation, (char)219, yellow);
 
 		//Boxes
-		g_Console.writeToBuffer(boxone.m_cLocation, (char)254, charColor);
-		g_Console.writeToBuffer(boxtwo.m_cLocation, (char)254, charColor);
-		g_Console.writeToBuffer(boxthree.m_cLocation, (char)254, charColor);
-		g_Console.writeToBuffer(boxfour.m_cLocation, (char)254, charColor);
+		g_Console.writeToBuffer(boxone.m_cLocation, (char)254, red);
+		g_Console.writeToBuffer(boxtwo.m_cLocation, (char)254, red);
+		g_Console.writeToBuffer(boxthree.m_cLocation, (char)254, red);
+		g_Console.writeToBuffer(boxfour.m_cLocation, (char)254, red);
 
 		break;
 
 	case levelone:
 
 		//First Character
-		g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, charColor);
+		g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, red);
 
 		//Second Character
-		g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, charColor2);
+		g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, green);
 
 		//Enemy
-		g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, charColor2);
-		g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, charColor2);
+		g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, green);
+		g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, green);
 
 		//Door
-		g_Console.writeToBuffer(g_door1.m_cLocation, (char)219, charColor);
+		g_Console.writeToBuffer(g_door1.m_cLocation, (char)219, red);
 
 		//Lever
 		g_Console.writeToBuffer(g_lever1.m_cLocation, (char)219, yellow);
 
 		//Teleporter
-		g_Console.writeToBuffer(g_lever2.m_cLocation, (char)234, charColor3);
+		g_Console.writeToBuffer(g_lever2.m_cLocation, (char)234, lightblue);
 
 		//Box
-		g_Console.writeToBuffer(g_box1.m_cLocation, (char)254, charColor);
+		g_Console.writeToBuffer(g_box1.m_cLocation, (char)254, red);
 
 		//Release A.I
-		g_Console.writeToBuffer(release_enemy.m_cLocation, (char)219, charColor);
-		g_Console.writeToBuffer(release_enemy1.m_cLocation, (char)219, charColor);
-		g_Console.writeToBuffer(release_enemy2.m_cLocation, (char)219, charColor);
-		g_Console.writeToBuffer(release_enemy3.m_cLocation, (char)219, charColor);
-		g_Console.writeToBuffer(release_enemy4.m_cLocation, (char)219, charColor);
-		g_Console.writeToBuffer(release_enemy5.m_cLocation, (char)219, charColor);
-		g_Console.writeToBuffer(release_enemy6.m_cLocation, (char)219, charColor);
-		g_Console.writeToBuffer(release_enemy7.m_cLocation, (char)219, charColor);
-		g_Console.writeToBuffer(release_enemy8.m_cLocation, (char)219, charColor);
+		g_Console.writeToBuffer(release_enemy.m_cLocation, (char)219, red);
+		g_Console.writeToBuffer(release_enemy1.m_cLocation, (char)219, red);
+		g_Console.writeToBuffer(release_enemy2.m_cLocation, (char)219, red);
+		g_Console.writeToBuffer(release_enemy3.m_cLocation, (char)219, red);
+		g_Console.writeToBuffer(release_enemy4.m_cLocation, (char)219, red);
+		g_Console.writeToBuffer(release_enemy5.m_cLocation, (char)219, red);
+		g_Console.writeToBuffer(release_enemy6.m_cLocation, (char)219, red);
+		g_Console.writeToBuffer(release_enemy7.m_cLocation, (char)219, red);
+		g_Console.writeToBuffer(release_enemy8.m_cLocation, (char)219, red);
 
 		//Powerup
-		g_Console.writeToBuffer(g_powerup.m_cLocation, (char)206, charColor3);
+		g_Console.writeToBuffer(g_powerup.m_cLocation, (char)206, purple);
 
 		//TimerUp
-		g_Console.writeToBuffer(g_timeboost.m_cLocation, (char)64, charColor3);
+		g_Console.writeToBuffer(g_timeboost.m_cLocation, (char)64, purple);
 		break;
 
 	case leveltwo:
-		if (g_sChar.m_bActive)
-		{
-			charColor = 0x0A;
-		}
-		g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, charColor);
+		// Draw the location of the character
+		g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, red);
 
 		// Draw the location of the character
-		if (g_nChar.m_bActive)
-		{
-			charColor = 0x0C;
-		}
-		g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, charColor2);
+
+		g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, green);
 
 		//Enemy
-		g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, charColor2);
-		g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, charColor2);
+		g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, green);
+		g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, green);
 
-		//platform
-		g_Console.writeToBuffer(g_platform.m_cLocation, (char)254, charColor3);
+		////platform
+		//g_Console.writeToBuffer(g_platform.m_cLocation, (char)254, purple);
 
-		//powerup
-		COORD C;
-		C.X = 23;
-		C.Y = 10;
+		////powerup
+		//COORD C;
+		//C.X = 23;
+		//C.Y = 10;
 
-		g_Console.writeToBuffer(C, (char)206, charColor3);
+		//g_Console.writeToBuffer(C, (char)206, purple);
 		break;
 
 	case levelthree:
-		g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, charColor);
+		g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, red);
 
 		// Draw the location of the character
-		g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, charColor2);
+		g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, green);
 
 		//Enemy
-		g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, charColor2);
-		g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, charColor2);
+
+		
+		
+
+		g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, green);
+		g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, green);
 
 		//Lever
 		g_Console.writeToBuffer(g_lever1.m_cLocation, (char)219, yellow);
@@ -502,70 +636,72 @@ void rendercharacters()
 
 
 		//Door
-		g_Console.writeToBuffer(g_door1.m_cLocation, (char)219, charColor);
-		g_Console.writeToBuffer(g_door2.m_cLocation, (char)219, charColor);
-		g_Console.writeToBuffer(g_door3.m_cLocation, (char)219, charColor);
-		g_Console.writeToBuffer(g_door4.m_cLocation, (char)219, charColor);
+		g_Console.writeToBuffer(g_door1.m_cLocation, (char)219, red);
+		g_Console.writeToBuffer(g_door2.m_cLocation, (char)219, red);
+		g_Console.writeToBuffer(g_door3.m_cLocation, (char)219, red);
+		g_Console.writeToBuffer(g_door4.m_cLocation, (char)219, red);
 		//Box
-		g_Console.writeToBuffer(boxone.m_cLocation, (char)254, charColor);
-		g_Console.writeToBuffer(boxone.m_cLocation, (char)254, charColor);
-		g_Console.writeToBuffer(boxfour.m_cLocation, (char)254, charColor);
-		g_Console.writeToBuffer(boxfour.m_cLocation, (char)254, charColor);
+		g_Console.writeToBuffer(boxone.m_cLocation, (char)254, red);
+		g_Console.writeToBuffer(boxone.m_cLocation, (char)254, red);
+		g_Console.writeToBuffer(boxfour.m_cLocation, (char)254, red);
+		g_Console.writeToBuffer(boxfour.m_cLocation, (char)254, red);
 		
 
 		//platform
-		g_Console.writeToBuffer(g_platform.m_cLocation, (char)254, charColor3);
+		g_Console.writeToBuffer(g_platform.m_cLocation, (char)254, purple);
 
 		//powerup
-		C.X = 23;
-		C.Y = 10;
+		//C.X = 23;
+		//C.Y = 10;
 
-		g_Console.writeToBuffer(C, (char)206, charColor3);
+		//g_Console.writeToBuffer(C, (char)206, purple);
 		break;
 
 	case levelfour:
 		
 		if (g_sChar.m_bActive)
 		{
-			charColor = 0x0A;
+			red = 0x0A;
 		}
-		g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, charColor);
+		g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, red);
 
 		// Draw the location of the character
 		if (g_nChar.m_bActive)
 		{
-			charColor = 0x0C;
+			red = 0x0C;
 		}
-		g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, charColor2);
+		g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, green);
 
 		//Enemy
-		g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, charColor2);
-		g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, charColor2);
+		g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, green);
+		g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, green);
 
 		//Doors
-		g_Console.writeToBuffer(g_door1.m_cLocation, (char)219, charColor);
-		g_Console.writeToBuffer(g_door2.m_cLocation, (char)219, charColor);
-		g_Console.writeToBuffer(g_door3.m_cLocation, (char)219, charColor);
-		g_Console.writeToBuffer(g_door4.m_cLocation, (char)219, charColor);
-		g_Console.writeToBuffer(g_door5.m_cLocation, (char)219, charColor);
+		g_Console.writeToBuffer(g_door1.m_cLocation, (char)219, red);
+		g_Console.writeToBuffer(g_door2.m_cLocation, (char)219, red);
+		g_Console.writeToBuffer(g_door3.m_cLocation, (char)219, red);
+		g_Console.writeToBuffer(g_door4.m_cLocation, (char)219, red);
+		g_Console.writeToBuffer(g_door5.m_cLocation, (char)219, red);
 
 		//Levers
 		g_Console.writeToBuffer(g_lever1.m_cLocation, (char)219, yellow);
 		g_Console.writeToBuffer(g_lever3.m_cLocation, (char)219, yellow);
 
 		//Teleporter
-		g_Console.writeToBuffer(g_lever2.m_cLocation, (char)234, charColor3);
-		g_Console.writeToBuffer(g_portal.m_cLocation, (char)234, charColor3);
+		g_Console.writeToBuffer(g_lever2.m_cLocation, (char)234, purple);
+		g_Console.writeToBuffer(g_portal.m_cLocation, (char)234, purple);
 
 		//Boxes
-		g_Console.writeToBuffer(boxone.m_cLocation, (char)254, charColor);
-		g_Console.writeToBuffer(boxtwo.m_cLocation, (char)254, charColor);
+		g_Console.writeToBuffer(boxone.m_cLocation, (char)254, red);
+		g_Console.writeToBuffer(boxtwo.m_cLocation, (char)254, red);
+
 
 		//powerup
 		/*C.X = 23;
 		C.Y = 10;
 
 		g_Console.writeToBuffer(C, (char)206, charColor3);*/
+
 		break;
 	}
 }

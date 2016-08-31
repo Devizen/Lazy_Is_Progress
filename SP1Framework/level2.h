@@ -2,6 +2,7 @@
 #include "game.h"
 #include "gameover.h"
 #include "Framework\timer.h"
+#include "renderLegend.h"
 
 //Linking Timer.
 extern double  g_dBounceTime;
@@ -33,3 +34,5 @@ extern RESTART level;
 
 //Definition for function.
 void level2(); // level 2.
+void level2b(); // level 2.
+void level2c(); // level 2.

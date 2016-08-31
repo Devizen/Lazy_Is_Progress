@@ -14,7 +14,7 @@ void level3()
 		string name = "Text/Screen/level3.txt";
 		loadlevel(name);
 
-		c.X = 15;
+		c.X = 12;
 		c.Y = 7;
 
 		clearScreen();
@@ -71,6 +71,17 @@ void level3()
 		//COORD y;
 		//y.X = 15;
 		//y.Y = 15;
+
+		COORD d;
+		d.X = 63;
+		d.Y = 15;
+		g_Console.writeToBuffer(d, "Run Away From");
+		d.Y = 16;
+		g_Console.writeToBuffer(d, "The Bad Neighbour");
+		d.Y = 17;
+		g_Console.writeToBuffer(d, "Or You Will");
+		d.Y = 18;
+		g_Console.writeToBuffer(d, "Die");
 
 		rendercharacters();
 		motiondetect();

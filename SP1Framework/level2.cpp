@@ -53,6 +53,64 @@ void level2()
 		COORD y;
 		y.X = 15;
 		y.Y = 15;
+
+		if (g_dCountTime <= 60 && g_dCountTime >= 50)
+		{
+			COORD d;
+			d.X = 63;
+			d.Y = 14;
+			g_Console.writeToBuffer(d, "Hint:", yellow);
+			d.Y = 15;
+			g_Console.writeToBuffer(d, "Run away from");
+			d.Y = 16;
+			g_Console.writeToBuffer(d, "the enemies for");
+			d.Y = 17;
+			g_Console.writeToBuffer(d, "10 seconds!");
+		}
+		if (g_dCountTime <= 50 && partb == false)
+		{
+			COORD d;
+			d.X = 63;
+			d.Y = 14;
+			g_Console.writeToBuffer(d, "Hint:", yellow);
+			d.Y = 15;
+			g_Console.writeToBuffer(d, "Hurry to the");
+			d.Y = 16;
+			g_Console.writeToBuffer(d, "teleporters!");
+		}
+
+		if (g_dCountTime <= 50 && partb == true)
+		{
+			COORD d;
+			d.X = 63;
+			d.Y = 14;
+			g_Console.writeToBuffer(d, "Hint:", yellow);
+			d.Y = 15;
+			g_Console.writeToBuffer(d, "Empty your mind.");
+			d.Y = 16;
+			g_Console.writeToBuffer(d, "Alternate mind.");
+			d.Y = 17;
+			g_Console.writeToBuffer(d, "Do you think");
+			d.Y = 18;
+			g_Console.writeToBuffer(d, "YOU can do it?");
+		}
+
+		if (partc == true)
+		{
+			COORD d;
+			d.X = 63;
+			d.Y = 14;
+			g_Console.writeToBuffer(d, "Hint:", yellow);
+			d.Y = 15;
+			g_Console.writeToBuffer(d, "                       ");
+			g_Console.writeToBuffer(d, "You are now");
+			d.Y = 16;
+			g_Console.writeToBuffer(d, "MERGED as ONE.");
+			d.Y = 17;
+			g_Console.writeToBuffer(d, "Move and Escape");
+			d.Y = 18;
+			g_Console.writeToBuffer(d, "as a ONE being!");
+		}
 		//string line = " ";
 		//string name = "Text/Level/level2.txt";
 		//loadlevel(name);
@@ -75,9 +133,95 @@ void level2()
 
 		rendercharacters();
 		motiondetect();
+		
+
+		if (g_dCountTime < 50 && partb == false)
+		{
+			//Teleporter
+			g_portal.m_cLocation.X = 3;
+			g_portal.m_cLocation.Y = 2;
+
+			g_portal1.m_cLocation.X = 56;
+			g_portal1.m_cLocation.Y = 22;
+
+			//Teleporter
+			g_Console.writeToBuffer(g_portal.m_cLocation, (char)234, lightblue);
+			g_Console.writeToBuffer(g_portal1.m_cLocation, (char)234, lightblue);
+
+			if (g_sChar.m_cLocation.X == 3 &&
+				g_sChar.m_cLocation.Y == 2 &&
+				g_nChar.m_cLocation.X == 56 &&
+				g_nChar.m_cLocation.Y == 22)
+			{
+				g_nChar.m_cLocation.X = 15;
+				g_nChar.m_cLocation.Y = 5;
+
+				g_sChar.m_cLocation.X = 45;
+				g_sChar.m_cLocation.Y = 19;
+				partb = true;
+			}
+		}
+
+		if (partb == true && partc == false)
+		{
+			//Teleporter
+			g_portal.m_cLocation.X = 3;
+			g_portal.m_cLocation.Y = 22;
+
+			g_portal1.m_cLocation.X = 56;
+			g_portal1.m_cLocation.Y = 2;
+
+			//Teleporter
+			g_Console.writeToBuffer(g_portal.m_cLocation, (char)234, lightblue);
+			g_Console.writeToBuffer(g_portal1.m_cLocation, (char)234, lightblue);
+
+			if (g_nChar.m_cLocation.X == 3 &&
+				g_nChar.m_cLocation.Y == 22 &&
+				g_sChar.m_cLocation.X == 56 &&
+				g_sChar.m_cLocation.Y == 2)
+			{
+				g_sChar.m_cLocation.X = 3;
+				g_sChar.m_cLocation.Y = 22;
+
+				g_nChar.m_cLocation.X = 56;
+				g_nChar.m_cLocation.Y = 2;
+				partc = true;
+			}
+		}
+
+		if (partc == true)
+		{
+			//Teleporter
+			g_portal.m_cLocation.X = 15;
+			g_portal.m_cLocation.Y = 19;
+
+			g_portal1.m_cLocation.X = 45;
+			g_portal1.m_cLocation.Y = 19;
+
+			//Teleporter
+			g_Console.writeToBuffer(g_portal.m_cLocation, (char)234, lightblue);
+			g_Console.writeToBuffer(g_portal1.m_cLocation, (char)234, lightblue);
+
+			if (g_sChar.m_cLocation.X == 15 &&
+				g_sChar.m_cLocation.Y == 19 &&
+				g_nChar.m_cLocation.X == 45 &&
+				g_nChar.m_cLocation.Y == 19)
+			{
+				g_sChar.health = 3;
+
+				g_dCountTime = 60;
+				load = levelthree;
+				restarthealth = true;
+				splash = true;
+				spawn();
+				renderGame();
+			}
+		}
 
 		if ((g_enemy.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_sChar.m_cLocation.Y) ||
-			(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y))
+			(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y) ||
+			(g_enemy.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_nChar.m_cLocation.Y) ||
+			(g_enemy2.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_sChar.m_cLocation.Y))
 		{
 			//Set boolean to false so the health will not reset.
 			restarthealth = false;

@@ -12,6 +12,7 @@ extern bool door1;
 extern bool door2;
 extern bool door3;
 extern bool door4;
+extern bool door5;
 
 extern CStopWatch g_swTimer;
 extern bool g_bQuitGame;
@@ -155,12 +156,12 @@ void tutoriala();
 void tutorialb();
 
 //Movement for Characters
-void nomovement();
 void movelevel0();
 void movelevel1();
 void movelevel2();
 void movelevel3();
 void movelevel4();
+void movetogether();
 
 //Linking variables.
 extern bool restarthealth;
