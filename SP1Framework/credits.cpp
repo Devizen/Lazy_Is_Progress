@@ -9,8 +9,8 @@ void credits()
 
 	COORD c;
 
-	c.X = 39;
-	c.Y = 3;
+	c.X = 29;
+	c.Y = 2;
 
 	for (int i = 0; i <= y; i++)
 	{
@@ -18,6 +18,19 @@ void credits()
 		g_Console.writeToBuffer(c, line);
 		c.Y++;
 	}
+
+	c.X = 3;
+	c.Y = 3;
+	line = "Thank you for playing!";
+	g_Console.writeToBuffer(c, line, yellow);
+
+	c.Y = 4;
+	line = "You have";
+	g_Console.writeToBuffer(c, line);
+	c.X = 12;
+	line = "DONE WELL!";
+	g_Console.writeToBuffer(c, line, yellow);
+
 
 	if (g_abKeyPressed[K_BACK])
 	{
