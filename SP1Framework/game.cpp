@@ -545,6 +545,19 @@ void processUserInput()
 			}
 			break;
 
+		case levelthree:
+			level = three;
+
+			if (g_sChar.health > 0)
+			{
+				spawn();
+			}
+			else
+			{
+				load = defeated;
+			}
+			break;
+
 		case levelfour:
 			level = four;
 
@@ -622,11 +635,35 @@ void processUserInput()
 			renderGame();
 			break;
 
+		case levelthree:
+			restarthealth = true;
+			clearScreen();
+			g_eGameState = S_MENU;
+			load = levelthree;
+			renderGame();
+			break;
+
 		case levelfour:
 			restarthealth = true;
 			clearScreen();
 			g_eGameState = S_MENU;
 			load = levelfour;
+			renderGame();
+			break;
+
+		case levelfive:
+			restarthealth = true;
+			clearScreen();
+			g_eGameState = S_MENU;
+			load = levelfive;
+			renderGame();
+			break;
+
+		case levelfiveb:
+			restarthealth = true;
+			clearScreen();
+			g_eGameState = S_MENU;
+			load = levelfiveb;
 			renderGame();
 			break;
 		}

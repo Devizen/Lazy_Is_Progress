@@ -42,3 +42,4 @@ extern bool g_abKeyPressed[K_COUNT];
 //Definition for function.
 void patrolai();
 void patrolfiveb();
+void patrolcredits();

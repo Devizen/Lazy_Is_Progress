@@ -391,19 +391,13 @@ void level5_0()
 		}
 
 		//Realmadrid123
-		if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X] == 't'/* ||
-																	map[g_sChar.m_cLocation.Y - 1][g_sChar.m_cLocation.X] == 't' ||
-																	map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] == 't' ||
-																	map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] == 't'*/)
+		if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X] == 't')
 		{
 			g_sChar.m_cLocation.Y += 17;
 			g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, red);
 		}
 
-		if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X] == 't'/* ||
-																	map[g_nChar.m_cLocation.Y - 1][g_nChar.m_cLocation.X] == 't' ||
-																	map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] == 't' ||
-																	map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] == 't'*/)
+		if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X] == 't')
 		{
 			g_nChar.m_cLocation.Y += 17;
 			g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, green);
@@ -434,6 +428,9 @@ void level5_0()
 
 			//Deduct one health.
 			g_sChar.health -= 1;
+			
+			//Displaying Splash Screen.
+			splash = true;
 
 			//Revert the level settings.
 			spawn();

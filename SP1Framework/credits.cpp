@@ -31,6 +31,44 @@ void credits()
 	line = "DONE WELL!";
 	g_Console.writeToBuffer(c, line, yellow);
 
+	c.X = 55;
+	c.Y = 3;
+	line = "Press ";
+	g_Console.writeToBuffer(c, line);
+
+	c.X = 61;
+	line = "[Back] ";
+	g_Console.writeToBuffer(c, line, yellow);
+
+	c.X = 68;
+	line = "button";
+	g_Console.writeToBuffer(c, line);
+
+	c.X = 55;
+	c.Y = 4;
+	line = "for Main Menu.";
+	g_Console.writeToBuffer(c, line);
+
+	c.Y = 6;
+	line = "Press ";
+	g_Console.writeToBuffer(c, line);
+
+	c.X = 61;
+	line = "[Esc] ";
+	g_Console.writeToBuffer(c, line, yellow);
+
+	c.X = 67;
+	line = "button";
+	g_Console.writeToBuffer(c, line);
+
+	c.X = 55;
+	c.Y = 7;
+	line = "to Quit Game.";
+	g_Console.writeToBuffer(c, line);
+
+
+	rendercharacters();
+	patrolcredits();
 
 	if (g_abKeyPressed[K_BACK])
 	{
