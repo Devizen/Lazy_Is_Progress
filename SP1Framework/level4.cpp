@@ -216,7 +216,8 @@ void level4()
 			g_sChar.m_cLocation.X = 48;
 			g_sChar.m_cLocation.Y = 9;
 		}
-	 if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X] == map[g_portal.m_cLocation.Y][g_portal.m_cLocation.X])
+
+		if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X] == map[g_portal.m_cLocation.Y][g_portal.m_cLocation.X])
 		{
 			g_sChar.m_cLocation.X = 3;
 			g_sChar.m_cLocation.Y = 2;
@@ -236,7 +237,20 @@ void level4()
 			g_nChar.m_cLocation.Y = 9;
 		}
 
-
+		 if (g_sChar.m_cLocation.X == 34 &&
+			 g_sChar.m_cLocation.Y == 7 &&
+			 g_nChar.m_cLocation.X == 26 &&
+			 g_nChar.m_cLocation.Y == 23)
+		 {
+			 g_sChar.health = 3;
+			 g_dCountTime = 60;
+			 restarthealth = true;
+			 splash = true;
+			 story = true;
+			 load = levelfive;
+			 spawn();
+			 renderGame();
+		 }
 
 		if (g_sChar.health < 1)
 		{
@@ -245,6 +259,7 @@ void level4()
 			renderGame();
 			rendercharacters();
 		}
+
 
 	}
 

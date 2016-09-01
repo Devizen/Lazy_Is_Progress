@@ -737,7 +737,7 @@ void renderFramerate()
 	std::ostringstream ss;
 	ss << std::fixed << std::setprecision(0);
 	//ss << 1.0 / g_dDeltaTime << "fps";
-	c.X = g_Console.getConsoleSize().X - 13;
+	c.X = g_Console.getConsoleSize().X - 14;
 	c.Y = 0;
 	g_Console.writeToBuffer(c, "Time Left");
 
@@ -746,7 +746,7 @@ void renderFramerate()
 	{
 		ss.str("");
 		ss << g_dCountTime << " secs";
-		c.X = g_Console.getConsoleSize().X - 12;
+		c.X = g_Console.getConsoleSize().X - 13;
 		c.Y = g_Console.getConsoleSize().Y - 24;
 		g_Console.writeToBuffer(c, ss.str(), green);
 
