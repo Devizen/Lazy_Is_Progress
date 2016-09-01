@@ -16,6 +16,7 @@
 #include "level3.h"
 #include "level4.h"
 #include "level5.h"
+#include "credits.h"
 #include "characters.h"
 #include "renderResult.h"
 #include "menu.h"
@@ -66,6 +67,8 @@ SGameChar   g_sChar;
 SGameChar	g_nChar;
 SGameChar	g_enemy;
 SGameChar	g_enemy2;
+SGameChar	g_enemy3;
+SGameChar	g_enemy4;
 
 objects
 boxone,
@@ -84,6 +87,7 @@ g_lever1,
 g_lever2,
 g_lever3,
 g_lever4,
+g_lever5,
 g_box1,
 g_portal,
 g_portal1;
@@ -151,7 +155,7 @@ void init(void)
 	g_Console.setConsoleFont(0, 16, L"Arial");
 	// Added by Daniel \/
 
-	PlaySound(TEXT("Soundtracks/BGM/Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
+	//PlaySound(TEXT("Soundtracks/BGM/Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
 
 	//PlaySound(TEXT("Soundtracks/BGM/Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
 
@@ -347,6 +351,11 @@ void moveCharacter()
 			sprint();
 			movelevel5();
 			break;
+
+		case levelfiveb:
+			sprint();
+			movelevel5b();
+			break;
 		}
 	}
 }
@@ -426,6 +435,11 @@ void processUserInput()
 	{
 		restarthealth = true;
 		splash = true;
+		door1 = false;
+		door2 = false;
+		door3 = false;
+		door4 = false;
+		door5 = false;
 		load = levelfive;
 		clearScreen();
 		spawn();
@@ -442,6 +456,11 @@ void processUserInput()
 
 		restarthealth = false;
 		splash = true;
+		door1 = false;
+		door2 = false;
+		door3 = false;
+		door4 = false;
+		door5 = false;
 		g_sChar.health -= 1;
 		bSomethingHappened = true;
 
@@ -509,6 +528,32 @@ void processUserInput()
 
 		case levelfour:
 			level = four;
+
+			if (g_sChar.health > 0)
+			{
+				spawn();
+			}
+			else
+			{
+				load = defeated;
+			}
+			break;
+
+		case levelfive:
+			level = five;
+
+			if (g_sChar.health > 0)
+			{
+				spawn();
+			}
+			else
+			{
+				load = defeated;
+			}
+			break;
+
+		case levelfiveb:
+			level = fiveb;
 
 			if (g_sChar.health > 0)
 			{
@@ -629,6 +674,10 @@ void renderGame()
 	case levelfour: level4();
 		break;
 	case levelfive: level5();
+		break;
+	case levelfiveb: level5_0();
+		break;
+	case creditscreen: credits();
 		break;
 	}
 }
@@ -816,6 +865,30 @@ void renderFramerate()
 			{
 				//Displaying Splash Screen.
 				splash = true;
+
+				//Resetting Doors.
+				door1 = false;
+				door2 = false;
+				door3 = false;
+				door4 = false;
+				door5 = false;
+
+				//Resetting Time Left.
+				g_dCountTime = 60;
+				spawn();
+			}
+			break;
+
+		case levelfiveb:
+			if (g_sChar.health < 1)
+			{
+				g_eGameState = S_RESULT;
+			}
+			else
+			{
+				//Displaying Splash Screen.
+				splash = true;
+
 				//Resetting Time Left.
 				g_dCountTime = 60;
 				spawn();

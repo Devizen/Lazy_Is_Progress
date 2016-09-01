@@ -86,8 +86,21 @@ void gameover()
 
 		case five:
 			splash = true;
+			door1 = false;
+			door2 = false;
+			door3 = false;
+			door4 = false;
+			door5 = false;
 			g_sChar.health = 3;
 			load = levelfive;
+			spawn();
+			renderGame();
+			break;
+
+		case fiveb:
+			splash = true;
+			g_sChar.health = 3;
+			load = levelfiveb;
 			spawn();
 			renderGame();
 			break;

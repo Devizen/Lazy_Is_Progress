@@ -123,7 +123,11 @@ void level4()
 
 	
 		rendercharacters();
+
+		//motiondetect();
+
 		motiondetect();
+
 		patrolfour();
 
 		if (boxreturn(boxone) == true || boxreturndoor(boxone, g_door5) == true)

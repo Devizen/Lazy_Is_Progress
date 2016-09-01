@@ -18,6 +18,8 @@ extern SGameChar g_sChar;
 extern SGameChar g_nChar;
 extern SGameChar g_enemy;
 extern SGameChar g_enemy2;
+extern SGameChar g_enemy3;
+extern SGameChar g_enemy4;
 
 
 extern SGameChar g_menu;
@@ -54,6 +56,7 @@ g_lever1,
 g_lever2,
 g_lever3,
 g_lever4,
+g_lever5,
 g_box1,
 g_portal,
 g_portal1;
@@ -62,6 +65,8 @@ g_portal1;
 extern double g_dCountTime;
 extern bool partb;
 extern bool partc;
+extern bool splash;
+extern double ai_BounceTime;
 
 //Definition for function.
 void spawn();

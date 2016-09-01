@@ -14,13 +14,7 @@ void movelevel0()
 	case levelzeroa:
 		if (g_abKeyPressed[K_W])
 		{
-			if (map[g_sChar.m_cLocation.Y - 1][g_sChar.m_cLocation.X] == map[release_enemy.m_cLocation.Y][release_enemy.m_cLocation.X] &&
-				door1 == false)
-			{
-
-			}
-
-			else if (g_sChar.m_cLocation.Y > 0 &&
+			if (g_sChar.m_cLocation.Y > 0 &&
 				map[g_sChar.m_cLocation.Y - 1][g_sChar.m_cLocation.X] != (char)219)
 			{
 				g_sChar.m_cLocation.Y--;

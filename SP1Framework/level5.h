@@ -3,6 +3,7 @@
 #include "Framework\timer.h"
 #include "characters.h"
 #include "health.h"
+#include "patrolai.h"
 
 //Linking Timer.
 extern double  g_dBounceTime;
@@ -33,6 +34,8 @@ extern LEVELS load;
 extern RESTART level;
 
 void level5();
+void level5_0();
 
 //Linking variables.
 extern bool story;
+extern bool partb;

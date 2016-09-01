@@ -80,6 +80,7 @@
   <ItemGroup>
     <ClCompile Include="characters.cpp" />
     <ClCompile Include="checkrelease.cpp" />
+    <ClCompile Include="credits.cpp" />
     <ClCompile Include="Framework\console.cpp" />
     <ClCompile Include="Framework\timer.cpp" />
     <ClCompile Include="game.cpp" />
@@ -97,6 +98,8 @@
     <ClCompile Include="movelevel3.cpp" />
     <ClCompile Include="movelevel4.cpp" />
     <ClCompile Include="movelevel5.cpp" />
+    <ClCompile Include="movelevel5b.cpp" />
+    <ClCompile Include="patrolai.cpp" />
     <ClCompile Include="renderLegend.cpp" />
     <ClCompile Include="movelevel0.cpp" />
     <ClCompile Include="movelevel1.cpp" />
@@ -113,6 +116,8 @@
     <ClInclude Include="..\..\Lazy is Progress - Copy\SP1Framework\ScoreBoard.h" />
     <ClInclude Include="characters.h" />
     <ClInclude Include="checkrelease.h" />
+    <ClInclude Include="credits.h" />
+    <ClInclude Include="extern.h" />
     <ClInclude Include="Framework\console.h" />
     <ClInclude Include="Framework\timer.h" />
     <ClInclude Include="game.h" />
@@ -131,6 +136,8 @@
     <ClInclude Include="movelevel3.h" />
     <ClInclude Include="movelevel4.h" />
     <ClInclude Include="movelevel5.h" />
+    <ClInclude Include="movelevel5b.h" />
+    <ClInclude Include="patrolai.h" />
     <ClInclude Include="renderLegend.h" />
     <ClInclude Include="movelevel0.h" />
     <ClInclude Include="movelevel1.h" />

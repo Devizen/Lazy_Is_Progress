@@ -36,13 +36,11 @@ void level4();
 
 //Linking variables.
 
-
-
-
 extern bool door1;
 extern bool door2;
 extern bool door3;
 extern bool door4;
 extern bool door5;
+
 extern bool story;
 
