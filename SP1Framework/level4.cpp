@@ -247,6 +247,11 @@ void level4()
 			 restarthealth = true;
 			 splash = true;
 			 story = true;
+			 door1 = false;
+			 door2 = false;
+			 door3 = false;
+			 door4 = false;
+			 door5 = false;
 			 load = levelfive;
 			 spawn();
 			 renderGame();
