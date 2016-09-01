@@ -1062,6 +1062,16 @@ void rendercharacters()
 		g_Console.writeToBuffer(g_lever2.m_cLocation, (char)234, lightblue);
 		//g_Console.writeToBuffer(g_lever3.m_cLocation, (char)234, lightblue);
 		//g_Console.writeToBuffer(g_lever4.m_cLocation, (char)234, lightblue);
+		break;
+
+	case creditscreen:
+		// Draw the location of the character
+		g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, green);
+		g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, red);
+
+		//Enemy
+		g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, green);
+		break;
 	}
 }
 

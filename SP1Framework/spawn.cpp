@@ -517,6 +517,20 @@ void spawn()
 		//Set the initial time limit
 		g_dCountTime = 60;
 		break;
+
+	case creditscreen:
+		//First Character
+		g_sChar.m_cLocation.X = 3;
+		g_sChar.m_cLocation.Y = 9;
+
+		//Second Character
+		g_nChar.m_cLocation.X = 3;
+		g_nChar.m_cLocation.Y = 7;
+
+		//Enemy
+		g_enemy.m_cLocation.X = 3;
+		g_enemy.m_cLocation.Y = 5;
+		break;
 	}
 }
 
