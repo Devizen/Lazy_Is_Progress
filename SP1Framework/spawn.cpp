@@ -265,25 +265,15 @@ void spawn()
 		g_powerup.m_cLocation.Y = 20;
 
 		//Door
-		g_door1.m_cLocation.X = 16;
-		g_door1.m_cLocation.Y = 11;
-		g_door2.m_cLocation.X = 3;
-		g_door2.m_cLocation.Y = 17;
-		g_door3.m_cLocation.X = 26;
-		g_door3.m_cLocation.Y = 17;
 		g_door4.m_cLocation.X = 45;
 		g_door4.m_cLocation.Y = 17;
 
 		//Lever
-		g_lever1.m_cLocation.X = 7;
-		g_lever1.m_cLocation.Y = 18;
-		g_lever4.m_cLocation.X = 50;
+		g_lever4.m_cLocation.X = 51;
 		g_lever4.m_cLocation.Y = 23;
 
 		//Box
-		boxone.m_cLocation.X = 10;
-		boxone.m_cLocation.Y = 18;
-		boxfour.m_cLocation.X = 48;
+		boxfour.m_cLocation.X = 52;
 		boxfour.m_cLocation.Y = 23;
 
 

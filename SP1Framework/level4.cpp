@@ -111,6 +111,28 @@ void level4()
 		//	c.Y++;
 		//}
 
+
+		COORD d;
+		d.X = 63;
+		d.Y = 14;
+		g_Console.writeToBuffer(d, "Hint:", yellow);
+		d.X = 63;
+		d.Y = 15;
+		g_Console.writeToBuffer(d, "Move the");
+		d.X = 72;
+		d.Y = 15;
+		g_Console.writeToBuffer(d, (char)3,red);
+		d.X = 63;
+		d.Y = 16;
+		g_Console.writeToBuffer(d,"to 1 and");
+		d.X = 63;
+		d.Y = 17;
+		g_Console.writeToBuffer(d,"the");
+		d.X = 67;
+		g_Console.writeToBuffer(d,(char)3,green);
+		d.X = 69;
+		g_Console.writeToBuffer(d, "to 2");
+
 	
 		rendercharacters();
 
