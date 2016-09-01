@@ -1,25 +1,25 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
++_________________________HHHHHHHHHHHH______________________+
++____________________HHHHHHHHHHHHHHHHHHHHHH_____________H___+
++__________________HHHHHHHH_________HHHHHHHHH_________HHH___+
++________________HHHHHH_________________HHHHHHHH   HHHHHH___+ 
++______________HHHH________________________HHHHHHHHHHHHHH___+ 
++____________HHH_____________________________HHHHHHHHHHHH___+    
++___________________________________________HHHHHHHHHHHHH___+
++___HHHHHHHHHHHHHHHH______________________HHHHHHHHHHHHHHH___+
++___HHHHHHHHHHHHHHH___________________________HHHHHHHHHHH___+
++___HHHHHHHHHHHHHH________________________________HHHHHHH___+
++___HHHHHHHHHHHHH_____________________________________HHH___+ 
++___HHHHHHHHHHHHHHHH_________________________HHH________H___+
++___HHHHHHH___HHHHHHHHH___________________HHHHH_____________+
++___HHHHH______HHHHHHHHHHH_____________HHHHHHH______________+
++___HHH____________HHHHHHHHHH_______HHHHHH__________________+
++___H___________________HHHHHHHHHHHHHHHHH___________________+
++__________________________HHHHHHHHHHH______________________+
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-+ They made it to the fourth floor, enemies started to      +
-+ chase them, trying their best to escape from the enemies  +
-+ grasp. Portals appeared, seems like there's hope.         +
-+ But nope, they got teleported to another map on the same  +
-+ floor. With their bodies swapped, they seemed confused.   +
-+ But that doesn't give them another reason to give up.     +
++ They made it to the 4th floor, enemies starts to chase    +
++ them. Portals appeared, they got teleported to another    +
++ map on the same floor, with bodies swapped, they are      +
++ confused. But that doesn't give them a reason to give up. +
 + They pursue on with their goal to escape.                 +
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
