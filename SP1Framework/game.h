@@ -82,6 +82,8 @@ enum LEVELS
 	levelthree,
 	levelfour,
 	levelfive,
+	levelfiveb,
+	creditscreen,
 	scoreboard1,
 	scoreboard2
 
@@ -95,7 +97,8 @@ enum RESTART
 	two,
 	three,
     four,
-	five
+	five,
+	fiveb
 };
 
 
@@ -165,6 +168,7 @@ void movelevel2();
 void movelevel3();
 void movelevel4();
 void movelevel5();
+void movelevel5b();
 void movetogether();
 
 //Linking variables.

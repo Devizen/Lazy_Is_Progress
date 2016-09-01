@@ -495,6 +495,85 @@ void motiondetect()
 			ai_BounceTime = g_dElapsedTime + 0.124; // 125ms should be enough
 		}
 		break;
+
+	case levelfiveb:
+		//For First Character
+
+		//Right
+		if (g_enemy3.m_cLocation.X > 0 &&
+			(g_enemy3.m_cLocation.X - g_nChar.m_cLocation.X) < 0 &&
+			map[g_enemy3.m_cLocation.Y][g_enemy3.m_cLocation.X + 1] != (char)219)
+		{
+			g_enemy3.m_cLocation.X++;
+			bSomethingHappened = true;
+		}
+
+		//Left
+		if (g_enemy3.m_cLocation.X > 0 &&
+			g_enemy3.m_cLocation.X - g_nChar.m_cLocation.X > 0 &&
+			map[g_enemy3.m_cLocation.Y][g_enemy3.m_cLocation.X - 1] != (char)219)
+		{
+			g_enemy3.m_cLocation.X--;
+			bSomethingHappened = true;
+		}
+
+		//Down
+		if (g_enemy3.m_cLocation.Y > 0 &&
+			(g_enemy3.m_cLocation.Y - g_nChar.m_cLocation.Y) < 0 &&
+			map[g_enemy3.m_cLocation.Y + 1][g_enemy3.m_cLocation.X] != (char)219)
+		{
+			g_enemy3.m_cLocation.Y++;
+			bSomethingHappened = true;
+		}
+
+		//Up
+		if (g_enemy3.m_cLocation.Y > 0 &&
+			(g_enemy3.m_cLocation.Y - g_nChar.m_cLocation.Y) > 0 &&
+			map[g_enemy3.m_cLocation.Y - 1][g_enemy3.m_cLocation.X] != (char)219)
+		{
+			g_enemy3.m_cLocation.Y--;
+			bSomethingHappened = true;
+		}
+
+		//For Second Character
+		if (g_enemy4.m_cLocation.X > 0 &&
+			(g_enemy4.m_cLocation.X - g_sChar.m_cLocation.X) < 0 &&
+			map[g_enemy4.m_cLocation.Y][g_enemy4.m_cLocation.X + 1] != (char)219)
+		{
+			g_enemy4.m_cLocation.X++;
+			bSomethingHappened = true;
+		}
+
+		if (g_enemy4.m_cLocation.X > 0 &&
+			g_enemy4.m_cLocation.X - g_sChar.m_cLocation.X > 0 &&
+			map[g_enemy4.m_cLocation.Y][g_enemy4.m_cLocation.X - 1] != (char)219)
+		{
+			g_enemy4.m_cLocation.X--;
+			bSomethingHappened = true;
+		}
+
+		if (g_enemy4.m_cLocation.Y > 0 &&
+			(g_enemy4.m_cLocation.Y - g_sChar.m_cLocation.Y) < 0 &&
+			map[g_enemy4.m_cLocation.Y + 1][g_enemy4.m_cLocation.X] != (char)219)
+		{
+			g_enemy4.m_cLocation.Y++;
+			bSomethingHappened = true;
+		}
+
+		if (g_enemy4.m_cLocation.Y > 0 &&
+			(g_enemy4.m_cLocation.Y - g_sChar.m_cLocation.Y) > 0 &&
+			map[g_enemy4.m_cLocation.Y - 1][g_enemy4.m_cLocation.X] != (char)219)
+		{
+			g_enemy4.m_cLocation.Y--;
+			bSomethingHappened = true;
+		}
+
+		if (bSomethingHappened)
+		{
+			// set the bounce time to some time in the future to prevent accidental triggers
+			ai_BounceTime = g_dElapsedTime + 0.5; // 125ms should be enough
+		}
+		break;
 	}
 }
 
@@ -691,6 +770,32 @@ void rendercharacters()
 
 	case levelfive:
 
+			// Draw the location of the character
+			g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, red);
+			g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, green);
+
+			//Enemy
+			g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, green);
+			g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, green);
+			g_Console.writeToBuffer(g_enemy3.m_cLocation, (char)1, green);
+
+			//Doors
+			g_Console.writeToBuffer(g_door1.m_cLocation, (char)219, red);
+			g_Console.writeToBuffer(g_door2.m_cLocation, (char)219, red);
+			g_Console.writeToBuffer(g_door3.m_cLocation, (char)219, red);
+			g_Console.writeToBuffer(g_door4.m_cLocation, (char)219, red);
+			g_Console.writeToBuffer(g_door5.m_cLocation, (char)219, red);
+
+			//Time Boost
+			g_Console.writeToBuffer(g_lever1.m_cLocation, (char)64, purple);
+			g_Console.writeToBuffer(g_lever2.m_cLocation, (char)64, purple);
+			g_Console.writeToBuffer(g_lever3.m_cLocation, (char)64, purple);
+			g_Console.writeToBuffer(g_lever4.m_cLocation, (char)64, purple);
+			g_Console.writeToBuffer(g_lever5.m_cLocation, (char)64, purple);
+		break;
+
+	case levelfiveb:
+
 		// Draw the location of the character
 		g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, red);
 		g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, green);
@@ -698,15 +803,14 @@ void rendercharacters()
 		//Enemy
 		g_Console.writeToBuffer(g_enemy.m_cLocation, (char)1, green);
 		g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, green);
+		g_Console.writeToBuffer(g_enemy3.m_cLocation, (char)1, green);
+		g_Console.writeToBuffer(g_enemy4.m_cLocation, (char)1, green);
 
-		//Doors
-		g_Console.writeToBuffer(g_door1.m_cLocation, (char)219, red);
-		g_Console.writeToBuffer(g_door2.m_cLocation, (char)219, red);
-		g_Console.writeToBuffer(g_door3.m_cLocation, (char)219, red);
-		g_Console.writeToBuffer(g_door4.m_cLocation, (char)219, red);
-		g_Console.writeToBuffer(g_door5.m_cLocation, (char)219, red);
-
-		break;
+		//Teleporters
+		g_Console.writeToBuffer(g_lever1.m_cLocation, (char)234, lightblue);
+		g_Console.writeToBuffer(g_lever2.m_cLocation, (char)234, lightblue);
+		//g_Console.writeToBuffer(g_lever3.m_cLocation, (char)234, lightblue);
+		//g_Console.writeToBuffer(g_lever4.m_cLocation, (char)234, lightblue);
 	}
 }
 
@@ -720,7 +824,7 @@ void patrolzerob()
 	}
 
 
-	for (unsigned loop = 1; loop != 5; loop++)
+	for (unsigned int loop = 1; loop != 5; loop++)
 	{
 		switch (loop)
 		{
@@ -804,54 +908,53 @@ void patrolfour()
 	}
 
 
-	for (unsigned loop = 1; loop != 5; loop++)
+	for (unsigned int loop = 1; loop != 5; loop++)
 	{
 		switch (loop)
 		{
 		case 1:
 		{
-				  if (map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != (char)219 &&
-					  g_enemy.m_cLocation.Y != 15 && g_enemy.m_cLocation.X == 13)
-				  {
-					  g_enemy.m_cLocation.Y++;
-					  bSomethingHappened = true;
-				  }
-				  break;
+			if (map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != (char)219 &&
+				g_enemy.m_cLocation.Y != 15 && g_enemy.m_cLocation.X == 13)
+			{
+				g_enemy.m_cLocation.Y++;
+				bSomethingHappened = true;
+			}
+			break;
 		}
 
 		case 2:
 		{
-				  if (map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X + 1] != (char)219 &&
-					  g_enemy.m_cLocation.X != 21 && g_enemy.m_cLocation.Y == 14)
-				  {
+			if (map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X + 1] != (char)219 &&
+				g_enemy.m_cLocation.X != 21 && g_enemy.m_cLocation.Y == 14)
+			{
 
-					  g_enemy.m_cLocation.X++;
-					  bSomethingHappened = true;
-				  }
-				  break;
+				g_enemy.m_cLocation.X++;
+				bSomethingHappened = true;
+			}
+			break;
 		}
 		case 3:
 		{
-				  if (map[g_enemy.m_cLocation.Y - 1][g_enemy.m_cLocation.X] != (char)219 &&
-					  g_enemy.m_cLocation.Y != 11 && g_enemy.m_cLocation.X == 21)
-				  {
-					  g_enemy.m_cLocation.Y--;
-					  bSomethingHappened = true;
-				  }
-				  break;
+			if (map[g_enemy.m_cLocation.Y - 1][g_enemy.m_cLocation.X] != (char)219 &&
+				g_enemy.m_cLocation.Y != 11 && g_enemy.m_cLocation.X == 21)
+			{
+				g_enemy.m_cLocation.Y--;
+				bSomethingHappened = true;
+			}
+			break;
 		}
 		case 4:
 		{
-				  if (map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X - 1] != (char)219 &&
-					  g_enemy.m_cLocation.X != 13 && g_enemy.m_cLocation.Y == 11)
-				  {
-					  g_enemy.m_cLocation.X--;
-					  bSomethingHappened = true;
-				  }
-				  break;
+			if (map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X - 1] != (char)219 &&
+				g_enemy.m_cLocation.X != 13 && g_enemy.m_cLocation.Y == 11)
+			{
+				g_enemy.m_cLocation.X--;
+				bSomethingHappened = true;
+			}
+			break;
 
 		}
-
 			if (loop = 4)
 			{
 				loop = 1;

@@ -33,8 +33,7 @@ extern EGAMESTATES g_eGameState;
 extern LEVELS load;
 extern RESTART level;
 
-void level5();
-void level5_0();
+void credits();
 
 //Linking variables.
 extern bool story;
