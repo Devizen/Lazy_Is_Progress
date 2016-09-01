@@ -1,25 +1,25 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
-+                                                           +
++            ___                             ___            +
++          _|___|_                         _|___|_          +
++        _<_______>_                     _<_______>_        +
++       |           |                   |           |       +
++       |           |                   |           |       +
++       |           |                   |           |       + 
++       |           |                   |           |       +
++       |           |                   |           |       +
++       | PORTAL 1  |  <=============>  | PORTAL 2  |       +
++       |           |                   |           |       +
++       |           |                   |           |       + 
++       |           |                   |           |       +
++       |           |                   |           |       +
++       |           |                   |           |       +
++     __|___________|__               __|___________|__     +
++    (_________________)             (_________________)    +
++    (_________________)             (_________________)    +
 +                                                           +
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-+ They returned to reality from their flashbacks.           +
-+ This time, They were trapped in a maze and were very      +
-+ desperate to escape. With a twist to this level,          +
-+ they needed to enter the door in the other's chamber.     +    
-+ As anxious as they are, enemies are on the back of their  +
-+ tails. In they end they overcame the obstacle and         +
-+ proceeded with the last floor.                            +
++ They returned to reality from their flashbacks, it's a    +   
++ maze this time. With a twist this level, portals were     +
++ to exit are in the other's chamber. They overcame the     +
++ obstacle and went on to the last floor.                   +
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
