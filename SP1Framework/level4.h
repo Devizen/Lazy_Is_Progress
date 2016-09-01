@@ -43,3 +43,4 @@ extern bool door4;
 extern bool door5;
 
 extern bool story;
+

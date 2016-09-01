@@ -101,7 +101,11 @@ void level4()
 
 	
 		rendercharacters();
+
 		//motiondetect();
+
+		motiondetect();
+
 		patrolfour();
 
 		if (boxreturn(boxone) == true || boxreturndoor(boxone, g_door5) == true)
@@ -153,7 +157,9 @@ void level4()
 		}
 	
 		if ((g_enemy.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_sChar.m_cLocation.Y) ||
-			(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y))
+			(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y) ||
+			(g_enemy.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_nChar.m_cLocation.Y) || 
+			(g_enemy2.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_sChar.m_cLocation.Y) )
 		{
 			//Set boolean to false so the health will not reset.
 			restarthealth = false;
@@ -174,13 +180,13 @@ void level4()
 		if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X] == map[g_lever2.m_cLocation.Y][g_lever2.m_cLocation.X])
 		{
 			g_sChar.m_cLocation.X = 48;
-			g_sChar.m_cLocation.Y = 8;
+			g_sChar.m_cLocation.Y = 9;
 		}
-	   /* if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X] == map[g_portal.m_cLocation.Y][g_portal.m_cLocation.X])
+	 if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X] == map[g_portal.m_cLocation.Y][g_portal.m_cLocation.X])
 		{
 			g_sChar.m_cLocation.X = 3;
-			g_sChar.m_cLocation.Y = 1;
-		}*/
+			g_sChar.m_cLocation.Y = 2;
+		}
 		
 
 
@@ -188,14 +194,16 @@ void level4()
 		if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X] == map[g_portal.m_cLocation.Y][g_portal.m_cLocation.X])
 		{
 			g_nChar.m_cLocation.X = 3;
-			g_nChar.m_cLocation.Y = 1;
+			g_nChar.m_cLocation.Y = 2;
 		}
-	/*	if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X] == map[g_lever2.m_cLocation.Y][g_lever2.m_cLocation.X])
+		 if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X] == map[g_lever2.m_cLocation.Y][g_lever2.m_cLocation.X])
 		{
 			g_nChar.m_cLocation.X = 48;
-			g_nChar.m_cLocation.Y = 8;
+			g_nChar.m_cLocation.Y = 9;
 		}
-*/
+
+
+
 		if (g_sChar.health < 1)
 		{
 			level = four;
@@ -203,6 +211,7 @@ void level4()
 			renderGame();
 			rendercharacters();
 		}
+
 	}
 
 }

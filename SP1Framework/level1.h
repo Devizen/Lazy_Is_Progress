@@ -64,7 +64,13 @@ extern RESTART level;
 //Linking variables.
 extern bool restarthealth;
 
+
 extern bool door1;
+
+
+extern bool story;
+
+
 
 extern bool story;
 //Definition for function.
