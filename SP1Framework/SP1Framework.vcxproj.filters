@@ -52,9 +52,6 @@
     <ClCompile Include="tutorial.cpp">
       <Filter>Game Level</Filter>
     </ClCompile>
-    <ClCompile Include="SpeedUpPlatform.cpp">
-      <Filter>Character and A.I\Movement</Filter>
-    </ClCompile>
     <ClCompile Include="Framework\console.cpp">
       <Filter>Base</Filter>
     </ClCompile>
@@ -155,9 +152,6 @@
     </ClInclude>
     <ClInclude Include="tutorial.h">
       <Filter>Game Level</Filter>
-    </ClInclude>
-    <ClInclude Include="SpeedUpPlatform.h">
-      <Filter>Character and A.I\Movement</Filter>
     </ClInclude>
     <ClInclude Include="Framework\console.h">
       <Filter>Base</Filter>

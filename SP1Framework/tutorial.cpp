@@ -38,16 +38,23 @@ void tutoriala()
 				c.Y++;
 			}
 
-			if (g_dCountTime < 40)
+			if (g_dCountTime < 40 && timereset == false)
+			{
+				timereset = true;
+			}
+
+			if (timereset == true)
 			{
 				splash = false;
 				story = false;
+				g_dCountTime = 60;
+				spawn();
 				renderGame();
 			}
 
 			if (g_abKeyPressed[K_RETURN])
 			{
-				g_dCountTime = 39;
+				timereset = true;
 			}
 
 			COORD d;
@@ -150,6 +157,7 @@ void tutoriala()
 			restarthealth = true;
 			splash = true;
 			story = true;
+			timereset = false;
 			load = levelzerob;
 			spawn();
 		}
@@ -158,21 +166,7 @@ void tutoriala()
 
 void tutorialb()
 {
-	//string line = " ";
-	//string name = "Text/Level/level0_1.txt";
-	//loadlevel(name);
 
-	//COORD c;
-
-	//c.X = 0;
-	//c.Y = 0;
-
-	//for (int i = 0; i <= y; i++)
-	//{
-	//	line = map[i];
-	//	g_Console.writeToBuffer(c, line);
-	//	c.Y++;
-	//}
 
 	string line = " ";
 	COORD c;
@@ -209,16 +203,23 @@ void tutorialb()
 				c.Y++;
 			}
 
-			if (g_dCountTime < 40)
+			if (g_dCountTime < 40 && timereset == false)
+			{
+				timereset = true;
+			}
+
+			if (timereset == true)
 			{
 				splash = false;
 				story = false;
+				g_dCountTime = 60;
+				spawn();
 				renderGame();
 			}
 
 			if (g_abKeyPressed[K_RETURN])
 			{
-				g_dCountTime = 39;
+				timereset = true;
 			}
 
 			COORD d;
@@ -356,41 +357,6 @@ void tutorialb()
 			door4 = false;
 		}
 
-		//if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X] == map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X])
-		//{
-		//	restarthealth = false;
-		//	g_sChar.health -= 1;
-
-		//	spawn();
-
-		//}
-
-		//if ((g_enemy.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_sChar.m_cLocation.Y)/* ||
-		//	(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y)*/)
-		//{
-		//	restarthealth = false;
-		//	g_sChar.health -= 1;
-
-		//	spawn();
-
-		//	////First Character
-		//	//g_sChar.m_cLocation.X = 20;
-		//	//g_sChar.m_cLocation.Y = 23;
-
-		//	////Second Character
-		//	//g_nChar.m_cLocation.X = 40;
-		//	//g_nChar.m_cLocation.Y = 23;
-
-		//	////Enemy
-		//	//g_enemy.m_cLocation.X = 22;
-		//	//g_enemy.m_cLocation.Y = 23;
-
-		//	//g_enemy2.m_cLocation.X = 38;
-		//	//g_enemy2.m_cLocation.Y = 23;
-
-		///*	g_dCountTime = 60;*/
-		//}
-
 		//Progress to next level.
 		if (g_sChar.m_cLocation.X == 15 &&
 			g_sChar.m_cLocation.Y == 2 &&
@@ -403,6 +369,8 @@ void tutorialb()
 
 			//Displaying Story Screen.
 			story = true;
+
+			timereset = false;
 
 			load = levelone;
 			spawn();

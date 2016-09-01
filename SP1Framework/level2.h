@@ -39,3 +39,4 @@ void level2c(); // level 2.
 
 //Linking variables.
 extern bool story;
+extern bool timereset;

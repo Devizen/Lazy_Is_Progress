@@ -8,6 +8,7 @@
 //2 problems , Box cannot return and door not working
 void level3()
 {
+	
 	string line = " ";
 	COORD c;
 
@@ -43,16 +44,23 @@ void level3()
 				c.Y++;
 			}
 
-			if (g_dCountTime < 40)
+			if (g_dCountTime < 40 && timereset == false)
+			{
+				timereset = true;
+			}
+
+			if (timereset == true)
 			{
 				splash = false;
 				story = false;
+				g_dCountTime = 60;
+				spawn();
 				renderGame();
 			}
 
 			if (g_abKeyPressed[K_RETURN])
 			{
-				g_dCountTime = 39;
+				timereset = true;
 			}
 
 			COORD d;
@@ -116,14 +124,14 @@ void level3()
 
 		COORD d;
 		d.X = 63;
+		d.Y = 14;
+		g_Console.writeToBuffer(d, "Hint:", yellow);
 		d.Y = 15;
-		g_Console.writeToBuffer(d, "Run Away From");
+		g_Console.writeToBuffer(d, "Run away from");
 		d.Y = 16;
-		g_Console.writeToBuffer(d, "The Bad Neighbour");
+		g_Console.writeToBuffer(d, "the bad");
 		d.Y = 17;
-		g_Console.writeToBuffer(d, "Or You Will");
-		d.Y = 18;
-		g_Console.writeToBuffer(d, "Die");
+		g_Console.writeToBuffer(d, "neightbour!");
 
 		rendercharacters();
 		motiondetect();
@@ -162,23 +170,27 @@ void level3()
 			spawn();
 		}
 
-		
+		if (g_nChar.m_cLocation.X == 33 &&
+			g_nChar.m_cLocation.Y == 23 &&
+			g_sChar.m_cLocation.X == 1 &&
+			g_sChar.m_cLocation.Y == 18)
+		{
+			g_sChar.health = 3;
+			g_dCountTime = 60;
+			restarthealth = true;
+			splash = true;
+			story = true;
+			door1 = false;
+			door2 = false;
+			door3 = false;
+			door4 = false;
+			door5 = false;
+			timereset = false;
+			load = levelfour;
+			spawn();
+			renderGame();
+		}
 
-		//if (g_nChar.m_cLocation.X == 49 &&
-		//	g_nChar.m_cLocation.Y == 11 &&
-		//	g_sChar.m_cLocation.X == 11 &&
-		//	g_sChar.m_cLocation.Y == 11)
-		//{
-		//	g_sChar.m_cLocation.X = 11;
-		//	g_sChar.m_cLocation.Y = 10;
-
-		//	g_nChar.m_cLocation.X = 49;
-		//	g_nChar.m_cLocation.Y = 10;
-		//	g_sChar.health = 3;
-
-		//	load = mainscreen;
-
-		//}
 		if (g_sChar.health < 1)
 		{
 			level = three;

@@ -67,6 +67,7 @@ extern bool partb;
 extern bool partc;
 extern bool splash;
 extern double ai_BounceTime;
+extern bool story;
 
 //Definition for function.
 void spawn();

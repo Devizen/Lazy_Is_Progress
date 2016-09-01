@@ -160,7 +160,7 @@ void renderLegend()
 		c.Y = 6;
 		g_Console.writeToBuffer(c, (char)219, yellow); //Display the Platform icon.
 
-		c.X = 66;
+		c.X = 65;
 		c.Y = 24;
 		g_Console.writeToBuffer(c, "Level Three");  //Display "Level"
 		break;

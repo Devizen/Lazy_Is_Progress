@@ -39,3 +39,4 @@ void level5_0();
 //Linking variables.
 extern bool story;
 extern bool partb;
+extern bool timereset;

@@ -70,6 +70,7 @@ void gameover()
 
 		case three:
 			splash = true;
+			door4 = false;
 			g_sChar.health = 3;
 			load = levelthree;
 			spawn();

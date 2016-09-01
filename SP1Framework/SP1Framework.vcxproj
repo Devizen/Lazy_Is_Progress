@@ -107,7 +107,6 @@
     <ClCompile Include="renderResult.cpp" />
     <ClCompile Include="Scoreboard.cpp" />
     <ClCompile Include="spawn.cpp" />
-    <ClCompile Include="SpeedUpPlatform.cpp" />
     <ClCompile Include="sprint.cpp" />
     <ClCompile Include="timeover.cpp" />
     <ClCompile Include="tutorial.cpp" />
@@ -144,7 +143,6 @@
     <ClInclude Include="movelevel2.h" />
     <ClInclude Include="renderResult.h" />
     <ClInclude Include="spawn.h" />
-    <ClInclude Include="SpeedUpPlatform.h" />
     <ClInclude Include="sprint.h" />
     <ClInclude Include="timeover.h" />
     <ClInclude Include="tutorial.h" />

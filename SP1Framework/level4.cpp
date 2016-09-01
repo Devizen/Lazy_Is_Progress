@@ -42,16 +42,23 @@ void level4()
 				c.Y++;
 			}
 
-			if (g_dCountTime < 40)
+			if (g_dCountTime < 40 && timereset == false)
+			{
+				timereset = true;
+			}
+
+			if (timereset == true)
 			{
 				splash = false;
 				story = false;
+				g_dCountTime = 60;
+				spawn();
 				renderGame();
 			}
 
 			if (g_abKeyPressed[K_RETURN])
 			{
-				g_dCountTime = 39;
+				timereset = true;
 			}
 
 			COORD d;
@@ -93,23 +100,6 @@ void level4()
 		COORD y;
 		y.X = 15;
 		y.Y = 15;
-
-		//string line = " ";
-		//string name = "Text/Level/level4.txt";
-		//loadlevel(name);
-		//COORD c;
-
-
-		//c.X = 0;
-		//c.Y = 0;
-
-
-		//for (int i = 0; i <= y; i++)
-		//{
-		//	line = map[i];
-		//	g_Console.writeToBuffer(c, line);
-		//	c.Y++;
-		//}
 
 
 		COORD d;
@@ -252,6 +242,7 @@ void level4()
 			 door3 = false;
 			 door4 = false;
 			 door5 = false;
+			 timereset = false;
 			 load = levelfive;
 			 spawn();
 			 renderGame();

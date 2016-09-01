@@ -72,6 +72,7 @@ void credits()
 
 	if (g_abKeyPressed[K_BACK])
 	{
+		timereset = false;
 		g_eGameState = S_MENU;
 		load = levelzeroa;
 		spawn();

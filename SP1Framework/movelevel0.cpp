@@ -318,43 +318,6 @@ void movelevel0()
 					g_nChar.m_cLocation.Y--;
 					bSomethingHappened = true;
 				}
-
-				//if (g_nChar.m_cLocation.Y - 1 == boxtwo.m_cLocation.Y &&
-				//	g_nChar.m_cLocation.X == boxtwo.m_cLocation.X)
-				//{
-				//	g_nChar.m_cLocation.Y--;
-				//	boxtwo.m_cLocation.Y--;
-				//	bSomethingHappened = true;
-				//}
-
-				//else if (g_nChar.m_cLocation.Y - 1 == boxfour.m_cLocation.Y &&
-				//	g_nChar.m_cLocation.X == boxfour.m_cLocation.X)
-				//{
-				//	g_nChar.m_cLocation.Y--;
-				//	boxfour.m_cLocation.Y--;
-				//	bSomethingHappened = true;
-				//}
-
-				//else if (g_nChar.m_cLocation.Y - 1 == boxfour.m_cLocation.Y &&
-				//	g_nChar.m_cLocation.X == boxfour.m_cLocation.X)
-				//{
-				//	boxfour.m_cLocation.Y--;
-				//	bSomethingHappened = true;
-				//}
-
-				//else if (door3 == false &&
-				//	map[g_nChar.m_cLocation.Y - 1][g_nChar.m_cLocation.X] !=
-				//	map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X])
-				//{
-				//	g_nChar.m_cLocation.Y--;
-				//	bSomethingHappened = true;
-				//}
-
-				//else if (door3 == true)
-				//{
-				//	g_nChar.m_cLocation.Y--;
-				//	bSomethingHappened = true;
-				//}
 			}
 		}
 
@@ -454,36 +417,6 @@ void movelevel0()
 					g_nChar.m_cLocation.Y++;
 					bSomethingHappened = true;
 				}
-
-				//if (g_nChar.m_cLocation.Y + 1 == boxtwo.m_cLocation.Y &&
-				//	g_nChar.m_cLocation.X == boxtwo.m_cLocation.X)
-				//{
-				//	g_nChar.m_cLocation.Y++;
-				//	boxtwo.m_cLocation.Y++;
-				//	bSomethingHappened = true;
-				//}
-
-				//else if (g_nChar.m_cLocation.Y + 1 == boxfour.m_cLocation.Y &&
-				//	g_nChar.m_cLocation.X == boxfour.m_cLocation.X)
-				//{
-				//	g_nChar.m_cLocation.Y++;
-				//	boxfour.m_cLocation.Y++;
-				//	bSomethingHappened = true;
-				//}
-
-				//else if (door3 == false &&
-				//	map[g_nChar.m_cLocation.Y + 1][g_nChar.m_cLocation.X] !=
-				//	map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X])
-				//{
-				//	g_nChar.m_cLocation.Y++;
-				//	bSomethingHappened = true;
-				//}
-
-				//else if (door3 == true)
-				//{
-				//	g_nChar.m_cLocation.Y++;
-				//	bSomethingHappened = true;
-				//}
 			}
 		}
 

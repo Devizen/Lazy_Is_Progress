@@ -29,8 +29,6 @@
 
 #include "renderLegend.h"
 
-#include "SpeedUpPlatform.h"
-
 using std::vector;
 using namespace std;
 
@@ -116,6 +114,7 @@ WORD darkgreen = 0x02;
 
 double g_dBounceTime; // this is to prevent key bouncing, so we won't trigger keypresses more than once
 double ai_BounceTime;
+bool timereset = false;
 
 double  g_dBounceTimeBoost = 0.0; // this is to prevent key bouncing, so we won't trigger keypresses more than once
 
@@ -155,12 +154,7 @@ void init(void)
 	g_Console.setConsoleFont(0, 16, L"Arial");
 	// Added by Daniel \/
 
-	//PlaySound(TEXT("Soundtracks/BGM/Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
-
-	//PlaySound(TEXT("Soundtracks/BGM/Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
-
-	//PlaySound(TEXT("Soundtracks/BGM/Jupiter_Lighthouse.mp3"),NULL, SND_SYNC | SND_LOOP | SND_ASYNC);
-	
+	PlaySound(TEXT("Soundtracks/BGM/Yiruma_RiverFlowsinMe(MP3).wav"), NULL, SND_SYNC |SND_LOOP | SND_ASYNC);
 }
 
 //--------------------------------------------------------------
@@ -279,8 +273,6 @@ void render()
 		break;
 	case S_INSTRUCTIONS: instructions();
 		break;
-	//case S_LEVEL1: level1();
-	//	break;
 	case S_RESULT: 
 		renderResult(&g_ResultIsDisplayed, &g_ElapsedGameTime);
 		break;
@@ -335,7 +327,6 @@ void moveCharacter()
 		case leveltwo:
 			sprint();
 			movelevel2();
-			SpeedUpPlatform();
 			break;
 
 		case levelthree:
@@ -416,6 +407,7 @@ void processUserInput()
 	{
 		restarthealth = true;
 		splash = true;
+		door4 = false;
 		load = levelthree;
 		clearScreen();
 		spawn();
@@ -720,6 +712,7 @@ void renderGame()
 	case levelzeroa: tutoriala();
 		break;
 	case levelzerob: tutorialb();
+
 		break;
 	case levelone: level1();
 		break;
@@ -764,12 +757,6 @@ void renderFramerate()
 
 	COORD c;
 
-	//WORD charColor = 0x0C;
-	//WORD charColor2 = 0x0A;
-	//WORD charColor3 = 0x2B;
-	//WORD yellow = 0x5E;
-	//WORD purple = 0x780F;
-
 	// displays the framerate
 	std::ostringstream ss;
 	ss << std::fixed << std::setprecision(0);
@@ -803,12 +790,6 @@ void renderFramerate()
 		//Deduct health when time over.
 		g_sChar.health--;
 		restarthealth = false;
-
-		//ss.str("");
-		//ss << "Time Over";
-		//c.X = g_Console.getConsoleSize().X - 10;
-		//c.Y = g_Console.getConsoleSize().Y - 23;
-		//g_Console.writeToBuffer(c, ss.str(), 0X4D);
 
 		switch (load)
 		{

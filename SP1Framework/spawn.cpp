@@ -100,8 +100,6 @@ void spawn()
 		g_enemy.m_cLocation.X = 33;
 		g_enemy.m_cLocation.Y = 8;
 
-		//g_enemy2.m_cLocation.X = 38;
-		//g_enemy2.m_cLocation.Y = 2;
 
 		//Set the initial health of the player
 		if (restarthealth == true)
@@ -214,25 +212,6 @@ void spawn()
 		g_enemy2.m_cLocation.X = 45;
 		g_enemy2.m_cLocation.Y = 10;
 
-		////Door
-		//g_door1.m_cLocation.X = 8;
-		//g_door1.m_cLocation.Y = 10;
-
-		////Lever
-		//g_lever1.m_cLocation.X = 53;
-		//g_lever1.m_cLocation.Y = 8;
-		//
-		////Box
-		//g_box1.m_cLocation.X = 54;
-		//g_box1.m_cLocation.Y = 21;
-
-		////Release A.I
-		//release_enemy.m_cLocation.X = 52;
-		//release_enemy.m_cLocation.Y = 6;
-
-		////PlatForm
-		//g_platform.m_cLocation.X = 4;
-		//g_platform.m_cLocation.Y = 21;
 
 		//Set the initial health of the player
 		if (restarthealth == true)
@@ -269,7 +248,7 @@ void spawn()
 		g_lever1.m_cLocation.Y= 23;
 
 		//Box
-		boxfour.m_cLocation.X = 56;
+		boxfour.m_cLocation.X = 52;
 		boxfour.m_cLocation.Y = 23;
 
 
@@ -279,15 +258,14 @@ void spawn()
 		release_enemy.m_cLocation.X = 16;
 		release_enemy.m_cLocation.Y = 9;
 
-		////PlatForm
-		//g_platform.m_cLocation.X = 7;
-		//g_platform.m_cLocation.Y = 21;
 
 		//Set the initial health of the player
 		if (restarthealth == true)
 		{
 			g_sChar.health = 3;
 		}
+
+		door4 = false;
 
 		//Set the initial time limit
 		g_dCountTime = 60;
@@ -362,14 +340,6 @@ void spawn()
 		g_nChar.m_cLocation.X = 59;
 		g_nChar.m_cLocation.Y = 23;
 
-		////First Character
-		//g_sChar.m_cLocation.X = 29;
-		//g_sChar.m_cLocation.Y = 2;
-
-		////Second Character
-		//g_nChar.m_cLocation.X = 59;
-		//g_nChar.m_cLocation.Y = 2;
-
 		//Enemy
 		g_enemy.m_cLocation.X = 38;
 		g_enemy.m_cLocation.Y = 6;
@@ -412,22 +382,6 @@ void spawn()
 		g_lever5.m_cLocation.X = 17;
 		g_lever5.m_cLocation.Y = 7;
 
-		////Boxes
-		//boxone.m_cLocation.X = 14;
-		//boxone.m_cLocation.Y = 8;
-		//boxtwo.m_cLocation.X = 41;
-		//boxtwo.m_cLocation.Y = 18;
-
-		////Release A.I
-		//release_enemy.m_cLocation.X = 52;
-		//release_enemy.m_cLocation.Y = 6;
-
-		////Teleporter
-		//g_lever2.m_cLocation.X = 3;
-		//g_lever2.m_cLocation.Y = 1;
-		//g_portal.m_cLocation.X = 48;
-		//g_portal.m_cLocation.Y = 8;
-
 		//Set the initial health of the player
 		if (restarthealth == true)
 		{
@@ -460,22 +414,6 @@ void spawn()
 		g_enemy4.m_cLocation.X = 46;
 		g_enemy4.m_cLocation.Y = 9;
 
-		////Doors
-		//g_door1.m_cLocation.X = 32;
-		//g_door1.m_cLocation.Y = 23;
-
-		//g_door2.m_cLocation.X = 41;
-		//g_door2.m_cLocation.Y = 17;
-
-		//g_door3.m_cLocation.X = 58;
-		//g_door3.m_cLocation.Y = 21;
-
-		//g_door4.m_cLocation.X = 51;
-		//g_door4.m_cLocation.Y = 13;
-
-		//g_door5.m_cLocation.X = 36;
-		//g_door5.m_cLocation.Y = 13;
-
 		//Levers
 		g_lever1.m_cLocation.X = 14;
 		g_lever1.m_cLocation.Y = 17;
@@ -488,25 +426,6 @@ void spawn()
 
 		g_lever4.m_cLocation.X = 46;
 		g_lever4.m_cLocation.Y = 8;
-
-		//g_lever5.m_cLocation.X = 17;
-		//g_lever5.m_cLocation.Y = 7;
-
-		////Boxes
-		//boxone.m_cLocation.X = 14;
-		//boxone.m_cLocation.Y = 8;
-		//boxtwo.m_cLocation.X = 41;
-		//boxtwo.m_cLocation.Y = 18;
-
-		////Release A.I
-		//release_enemy.m_cLocation.X = 52;
-		//release_enemy.m_cLocation.Y = 6;
-
-		////Teleporter
-		//g_lever2.m_cLocation.X = 3;
-		//g_lever2.m_cLocation.Y = 1;
-		//g_portal.m_cLocation.X = 48;
-		//g_portal.m_cLocation.Y = 8;
 
 		//Set the initial health of the player
 		if (restarthealth == true)

@@ -38,3 +38,4 @@ void credits();
 //Linking variables.
 extern bool story;
 extern bool partb;
+extern bool timereset;

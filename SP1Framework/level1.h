@@ -66,7 +66,7 @@ extern bool restarthealth;
 
 
 extern bool door1;
-
+extern bool timereset;
 
 extern bool story;
 

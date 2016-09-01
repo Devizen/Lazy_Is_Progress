@@ -42,16 +42,23 @@ void level2()
 				c.Y++;
 			}
 
-			if (g_dCountTime < 40)
+			if (g_dCountTime < 40 && timereset == false)
+			{
+				timereset = true;
+			}
+
+			if (timereset == true)
 			{
 				splash = false;
 				story = false;
+				g_dCountTime = 60;
+				spawn();
 				renderGame();
 			}
 
 			if (g_abKeyPressed[K_RETURN])
 			{
-				g_dCountTime = 39;
+				timereset = true;
 			}
 
 			COORD d;
@@ -151,25 +158,7 @@ void level2()
 			d.Y = 18;
 			g_Console.writeToBuffer(d, "as a ONE being!");
 		}
-		//string line = " ";
-		//string name = "Text/Level/level2.txt";
-		//loadlevel(name);
 
-		//COORD c;
-
-		//c.X = 0;
-		//c.Y = 0;
-
-		//for (int i = 0; i <= y; i++)
-		//{
-		//	line = map[i];
-		//	g_Console.writeToBuffer(c, line);
-		//	c.Y++;
-		//}
-
-		//COORD y;
-		//y.X = 15;
-		//y.Y = 15;
 
 		rendercharacters();
 		motiondetect();
@@ -256,6 +245,8 @@ void level2()
 
 				//Displaying Story Screen.
 				story = true;
+				timereset = false;
+				door4 = false;
 
 				spawn();
 				renderGame();
@@ -279,21 +270,6 @@ void level2()
 			spawn();
 		}
 
-		//if (g_nChar.m_cLocation.X == 49 &&
-		//	g_nChar.m_cLocation.Y == 11 &&
-		//	g_sChar.m_cLocation.X == 11 &&
-		//	g_sChar.m_cLocation.Y == 11)
-		//{
-		//	g_sChar.m_cLocation.X = 11;
-		//	g_sChar.m_cLocation.Y = 10;
-
-		//	g_nChar.m_cLocation.X = 49;
-		//	g_nChar.m_cLocation.Y = 10;
-		//	g_sChar.health = 3;
-
-		//	load = mainscreen;
-
-		//}
 
 		if (g_sChar.health < 1)
 		{
