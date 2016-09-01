@@ -267,6 +267,7 @@ void level1()
 			load = leveltwo;
 			restarthealth = true;
 			splash = true;
+			door1 = false;
 
 			//Displaying Story Screen.
 			story = true;
