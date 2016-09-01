@@ -21,6 +21,7 @@ boxthree,
 boxfour,
 boxfive,
 g_door1,
+g_door4,
 g_lever1,
 g_box1;
 

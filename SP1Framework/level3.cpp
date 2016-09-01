@@ -4,6 +4,8 @@
 #include "game.h"
 
 //Done by Daniel.
+
+//2 problems , Box cannot return and door not working
 void level3()
 {
 	string line = " ";
@@ -110,6 +112,19 @@ void level3()
 		rendercharacters();
 		motiondetect();
 
+
+		if (map[boxfour.m_cLocation.Y][boxfour.m_cLocation.X] += map[g_lever4.m_cLocation.Y][g_lever4.m_cLocation.X])
+		{
+			g_Console.writeToBuffer(g_lever4.m_cLocation, (char)219, green);
+			g_Console.writeToBuffer(g_door4.m_cLocation, (char)219, green);
+		}
+
+		if (boxreturn(boxfour) == true)
+		{
+			boxfour.m_cLocation.X = 52;
+			boxfour.m_cLocation.Y = 23;
+		}
+
 		if ((g_enemy.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_sChar.m_cLocation.Y) ||
 			(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y))
 		{
@@ -124,6 +139,8 @@ void level3()
 			//Revert the level settings.
 			spawn();
 		}
+
+		
 
 		//if (g_nChar.m_cLocation.X == 49 &&
 		//	g_nChar.m_cLocation.Y == 11 &&
