@@ -7,10 +7,6 @@
 
 void level4()
 {
-	WORD charColor = 0x0C;
-	WORD charColor2 = 0x0A;
-	WORD yellow = 0xFFE0;
-
 	string line = " ";
 	COORD c;
 
@@ -46,12 +42,28 @@ void level4()
 				c.Y++;
 			}
 
-			if (g_dCountTime < 55)
+			if (g_dCountTime < 40)
 			{
 				splash = false;
 				story = false;
 				renderGame();
 			}
+
+			if (g_abKeyPressed[K_RETURN])
+			{
+				g_dCountTime = 39;
+			}
+
+			COORD d;
+			d.X = 62;
+			d.Y = 14;
+			g_Console.writeToBuffer(d, "To Skip:", yellow);
+			d.Y = 15;
+			g_Console.writeToBuffer(d, "Press the");
+			d.Y = 16;
+			g_Console.writeToBuffer(d, "[Enter] button");
+			d.Y = 17;
+			g_Console.writeToBuffer(d, "to skip the story.");
 		}
 
 		if (g_dCountTime < 59 && story == false)
@@ -124,11 +136,11 @@ void level4()
 		//Unlock Door 1
 		if (map[boxone.m_cLocation.Y][boxone.m_cLocation.X] == map[g_lever1.m_cLocation.Y][g_lever1.m_cLocation.X])
 		{
-			g_Console.writeToBuffer(boxone.m_cLocation, (char)219, charColor2);
-			g_Console.writeToBuffer(g_door1.m_cLocation, (char)219, charColor2);
-			g_Console.writeToBuffer(g_door2.m_cLocation, (char)219, charColor2);
-			g_Console.writeToBuffer(g_door3.m_cLocation, (char)219, charColor2);
-			g_Console.writeToBuffer(g_door4.m_cLocation, (char)219, charColor2);
+			g_Console.writeToBuffer(boxone.m_cLocation, (char)219, green);
+			g_Console.writeToBuffer(g_door1.m_cLocation, (char)219, green);
+			g_Console.writeToBuffer(g_door2.m_cLocation, (char)219, green);
+			g_Console.writeToBuffer(g_door3.m_cLocation, (char)219, green);
+			g_Console.writeToBuffer(g_door4.m_cLocation, (char)219, green);
 
 			door1 = true;
 			door2 = true;
@@ -146,8 +158,8 @@ void level4()
 		//Unlock Door 2
 		if (map[boxtwo.m_cLocation.Y][boxtwo.m_cLocation.X] == map[g_lever3.m_cLocation.Y][g_lever3.m_cLocation.X])
 		{
-			g_Console.writeToBuffer(boxtwo.m_cLocation, (char)219, charColor2);
-			g_Console.writeToBuffer(g_door5.m_cLocation, (char)219, charColor2);
+			g_Console.writeToBuffer(boxtwo.m_cLocation, (char)219, green);
+			g_Console.writeToBuffer(g_door5.m_cLocation, (char)219, green);
 
 			door5 = true;
 		}

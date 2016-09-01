@@ -13,10 +13,6 @@ bool t5 = true;
 //Done by Eugene.
 void level5()
 {
-	WORD charColor = 0x0C;
-	WORD charColor2 = 0x0A;
-	WORD yellow = 0xFFE0;
-
 	string line = " ";
 	COORD c;
 
@@ -52,12 +48,28 @@ void level5()
 				c.Y++;
 			}
 
-			if (g_dCountTime < 55)
+			if (g_dCountTime < 40)
 			{
 				splash = false;
 				story = false;
 				renderGame();
 			}
+
+			if (g_abKeyPressed[K_RETURN])
+			{
+				g_dCountTime = 39;
+			}
+
+			COORD d;
+			d.X = 62;
+			d.Y = 14;
+			g_Console.writeToBuffer(d, "To Skip:", yellow);
+			d.Y = 15;
+			g_Console.writeToBuffer(d, "Press the");
+			d.Y = 16;
+			g_Console.writeToBuffer(d, "[Enter] button");
+			d.Y = 17;
+			g_Console.writeToBuffer(d, "to skip the story.");
 		}
 
 		if (g_dCountTime < 59 && story == false)
@@ -109,6 +121,17 @@ void level5()
 		patrolai();
 		//motiondetect();
 		//patrolfour();
+
+		COORD d;
+		d.X = 63;
+		d.Y = 14;
+		g_Console.writeToBuffer(d, "Hint:", yellow);
+		d.Y = 15;
+		g_Console.writeToBuffer(d, "Just keep moving.");
+		d.Y = 16;
+		g_Console.writeToBuffer(d, "Do not look back");
+		d.Y = 17;
+		g_Console.writeToBuffer(d, "or hesistate!");
 
 		if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X] == map[g_lever1.m_cLocation.Y][g_lever1.m_cLocation.X] || door1 == true)
 		{
@@ -227,10 +250,6 @@ void level5()
 
 void level5_0()
 {
-	WORD charColor = 0x0C;
-	WORD charColor2 = 0x0A;
-	WORD yellow = 0xFFE0;
-
 	string line = " ";
 	COORD c;
 
@@ -293,6 +312,14 @@ void level5_0()
 		y.X = 15;
 		y.Y = 15;
 
+		map[17][14] = 'a';
+		map[17][46] = 'b';
+		map[15][46] = 'A';
+		map[15][14] = 'B';
+		map[8][14] = 'c';
+		map[8][46] = 'd';
+		map[6][14] = 'C';
+		map[6][46] = 'D';
 
 		//spawn();
 		rendercharacters();
@@ -309,16 +336,15 @@ void level5_0()
 		g_Console.writeToBuffer(d, "both characters.");
 
 		//motiondetect();
-		if (g_sChar.m_cLocation.Y < 18 && g_nChar.m_cLocation.Y < 18)
+		if (g_sChar.m_cLocation.Y < 17 && g_nChar.m_cLocation.Y < 17)
 		{
 			motiondetect();
 		}
 		patrolfiveb();
 		//patrolfour();
 
-		if (g_dCountTime < 45 && g_sChar.m_cLocation.Y < 18 && g_nChar.m_cLocation.Y < 18)
+		if (g_dCountTime < 45 && g_sChar.m_cLocation.Y < 17 && g_nChar.m_cLocation.Y < 17)
 		{
-			COORD d;
 			d.Y = 15;
 			g_Console.writeToBuffer(d, "Get to the");
 			d.Y = 16;
@@ -340,15 +366,15 @@ void level5_0()
 				g_nChar.m_cLocation.Y = 6;
 			}
 		}
-		else if (g_dCountTime > 44 && g_sChar.m_cLocation.Y < 18 && g_nChar.m_cLocation.Y < 18)
+		else if (g_dCountTime > 44 && g_sChar.m_cLocation.Y < 17 && g_nChar.m_cLocation.Y < 17)
 		{
-			COORD d;
 			d.Y = 15;
 			g_Console.writeToBuffer(d, "Endure until");
 			d.Y = 16;
-			g_Console.writeToBuffer(d, "                       ");
+			g_Console.writeToBuffer(d, "                ");
 			g_Console.writeToBuffer(d, "time left is");
 			d.Y = 17;
+			g_Console.writeToBuffer(d, "                ");
 			g_Console.writeToBuffer(d, "lesser than 45.");
 		}
 

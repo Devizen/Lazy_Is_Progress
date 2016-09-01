@@ -222,6 +222,7 @@ void getInput(void)
 	g_abKeyPressed[K_5] = isKeyPressed(VK_5);
 	g_abKeyPressed[K_6] = isKeyPressed(VK_6);
 	g_abKeyPressed[K_7] = isKeyPressed(VK_7);
+	g_abKeyPressed[K_8] = isKeyPressed(VK_8);
 	g_abKeyPressed[K_9] = isKeyPressed(VK_9);
 	g_abKeyPressed[K_0] = isKeyPressed(VK_0);
 }
@@ -441,6 +442,24 @@ void processUserInput()
 		door4 = false;
 		door5 = false;
 		load = levelfive;
+		clearScreen();
+		spawn();
+		g_eGameState = S_GAME;
+	}
+
+	if (g_abKeyPressed[K_8])
+	{
+		restarthealth = true;
+		splash = true;
+		load = levelfiveb;
+		clearScreen();
+		spawn();
+		g_eGameState = S_GAME;
+	}
+
+	if (g_abKeyPressed[K_9])
+	{
+		load = creditscreen;
 		clearScreen();
 		spawn();
 		g_eGameState = S_GAME;

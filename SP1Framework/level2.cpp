@@ -42,12 +42,28 @@ void level2()
 				c.Y++;
 			}
 
-			if (g_dCountTime < 55)
+			if (g_dCountTime < 40)
 			{
 				splash = false;
 				story = false;
 				renderGame();
 			}
+
+			if (g_abKeyPressed[K_RETURN])
+			{
+				g_dCountTime = 39;
+			}
+
+			COORD d;
+			d.X = 62;
+			d.Y = 14;
+			g_Console.writeToBuffer(d, "To Skip:", yellow);
+			d.Y = 15;
+			g_Console.writeToBuffer(d, "Press the");
+			d.Y = 16;
+			g_Console.writeToBuffer(d, "[Enter] button");
+			d.Y = 17;
+			g_Console.writeToBuffer(d, "to skip the story.");
 		}
 
 		if (g_dCountTime < 59 && story == false)
