@@ -1121,7 +1121,8 @@ void sprint()
 				else if (door1 == false && door5 == false)
 				{
 					if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X] &&
-						map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X])
+						map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X] &&
+						map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X])
 					{
 						g_sChar.m_cLocation.X--;
 						boost = true;
@@ -1130,7 +1131,8 @@ void sprint()
 
 				else if (door1 == true && door5 == false)
 				{
-					if (map[g_sChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X])
+					if (map[g_sChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X] &&
+						map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X])
 					{
 						g_sChar.m_cLocation.X--;
 						boost = true;
@@ -1245,7 +1247,8 @@ void sprint()
 				else if (door3 == false && door5 == false)
 				{
 					if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X] &&
-						map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X])
+						map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X]&& 
+						map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
 					{
 						g_sChar.m_cLocation.X++;
 						boost = true;
@@ -1263,7 +1266,8 @@ void sprint()
 
 				else if (door3 == false && door5 == true)
 				{
-					if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X])
+					if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X] &&
+						map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
 					{
 						g_sChar.m_cLocation.X++;
 						boost = true;
@@ -1369,7 +1373,8 @@ void sprint()
 				else if (door1 == false && door5 == false)
 				{
 					if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X] &&
-						map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X])
+						map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X] &&
+						map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X])
 					{
 						g_nChar.m_cLocation.X--;
 						boost = true;
@@ -1387,7 +1392,8 @@ void sprint()
 
 				else if (door1 == false && door5 == true)
 				{
-					if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
+					if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X]&&
+						map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X])
 					{
 						g_nChar.m_cLocation.X--;
 						boost = true;
@@ -1458,7 +1464,8 @@ void sprint()
 			else if (door3 == false && door5 == false)
 			{
 				if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X] &&
-					map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X])
+					map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X] &&
+					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
 				{
 					g_nChar.m_cLocation.X++;
 					boost = true;
@@ -1476,7 +1483,8 @@ void sprint()
 
 			else if (door3 == false && door5 == true)
 			{
-				if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X])
+				if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X] &&
+					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
 				{
 					g_nChar.m_cLocation.X++;
 					boost = true;
