@@ -124,15 +124,7 @@ void movelevel4()
 		if (g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
 			map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != (char)219)
 		{
-			if (g_sChar.m_cLocation.Y == boxtwo.m_cLocation.Y &&
-				g_sChar.m_cLocation.X - 1 == boxtwo.m_cLocation.X)
-			{
-				g_sChar.m_cLocation.X--;
-				boxtwo.m_cLocation.X--;
-				bSomethingHappened = true;
-			}
-
-			else if (g_sChar.m_cLocation.Y == boxone.m_cLocation.Y &&
+			if (g_sChar.m_cLocation.Y == boxone.m_cLocation.Y &&
 				g_sChar.m_cLocation.X - 1 == boxone.m_cLocation.X)
 			{
 				g_sChar.m_cLocation.X--;
@@ -140,10 +132,19 @@ void movelevel4()
 				bSomethingHappened = true;
 			}
 
+			else if (g_sChar.m_cLocation.Y == boxtwo.m_cLocation.Y &&
+				g_sChar.m_cLocation.X - 1 == boxtwo.m_cLocation.X)
+			{
+				g_sChar.m_cLocation.X--;
+				boxtwo.m_cLocation.X--;
+				bSomethingHappened = true;
+			}
+
 			else if (door1 == false && door5 == false)
 			{
 				if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X] &&
-					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X])
+					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X] &&
+					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X])
 				{
 					g_sChar.m_cLocation.X--;
 					bSomethingHappened = true;
@@ -152,7 +153,7 @@ void movelevel4()
 
 			else if (door1 == true && door5 == false)
 			{
-				if (map[g_sChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X])
+				if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X])
 				{
 					g_sChar.m_cLocation.X--;
 					bSomethingHappened = true;
@@ -161,7 +162,8 @@ void movelevel4()
 
 			else if (door1 == false && door5 == true)
 			{
-				if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
+				if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X]
+					&& map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X - 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X])
 				{
 					g_sChar.m_cLocation.X--;
 					bSomethingHappened = true;
@@ -385,7 +387,8 @@ void movelevel4()
 			else if (door3 == false && door5 == false)
 			{
 				if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X] &&
-					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X])
+					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X] && 
+					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
 				{
 					g_sChar.m_cLocation.X++;
 					bSomethingHappened = true;
@@ -403,7 +406,8 @@ void movelevel4()
 
 			else if (door3 == false && door5 == true)
 			{
-				if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X])
+				if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X]
+					&& map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
 				{
 					g_sChar.m_cLocation.X++;
 					bSomethingHappened = true;
@@ -663,7 +667,8 @@ void movelevel4()
 			else if (door1 == false && door5 == false)
 			{
 				if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X] &&
-					map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X])
+					map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X] &&
+					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X])
 				{
 					g_nChar.m_cLocation.X--;
 					bSomethingHappened = true;
@@ -681,7 +686,8 @@ void movelevel4()
 
 			else if (door1 == false && door5 == true)
 			{
-				if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
+				if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X] &&
+					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X])
 				{
 					g_nChar.m_cLocation.X--;
 					bSomethingHappened = true;
@@ -1109,7 +1115,8 @@ void movelevel4()
 			else if (door3 == false && door5 == false)
 			{
 				if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X] &&
-					map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X])
+					map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X] &&
+					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
 				{
 					g_nChar.m_cLocation.X++;
 					bSomethingHappened = true;
@@ -1127,7 +1134,8 @@ void movelevel4()
 
 			else if (door3 == false && door5 == true)
 			{
-				if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X])
+				if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X] &&
+					map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
 				{
 					g_nChar.m_cLocation.X++;
 					bSomethingHappened = true;

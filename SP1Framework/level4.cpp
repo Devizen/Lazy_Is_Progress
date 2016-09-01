@@ -101,7 +101,11 @@ void level4()
 
 	
 		rendercharacters();
+
+		//motiondetect();
+
 		motiondetect();
+
 		patrolfour();
 
 		if (boxreturn(boxone) == true || boxreturndoor(boxone, g_door5) == true)
@@ -153,7 +157,9 @@ void level4()
 		}
 	
 		if ((g_enemy.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_sChar.m_cLocation.Y) ||
-			(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y))
+			(g_enemy2.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_nChar.m_cLocation.Y) ||
+			(g_enemy.m_cLocation.X == g_nChar.m_cLocation.X) && (g_enemy.m_cLocation.Y == g_nChar.m_cLocation.Y) || 
+			(g_enemy2.m_cLocation.X == g_sChar.m_cLocation.X) && (g_enemy2.m_cLocation.Y == g_sChar.m_cLocation.Y) )
 		{
 			//Set boolean to false so the health will not reset.
 			restarthealth = false;

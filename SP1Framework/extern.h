@@ -1,5 +1,6 @@
-#include "main.h"
 #include "game.h"
+#include "main.h"
+#include "spawn.h"
 
 //Linking Console.
 extern Console g_Console;
@@ -67,8 +68,3 @@ extern bool partb;
 extern bool partc;
 extern bool splash;
 extern double ai_BounceTime;
-
-//Definition for function.
-void spawn();
-bool boxreturn(struct objects box);
-bool boxreturndoor(struct objects box, struct objects door);

@@ -91,6 +91,15 @@
     <ClCompile Include="movelevel5.cpp">
       <Filter>Character and A.I\Movement</Filter>
     </ClCompile>
+    <ClCompile Include="patrolai.cpp">
+      <Filter>Character and A.I\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="movelevel5b.cpp">
+      <Filter>Character and A.I\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="credits.cpp">
+      <Filter>Game Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="characters.h">
@@ -185,6 +194,18 @@
     </ClInclude>
     <ClInclude Include="movelevel5.h">
       <Filter>Character and A.I\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="patrolai.h">
+      <Filter>Character and A.I\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="extern.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="movelevel5b.h">
+      <Filter>Character and A.I\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="credits.h">
+      <Filter>Game Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

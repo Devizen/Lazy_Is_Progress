@@ -1,7 +1,6 @@
-#include "movelevel5.h"
+#include "movelevel5b.h"
 
-//Done by Eugene.
-void movelevel5()
+void movelevel5b()
 {
 	bool bSomethingHappened = false;
 	if (g_dBounceTime > g_dElapsedTime)
@@ -64,36 +63,8 @@ void movelevel5()
 		if (g_nChar.m_cLocation.X > 0 &&
 			map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != (char)219)
 		{
-			if (door1 == true &&
-				map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != map[g_door4.m_cLocation.Y][g_door4.m_cLocation.X] && 
-				map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X])
-			{
-				g_nChar.m_cLocation.X--;
-				bSomethingHappened = true;
-			}
-
-			else if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X] &&
-				door1 == false)
-			{
-				g_nChar.m_cLocation.X--;
-				bSomethingHappened = true;
-			}
-
-			else if (door4 == true &&
-				map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X - 1] != map[g_door5.m_cLocation.Y][g_door5.m_cLocation.X])
-			{
-				g_nChar.m_cLocation.X--;
-				bSomethingHappened = true;
-			}
-			else if (door1 == true &&
-				door2 == true &&
-				door3 == true &&
-				door4 == true &&
-				door5 == true)
-			{
-				g_nChar.m_cLocation.X--;
-				bSomethingHappened = true;
-			}
+			g_nChar.m_cLocation.X--;
+			bSomethingHappened = true;
 		}
 	}
 
@@ -112,26 +83,8 @@ void movelevel5()
 		if (g_nChar.m_cLocation.X < g_Console.getConsoleSize().X - 1 &&
 			map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != (char)219)
 		{
-			if (door2 == true &&
-				map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X])
-			{
-				g_nChar.m_cLocation.X++;
-				bSomethingHappened = true;
-			}
-
-			else if (map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X + 1] != map[g_door2.m_cLocation.Y][g_door2.m_cLocation.X] &&
-				door2 == false)
-			{
-				g_nChar.m_cLocation.X++;
-				bSomethingHappened = true;
-			}
-
-			else if (door2 == true &&
-				door3 == true)
-			{
-				g_nChar.m_cLocation.X++;
-				bSomethingHappened = true;
-			}
+			g_nChar.m_cLocation.X++;
+			bSomethingHappened = true;
 		}
 	}
 
