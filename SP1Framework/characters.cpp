@@ -534,156 +534,227 @@ void motiondetect()
 		//}
 
 		//For Second Character
-
-		if (g_nChar.m_cLocation.X > 30 && g_nChar.m_cLocation.Y < 60 && g_sChar.m_cLocation.X < 30 && g_sChar.m_cLocation.Y < 60)/*(( map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X] - map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X] )
-			<(map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X] - map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X])))
-			*/
-		{ 
-			if (g_enemy2.m_cLocation.X > 0 &&
-				(g_enemy2.m_cLocation.X - g_nChar.m_cLocation.X) < 0 &&
-				map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X + 1] != (char)219)
+			if (g_nChar.m_cLocation.X > 30 && g_nChar.m_cLocation.Y < 80 && g_sChar.m_cLocation.X < 30 && g_sChar.m_cLocation.Y <80)/*(( map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X] - map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X] )
+				<(map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X] - map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X])))
+				*/
 			{
-				if (map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X + 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X] && door1 == false)
+				if (g_enemy2.m_cLocation.X > 0 &&
+					(g_enemy2.m_cLocation.X - g_nChar.m_cLocation.X) < 0 &&
+					map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X + 1] != (char)219)
 				{
-					g_enemy2.m_cLocation.X++;
-					bSomethingHappened = true;
+					if (map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X + 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X] && door1 == false)
+					{
+						g_enemy2.m_cLocation.X++;
+						bSomethingHappened = true;
+					}
+
+					else if (door1 == true)
+					{
+						g_enemy2.m_cLocation.X++;
+						bSomethingHappened = true;
+					}
 				}
 
-				else if (door1 == true)
+				if (g_enemy2.m_cLocation.X > 0 &&
+					g_enemy2.m_cLocation.X - g_nChar.m_cLocation.X > 0 &&
+					map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X - 1] != (char)219)
 				{
-					g_enemy2.m_cLocation.X++;
-					bSomethingHappened = true;
+					if (map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X - 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X] && door3 == false)
+					{
+						g_enemy2.m_cLocation.X--;
+						bSomethingHappened = true;
+					}
+
+					else if (door3 == true)
+					{
+						g_enemy2.m_cLocation.X--;
+						bSomethingHappened = true;
+					}
+				}
+
+				if (g_enemy2.m_cLocation.Y > 0 &&
+					(g_enemy2.m_cLocation.Y - g_nChar.m_cLocation.Y) < 0 &&
+					map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] != (char)219)
+				{
+					if (map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] != map[g_door2.m_cLocation.Y][g_door2.m_cLocation.X] && door2 == false)
+					{
+						g_enemy2.m_cLocation.Y++;
+						bSomethingHappened = true;
+					}
+
+					else if (door2 == true)
+					{
+						g_enemy2.m_cLocation.Y++;
+						bSomethingHappened = true;
+					}
+				}
+
+				if (g_enemy2.m_cLocation.Y > 0 &&
+					(g_enemy2.m_cLocation.Y - g_nChar.m_cLocation.Y) > 0 &&
+					map[g_enemy2.m_cLocation.Y - 1][g_enemy2.m_cLocation.X] != (char)219)
+				{
+					if (map[g_enemy2.m_cLocation.Y - 1][g_enemy2.m_cLocation.X] != map[g_door4.m_cLocation.Y][g_door4.m_cLocation.X] && door4 == false)
+					{
+						g_enemy2.m_cLocation.Y--;
+						bSomethingHappened = true;
+					}
+
+					else if (door4 == true)
+					{
+						g_enemy2.m_cLocation.Y--;
+						bSomethingHappened = true;
+					}
 				}
 			}
 
-			if (g_enemy2.m_cLocation.X > 0 &&
-				g_enemy2.m_cLocation.X - g_nChar.m_cLocation.X > 0 &&
-				map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X - 1] != (char)219)
+			else if (g_sChar.m_cLocation.X > 30 && g_sChar.m_cLocation.Y < 80)/* && ((map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X] - map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X])
+				<(map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X] - map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X])))*/
 			{
-				if (map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X - 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X] && door3 == false)
+				if (((g_sChar.m_cLocation.X) - (g_enemy2.m_cLocation.X)) < ((g_nChar.m_cLocation.X) - (g_enemy2.m_cLocation.X)) ||
+					((g_sChar.m_cLocation.Y) - (g_enemy2.m_cLocation.Y)) < ((g_nChar.m_cLocation.Y) - (g_enemy2.m_cLocation.Y)) ||
+					((g_enemy2.m_cLocation.Y) - (g_sChar.m_cLocation.Y)) < ((g_enemy2.m_cLocation.Y) - (g_nChar.m_cLocation.Y)) ||
+					((g_enemy2.m_cLocation.Y) - (g_sChar.m_cLocation.Y)) < ((g_enemy2.m_cLocation.Y) - (g_nChar.m_cLocation.Y)))
 				{
-					g_enemy2.m_cLocation.X--;
-					bSomethingHappened = true;
+					if (g_enemy2.m_cLocation.X > 0 &&
+						(g_enemy2.m_cLocation.X - g_sChar.m_cLocation.X) < 0 &&
+						map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X + 1] != (char)219)
+					{
+						if (map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X + 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X] && door1 == false)
+						{
+							g_enemy2.m_cLocation.X++;
+							bSomethingHappened = true;
+						}
+
+						else if (door1 == true)
+						{
+							g_enemy2.m_cLocation.X++;
+							bSomethingHappened = true;
+						}
+					}
+
+					if (g_enemy2.m_cLocation.X > 0 &&
+						g_enemy2.m_cLocation.X - g_sChar.m_cLocation.X > 0 &&
+						map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X - 1] != (char)219)
+					{
+						if (map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X - 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X] && door3 == false)
+						{
+							g_enemy2.m_cLocation.X--;
+							bSomethingHappened = true;
+						}
+
+						else if (door3 == true)
+						{
+							g_enemy2.m_cLocation.X--;
+							bSomethingHappened = true;
+						}
+					}
+
+					if (g_enemy2.m_cLocation.Y > 0 &&
+						(g_enemy2.m_cLocation.Y - g_sChar.m_cLocation.Y) < 0 &&
+						map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] != (char)219)
+					{
+						if (map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] != map[g_door2.m_cLocation.Y][g_door2.m_cLocation.X] && door2 == false)
+						{
+							g_enemy2.m_cLocation.Y++;
+							bSomethingHappened = true;
+						}
+
+						else if (door2 == true)
+						{
+							g_enemy2.m_cLocation.Y++;
+							bSomethingHappened = true;
+						}
+					}
+
+					if (g_enemy2.m_cLocation.Y > 0 &&
+						(g_enemy2.m_cLocation.Y - g_sChar.m_cLocation.Y) > 0 &&
+						map[g_enemy2.m_cLocation.Y - 1][g_enemy2.m_cLocation.X] != (char)219)
+					{
+						if (map[g_enemy2.m_cLocation.Y - 1][g_enemy2.m_cLocation.X] != map[g_door4.m_cLocation.Y][g_door4.m_cLocation.X] && door4 == false
+							&& map[g_enemy2.m_cLocation.Y - 1][g_enemy2.m_cLocation.X] != (char)219)
+						{
+							g_enemy2.m_cLocation.Y--;
+							bSomethingHappened = true;
+						}
+
+						else if (door4 == true)
+						{
+							g_enemy2.m_cLocation.Y--;
+							bSomethingHappened = true;
+						}
+					}
 				}
+				else{
+					if (g_enemy2.m_cLocation.X > 0 &&
+						(g_enemy2.m_cLocation.X - g_nChar.m_cLocation.X) < 0 &&
+						map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X + 1] != (char)219)
+					{
+						if (map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X + 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X] && door1 == false)
+						{
+							g_enemy2.m_cLocation.X++;
+							bSomethingHappened = true;
+						}
 
-				else if (door3 == true)
-				{
-					g_enemy2.m_cLocation.X--;
-					bSomethingHappened = true;
+						else if (door1 == true)
+						{
+							g_enemy2.m_cLocation.X++;
+							bSomethingHappened = true;
+						}
+					}
+
+					if (g_enemy2.m_cLocation.X > 0 &&
+						g_enemy2.m_cLocation.X - g_nChar.m_cLocation.X > 0 &&
+						map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X - 1] != (char)219)
+					{
+						if (map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X - 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X] && door3 == false)
+						{
+							g_enemy2.m_cLocation.X--;
+							bSomethingHappened = true;
+						}
+
+						else if (door3 == true)
+						{
+							g_enemy2.m_cLocation.X--;
+							bSomethingHappened = true;
+						}
+					}
+
+					if (g_enemy2.m_cLocation.Y > 0 &&
+						(g_enemy2.m_cLocation.Y - g_nChar.m_cLocation.Y) < 0 &&
+						map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] != (char)219)
+					{
+						if (map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] != map[g_door2.m_cLocation.Y][g_door2.m_cLocation.X] && door2 == false)
+						{
+							g_enemy2.m_cLocation.Y++;
+							bSomethingHappened = true;
+						}
+
+						else if (door2 == true)
+						{
+							g_enemy2.m_cLocation.Y++;
+							bSomethingHappened = true;
+						}
+					}
+
+					if (g_enemy2.m_cLocation.Y > 0 &&
+						(g_enemy2.m_cLocation.Y - g_nChar.m_cLocation.Y) > 0 &&
+						map[g_enemy2.m_cLocation.Y - 1][g_enemy2.m_cLocation.X] != (char)219)
+					{
+						if (map[g_enemy2.m_cLocation.Y - 1][g_enemy2.m_cLocation.X] != map[g_door4.m_cLocation.Y][g_door4.m_cLocation.X] && door4 == false)
+						{
+							g_enemy2.m_cLocation.Y--;
+							bSomethingHappened = true;
+						}
+
+						else if (door4 == true)
+						{
+							g_enemy2.m_cLocation.Y--;
+							bSomethingHappened = true;
+						}
+					}
 				}
-			}
-
-			if (g_enemy2.m_cLocation.Y > 0 &&
-				(g_enemy2.m_cLocation.Y - g_nChar.m_cLocation.Y) < 0 &&
-				map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] != (char)219)
-			{
-				if (map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] != map[g_door2.m_cLocation.Y][g_door2.m_cLocation.X] && door2 == false)
-				{
-					g_enemy2.m_cLocation.Y++;
-					bSomethingHappened = true;
 				}
-
-				else if (door2 == true)
-				{
-					g_enemy2.m_cLocation.Y++;
-					bSomethingHappened = true;
-				}
-			}
-
-			if (g_enemy2.m_cLocation.Y > 0 &&
-				(g_enemy2.m_cLocation.Y - g_nChar.m_cLocation.Y) > 0 &&
-				map[g_enemy2.m_cLocation.Y - 1][g_enemy2.m_cLocation.X] != (char)219)
-			{
-				if (map[g_enemy2.m_cLocation.Y - 1][g_enemy2.m_cLocation.X] != map[g_door4.m_cLocation.Y][g_door4.m_cLocation.X] && door4 == false)
-				{
-					g_enemy2.m_cLocation.Y--;
-					bSomethingHappened = true;
-				}
-
-				else if (door4 == true)
-				{
-					g_enemy2.m_cLocation.Y--;
-					bSomethingHappened = true;
-				}
-			}
-		}
-
-		else if (g_sChar.m_cLocation.X > 30 && g_sChar.m_cLocation.Y < 60)/* && ((map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X] - map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X])
-			<(map[g_nChar.m_cLocation.Y][g_nChar.m_cLocation.X] - map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X])))*/
-		{
-			if (g_enemy2.m_cLocation.X > 0 &&
-				(g_enemy2.m_cLocation.X - g_sChar.m_cLocation.X) < 0 &&
-				map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X + 1] != (char)219)
-			{
-				if (map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X + 1] != map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X] && door1 == false)
-				{
-					g_enemy2.m_cLocation.X++;
-					bSomethingHappened = true;
-				}
-
-				else if (door1 == true)
-				{
-					g_enemy2.m_cLocation.X++;
-					bSomethingHappened = true;
-				}
-			}
-
-			if (g_enemy2.m_cLocation.X > 0 &&
-				g_enemy2.m_cLocation.X - g_sChar.m_cLocation.X > 0 &&
-				map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X - 1] != (char)219)
-			{
-				if (map[g_enemy2.m_cLocation.Y][g_enemy2.m_cLocation.X - 1] != map[g_door3.m_cLocation.Y][g_door3.m_cLocation.X] && door3 == false)
-				{
-					g_enemy2.m_cLocation.X--;
-					bSomethingHappened = true;
-				}
-
-				else if (door3 == true)
-				{
-					g_enemy2.m_cLocation.X--;
-					bSomethingHappened = true;
-				}
-			}
-
-			if (g_enemy2.m_cLocation.Y > 0 &&
-				(g_enemy2.m_cLocation.Y - g_sChar.m_cLocation.Y) < 0 &&
-				map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] != (char)219)
-			{
-				if (map[g_enemy2.m_cLocation.Y + 1][g_enemy2.m_cLocation.X] != map[g_door2.m_cLocation.Y][g_door2.m_cLocation.X] && door2 == false)
-				{
-					g_enemy2.m_cLocation.Y++;
-					bSomethingHappened = true;
-				}
-
-				else if (door2 == true)
-				{
-					g_enemy2.m_cLocation.Y++;
-					bSomethingHappened = true;
-				}
-			}
-
-			if (g_enemy2.m_cLocation.Y > 0 &&
-				(g_enemy2.m_cLocation.Y - g_sChar.m_cLocation.Y) > 0 &&
-				map[g_enemy2.m_cLocation.Y - 1][g_enemy2.m_cLocation.X] != (char)219)
-			{
-				if (map[g_enemy2.m_cLocation.Y - 1][g_enemy2.m_cLocation.X] != map[g_door4.m_cLocation.Y][g_door4.m_cLocation.X] && door4 == false
-					&& map[g_enemy2.m_cLocation.Y - 1][g_enemy2.m_cLocation.X] != (char)219)
-				{
-					g_enemy2.m_cLocation.Y--;
-					bSomethingHappened = true;
-				}
-
-				else if (door4 == true)
-				{
-					g_enemy2.m_cLocation.Y--;
-					bSomethingHappened = true;
-				}
-			}
-		}
-
-
-
-
+			
 
 		if (bSomethingHappened)
 		{
