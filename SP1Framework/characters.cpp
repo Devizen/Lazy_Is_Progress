@@ -840,7 +840,7 @@ void motiondetect()
 		if (bSomethingHappened)
 		{
 			// set the bounce time to some time in the future to prevent accidental triggers
-			ai_BounceTime = g_dElapsedTime + 0.124; // 125ms should be enough
+			ai_BounceTime = g_dElapsedTime + 0.02f; // 125ms should be enough
 
 		}
 		break;
@@ -1247,7 +1247,7 @@ void patrolfour()
 	if (bSomethingHappened)
 	{
 		// set the bounce time to some time in the future to prevent accidental triggers
-		ai_BounceTime = g_dElapsedTime + 0.023f; // 125ms should be enough
+		ai_BounceTime = g_dElapsedTime + 0.0222f; // 125ms should be enough
 
 	}
 }
