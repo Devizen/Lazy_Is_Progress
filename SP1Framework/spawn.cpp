@@ -260,20 +260,16 @@ void spawn()
 		g_enemy2.m_cLocation.X = 15;
 		g_enemy2.m_cLocation.Y = 9;
 
-		//PowerUp
-		g_powerup.m_cLocation.X = 40;
-		g_powerup.m_cLocation.Y = 20;
-
 		//Door
 		g_door4.m_cLocation.X = 45;
 		g_door4.m_cLocation.Y = 17;
 
 		//Lever
-		g_lever4.m_cLocation.X = 51;
-		g_lever4.m_cLocation.Y = 23;
+		g_lever1.m_cLocation.X = 51;
+		g_lever1.m_cLocation.Y= 23;
 
 		//Box
-		boxfour.m_cLocation.X = 52;
+		boxfour.m_cLocation.X = 56;
 		boxfour.m_cLocation.Y = 23;
 
 
@@ -283,9 +279,9 @@ void spawn()
 		release_enemy.m_cLocation.X = 16;
 		release_enemy.m_cLocation.Y = 9;
 
-		//PlatForm
-		g_platform.m_cLocation.X = 7;
-		g_platform.m_cLocation.Y = 21;
+		////PlatForm
+		//g_platform.m_cLocation.X = 7;
+		//g_platform.m_cLocation.Y = 21;
 
 		//Set the initial health of the player
 		if (restarthealth == true)

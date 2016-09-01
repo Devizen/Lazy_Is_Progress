@@ -13,7 +13,7 @@ void gameover()
 	c.X = 13;
 	c.Y = 5;
 
-	for (int i = 0; i <= y; i++)
+	for (unsigned int i = 0; i <= y; i++)
 	{
 		line = map[i];
 		g_Console.writeToBuffer(c, line);

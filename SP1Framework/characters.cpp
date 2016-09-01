@@ -421,40 +421,40 @@ void motiondetect()
 	case levelthree:
 		//For First Character
 		//Right
-		if (g_enemy.m_cLocation.X > 0 &&
-			(g_enemy.m_cLocation.X - g_sChar.m_cLocation.X) < 0 &&
-			map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X + 1] != (char)219)
-		{
-			g_enemy.m_cLocation.X++;
-			bSomethingHappened = true;
-		}
+		//if (g_enemy.m_cLocation.X > 0 &&
+		//	(g_enemy.m_cLocation.X - g_sChar.m_cLocation.X) < 0 &&
+		//	map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X + 1] != (char)219)
+		//{
+		//	g_enemy.m_cLocation.X++;
+		//	bSomethingHappened = true;
+		//}
 
-		//Left
-		if (g_enemy.m_cLocation.X > 0 &&
-			g_enemy.m_cLocation.X - g_sChar.m_cLocation.X > 0 &&
-			map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X - 1] != (char)219)
-		{
-			g_enemy.m_cLocation.X--;
-			bSomethingHappened = true;
-		}
+		////Left
+		//if (g_enemy.m_cLocation.X > 0 &&
+		//	g_enemy.m_cLocation.X - g_sChar.m_cLocation.X > 0 &&
+		//	map[g_enemy.m_cLocation.Y][g_enemy.m_cLocation.X - 1] != (char)219)
+		//{
+		//	g_enemy.m_cLocation.X--;
+		//	bSomethingHappened = true;
+		//}
 
-		//Down
-		if (g_enemy.m_cLocation.Y > 0 &&
-			(g_enemy.m_cLocation.Y - g_sChar.m_cLocation.Y) < 0 &&
-			map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != (char)219)
-		{
-			g_enemy.m_cLocation.Y++;
-			bSomethingHappened = true;
-		}
+		////Down
+		//if (g_enemy.m_cLocation.Y > 0 &&
+		//	(g_enemy.m_cLocation.Y - g_sChar.m_cLocation.Y) < 0 &&
+		//	map[g_enemy.m_cLocation.Y + 1][g_enemy.m_cLocation.X] != (char)219)
+		//{
+		//	g_enemy.m_cLocation.Y++;
+		//	bSomethingHappened = true;
+		//}
 
-		//Up
-		if (g_enemy.m_cLocation.Y > 0 &&
-			(g_enemy.m_cLocation.Y - g_sChar.m_cLocation.Y) > 0 &&
-			map[g_enemy.m_cLocation.Y - 1][g_enemy.m_cLocation.X] != (char)219)
-		{
-			g_enemy.m_cLocation.Y--;
-			bSomethingHappened = true;
-		}
+		////Up
+		//if (g_enemy.m_cLocation.Y > 0 &&
+		//	(g_enemy.m_cLocation.Y - g_sChar.m_cLocation.Y) > 0 &&
+		//	map[g_enemy.m_cLocation.Y - 1][g_enemy.m_cLocation.X] != (char)219)
+		//{
+		//	g_enemy.m_cLocation.Y--;
+		//	bSomethingHappened = true;
+		//}
 
 		//For Second Character
 		if (g_enemy2.m_cLocation.X > 0 &&
@@ -967,44 +967,24 @@ void rendercharacters()
 		break;
 
 	case levelthree:
-		g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, red);
-
 		// Draw the location of the character
 		g_Console.writeToBuffer(g_nChar.m_cLocation, (char)3, green);
+		g_Console.writeToBuffer(g_sChar.m_cLocation, (char)3, red);
 
 		//Enemy
-
-		
-		
-
-		g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, green);
 		g_Console.writeToBuffer(g_enemy2.m_cLocation, (char)1, green);
 
 		//Lever
 		g_Console.writeToBuffer(g_lever1.m_cLocation, (char)219, yellow);
-		g_Console.writeToBuffer(g_lever4.m_cLocation, (char)219, yellow);
 
 
-		//Door
-		g_Console.writeToBuffer(g_door1.m_cLocation, (char)219, red);
-		g_Console.writeToBuffer(g_door2.m_cLocation, (char)219, red);
-		g_Console.writeToBuffer(g_door3.m_cLocation, (char)219, red);
+		 // Door
+		/*g_Console.writeToBuffer(g_door1.m_cLocation, (char)219, red);*/
 		g_Console.writeToBuffer(g_door4.m_cLocation, (char)219, red);
 		//Box
-		g_Console.writeToBuffer(boxone.m_cLocation, (char)254, red);
-		g_Console.writeToBuffer(boxone.m_cLocation, (char)254, red);
-		g_Console.writeToBuffer(boxfour.m_cLocation, (char)254, red);
 		g_Console.writeToBuffer(boxfour.m_cLocation, (char)254, red);
 		
 
-		//platform
-		g_Console.writeToBuffer(g_platform.m_cLocation, (char)254, purple);
-
-		//powerup
-		//C.X = 23;
-		//C.Y = 10;
-
-		//g_Console.writeToBuffer(C, (char)206, purple);
 		break;
 
 	case levelfour:

@@ -15,7 +15,7 @@ void tutoriala()
 		c.Y = 7;
 
 		clearScreen();
-		for (int i = 0; i <= y; i++)
+		for (unsigned int i = 0; i <= y; i++)
 		{
 			line = map[i];
 			g_Console.writeToBuffer(c, line);
@@ -31,7 +31,7 @@ void tutoriala()
 			c.Y = 0;
 
 			clearScreen();
-			for (int i = 0; i <= y; i++)
+			for (unsigned int i = 0; i <= y; i++)
 			{
 				line = map[i];
 				g_Console.writeToBuffer(c, line);
@@ -79,7 +79,7 @@ void tutoriala()
 		c.X = 0;
 		c.Y = 0;
 
-		for (int i = 0; i <= y; i++)
+		for (unsigned int i = 0; i <= y; i++)
 		{
 			line = map[i];
 			g_Console.writeToBuffer(c, line);
@@ -186,7 +186,7 @@ void tutorialb()
 		c.Y = 7;
 
 		clearScreen();
-		for (int i = 0; i <= y; i++)
+		for (unsigned int i = 0; i <= y; i++)
 		{
 			line = map[i];
 			g_Console.writeToBuffer(c, line);
@@ -202,7 +202,7 @@ void tutorialb()
 			c.Y = 0;
 
 			clearScreen();
-			for (int i = 0; i <= y; i++)
+			for (unsigned int i = 0; i <= y; i++)
 			{
 				line = map[i];
 				g_Console.writeToBuffer(c, line);
@@ -248,7 +248,7 @@ void tutorialb()
 		c.X = 0;
 		c.Y = 0;
 
-		for (int i = 0; i <= y; i++)
+		for (unsigned int i = 0; i <= y; i++)
 		{
 			line = map[i];
 			g_Console.writeToBuffer(c, line);

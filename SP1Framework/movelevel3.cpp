@@ -14,18 +14,50 @@ void movelevel3()
 		
 		if (g_sChar.m_cLocation.Y > 0 && map[g_sChar.m_cLocation.Y - 1][g_sChar.m_cLocation.X] != (char)219)
 		{
-			g_sChar.m_cLocation.Y--;
-			bSomethingHappened = true;
+			if (door4 == true)
+			{
+				if (g_sChar.m_cLocation.Y < g_Console.getConsoleSize().Y - 1 &&
+					map[g_sChar.m_cLocation.Y-1][g_sChar.m_cLocation.X ] != (char)219)
+				{
+					g_sChar.m_cLocation.Y--;
+					bSomethingHappened = true;
+				}
+			}
+			if (door4 == false)
+			{
+				if (g_sChar.m_cLocation.Y < g_Console.getConsoleSize().Y - 1 &&
+					map[g_sChar.m_cLocation.Y-1][g_sChar.m_cLocation.X] != (char)219 &&
+					map[g_sChar.m_cLocation.Y-1][g_sChar.m_cLocation.X ] !=
+					map[g_door1.m_cLocation.Y][g_door1.m_cLocation.X])
+				{
+					g_sChar.m_cLocation.Y--;
+					bSomethingHappened = true;
+				}
+			}
 		}
 		
 	}
 	if (g_abKeyPressed[K_S])
 	{
-		if (g_sChar.m_cLocation.Y < g_Console.getConsoleSize().Y - 1 &&
-			map[g_sChar.m_cLocation.Y + 1][g_sChar.m_cLocation.X] != (char)219)
+		if (door4 = true)
 		{
-			g_sChar.m_cLocation.Y++;
-			bSomethingHappened = true;
+			if (g_sChar.m_cLocation.Y < g_Console.getConsoleSize().Y + 1 &&
+				map[g_sChar.m_cLocation.Y + 1][g_sChar.m_cLocation.X] != (char)219)
+			{
+				g_sChar.m_cLocation.Y++;
+				bSomethingHappened = true;
+			}
+		}
+		else if (door4 = false)
+		{
+			if (g_sChar.m_cLocation.Y > 0 &&
+				map[g_sChar.m_cLocation.X][g_sChar.m_cLocation.Y + 1] != (char)219 &&
+				map[g_sChar.m_cLocation.X][g_sChar.m_cLocation.Y + 1] !=
+				map[g_door4.m_cLocation.X][g_door4.m_cLocation.Y + 1])
+			{
+				g_sChar.m_cLocation.Y++;
+				bSomethingHappened = true;
+			}
 		}
 	}
 

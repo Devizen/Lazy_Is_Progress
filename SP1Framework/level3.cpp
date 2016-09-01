@@ -20,7 +20,7 @@ void level3()
 		c.Y = 7;
 
 		clearScreen();
-		for (int i = 0; i <= y; i++)
+		for (unsigned int i = 0; i <= y; i++)
 		{
 			line = map[i];
 			g_Console.writeToBuffer(c, line);
@@ -36,7 +36,7 @@ void level3()
 			c.Y = 0;
 
 			clearScreen();
-			for (int i = 0; i <= y; i++)
+			for (unsigned int i = 0; i <= y; i++)
 			{
 				line = map[i];
 				g_Console.writeToBuffer(c, line);
@@ -84,7 +84,7 @@ void level3()
 		c.X = 0;
 		c.Y = 0;
 
-		for (int i = 0; i <= y; i++)
+		for (unsigned int i = 0; i <= y; i++)
 		{
 			line = map[i];
 			g_Console.writeToBuffer(c, line);
@@ -129,9 +129,9 @@ void level3()
 		motiondetect();
 
 
-		if (map[boxfour.m_cLocation.Y][boxfour.m_cLocation.X] += map[g_lever4.m_cLocation.Y][g_lever4.m_cLocation.X])
+		if (map[boxfour.m_cLocation.Y][boxfour.m_cLocation.X] == map[g_lever1.m_cLocation.Y][g_lever1.m_cLocation.X])
 		{
-			g_Console.writeToBuffer(g_lever4.m_cLocation, (char)219, green);
+			g_Console.writeToBuffer(boxfour.m_cLocation, (char)219, green);
 			g_Console.writeToBuffer(g_door4.m_cLocation, (char)219, green);
 
 			door4 = true;

@@ -12,7 +12,7 @@ void credits()
 	c.X = 29;
 	c.Y = 2;
 
-	for (int i = 0; i <= y; i++)
+	for (unsigned int i = 0; i <= y; i++)
 	{
 		line = map[i];
 		g_Console.writeToBuffer(c, line);
