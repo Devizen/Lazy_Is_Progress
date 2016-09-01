@@ -117,6 +117,12 @@ void level3()
 		{
 			g_Console.writeToBuffer(g_lever4.m_cLocation, (char)219, green);
 			g_Console.writeToBuffer(g_door4.m_cLocation, (char)219, green);
+
+			door4 = true;
+		}
+		else
+		{
+			door4 = false;
 		}
 
 		if (boxreturn(boxfour) == true)
